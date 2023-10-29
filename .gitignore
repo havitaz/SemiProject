@@ -145,3 +145,5 @@ $RECYCLE.BIN/
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,eclipse,visualstudiocode
+Servers/
+SemiProject/.gitignore
