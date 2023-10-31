@@ -131,56 +131,18 @@ body{
 
             <div class="video-preview">
                 <div class="thumbnail-row">
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/maxresdefault.jpg">
-                    <div class="video-time">
-                        명품 편집샵 직원들의 출근룩이란? 젠테 스토어 : part 2 【서울 스트릿 패션】 - EP.17
-                    </div>
-                    <div class="video-time">
-                        14:48
-                    </div>
-
+                    <iframe width="400" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="400" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="400" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="400" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 
             </div>
 
 
-            <div class="video-preview">
-                <div class="thumbnail-row">
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/maxresdefault.jpg">
-                    <div class="video-time">
-                        명품 편집샵 직원들의 출근룩이란? 젠테 스토어 : part 2 【서울 스트릿 패션】 - EP.17
-                    </div>
-                    <div class="video-time">
-                        14:48
-                    </div>
-                </div>
-              
-            </div>
-            <div class="video-preview">
-                <div class="thumbnail-row">
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/maxresdefault.jpg">
-                    <div class="video-time">
-                        명품 편집샵 직원들의 출근룩이란? 젠테 스토어 : part 2 【서울 스트릿 패션】 - EP.17
-                    </div>
-                    <div class="video-time">
-                        12:14
-                    </div>
-                    
-                </div>
-              
-            </div>
-            <div class="video-preview">
-                <div class="thumbnail-row">
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/maxresdefault.jpg">
-                    <div class="video-time">
-                        명품 편집샵 직원들의 출근룩이란? 젠테 스토어 : part 2 【서울 스트릿 패션】 - EP.17
-                    </div>
-                    <div class="video-time">
-                        8:06
-                    </div>
-                </div>
+
                 
-            </div>
+            
         </section>
 
         </div>
@@ -190,99 +152,73 @@ body{
 
 
         <div class="music-grid">
-            <section>
-                <h1>top 100</h1>
-                <table class="top100grid">
-                    <tr>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg">
-                                    <div class="music-detail" align="center">
-                                        Nine Tracks Mind Delux
-                                        <br>
-                                        Charlie Puth
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/justice.jpg">
-                                    <div class="music-detail" align="center">
-                                        Justice
-                                        <br>
-                                        Justin Bieber   
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/intentions.jpg">
-                                    <div class="music-detail" align="center">
-                                        intentions
-                                        <br>
-                                        Justin Bieber                                     
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/sm.jpg">
-                                    <div class="music-detail" align="center">
-                                        Shawn Mendes
-                                        <br>
-                                        Shawn Mendes
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/wild.jpg">
-                                    <div class="music-detail" align="center">
-                                        Wild
-                                        <br>
-                                        Troye Sivan                        
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                        <td>
-                            <div class="video-preview">
-                                <div class="thumbnail-row">
-                                    <img class="thumbnail" src="<%=contextPath %>/resources/images/trx.jpg">
-                                    <div class="music-detail" align="center">
-                                        Trxye
-                                        <br>
-                                        Troye Sivan
-                                    </div>
-                                    <div class="video-time">
-                                        8:06
-                                    </div>
-                                </div>
-                        </td>
-                    </tr>
-                </table>
-                    
-                
-            </section>
+            <div>
+                <div class="top100part">
+                <h1>쿼카 플레이어
+                    <br>top 100
+                </h1>
+                <div class="top100info">
+                    총 100곡!
+                    <br><br><br>
+                    플레이버튼
+                </div>
+
+            </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/>
+                        <div class="thumbnail-text">
+                        Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                        </div> 
+                    </div>
+                    <div>
+                        <img class="thumbnail" src="<%=contextPath %>/resources/images/justice.jpg">
+                        <div class="thumbnail-text">
+                        Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                    </div>
+                    </div>
+                    <div>
+                        <img class="thumbnail" src="<%=contextPath %>/resources/images/intentions.jpg">
+                        <div class="thumbnail-text">
+                        Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img class="thumbnail" src="<%=contextPath %>/resources/images/sm.jpg">
+                    <div class="thumbnail-text">
+                    Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                    </div>
+                </div>
+                <div>
+                    <img class="thumbnail" src="<%=contextPath %>/resources/images/wild.jpg">
+                    <div class="thumbnail-text">
+                    Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                    </div>
+                </div>
+                <div>
+                    <img class="thumbnail" src="<%=contextPath %>/resources/images/trx.jpg">
+                    <div class="thumbnail-text">
+                    Nine Tracks Mind Delux
+                        <br>
+                        Charlie Puth
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>

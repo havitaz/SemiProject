@@ -2,7 +2,7 @@ body{
     margin: 0;
     color: white;
     padding-top: 80px;
-    padding-left: 250px;
+    padding-left: 310px;
     padding-right: 20px;
     font-family: 'Noto Sans KR', sans-serif;
     background-image: url("<%=contextPath %>/resources/images/XXXX.png");
@@ -21,19 +21,35 @@ P{
 }
 
 .music-grid{
+    display:flex;
     background: rgba(204, 91, 35, 0.9);
-    height: 475px;
+    height: 510px;
     width: 100%;
     border-radius: 15px;
     margin-top: 40px;
 }
 
-.top100grid{
-    display: grid;
-    column-gap: 16px;
-    row-gap: 40px;
+.top100part{
+    position: absolute;
+    z-index: 4;
+    width: 280px;
+    padding: 40px 0 0 40px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 40px;
+    color: #fff;
 }
 
+.top100info{
+    font-size: 23px;
+    font-weight: 100;
+    line-height: 20px;
+    color: #fff;
+}
+
+.music-grid > div {
+    flex: 1;
+}
 @media (min-width: 1000px) {
     .top100grid-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
