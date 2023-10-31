@@ -6,7 +6,7 @@
  
     position: fixed;
     top: 0;
-    left: 200px;
+    left: 260px;
     right: 0;
     z-index: 199;
 
@@ -28,11 +28,8 @@
 
 }
 
-.hamburger-menu{
-    
-}
 
-.left-section img.hamburger-menu{
+.left-section img.player-menu{
 
     width: 100%;
     height: 100%;
@@ -50,16 +47,8 @@
     flex: 1;
 }
 
-.search-button{
-    height: 44px;
-    width: 44px;
-    background: #323232;
-    margin-left: 10px;
-    border-radius: 5px 5px 5px 5px;
 
-}
-
-.search-bar{
+.player-bar{
     height: 40px;
     /* padding-left: 10px; */
     /* font-size: 16px; */
@@ -71,7 +60,7 @@
     flex: 1px;
 }
 
-.search-icon{
+.album-thumb{
     border-radius: 12px 12px 12px 12px;
     height: 42px;
     width: 42px;
@@ -79,18 +68,10 @@
     bottom: 1px;
 }
 
-.voice-search-button{
-    height: 10px;
-    width: 10px;
-    border-radius: 20px;
-    border: none;
-    background: #121212;
-}
+
 
 .search-button,
-.voice-search-button,
-.search-icon,
-.upload-icon-container{
+.album-thumb{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,22 +79,8 @@
     cursor: pointer;
 }
 
-.tooltip{
-    position: absolute;
-    background: grey;
-    color:white;
-    padding: 4px 8px;
-    bottom: -30px;
-    border-radius: 2px;
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.2s;
-    white-space: nowrap;
-    pointer-events: none;
-}
 
 .search-button:hover .tooltip,
-.voice-search-button:hover .tooltip,
 .upload-icon-container:hover .tooltip{
     opacity: 1;
 }
@@ -161,8 +128,4 @@
 
 .playlist{
     color: rgba(63, 47, 34, 0.9);
-}
-
-.voice-search-icon {
-    width: 15px;
 }
