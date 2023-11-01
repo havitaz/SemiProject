@@ -11,10 +11,6 @@
     z-index: 199;
 
     background-color: rgb(205, 165, 130);
-    /* border-bottom-width: 1px;
-    border-bottom-style: none;
-    border-bottom-color: #4d4d4d; */
-    /* border: 1px solid #4d4d4d; */
     border-bottom: 1px solid rgb(133, 90, 71);
 
 }
@@ -50,20 +46,15 @@
 
 .player-bar{
     height: 40px;
-    /* padding-left: 10px; */
-    /* font-size: 16px; */
-    border: 1px solid #4d4d4d; 
     background: rgba(63, 47, 34, 0.9);
     border-radius: 12px 12px 12px 12px;   
-    /* margin-right: 10px; */
-    /* left: 0; */
     flex: 1px;
 }
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
-    height: 42px;
-    width: 42px;
+    height: 40px;
+    width: 40px;
     right: 12px;
     bottom: 1px;
 }

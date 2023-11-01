@@ -24,17 +24,20 @@ body{
     background-image: url("<%=contextPath %>/resources/images/XXXX.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: rgb(255, 252, 227);
+
 }
+
 </style>
 <body>
 	 <header class="header">
 
         <div class="left-section">
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/shuffle.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/left.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/play.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/right.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/repeat.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
         </div>
 
         <div class="middle-section">
@@ -49,7 +52,6 @@ body{
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <!-- <img class="current-user-picture" src="assets/images/avatars/avatar-1.png"> -->
             <button class="btn-login">로그인</button>
         </div>
 

@@ -1,41 +1,4 @@
-body{
-    margin: 0;
-    color: white;
-    padding-top: 80px;
-    padding-left: 250px;
-    padding-right: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    background-image: url("<%=contextPath %>/resources/images/XXXX.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 P{
     margin: 0;
 }
 
-.main-title{
-    color: rgb(51, 51, 51);
-    border-bottom: 1px solid rgb(51, 51, 51);
-    font-weight: 900;
-}
-
-.music-grid{
-    background: rgba(204, 91, 35, 0.9);
-    height: 475px;
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 40px;
-}
-
-.top100grid{
-    display: grid;
-    column-gap: 16px;
-    row-gap: 40px;
-}
-
-@media (min-width: 1000px) {
-    .top100grid-grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}

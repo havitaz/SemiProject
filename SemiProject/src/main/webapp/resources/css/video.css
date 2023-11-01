@@ -5,7 +5,8 @@
 
 
 .video-grid{
-    display: grid;
+    display: flex;
+    align-items: center;
     column-gap: 16px;
     row-gap: 40px;
 }
@@ -28,15 +29,14 @@
     }
 }
 
-.thumbnail-row{
-    margin-bottom: 8px;
-    position: relative;
-}
 
 .thumbnail{
-    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 150px;
     border-radius: 15px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .thumbnail:hover{
@@ -52,9 +52,11 @@
     right: 5px;
     font-size: 12px;
     font-weight: 900;
+    text-align: right;
     border-radius: 2px;
     padding: 1px 4px;
     color: black;
+    text-align: right;
 }
 
 .video-info-grid{
@@ -82,23 +84,6 @@
     color: #aaaaaa;
 }
 
-
-
-
-.music-grid{
-    background: rgba(204, 91, 35, 0.9);
-    height: 475px;
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 40px;
-}
-
-.top100grid{
-    display: grid;
-    column-gap: 16px;
-    row-gap: 40px;
-}
-
 @media (min-width: 1000px) {
     .top100grid-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -115,4 +100,38 @@
     padding: 1px 4px;
     background: rgba(65, 64, 64, 0.668);
     color: rgb(255, 255, 255);
+}
+
+.music-grid{
+    display:flex;
+    background: rgba(204, 91, 35, 0.9);
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.top100part{
+    position: absolute;
+    z-index: 4;
+    width: 280px;
+    padding: 40px 0 0 40px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 40px;
+    color: #fff;
+}
+
+.top100info{
+    font-size: 23px;
+    font-weight: 100;
+    line-height: 20px;
+    color: #fff;
+}
+
+.music-grid > div {
+    flex: 1;
+}
+@media (min-width: 1000px) {
+    .top100grid-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

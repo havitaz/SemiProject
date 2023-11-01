@@ -6,8 +6,6 @@
     background: rgb(205, 165, 130);
     width: 260px;
     z-index: 200;
-    /* padding: 0 4px;
-    padding-top: 5px; */
     border-right: 1px solid rgb(133, 90, 71);
 }
 .top-section{
@@ -24,7 +22,6 @@
     border-radius: 15px;
     width: 240px;
     height: 155px;
-    /* margin-top: 55px; */
     margin-bottom: 15px;
     list-style-type: none;
 }
