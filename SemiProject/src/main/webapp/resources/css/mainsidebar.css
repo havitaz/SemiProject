@@ -4,14 +4,14 @@
     top: 0px;
     bottom: 0px;
     background: rgb(205, 165, 130);
-    width: 260px;
+    width: 200px;
     z-index: 200;
     /* padding: 0 4px;
     padding-top: 5px; */
     border-right: 1px solid rgb(133, 90, 71);
-
+}
 .top-section{
-    height: 175px;
+    height: 220px;
     display: flex;
     justify-content: center; /*정렬*/
     align-items: center;
@@ -22,8 +22,8 @@
 .Member-profile{
     background: rgb(133, 90, 71);
     border-radius: 15px;
-    width: 180px;
-    height: 115px;
+    width: 240px;
+    height: 155px;
     /* margin-top: 55px; */
     margin-bottom: 15px;
     list-style-type: none;

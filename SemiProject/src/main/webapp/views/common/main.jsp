@@ -6,9 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
+    <link rel="stylesheet" href="<%=contextPath %>/resources/css/mainheader.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
+    <link rel="stylesheet" href="<%=contextPath %>/resources/css/mainsidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
 </head>
 <meta charset="UTF-8">
