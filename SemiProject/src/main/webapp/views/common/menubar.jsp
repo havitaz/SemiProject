@@ -18,13 +18,14 @@ body{
     margin: 0;
     color: white;
     padding-top: 80px;
-    padding-left: 250px;
+    padding-left: 310px;
     padding-right: 20px;
     font-family: 'Noto Sans KR', sans-serif;
     background-image: url("<%=contextPath %>/resources/images/XXXX.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 </style>
 <body>
 	
@@ -130,11 +131,11 @@ body{
         <section class="video-grid">
 
             <div class="video-preview">
-                <div class="thumbnail-row">
-                    <iframe width="400" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="400" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="400" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="400" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div>
+                    <iframe width="360" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="360" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="360" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="360" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 
             </div>
@@ -166,58 +167,36 @@ body{
             </div>
             </div>
             <div>
-                <div>
-                    <div>
-                        <img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/>
-                        <div class="thumbnail-text">
-                        Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                        </div> 
-                    </div>
-                    <div>
-                        <img class="thumbnail" src="<%=contextPath %>/resources/images/justice.jpg">
-                        <div class="thumbnail-text">
-                        Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                    </div>
-                    </div>
-                    <div>
-                        <img class="thumbnail" src="<%=contextPath %>/resources/images/intentions.jpg">
-                        <div class="thumbnail-text">
-                        Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                    </div>
-                    </div>
-                </div>
+                <table>
+                    <tr height="120">
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                    <tr>
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                    <tr>
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                </table>
             </div>
             <div>
-                <div>
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/sm.jpg">
-                    <div class="thumbnail-text">
-                    Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                    </div>
-                </div>
-                <div>
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/wild.jpg">
-                    <div class="thumbnail-text">
-                    Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                    </div>
-                </div>
-                <div>
-                    <img class="thumbnail" src="<%=contextPath %>/resources/images/trx.jpg">
-                    <div class="thumbnail-text">
-                    Nine Tracks Mind Delux
-                        <br>
-                        Charlie Puth
-                    </div>
-                </div>
+                <table>
+                    <tr>
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                    <tr>
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                    <tr>
+                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
+                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
+                    </tr>
+                </table>
             </div>
         </div>
 

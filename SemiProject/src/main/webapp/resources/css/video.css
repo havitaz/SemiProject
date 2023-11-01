@@ -6,6 +6,7 @@
 
 .video-grid{
     display: flex;
+    align-items: center;
     column-gap: 16px;
     row-gap: 40px;
 }
@@ -28,15 +29,11 @@
     }
 }
 
-.thumbnail-text{
-    margin-left: 120px;
-    
-}
 
 .thumbnail{
     display: flex;
     align-items: center;
-    width: 100px;
+    width: 150px;
     border-radius: 15px;
     cursor: pointer;
     margin-top: 20px;
