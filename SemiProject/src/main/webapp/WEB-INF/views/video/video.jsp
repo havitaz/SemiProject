@@ -22,7 +22,7 @@ body{
     padding-left: 310px;
     padding-right: 20px;
     font-family: 'Noto Sans KR', sans-serif;
-    background-image: url("<%=contextPath %>/resources/images/XXXX.png");
+    background-image: url("<%=contextPath %>/resources/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
