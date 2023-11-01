@@ -51,7 +51,7 @@
 				<td>MVI</td>
 			</tr>
 			<tr>
-				<td>앨범커버자리</td>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
 				<td style="text-align: left;">Love Lee</td>
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
@@ -61,7 +61,77 @@
 				<td>MVI</td>
 			</tr>
 			<tr>
-				<td>앨범커버자리</td>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td>재생I</td>
+				<td>담기I</td>
+				<td>MVI</td>
+			</tr>
+			<tr>
+				<td><img src="../../resources/icon/musicAlbumCover/LoveLee.jpg"></td>
 				<td style="text-align: left;">Love Lee</td>
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
