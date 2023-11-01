@@ -48,9 +48,9 @@
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
 				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/add_icon.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/video_production_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 			</tr>
 			<tr>
 				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
@@ -58,9 +58,9 @@
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
 				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/add_icon.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/video_production_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 			</tr>
 			<tr>
 				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
@@ -68,9 +68,9 @@
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
 				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/add_icon.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/video_production_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 			</tr>
 			<tr>
 				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
@@ -78,9 +78,9 @@
 				<td>악동뮤지션</td>
 				<td>댄스, 포크/블루스</td>
 				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/add_icon.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/video_production_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 			</tr>
 		</tbody>
 	</table>
