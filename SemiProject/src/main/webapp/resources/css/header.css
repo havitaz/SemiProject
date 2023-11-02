@@ -12,12 +12,18 @@
 
     background-color: rgb(205, 165, 130);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     /* border-bottom-width: 1px;
     border-bottom-style: none;
     border-bottom-color: #4d4d4d; */
     /* border: 1px solid #4d4d4d; */
+<<<<<<< HEAD
 =======
 >>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
+=======
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     border-bottom: 1px solid rgb(133, 90, 71);
 
 }
@@ -54,6 +60,9 @@
 .player-bar{
     height: 40px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     /* padding-left: 10px; */
     /* font-size: 16px; */
     border: 1px solid #4d4d4d; 
@@ -61,15 +70,19 @@
     border-radius: 12px 12px 12px 12px;   
     /* margin-right: 10px; */
     /* left: 0; */
+<<<<<<< HEAD
 =======
     background: rgba(63, 47, 34, 0.9);
     border-radius: 12px 12px 12px 12px;   
 >>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
+=======
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     flex: 1px;
 }
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
+<<<<<<< HEAD
 <<<<<<< HEAD
     height: 42px;
     width: 42px;
@@ -77,6 +90,10 @@
     height: 40px;
     width: 40px;
 >>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
+=======
+    height: 42px;
+    width: 42px;
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     right: 12px;
     bottom: 1px;
 }
@@ -142,7 +159,11 @@
 .playlist{
     color: rgba(63, 47, 34, 0.9);
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
+=======
+}
+>>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
