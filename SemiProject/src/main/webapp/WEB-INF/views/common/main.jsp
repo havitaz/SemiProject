@@ -6,9 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/mainheader.css">
+
+
+    <link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/mainsidebar.css">
+    <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
 </head>
 <meta charset="UTF-8">
@@ -35,11 +37,11 @@ body{
 
 
         <div class="left-section">
-                <img class= "hamburger-menu" src="<%=contextPath %>/resources/icon/shuffle.png" alt="메뉴"/>
-                <img class= "hamburger-menu" src="<%=contextPath %>/resources/icon/left.png" alt="메뉴"/>
-                <img class= "hamburger-menu" src="<%=contextPath %>/resources/icon/play.png" alt="메뉴"/>
-                <img class= "hamburger-menu" src="<%=contextPath %>/resources/icon/right.png" alt="메뉴"/>
-                <img class= "hamburger-menu" src="<%=contextPath %>/resources/icon/repeat.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/shuffle.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/left.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/play.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/right.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/repeat.png" alt="메뉴"/>
 
         </div>
 

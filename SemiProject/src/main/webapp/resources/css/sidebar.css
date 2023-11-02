@@ -1,0 +1,57 @@
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0px;
+    bottom: 0px;
+    background: rgb(205, 165, 130);
+    width: 260px;
+    z-index: 200;
+    /* padding: 0 4px;
+    padding-top: 5px; */
+    border-right: 1px solid rgb(133, 90, 71);
+}
+.top-section{
+    height: 220px;
+    display: flex;
+    justify-content: center; /*정렬*/
+    align-items: center;
+    flex-direction: column; /*글자 아래로 정렬*/
+    border-bottom: 1px solid rgb(133, 90, 71);
+}
+
+.Member-profile{
+    background: rgb(133, 90, 71);
+    border-radius: 15px;
+    width: 240px;
+    height: 155px;
+    /* margin-top: 55px; */
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+
+.sidebar-link:hover{ /*마우스오버시 색변환*/
+    background-color: #4d4d4d;
+}
+
+.sidebar-link img{
+    height: 24px;
+    margin-bottom: 4px;
+
+}
+
+.sidebar-link div{
+    font-size: 10px;
+}
+
+.logo{
+    height: 50px;
+}
+
+.detail-profile{
+    list-style: none;
+}
+
+.playlist{
+    list-style: none;
+}
