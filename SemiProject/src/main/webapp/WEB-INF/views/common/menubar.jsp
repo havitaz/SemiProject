@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
@@ -52,7 +54,37 @@ body{
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login">로그인</button>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
+        </div>
+
+        <!-- loginModal -->
+        <div class="modal" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header-->
+                    <div class="modal-header">
+                        <div>
+                            <h4>Quokka Player
+                                <br>
+                                Login
+                            </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        아이디<input type="text" name="MemberId">
+                        비밀번호<input type="password" name="MemberPwd">
+                    </div>
+
+                    <!-- Modal footer -->
+                    <a href="">아이디찾기</a>
+                    <a href="">비밀번호찾기</a>
+                    <a href="">회원가입</a>
+                </div>
+            </div>
         </div>
 
     </header>
