@@ -29,6 +29,7 @@ body{
 </style>
 <body>
 	
+<<<<<<< HEAD
 	 <header class="header">
 
 
@@ -203,5 +204,62 @@ body{
     </main>
 
 
+=======
+	<table id="top100">
+		<thead>
+			<tr height="60;">
+				<th colspan="2" >(앨범커버)노래</th>
+				<th width="17%">| 아티스트</th>
+				<th width="17%">| 장르</th>
+				<th width="6%">| 재생시간</th>
+				<th width="6%">재생</th>
+				<th width="6%">담기</th>
+				<th width="6%">MV</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+			</tr>
+			<tr>
+				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+			</tr>
+			<tr>
+				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+			</tr>
+			<tr>
+				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+				<td style="text-align: left;">Love Lee</td>
+				<td>악동뮤지션</td>
+				<td>댄스, 포크/블루스</td>
+				<td>03:00</td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon.png" width="30"></a></td>
+				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+			</tr>
+		</tbody>
+	</table>
+>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
 </body>
 </html>

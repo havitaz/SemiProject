@@ -11,10 +11,13 @@
     z-index: 199;
 
     background-color: rgb(205, 165, 130);
+<<<<<<< HEAD
     /* border-bottom-width: 1px;
     border-bottom-style: none;
     border-bottom-color: #4d4d4d; */
     /* border: 1px solid #4d4d4d; */
+=======
+>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
     border-bottom: 1px solid rgb(133, 90, 71);
 
 }
@@ -50,6 +53,7 @@
 
 .player-bar{
     height: 40px;
+<<<<<<< HEAD
     /* padding-left: 10px; */
     /* font-size: 16px; */
     border: 1px solid #4d4d4d; 
@@ -57,13 +61,22 @@
     border-radius: 12px 12px 12px 12px;   
     /* margin-right: 10px; */
     /* left: 0; */
+=======
+    background: rgba(63, 47, 34, 0.9);
+    border-radius: 12px 12px 12px 12px;   
+>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
     flex: 1px;
 }
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
+<<<<<<< HEAD
     height: 42px;
     width: 42px;
+=======
+    height: 40px;
+    width: 40px;
+>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
     right: 12px;
     bottom: 1px;
 }
@@ -128,4 +141,8 @@
 
 .playlist{
     color: rgba(63, 47, 34, 0.9);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
