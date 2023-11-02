@@ -6,16 +6,6 @@
     background: rgb(205, 165, 130);
     width: 260px;
     z-index: 200;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* padding: 0 4px;
-    padding-top: 5px; */
-=======
->>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
-=======
-    /* padding: 0 4px;
-    padding-top: 5px; */
->>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     border-right: 1px solid rgb(133, 90, 71);
 }
 .top-section{
@@ -32,14 +22,6 @@
     border-radius: 15px;
     width: 240px;
     height: 155px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* margin-top: 55px; */
-=======
->>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512
-=======
-    /* margin-top: 55px; */
->>>>>>> dbc872fa971bce7ef1c14fa5dbc21bbe86188eaf
     margin-bottom: 15px;
     list-style-type: none;
 }

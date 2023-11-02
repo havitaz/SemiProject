@@ -7,12 +7,7 @@
 <html>
 <head>
 
-<<<<<<<< HEAD:SemiProject/src/main/webapp/WEB-INF/views/common/main.jsp
-
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
-========
 	<link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
->>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512:SemiProject/src/main/webapp/WEB-INF/views/video/video.jsp
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
@@ -40,20 +35,11 @@ body{
 	 <header class="header">
 
         <div class="left-section">
-<<<<<<<< HEAD:SemiProject/src/main/webapp/WEB-INF/views/common/main.jsp
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/shuffle.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/left.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/play.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/right.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/repeat.png" alt="메뉴"/>
-
-========
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
->>>>>>>> ad51b6bdb1f2aa6812e7b88d0ca0af3530fbc512:SemiProject/src/main/webapp/WEB-INF/views/video/video.jsp
         </div>
 
         <div class="middle-section">
@@ -94,7 +80,7 @@ body{
 
 
 	 <main>
-        <h1 class="main-title">지금 듣기</h1><br>
+        <h1 class="main-title" style="color: black;">지금 듣기</h1><br>
 
         <div>
 

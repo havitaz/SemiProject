@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	 <jsp:forward page="/WEB-INF/views/TOP100List/TOP100.jsp"/>
+	 <%@ include file="WEB-INF/views/video/video.jsp" %>
 
 	<%-- 
 	<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
