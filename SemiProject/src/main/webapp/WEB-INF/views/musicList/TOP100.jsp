@@ -7,7 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>TOP100</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 	#top100{
 		border: 1px;
@@ -36,14 +39,17 @@
 	a{
 	cursor: pointer;
 	}
-	
-	.paging-area{
-	color: black;
-	font-size: 24px;
-	}
 	.music-row{
 	background: rgba(77,58,44,0.7365);
 	color: white;
+	}
+	.page-link{
+	background-color:transparent;
+	background: rgba(77,58,44,0.7365);
+	color: white;
+	scale: 1.1;
+	margin: 6px;
+	
 	}
 </style>
 <body>
@@ -51,7 +57,7 @@
 	<jsp:include page="../common/menubar.jsp"/>
 	
 	<h1 style="color: black; margin-bottom: 0px;">TOP 100 ></h1>
-	<hr>
+	<hr style="color: black;">
 	
 	<table id="top100" style="border-collapse: collapse;">
 		<thead>
@@ -181,14 +187,15 @@
 	</table>
 	<br><br>
 	
-	<div class="paging-area" align="center">
-		<a>&#9665;</a>
-		<a>[1]</a>
-		<a>[2]</a>
-		<a>[3]</a>
-		<a>[4]</a>
-		<a>[5]</a>
-		<a>&#9655;</a>
+	<div class="container mt-3">           
+		<ul class="pagination justify-content-center">
+			<li class="page-item"><a class="page-link" href="#">&#9665;</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">4</a></li>
+			<li class="page-item"><a class="page-link" href="#">&#9655;</a></li>
+		</ul>
 	</div>
 </body>
 </html>
