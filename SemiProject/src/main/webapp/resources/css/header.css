@@ -124,11 +124,11 @@
     background-color: rgb(133, 90, 71);
     border: none;
     border-radius: 5px;
-    width: 60px;
+    width: 100px;
     height: 25px;
     color: #FFFFFF;
     cursor: pointer;
-    
+    font-size: 15px;
 }
 
 .playlist{
