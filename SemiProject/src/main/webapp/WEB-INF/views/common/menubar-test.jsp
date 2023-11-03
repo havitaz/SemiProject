@@ -95,7 +95,7 @@ body{
                 <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
                 <div class="Member-profile">
 	                <ul class="profileImg">
-	                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/admin.png" alt="로고"/>               
+	                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
 	                </ul>
                     <ul class="detail-profile">
                         <li>ooo님</li>
@@ -103,8 +103,8 @@ body{
                         <li>a@naver.com</li>
                     </ul>
 					<ul class="profile-button">
-						<button class="a_button">회원관리</button>
-						<button class="a_button">노래관리</button>
+						<button class="a_button">마이페이지</button>
+						<button class="a_button">로그아웃</button>
 					</ul>
                 </div>
 
