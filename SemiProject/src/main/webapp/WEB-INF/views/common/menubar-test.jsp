@@ -30,7 +30,15 @@ body{
     justify-content: center;
   }
  
-  
+  ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 5px;
+    margin-inline-end: -25px;
+    padding-inline-start: 40px;
+}
   .addPlayList {
     width: 24px;
     height: 24px;
@@ -41,6 +49,21 @@ body{
     width: 15px;
     height: 15px;
     cursor: pointer;
+}
+.profile-button{
+	width: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+    padding-left: 26px;
+    
+}
+
+.a_button{
+    cursor: pointer;
+
 }
 </style>
 <body>
@@ -55,12 +78,32 @@ body{
         </div>
 
         <div class="middle-section"> 
+  
+            <div class="player-bar"> 
+                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+
+                <div class="flex-item time">
+                    0:8
+                </div>       
+                                
+                <div class="flex-item mp_info"> 
+               		 제목 - 가수
+                </div>  
+                                 
+                <div  class="flex-item time align">
+                    14:48
+                </div>
+                
+            </div>
+            
+<!--             
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
-                <div class="video-time">
+                <div class="musicplayer-time">
                     14:48
                 </div>
             </div>
+             -->
         </div>
 
         <div class="right-section">
@@ -77,15 +120,20 @@ body{
         <div class="top-section">
                 <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
                 <div class="Member-profile">
-	                <ul>
-	                  <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
+	                <ul class="profileImg">
+	                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
 	                </ul>
                     <ul class="detail-profile">
                         <li>ooo님</li>
                         <li>010-xxxx-xxxx</li>
                         <li>a@naver.com</li>
                     </ul>
+					<ul class="profile-button">
+						<button class="a_button">마이페이지</button>
+						<button class="a_button">로그아웃</button>
+					</ul>
                 </div>
+
         </div>
         
         
@@ -148,6 +196,12 @@ body{
 			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
 			 </summary>
 			  <!-- 반복문 -->
+			  <div class="player-row">                
+			  <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+			  We  raeraerare
+			  </div>
+			  
+			  
 			  <p>제목 가수 이름 등등</p>
 			  <p>제목 가수 이름 등등</p>
 			  <p>제목 가수 이름 등등</p>
