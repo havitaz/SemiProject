@@ -41,8 +41,10 @@ body{
         </div>
 
         <div class="middle-section">
-            <div class="player-bar">
-                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
+            <div class="player-bar"> 
+                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> asdasdasd       
+                <div> asdasdasd</div>
+                <div>ㄴㅁㅇㅁㄴㅇㅁㄴ</div>          
                 <div class="video-time">
                     14:48
                 </div>
