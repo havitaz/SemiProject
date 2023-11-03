@@ -122,3 +122,29 @@
 .playlist{
     color: rgba(63, 47, 34, 0.9);
 }
+
+.musicplayer-lefttime{
+    position: absolute;
+    bottom: 8px;
+    right: 384px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+    border-radius: 2px;
+    padding: 1px 4px;
+    color: white;
+    text-align: right;
+}
+
+.musicplayer-playtime{
+    position: absolute;
+    bottom: 8px;
+    right: 830px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+    border-radius: 2px;
+    padding: 1px 4px;
+    color: white;
+    text-align: right;
+}

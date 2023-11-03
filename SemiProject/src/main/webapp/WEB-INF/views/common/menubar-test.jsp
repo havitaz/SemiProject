@@ -74,7 +74,7 @@ body{
         <div class="middle-section"> 
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
-                <div class="video-time">
+                <div class="musicplayer-time">
                     14:48
                 </div>
             </div>

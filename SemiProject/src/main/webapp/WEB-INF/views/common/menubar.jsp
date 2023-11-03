@@ -44,8 +44,11 @@ body{
             <div class="player-bar"> 
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> asdasdasd       
                 <div> asdasdasd</div>
-                <div>ㄴㅁㅇㅁㄴㅇㅁㄴ</div>          
-                <div class="video-time">
+                <div>ㄴㅁㅇㅁㄴㅇㅁㄴ</div>
+                <div class="musicplayer-playtime">
+                    0:8
+                </div>          
+                <div class="musicplayer-lefttime">
                     14:48
                 </div>
             </div>
