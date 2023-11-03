@@ -18,8 +18,8 @@
                         <div class = "headerList">
                             <div class="left-area">
                                 <div class ="left-area-div">
-                                    <input class="left-area-div-input" type="text" name="musicText" value="노래검색"/>
-                                    <button class="music-search">검색</button>
+                                    <input class="left-area-div-input" type="text" name="musicText" placeholder="노래 검색"/>
+                                    <a href=""><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
                                 </div>
                             </div>
                         </div>
@@ -59,17 +59,30 @@
                         </div>
                     </div>
                     
-                </div>
- 
-                <div class="right-area">
-                    <h2>노래 상세정보</h2>
-                    <div>
-                        노래제목 <input type="text" name="musicTitle"/>
-                        가수 <input type="text" name="artist"/>
-                        장르 <input type="text" name="genre"/>
+                    <div class="right">
+                        <div class="right-area" align="center">
+                            <h1 style="color: #41382b; margin-top: 50px;">노래 상세정보</h1>
+
+                            <form id="inputInfo" class="form-horizontal">
+                                    <div class="music-info-class">
+                                        <input type="text" id="musicInfo" placeholder="노래제목"/>
+                                        <input type="text" id="musicInfo" placeholder="가수"/>
+                                        <input type="text" id="musicInfo" placeholder="장르"/>
+                                    </div>
+                            </form>
+
+
+                            <div class="musicButton">
+                               <div> <button id="musicBtnAdd">노래추가</button></div>
+                                <div><button id="musicBtnUpdate">노래수정</button></div>
+                                <div><button id="musicBtnDelete">노래삭제</button></div>
+                            </div>
+                        
+                        </div>
                     </div>
                 </div>
-
+ 
+    
         
 </body>
 </html>
