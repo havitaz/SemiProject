@@ -45,6 +45,11 @@
 	}
 	.page-link{
 	background-color:transparent;
+	background: rgba(77,58,44,0.7365);
+	color: white;
+	scale: 1.1;
+	margin: 6px;
+	
 	}
 </style>
 <body>
@@ -52,7 +57,7 @@
 	<jsp:include page="../common/menubar.jsp"/>
 	
 	<h1 style="color: black; margin-bottom: 0px;">TOP 100 ></h1>
-	<hr>
+	<hr style="color: black;">
 	
 	<table id="top100" style="border-collapse: collapse;">
 		<thead>
