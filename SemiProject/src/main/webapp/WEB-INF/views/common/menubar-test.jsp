@@ -58,6 +58,12 @@ body{
     flex-direction: column;
     padding: unset;
     padding-left: 26px;
+    
+}
+
+.a_button{
+    cursor: pointer;
+
 }
 </style>
 <body>
@@ -72,12 +78,32 @@ body{
         </div>
 
         <div class="middle-section"> 
+  
+            <div class="player-bar"> 
+                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+
+                <div class="flex-item time">
+                    0:8
+                </div>       
+                                
+                <div class="flex-item mp_info"> 
+               		 제목 - 가수
+                </div>  
+                                 
+                <div  class="flex-item time align">
+                    14:48
+                </div>
+                
+            </div>
+            
+<!--             
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
                 <div class="musicplayer-time">
                     14:48
                 </div>
             </div>
+             -->
         </div>
 
         <div class="right-section">
@@ -170,6 +196,12 @@ body{
 			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
 			 </summary>
 			  <!-- 반복문 -->
+			  <div class="player-row">                
+			  <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+			  We  raeraerare
+			  </div>
+			  
+			  
 			  <p>제목 가수 이름 등등</p>
 			  <p>제목 가수 이름 등등</p>
 			  <p>제목 가수 이름 등등</p>

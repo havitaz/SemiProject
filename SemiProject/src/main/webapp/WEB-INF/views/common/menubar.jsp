@@ -41,17 +41,27 @@ body{
         </div>
 
         <div class="middle-section">
+        
+        
             <div class="player-bar"> 
-                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> asdasdasd       
-                <div> asdasdasd</div>
-                <div>ㄴㅁㅇㅁㄴㅇㅁㄴ</div>
-                <div class="musicplayer-playtime">
+                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+
+                <div class="flex-item time">
                     0:8
-                </div>          
-                <div class="musicplayer-lefttime">
+                </div>       
+                                
+                <div class="flex-item mp_info"> 
+               		 제목 - 가수
+                </div>  
+                                 
+                <div  class="flex-item time align">
                     14:48
                 </div>
+                
             </div>
+            
+            
+            
         </div>
 
         <div class="right-section">

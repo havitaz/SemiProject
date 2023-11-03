@@ -44,7 +44,21 @@
 }
 
 
-.player-bar{
+    .player-bar{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        /*flex-direction: row | column */
+        height: 40px;
+    	background: rgba(63, 47, 34, 0.9);
+    	border-radius: 12px 12px 12px 12px;   
+    	flex: 1px;
+    	text-align: center;
+    }
+
+/*
+.player-bar-dummy{
     height: 40px;
     background: rgba(63, 47, 34, 0.9);
     border-radius: 12px 12px 12px 12px;   
@@ -52,18 +66,17 @@
     display: flex;
     text-align: center;
 }
+*/
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
     height: 40px;
     width: 40px;
     right: 12px;
-    bottom: 1px;
 }
 
 
 
-.search-button,
 .album-thumb{
     display: flex;
     justify-content: center;
@@ -91,10 +104,7 @@
     border-radius: 16px;
 }
 
-.notifications-icon,
-.upload-icon{
-    height: 24px;
-}
+
 .notifications-icon-container{
     position: relative;
 }
@@ -117,11 +127,16 @@
     width: 60px;
     height: 25px;
     color: #FFFFFF;
+    cursor: pointer;
+    
 }
 
 .playlist{
     color: rgba(63, 47, 34, 0.9);
 }
+
+/* 플레이어 바 */
+
 
 .musicplayer-lefttime{
     position: absolute;
@@ -148,3 +163,29 @@
     color: white;
     text-align: right;
 }
+
+
+
+    .flex-item{
+        color: black;
+        text-align: center;
+    }
+    .item1{
+        align-self: flex-start;
+        order: 3;
+        flex: 1;
+    }
+    .time{
+        align-self:flex-end;
+        color: white;
+        order: 1;
+    }
+    .mp_info{
+        color: white;
+        flex: 1;
+        order: 1;
+    }
+    .align{
+    position: relative;
+    right: 15px;
+    }
