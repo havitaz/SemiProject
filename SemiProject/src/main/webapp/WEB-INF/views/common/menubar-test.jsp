@@ -30,7 +30,15 @@ body{
     justify-content: center;
   }
  
-  
+  ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 5px;
+    margin-inline-end: -25px;
+    padding-inline-start: 40px;
+}
   .addPlayList {
     width: 24px;
     height: 24px;
@@ -41,6 +49,15 @@ body{
     width: 15px;
     height: 15px;
     cursor: pointer;
+}
+.profile-button{
+	width: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+    padding-left: 26px;
 }
 </style>
 <body>
@@ -77,15 +94,20 @@ body{
         <div class="top-section">
                 <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
                 <div class="Member-profile">
-	                <ul>
-	                  <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
+	                <ul class="profileImg">
+	                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/admin.png" alt="로고"/>               
 	                </ul>
                     <ul class="detail-profile">
                         <li>ooo님</li>
                         <li>010-xxxx-xxxx</li>
                         <li>a@naver.com</li>
                     </ul>
+					<ul class="profile-button">
+						<button class="a_button">회원관리</button>
+						<button class="a_button">노래관리</button>
+					</ul>
                 </div>
+
         </div>
         
         
