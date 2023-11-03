@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="/WEB-INF/views/musicList/TOP100.jsp"/>
+	<jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/>
 	<%-- 
 	<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
 	<%@ include file="WEB-INF/views/common/menubar.jsp" %>  메뉴바(기본 틀)
