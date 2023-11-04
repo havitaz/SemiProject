@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-	<jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/>
+
+		  
+<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/>
+
 	<%-- 
 	<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
 	<%@ include file="WEB-INF/views/common/menubar.jsp" %>  메뉴바(기본 틀)
@@ -21,5 +23,6 @@
 	 		있다면 수행
 	 
 	 --%>
-    </body>
+	 
+</body>
 </html>
