@@ -49,7 +49,7 @@ ul{
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
                 <div class="video-time">
-                    14:48
+                    <!-- 14:48 -->
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ ul{
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login" style="width: 100px;">로그인</button>
+            <button class="btn-login">로그아웃</button>
         </div>
 
     </header>

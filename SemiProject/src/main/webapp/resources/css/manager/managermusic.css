@@ -65,6 +65,18 @@
     background: rgb(199 167 135);
 }
 
+.music-search:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.music-search:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(205, 165, 130);
+    background-color: rgb(127 92 74);
+}
+
+
 .list-music{
     width: 450px;
     height: 500px;
@@ -110,16 +122,30 @@
 
 }
 
-#musicBtnAdd{
+.musicBtnAdd{
     width: 200px;
     height: 50px;
     color: white;
     background: rgb(67, 56, 41);
     border-radius: 5px;
     cursor: pointer;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
 }
 
-#musicBtnUpdate{
+.musicBtnAdd:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.musicBtnAdd:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
+}
+
+      
+
+.musicBtnUpdate{
     width: 200px;
     height: 50px;
     color: white;
@@ -127,9 +153,22 @@
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
 }
 
-#musicBtnDelete{
+.musicBtnUpdate:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.musicBtnUpdate:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
+}
+
+
+.musicBtnDelete{
     width: 200px;
     height: 50px;
     color: white;
@@ -137,4 +176,16 @@
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
+}
+
+.musicBtnDelete:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.musicBtnDelete:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
 }
