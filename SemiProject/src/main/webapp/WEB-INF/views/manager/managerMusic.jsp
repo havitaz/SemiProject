@@ -11,7 +11,7 @@
 </head>
 <body>
 		 <%@ include file="../common/managerMenubar.jsp" %>
-		  <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/managermusic.css">
+		  <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/manager_music.css">
 		 
                 <div class="all">
                     <div class="left">
@@ -26,32 +26,32 @@
                         <div class="bodyList">
                             <div class="list-music">
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">D</div>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">잊어버리지마(feat.태연)</div>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">Bye Bye my Blue</div>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">곁에 있어줘(feat.원슈타인)</div>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">Boat</div>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/managerImage/loopy.jpeg">
+                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
                                     <div class="music-title">양화대교</div>
                                 </div>
                                 <hr>

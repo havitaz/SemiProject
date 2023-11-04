@@ -143,7 +143,6 @@ body {
 			  <!-- 반복문 -->
 			  <div class="player-row">                
 			  <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			  We  raeraerare
 			  </div>
 			  
 			  
