@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	 <jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지
+	 <jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/> 메뉴바(로그인)
 		  
 
 	<%-- 

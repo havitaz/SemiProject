@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
+    
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
@@ -31,17 +32,22 @@ body {
 <body>
 	 <header class="header">
 
+
+
         <div class="left-section">
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
-                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
+	        <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
+	        <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
+	        <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
+	        <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
+	        <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
         </div>
+
+
 
         <div class="middle-section"> 
   
             <div class="player-bar"> 
+            
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 
                 <div class="flex-item time">
@@ -57,24 +63,27 @@ body {
                 </div>
                 
             </div>
-            
-<!--             
-            <div class="player-bar">
-                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
-                <div class="musicplayer-time">
-                    14:48
-                </div>
-            </div>
-             -->
+			
+			
+			<input class="volume" type="range" min="0" max="100">
+			
+			
         </div>
 
+
+
+
         <div class="right-section">
-            <div class="notifications-icon-container">    
+            <div class="volume-range">    
+
             </div>
             <button class="btn-login">로그인</button>
         </div>
 
+
     </header>
+
+
 
 
     <nav class="sidebar">    
