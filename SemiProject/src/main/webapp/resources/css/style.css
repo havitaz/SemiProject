@@ -2,3 +2,43 @@ P{
     margin: 0;
 }
 
+ 
+.createPlayList {
+    justify-content: center;
+  }
+ 
+  .ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 3px;
+    margin-inline-end: -42px;
+    padding-inline-start: 40px;
+}
+  .addPlayList {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+  .removePlayList {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.profile-button{
+	width: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+    padding-left: 26px;
+    
+}
+
+.a_button{
+    cursor: pointer;
+
+}

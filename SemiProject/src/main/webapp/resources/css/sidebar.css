@@ -8,7 +8,6 @@
     z-index: 200;
     border-right: 1px solid rgb(133, 90, 71);
 }
-
 .top-section{
     /* height: 220px; */
     display: flex;
@@ -74,7 +73,7 @@
 .profileImg{
     width: 60px;
     height: 60px;
-    padding-inline-start: 35px;
+    padding-inline-start: 10px;
 }
 
 
