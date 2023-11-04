@@ -73,9 +73,9 @@
 
 
                             <div class="musicButton">
-                               <div> <button id="musicBtnAdd">노래추가</button></div>
-                                <div><button id="musicBtnUpdate">노래수정</button></div>
-                                <div><button id="musicBtnDelete">노래삭제</button></div>
+                                <div><button type="button" class="musicBtnAdd ">노래추가</button></div>
+                                <div><button type="button" class="musicBtnUpdate">노래수정</button></div>
+                                <div><button type="button" class="musicBtnDelete">노래삭제</button></div>
                             </div>
                         
                         </div>

@@ -7,7 +7,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
+    <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/style_manager.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/sidebar_manager.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/managermusic.css">
@@ -49,7 +49,7 @@ ul{
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
                 <div class="video-time">
-                    14:48
+                    <!-- 14:48 -->
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ ul{
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login" style="width: 100px;">로그인</button>
+            <button class="btn-login">로그아웃</button>
         </div>
 
     </header>
@@ -69,7 +69,7 @@ ul{
             <img class= "logo" style="margin-bottom: 10px;" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/> 
                 
                 
-                <div class="Member-profile" align="center">
+                <div class="manager-profile" align="center">
                     <ul class="profileImg">
                         <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
                       </ul>
