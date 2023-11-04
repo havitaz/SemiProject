@@ -3,13 +3,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
- 
     position: fixed;
     top: 0;
     left: 260px;
     right: 0;
     z-index: 199;
-
     background-color: rgb(205, 165, 130);
     border-bottom: 1px solid rgb(133, 90, 71);
 
@@ -44,36 +42,45 @@
 }
 
 
-.player-bar{
+    .player-bar{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        /*flex-direction: row | column */
+        height: 40px;
+    	background: rgba(63, 47, 34, 0.9);
+    	border-radius: 12px 12px 12px 12px;   
+    	flex: 1px;
+    	text-align: center;
+    }
+
+/*
+.player-bar-dummy{
     height: 40px;
     background: rgba(63, 47, 34, 0.9);
     border-radius: 12px 12px 12px 12px;   
     flex: 1px;
+    display: flex;
+    text-align: center;
 }
+*/
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
     height: 40px;
     width: 40px;
     right: 12px;
-    bottom: 1px;
 }
 
 
 
-.search-button,
 .album-thumb{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     cursor: pointer;
-}
-
-
-.search-button:hover .tooltip,
-.upload-icon-container:hover .tooltip{
-    opacity: 1;
 }
 
 .right-section{
@@ -89,24 +96,6 @@
     border-radius: 16px;
 }
 
-.notifications-icon,
-.upload-icon{
-    height: 24px;
-}
-.notifications-icon-container{
-    position: relative;
-}
-
-.notifications-count{
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background-color: crimson;
-    color: white;
-    font-size: 11px;
-    padding: 1px 5px;
-    border-radius: 10px;
-}
 
 .btn-login{
     background-color: rgb(133, 90, 71);
@@ -115,8 +104,65 @@
     width: 60px;
     height: 25px;
     color: #FFFFFF;
+    cursor: pointer;
+    
 }
 
 .playlist{
     color: rgba(63, 47, 34, 0.9);
 }
+
+/* 플레이어 바 */
+
+
+.musicplayer-lefttime{
+    position: absolute;
+    bottom: 8px;
+    right: 384px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+    border-radius: 2px;
+    padding: 1px 4px;
+    color: white;
+    text-align: right;
+}
+
+.musicplayer-playtime{
+    position: absolute;
+    bottom: 8px;
+    right: 830px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+    border-radius: 2px;
+    padding: 1px 4px;
+    color: white;
+    text-align: right;
+}
+
+
+
+    .flex-item{
+        color: black;
+        text-align: center;
+    }
+    .item1{
+        align-self: flex-start;
+        order: 3;
+        flex: 1;
+    }
+    .time{
+        align-self:flex-end;
+        color: white;
+        order: 1;
+    }
+    .mp_info{
+        color: white;
+        flex: 1;
+        order: 1;
+    }
+    .align{
+    position: relative;
+    right: 15px;
+    }
