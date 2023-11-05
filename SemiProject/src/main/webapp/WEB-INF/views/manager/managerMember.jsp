@@ -19,7 +19,7 @@
                             <div class="left-area">
                                 <div class ="left-area-div">
                                     <input class="left-area-div-input" type="text" name="memberText" placeholder="회원 검색"/>
-                                    <a href=""><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
+                                    <a href=""><img class="member-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
                                 </div>
                             </div>
                         </div>
@@ -27,32 +27,32 @@
                             <div class="list-member">
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">철수</div>
+                                    <li class="member-title">철수</li>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">짱구</div>
+                                    <li class="member-title">짱구</li>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">유리</div>
+                                    <li class="member-title">유리</li>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">수지</div>
+                                    <li class="member-title">수지</li>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">맹구</div>
+                                    <li class="member-title">맹구</li>
                                 </div>
                                 <hr>
                                 <div  class ="left-list-div">
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <div class="member-title">원장쌤</div>
+                                    <li class="member-title">원장쌤</li>
                                 </div>
                                 <hr>
                             </div>
@@ -66,17 +66,17 @@
                             <form id="inputInfo" class="form-horizontal">
                                     <div class="member-info-class">
                                         <div>
-                                            <label for="memInfo" style="margin-right: 10px;">아이디</label>
+                                            <label for="memInfo" style="margin-right: 45px;">아이디</label>
                                             <input type="text" id="memInfo" placeholder="짱구" readonly/><br>
                                         </div>
 
                                         <div>
-                                            <label for="memInfo" style="margin-right: 10px;">이메일</label>
+                                            <label for="memInfo" style="margin-right: 45px;">이메일</label>
                                             <input type="text" id="memInfo" placeholder="jjanggu@naver.com" readonly/><br>
                                         </div>
                                         
                                         <div>
-                                            <label for="memInfo" style="margin-right: 10px;">전화번호</label>
+                                            <label for="memInfo" style="margin-right: 30px;">전화번호</label>
                                             <input type="text" id="memInfo" placeholder="010-1234-5678" readonly/><br>
                                         </div>
                                     </div>

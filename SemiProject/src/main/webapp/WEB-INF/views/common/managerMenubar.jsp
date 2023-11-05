@@ -30,7 +30,7 @@ body{
 }
 
 ul{
-	 margin-inline-end: -22px;
+	 margin-inline-end: 5px;
 }
 
 </style>

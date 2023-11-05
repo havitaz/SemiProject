@@ -58,7 +58,7 @@
 
 }
 
-.music-search{
+.member-search{
     cursor: pointer;
     color: white;
     width: 50px;
@@ -87,6 +87,7 @@
 .member-title{
     margin-left: 20px;
     color: bisque;
+    list-style: none;
 }
 
 .list-member {
@@ -109,10 +110,6 @@
     color: black;
 }
 
-.musicBtn{
-    display: flex;
-
-}
 
 #memInfo{
     width: 50%;
@@ -121,6 +118,7 @@
     border: 2px solid rgb(199 167 135);
     border-radius: 10px;
 }
+
 
 .deleteButton{
     margin-top: 60px;
@@ -149,4 +147,3 @@
     background-color: rgb(205, 165, 130);
 }
 
-      

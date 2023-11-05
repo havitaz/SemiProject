@@ -30,7 +30,7 @@
     justify-content: center;
     width: 600px;
     height: 70px;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .left-area-div{
@@ -39,6 +39,14 @@
     height:50px;
     margin-top: 20px;
     margin-left: 90px;
+}
+
+.left-area-div-input{
+    background: rgb(255, 255, 255);
+    width: 500px;
+    height: 44px;
+    border-radius: 3px;
+
 }
 
 .left-list-div{
@@ -51,13 +59,7 @@
     list-style: none;
 }
 
-.left-area-div-input{
-    background: rgb(255, 255, 255);
-    width: 500px;
-    height: 44px;
-    border-radius: 3px;
 
-}
 
 .music-search{
     cursor: pointer;
@@ -88,6 +90,7 @@
 .music-title{
     margin-left: 20px;
     color: bisque;
+    list-style: none;
 }
 
 .left-list-div > input{
@@ -106,23 +109,29 @@
     color: black;
 }
 
-.musicBtn{
-    display: flex;
-
-}
 
 #musicInfo{
-    width: 70%;
+    width: 50%;
     height: 60px;
     margin-top: 30px;
     border: 2px solid rgb(199 167 135);
     border-radius: 10px;
+    padding: 5px;
 }
 
 .musicButton{
     margin-top: 60px;
     justify-items: center;
 
+}
+
+#musicInfo_modal{
+    width: 50%;
+    height: 60px;
+    margin-top: 30px;
+    border: 2px solid rgb(199 167 135);
+    border-radius: 10px;
+    margin-left: 20px;
 }
 
 .musicBtnAdd{
@@ -191,4 +200,33 @@
 	top:1px;
     box-shadow: 0 0 rgb(67, 56, 41);
     background-color: rgb(205, 165, 130);
+}
+
+
+.btnAdd{
+    background: rgb(67, 56, 41);
+    color: white;
+    border-radius: 5px;
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
+}
+
+
+.btnAdd:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.btnAdd:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
+}
+
+
+.modal-body{
+    height: 500px;
+    background: ivory;
 }
