@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.table{
+  		width: 100%;
+  		background: transparent;
+  		background-color: transparent;
+		margin-left: 3%;
+		
+  	}
+  	.table>:not(caption)>*>* {
+  		background: transparent;
+  		background-color: transparent;
+  		border-bottom: none;
+  	}
+  	ul{
+  	list-style: none;
+  	float: left;
+  	margin-left: 5%;
+  	}

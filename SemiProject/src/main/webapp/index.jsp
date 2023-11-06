@@ -10,6 +10,7 @@
 		
  		<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 
+	
 	<%-- 
      <%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
 	 <%@ include file="WEB-INF/views/common/menubar.jsp" %>  메뉴바(기본 틀, 로그아웃)

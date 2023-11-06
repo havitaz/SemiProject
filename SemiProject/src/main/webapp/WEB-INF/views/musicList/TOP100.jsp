@@ -11,47 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-	#top100{
-		border: 1px;
-		text-align: center;
-		width: 100%;
-	}
-	#top100 > thead > tr > th, #top100 > tbody > tr > td{
-		font-size: medium;
-		font-weight: bolder;
-		color: black;
-	}
-	#top100 > thead > tr > th{
-		border-bottom: 8px solid rgb(255, 252, 227);
-	}
-	#top100 > tbody > tr > td{
-		height: 35px;
-		padding-top: 10px;
-		color: white;
-	}
-	#top100 > tbody > tr:hover{
-		opacity: 0.9;
-	}
-	#top100 > tbody > tr > td > a > img:hover{
-		scale: 1.2;
-	}
-	a{
-	cursor: pointer;
-	}
-	.music-row{
-	background: rgba(77,58,44,0.7365);
-	color: white;
-	}
-	.page-link{
-	background-color:transparent;
-	background: rgba(77,58,44,0.7365);
-	color: white;
-	scale: 1.1;
-	margin: 6px;
-	
-	}
-</style>
+  
+  <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/top100.css">
 <body>
 
 	<jsp:include page="../common/menubar.jsp"/>
