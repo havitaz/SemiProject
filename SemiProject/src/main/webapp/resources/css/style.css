@@ -16,6 +16,7 @@ P{
     margin-inline-end: -42px;
     padding-inline-start: 40px;
 }
+
   .addPlayList {
     width: 24px;
     height: 24px;
@@ -27,6 +28,7 @@ P{
     height: 15px;
     cursor: pointer;
 }
+
 .profile-button{
 	width: auto;
     align-items: center;
