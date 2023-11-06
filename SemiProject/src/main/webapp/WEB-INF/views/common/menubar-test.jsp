@@ -10,24 +10,24 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
-</head>
-<meta charset="UTF-8">
-<title>Quokka Player</title>
 <style>
-
 body {
     margin: 0;
     padding-top: 80px;
     padding-left: 310px;
+   
     padding-right: 20px;
     font-family: 'Noto Sans KR', sans-serif;
     background-image: url("<%=contextPath %>/resources/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
- }
-
+}
 </style>
+</head>
+<meta charset="UTF-8">
+<title>Quokka Player</title>
+
 <body>
 	 <header class="header">
 
@@ -58,13 +58,13 @@ body {
                 
             </div>
             
-<!--             
-            <div class="player-bar">
-                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
-                <div class="musicplayer-time">
-                    14:48
-                </div>
-            </div>
+			<!--             
+	            <div class="player-bar">
+	                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
+	                <div class="musicplayer-time">
+	                    14:48
+	                </div>
+	            </div>
              -->
         </div>
 
