@@ -8,7 +8,7 @@
 </head>
 <body>
 		
-	<jsp:forward page="/WEB-INF/views/member/insertMember.jsp"/>  
+	<jsp:forward page="/WEB-INF/views/member/searchId.jsp"/>  
 	
 	<%-- 
      <%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
