@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+		
  		<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 
 	<%-- 
