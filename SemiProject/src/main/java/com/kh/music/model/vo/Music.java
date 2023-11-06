@@ -13,11 +13,12 @@ public class Music {
 	private int count;
 	private String albumPath;
 	private Date enrollDate;
+	private int rownum;
 	
 	public Music() {}
 
 	public Music(int musNo, String musName, String musArt, String musGen, String musTime, String musMv, String status,
-			int count, String albumPath, Date enrollDate) {
+			int count, String albumPath, Date enrollDate, int rownum) {
 		super();
 		this.musNo = musNo;
 		this.musName = musName;
@@ -29,6 +30,7 @@ public class Music {
 		this.count = count;
 		this.albumPath = albumPath;
 		this.enrollDate = enrollDate;
+		this.rownum = rownum;
 	}
 
 	public int getMusNo() {
@@ -111,12 +113,22 @@ public class Music {
 		this.enrollDate = enrollDate;
 	}
 
+	public int getRownum() {
+		return rownum;
+	}
+
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
+
 	@Override
 	public String toString() {
 		return "Music [musNo=" + musNo + ", musName=" + musName + ", musArt=" + musArt + ", musGen=" + musGen
 				+ ", musTime=" + musTime + ", musMv=" + musMv + ", status=" + status + ", count=" + count
-				+ ", albumPath=" + albumPath + ", enrollDate=" + enrollDate + "]";
+				+ ", albumPath=" + albumPath + ", enrollDate=" + enrollDate + ", rownum=" + rownum + "]";
 	}
+
+	
 	
 	
 }

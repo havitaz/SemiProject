@@ -7,7 +7,7 @@ import com.kh.music.model.vo.Music;
 
 public interface MusicService {
 	
-	//TOP100조회
+	//TOP100조회(리스트)
 	public int selectListCount();
 	public ArrayList<Music> selectList(PageInfo pi);
 }
