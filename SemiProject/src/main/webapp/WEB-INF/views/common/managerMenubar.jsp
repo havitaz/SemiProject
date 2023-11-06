@@ -30,7 +30,7 @@ body{
 }
 
 ul{
-	 margin-inline-end: -22px;
+	 margin-inline-end: 5px;
 }
 
 </style>
@@ -71,7 +71,7 @@ ul{
                 
                 <div class="manager-profile" align="center">
                     <ul class="profileImg">
-                        <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
+                        <img class= "pro_admin" src="<%=contextPath %>/resources/images/admin.png" alt="관리자"/>               
                       </ul>
 
                     <ul class="detail-profile">

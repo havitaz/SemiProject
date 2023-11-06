@@ -30,6 +30,10 @@ body {
 
 
 </style>
+</head>
+<meta charset="UTF-8">
+<title>Quokka Player</title>
+
 <body>
 	 <header class="header">
 
@@ -69,6 +73,15 @@ body {
 			<input class="volume" type="range" min="0" max="100">
 			
 			
+            
+			<!--             
+	            <div class="player-bar">
+	                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
+	                <div class="musicplayer-time">
+	                    14:48
+	                </div>
+	            </div>
+             -->
         </div>
 
 
