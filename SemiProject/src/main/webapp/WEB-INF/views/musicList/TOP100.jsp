@@ -53,12 +53,17 @@
 	
 	<div class="container mt-3">           
 		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#">&#9665;</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item"><a class="page-link" href="#">&#9655;</a></li>
+			<c:if test="${pi.currentPage ne 1 }">
+			<li class="page-item"><a class="page-link" href="list.mu?cpage=${pi.currentPage - 1 }">&#9665;</a></li>
+			</c:if>
+			
+			<c:forEach var="i" begin="${ pi.startPage }" end="${ pi.endPage }">
+				<li class="page-item"><a class="page-link" href="list.mu?cpage=${i }">${i }</a></li>
+			</c:forEach>
+			
+			<c:if test="${ pi.currentPage ne pi.maxPage}">
+				<li class="page-item"><a class="page-link" href="list.mu?cpage=${ pi.currentPage + 1 }">&#9655;</a></li>
+			</c:if>
 		</ul>
 	</div>
 </body>
