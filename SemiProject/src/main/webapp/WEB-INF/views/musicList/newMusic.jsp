@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-  	.table{
-  		width: 100%;
-  		background: transparent;
-  		background-color: transparent;
-		margin-left: 3%;
-		
-  	}
-  	.table>:not(caption)>*>* {
-  		background: transparent;
-  		background-color: transparent;
-  		border-bottom: none;
-  	}
-  </style>
+  
+  <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/newMusic.css">
 </head>
 <body>
 	<jsp:include page="../common/menubar.jsp"/>
@@ -141,7 +132,61 @@
 			</th>
 		</thead>
 	</table>
-
 	<hr style="color: black;">
+	<br>
+	<br>
+	
+	<div class="newMusic-area"></div>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	<ul style="color: black;">
+		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+		<li>노래이름</li>
+		<li>가수명</li>
+	</ul>
+	
 </body>
 </html>

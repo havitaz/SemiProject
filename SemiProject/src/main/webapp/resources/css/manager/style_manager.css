@@ -28,13 +28,12 @@ P{
     cursor: pointer;
 }
 .profile-button{
-	width: auto;
+	  width: auto;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     padding: unset;
-    padding-left: 26px;
     
 }
 
