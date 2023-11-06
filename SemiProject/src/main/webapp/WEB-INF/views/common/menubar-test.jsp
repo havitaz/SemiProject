@@ -36,7 +36,7 @@
 	box-sizing: border-box;
 }
 
-
+/*
  details {
 	background:rgba(133, 90, 71, 0.8);
 	border-radius: 10px;
@@ -51,15 +51,15 @@
 	margin-top: 3px;
 	height: 40px;
  }
+*/ 
 .sidebar-list{
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 1px;
+	margin-bottom: 0px;
 	list-style: none;
 	height: 40px;
 	border: 1px solid rgba(51, 51, 51, 0.5);
 	border-left: none;
 	border-right: none;
-	border-bottom: none;
 	background:  rgba(51, 51, 51, 0.7);
 	color: white;
 	display: flex;
@@ -129,6 +129,7 @@
 .pl-title {
 	font-size: 14px;
 }
+
 .playList{
 	overflow-y: auto;
 	height: 100%;
@@ -475,44 +476,7 @@
   </div>
 </div>
 			
-						
-			<!-- 
-			<details>
-			  <summary>
-			  재생목록 N 					
-			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
-			 </summary>
-			  <!-- 반복문 -->
-			<!-- 
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
 
-			</details>
-			
-			<details>
-			  <summary>
-			  재생목록 N 					
-			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
-			 </summary>
-			  <!-- 반복문 -->
-			   <!-- 
-			  <div class="player-row">                
-			  <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			  We  raeraerareu
-			  </div>
-			  
-			  
-			  <p>Road to Ruin Mr.big</p>
-			  <p>제목 가수 이름 등등</p>
-			  <p>제목 가수 이름 등등</p>
-			</details>
-			 -->
 			 
 			 
 		</div>
