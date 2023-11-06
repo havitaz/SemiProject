@@ -116,7 +116,7 @@ body{
                             </td>
                             <td><input type="password" name="MemberPwd"></td>
                         </tr>
-                        <tr colspan="2">
+                        <tr colspan="2" align="center">
                           <td>
                             <button type="submit">로그인</button>
                           </td>
@@ -126,15 +126,10 @@ body{
 
                 <!-- Modal footer -->
                 <div class="modal-footer" align="center">
-                    <button type="button" onclick="insertMember();">회원가입</button>
-                    <button type="button" onclick="searchIdPage();">아이디찾기</button>
-                    <button type="button" onclick="searchPwdPage();">비밀번호찾기</button>
+                    <a href="insert.me">회원가입</button>
+                    <a href="selectId.me">아이디찾기</a>
+                    <a href="selectPwd.me">비밀번호찾기</a>
                 </div>
-                <script>
-                    function searchIdPage(){
-                        location.href="<%= contextPath%>/insertMember.me";
-                    }
-                </script>
             </div>
         </div>
     </div>

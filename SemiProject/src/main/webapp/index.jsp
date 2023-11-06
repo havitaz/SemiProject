@@ -8,12 +8,7 @@
 </head>
 <body>
 		
- 		<jsp:forward page="/WEB-INF/views/musicList/TOP100.jsp"/>
-
-<<<<<<< HEAD
-	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/>	  
-=======
->>>>>>> 456eceea8aa59b9ed14c4c8b5e3ebaf717df1668
+	<jsp:forward page="/WEB-INF/views/member/insertMember.jsp"/>  
 	
 	<%-- 
      <%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
