@@ -212,7 +212,7 @@
                                                         <input type="text" id="musicInfo_modal" placeholder="R&B" readonly/>
                                                         </label>
                                                     </div>
-                                                    <button type="button" class="btnAdd">강제탈퇴</button>
+                                                    <button type="button" class="btnAdd">삭제</button>
                                                 </form>
                                             </div>
                                 

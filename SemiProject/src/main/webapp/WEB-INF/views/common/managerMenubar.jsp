@@ -78,13 +78,17 @@ ul{
                         <li>관리자 님</li>
                     </ul>
 					<ul class="profile-button">
-						<button class="music-btn">노래관리</button>
-						<button class="member-btn">회원관리</button>
+						<button class="music-btn" onclick="location.href='<index.html>'">노래관리</button>
+						<button class="member-btn" onclick="location.href='managerMember.jsp'">회원관리</button>
 					</ul>
                 </div>
 
 
         </div>
     </nav>
+
+    <script>
+
+    </script>
 </body>
 </html>
