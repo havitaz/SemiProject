@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/sidebar_manager.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/managermusic.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
@@ -30,7 +37,7 @@ body{
 }
 
 ul{
-	 margin-inline-end: 5px;
+	 margin-inline-end: 10px;
 }
 
 </style>
@@ -77,14 +84,19 @@ ul{
                     <ul class="detail-profile">
                         <li>관리자 님</li>
                     </ul>
+                    
 					<ul class="profile-button">
-						<button class="music-btn">노래관리</button>
-						<button class="member-btn">회원관리</button>
+                        <a href="<%=contextPath %>/music.bt" class="music-btn">노래관리</a>
+                        <a href="<%=contextPath %>/member.bt" class="member-btn">회원관리</a>
 					</ul>
                 </div>
 
 
         </div>
     </nav>
+
+    <script>
+
+    </script>
 </body>
 </html>
