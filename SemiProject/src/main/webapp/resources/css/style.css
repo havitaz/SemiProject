@@ -13,22 +13,16 @@ P{
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 3px;
-    margin-inline-end: -42px;
+    margin-inline-end: -34px;
     padding-inline-start: 40px;
 }
 
-  .addPlayList {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
 
   .removePlayList {
     width: 15px;
     height: 15px;
     cursor: pointer;
 }
-
 .profile-button{
 	width: auto;
     align-items: center;

@@ -55,6 +55,7 @@
     padding: 8px 0px 5px 0px;
 }
 
+
 .pro_admin{
 	border-radius: 50px;
     width: 60px;
@@ -84,4 +85,13 @@
     background: black;
     border-radius: 7px;
     margin-bottom: 3px;
+}
+
+.addPlayList {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    left: 108px;
+    box-sizing: border-box;
 }
