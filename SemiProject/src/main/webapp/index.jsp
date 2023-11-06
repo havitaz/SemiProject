@@ -17,16 +17,10 @@
 	 <jsp:forward page="/WEB-INF/views/musicList/TOP100.jsp"/> top100
 	 <jsp:forward page="/WEB-INF/views/musicList/newMusic.jsp"/> newMusic
 	 <jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/> 메뉴바(로그인)
-<<<<<<< HEAD
 	 	<jsp:forward page="/WEB-INF/views/manager/managerMember.jsp"/> 관리자 페이지-회원
  	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 
 	
-
-
-=======
-	 <jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지
->>>>>>> afec284066db8143433e3ce093ad8700f11e2acb
 	 
 	 TOP-MEMO
 	 	로그인정보가 없으면 클릭시 로그인화면이동

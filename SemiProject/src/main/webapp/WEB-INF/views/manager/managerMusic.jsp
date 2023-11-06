@@ -75,17 +75,17 @@
                                     <div class="music-info-class">
                                         <div>
                                             <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                            <input type="text" id="musicInfo" placeholder="Vancouver"/>
+                                            <input type="text" id="musicInfo" placeholder="Vancouver" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                            <input type="text" id="musicInfo" placeholder="BIG Naughty(서동현)"/>
+                                            <input type="text" id="musicInfo" placeholder="BIG Naughty(서동현)" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                            <input type="text" id="musicInfo" placeholder="R&B"/>
+                                            <input type="text" id="musicInfo" placeholder="R&B" readonly/>
                                         </div>
 
                                         
