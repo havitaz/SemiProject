@@ -95,9 +95,17 @@ NOCYCLE
 NOCACHE;
 
 ------------------------------------더미데이터------------------------------------
---컨펌후 추가
-SET DEFINE OFF
+--MEMBER데이터
+INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS)
+VALUES (1, 'admin', '1234', '010-0000-0000', 'admin@kh.com', 'Y');
 
+INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS)
+VALUES (SEQ_MEM_NO.NEXTVAL, 'user01', 'pass01', '010-1111-1111', 'user02@kh.com', 'Y');
+
+INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS)
+VALUES (SEQ_MEM_NO.NEXTVAL, 'user02', 'pass02', '010-2222-2222', 'user02@kh.com', 'Y');
+--MUSIC데이터
+SET DEFINE OFF
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Specialz', 'king Gnu', 'JPOP', '03:59', 'https://youtu.be/MIbt_Yn_rdw', 'Y', 0, NULL, NULL);
 
