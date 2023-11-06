@@ -8,7 +8,7 @@
 </head>
 <body>
 		
- 		<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
+ 		<jsp:forward page="/WEB-INF/views/musicList/TOP100.jsp"/>
 
 	
 	<%-- 
