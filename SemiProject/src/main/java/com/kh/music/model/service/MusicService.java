@@ -10,4 +10,7 @@ public interface MusicService {
 	//TOP100조회(리스트)
 	public int selectListCount();
 	public ArrayList<Music> selectList(PageInfo pi);
+	
+	//관리자 노래제목 리스트
+	ArrayList<Music> selectMusicTitleList();
 }
