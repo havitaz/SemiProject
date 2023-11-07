@@ -105,6 +105,7 @@ body{
 
                 <!-- Modal body -->
                 <div class="modal-body" align="center">
+                <form action="login.me" method="post">
                     <table>
                         <tr>
                             <td>아이디</td>
@@ -122,6 +123,7 @@ body{
                           </td>
                         </tr>
                     </table>
+                </form>
                 </div>
 
                 <!-- Modal footer -->
