@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<%@ include file="WEB-INF/views/video/video.jsp" %>
+	<jsp:forward page="/WEB-INF/views/musicList/newMusic.jsp"/> newMusic
 
 	<%-- 
 	<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
