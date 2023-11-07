@@ -108,7 +108,7 @@ body{
 
 
 
-        <div class="music-grid">
+        <div class="music-grid" onclick="location.href='list.mu?cpage=1';" style="cursor: pointer;">
             <div>
                 <div class="top100part">
                 <h1>쿼카 플레이어

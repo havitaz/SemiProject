@@ -35,7 +35,7 @@
 .middle-section{
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 625px;
     margin-left: 70px;
     margin-right: 35px;
     flex: 1;
@@ -101,9 +101,9 @@
     color: rgba(63, 47, 34, 0.9);
 }
 
-/* 플레이어 바 */
 
 
+/* 상단 플레이어 바 */
 .musicplayer-lefttime{
     position: absolute;
     bottom: 8px;
