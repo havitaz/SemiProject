@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,39 +31,22 @@
                             </div>
                         </div>
 
+
                         <div class="bodyList">
+                        
+                       
                             <div class="list-music">
+                            <c:forEach var="m" items="${ list }">
                                 <div  class ="left-list-div">
+                           
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">D</li>
+                                    <li class="music-title">${ m.musName }</li>
+                                 
                                 </div>
                                 <hr>
-                                <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">잊어버리지마(feat.태연)</li>
-                                </div>
-                                <hr>
-                                <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">Bye Bye my Blue</li>
-                                </div>
-                                <hr>
-                                <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">곁에 있어줘(feat.원슈타인)</li>
-                                </div>
-                                <hr>
-                                <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">Boat</li>
-                                </div>
-                                <hr>
-                                <div  class ="left-list-div">
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">양화대교</li>
-                                </div>
-                                <hr>
+                                 </c:forEach>
                             </div>
+                          
                         </div>
                     </div>
                     

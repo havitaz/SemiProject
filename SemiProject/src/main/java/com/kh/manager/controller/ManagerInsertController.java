@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ManagerInsertController
  */
-@WebServlet("//insert.in")
+@WebServlet("/insert.in")
 public class ManagerInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
