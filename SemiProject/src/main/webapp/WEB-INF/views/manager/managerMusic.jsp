@@ -112,7 +112,7 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="/action_page.php">
+                                                <form action="<%=contextPath %>/insert.in" method="post">
                                                     <div class="musicTitle">
                                                         <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
                                                         <input type="text" id="musicInfo_modal" placeholder="내용을 입력하세요."/>
