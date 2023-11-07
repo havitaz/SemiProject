@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <% 
     	String contextPath = request.getContextPath();
     %>
@@ -19,7 +20,6 @@
 	
 	<h1 style="color: black; margin-bottom: 0px;">TOP 100 ></h1>
 	<hr style="color: black;">
-	
 	<table id="top100" style="border-collapse: collapse;">
 		<thead>
 			<tr height="45;">
@@ -34,128 +34,36 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="music-row">
-				<td>1</td>
-				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
-				<td>AKMU(악뮤)</td>
-				<td>댄스, 포크/블루스</td>
-				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>2</td>
-				<td><img src="resources/icon/musicAlbumCover/Baddie.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Baddie</td>
-				<td>IVE(아이브)</td>
-				<td>댄스, R&B/Soul</td>
-				<td>02:35</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>1</td>
-				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
-				<td>AKMU(악뮤)</td>
-				<td>댄스, 포크/블루스</td>
-				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>2</td>
-				<td><img src="resources/icon/musicAlbumCover/Baddie.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Baddie</td>
-				<td>IVE(아이브)</td>
-				<td>댄스, R&B/Soul</td>
-				<td>02:35</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>1</td>
-				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
-				<td>AKMU(악뮤)</td>
-				<td>댄스, 포크/블루스</td>
-				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>2</td>
-				<td><img src="resources/icon/musicAlbumCover/Baddie.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Baddie</td>
-				<td>IVE(아이브)</td>
-				<td>댄스, R&B/Soul</td>
-				<td>02:35</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>1</td>
-				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
-				<td>AKMU(악뮤)</td>
-				<td>댄스, 포크/블루스</td>
-				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>2</td>
-				<td><img src="resources/icon/musicAlbumCover/Baddie.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Baddie</td>
-				<td>IVE(아이브)</td>
-				<td>댄스, R&B/Soul</td>
-				<td>02:35</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>1</td>
-				<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Love Lee</td>
-				<td>AKMU(악뮤)</td>
-				<td>댄스, 포크/블루스</td>
-				<td>03:00</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
-			<tr class="music-row">
-				<td>2</td>
-				<td><img src="resources/icon/musicAlbumCover/Baddie.jpg"></td>
-				<td style="text-align: left; font-weight: bolder;">Baddie</td>
-				<td>IVE(아이브)</td>
-				<td>댄스, R&B/Soul</td>
-				<td>02:35</td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-				<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
-			</tr>
+			<c:forEach var="m" items="${ list }">
+				<tr class="music-row">
+					<td>${m.rownum} </td>
+					<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+					<td style="text-align: left; font-weight: bolder;">${m.musName}</td>
+					<td>${m.musArt}</td>
+					<td>${m.musGen}</td>
+					<td>${m.musTime}</td>
+					<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
+					<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
+					<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 	<br><br>
 	
 	<div class="container mt-3">           
 		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#">&#9665;</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item"><a class="page-link" href="#">&#9655;</a></li>
+			<c:if test="${pi.currentPage ne 1 }">
+			<li class="page-item"><a class="page-link" href="list.mu?cpage=${pi.currentPage - 1 }">&#9665;</a></li>
+			</c:if>
+			
+			<c:forEach var="i" begin="${ pi.startPage }" end="${ pi.endPage }">
+				<li class="page-item"><a class="page-link" href="list.mu?cpage=${i }">${i }</a></li>
+			</c:forEach>
+			
+			<c:if test="${ pi.currentPage ne pi.maxPage}">
+				<li class="page-item"><a class="page-link" href="list.mu?cpage=${ pi.currentPage + 1 }">&#9655;</a></li>
+			</c:if>
 		</ul>
 	</div>
 </body>
