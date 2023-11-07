@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% 
 	String contextPath = request.getContextPath();
 %>
@@ -135,11 +136,13 @@
 	<hr style="color: black;">
 	<br>
 	<br>
-		<ul style="color: black;">
-			<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-			<li>노래이름</li>
-			<li>가수명</li>
-		</ul>
-	<!-- selectNewMusicList 구조만들어서 erollDate 최근 순으로 정렬해서 10개만 가져오기 -->
+		<c:forEach var="n" items="${ list }">
+				<ul style="color: black; width: 180px;">
+					<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+					<li>${n.musName}</li>
+					<li>${n.musArt}</li>
+				</ul>
+		</c:forEach>
+		<!-- contextPath + ALBUM_PATH적용해서 사진불러오기..? + css 정렬 모르겠음-->
 </body>
 </html>

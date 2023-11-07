@@ -29,4 +29,8 @@ public class MusicDao {
 	public ArrayList<Music> selectMusicTitleList(SqlSession sqlSession) {
 		return (ArrayList)sqlSession.selectList("musicMapper.selectMusicTitleList");
 	}
+	
+	public ArrayList<Music> selectNewList(SqlSession sqlSession){
+		return (ArrayList)sqlSession.selectList("musicMapper.selectNewList");
+	}
 }
