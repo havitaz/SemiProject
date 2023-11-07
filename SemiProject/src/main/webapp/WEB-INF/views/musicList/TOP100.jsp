@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/top100.css">
 <body>
 
-	<jsp:include page="../common/menubar.jsp"/>
+	<jsp:include page="../common/menubar-test.jsp"/>
 	
 	<h1 style="color: black; margin-bottom: 0px;">TOP 100 ></h1>
 	<hr style="color: black;">
