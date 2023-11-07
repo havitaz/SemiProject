@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="musicMapper">
+
+	<resultMap id="MusicResultSet" type="Music">
+		<result column="MUS_NO" property="musNo"/>
+		<result column="MUS_NAME" property="musName"/>
+		<result column="MUS_ART" property="musArt"/>
+		<result column="MUS_GEN" property="musGen"/>
+		<result column="MUS_TIME" property="musTime"/>
+		<result column="MUS_MV" property="musMv"/>
+		<result column="STATUS" property="status"/>
+		<result column="COUNT" property="count"/>
+		<result column="ALBUM_PATH" property="albumPath"/>
+		<result column="ENROLL_DATE" property="enrollDate"/>
+		<result column="ROWNUM" property="rownum"/>
+	</resultMap>
+	
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM MUSIC
+		WHERE STATUS = 'Y'
+	</select>
+	<select id="selectList" resultMap="MusicResultSet">
+		SELECT ROWNUM,
+		        MUS_NO,
+					MUS_NAME,
+					MUS_ART,
+					MUS_GEN,
+					MUS_TIME,
+					MUS_MV,
+					STATUS,
+					COUNT,
+					ALBUM_PATH,
+					ENROLL_DATE
+		FROM (SELECT MUS_NO,
+					MUS_NAME,
+					MUS_ART,
+					MUS_GEN,
+					MUS_TIME,
+					MUS_MV,
+					STATUS,
+					COUNT,
+					ALBUM_PATH,
+					ENROLL_DATE
+				FROM MUSIC
+				WHERE STATUS = 'Y'
+				ORDER BY COUNT DESC)
+	</select>
+</mapper>
