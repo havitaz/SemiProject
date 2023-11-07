@@ -135,6 +135,7 @@
 .playList{
 	overflow-y: auto;
 	height: 100%;
+	width: 100%;
 }
 
 
@@ -155,6 +156,20 @@
   background: #84848447;  스크롤바 뒷 배경 색상
 }
 */
+.volume{
+	display: flex;
+	margin-left: 10px;
+	align-items: center;
+}
+
+.vol-btn{
+	width: 35px;
+	cursor: pointer;
+}
+
+.form-range-thumb-active-bg{
+	tint-color($component-active-bg, 70%);
+}   
 
 </style>
 
@@ -194,10 +209,12 @@
                 </div>
                 
             </div>
-            
-
+			<div class="volume">
+                <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>
+				<input type="range" class="form-range" min="0" max="100" step="0.5" id="customRange3">
+			</div>
         </div>
-
+  
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
@@ -215,7 +232,7 @@
                 
                 
                 <c:choose>
-                	<c:when test="${ empty loginUser }">  
+                	<c:when test="${ !empty loginUser }">  
                 	
                 	  
                  	               	
@@ -268,6 +285,17 @@
 			            </div>    
 			            
 			            			            			        
+
+							            
+               		</c:otherwise>             			 
+				</c:choose> 
+        </div>
+
+			
+
+                <c:choose>
+             		<c:when test="${ empty loginUser }">  
+
 						<div class="playList" align="center">
 							<div class="createPlayList">
 								<h4 class="pltitle">
@@ -513,16 +541,12 @@
 							  </div>
 						    </div>
 						  </div>
-							</div>
-							            
-               		</c:otherwise>             			 
+						</div>
+			 		</c:when>
+			 		<c:otherwise>
+			 		</c:otherwise>             			 
 				</c:choose> 
-        </div>
-
-			
-
-			 
-			 
+			 	     	<!-- 로그인 전 -->      
 		</div>
 
     </nav>
