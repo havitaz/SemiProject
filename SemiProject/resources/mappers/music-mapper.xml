@@ -50,4 +50,9 @@
 				WHERE STATUS = 'Y'
 				ORDER BY COUNT DESC)
 	</select>
+	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
+				SELECT MUS_NAME
+					FROM MUSIC
+				WHERE STATUS = 'Y'
+	</select>
 </mapper>
