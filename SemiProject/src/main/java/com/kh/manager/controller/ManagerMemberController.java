@@ -1,30 +1,25 @@
-package com.kh.music.controller;
+package com.kh.manager.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.common.model.vo.PageInfo;
-import com.kh.common.template.Pagenation;
-import com.kh.music.model.service.MusicServiceImpl;
-import com.kh.music.model.vo.Music;
-
 /**
- * Servlet implementation class MusicListController
+ * Servlet implementation class ManagerMemberController
  */
-@WebServlet("/list.mu")
-public class MusicListController extends HttpServlet {
+@WebServlet("/member.bt")
+public class ManagerMemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MusicListController() {
+    public ManagerMemberController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,18 +28,8 @@ public class MusicListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//-----페이징처리-----
-		int listCount = new MusicServiceImpl().selectListCount();
-		int currentPage = Integer.parseInt(request.getParameter("cpage"));
-		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 10);
-		
-		ArrayList<Music> list = new MusicServiceImpl().selectList(pi);
-		
-		request.setAttribute("pi", pi);
-		request.setAttribute("list", list);
-		
-		request.getRequestDispatcher("WEB-INF/views/musicList/TOP100.jsp").forward(request, response);
-	
+			RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/manager/managerMember.jsp");
+			view.forward(request, response);
 	}
 
 	/**
