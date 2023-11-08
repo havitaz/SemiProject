@@ -21,14 +21,14 @@
     <div class="memberInput" align="center">
     	<h1 style="color: black;" align="center">회원가입</h1>
         <br><br>
-        <form id="memberInfo">
+        <form action="insert.me" method="post" id="memberInfo">
             <table class="input-table">
                 <tr>
                     <td>
                         아이디
                     </td>
                     <td>
-                        <input type="text" id="memberId">
+                        <input type="text" id="memberId" name="memberId" required>
                     </td>
                 </tr>
                 <tr>
@@ -36,7 +36,7 @@
                         비밀번호
                     </td>
                     <td>
-                        <input type="text" id="memberPwd">
+                        <input type="password" id="memberPwd" name="memberPwd" required>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                         핸드폰 번호
                     </td>
                     <td>
-                        <input type="text" id="phone">
+                        <input type="text" id="phone" name="phone" required>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@
                         이메일
                     </td>
                     <td>
-                        <input type="text" id="email">
+                        <input type="text" id="email" name="email" required>
                     </td>
                 </tr>
             </table>

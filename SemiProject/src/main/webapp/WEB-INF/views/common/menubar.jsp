@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     <% 
     	String contextPath = request.getContextPath();
+    	
+    	String alertMsg = (String)session.getAttribute("alertMsg"); 
     %>
 <!DOCTYPE html>
 <html>
@@ -32,6 +34,13 @@ body{
 
 </style>
 <body>
+	<% if(alertMsg != null) { %>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
+
 	 <header class="header">
 
         <div class="left-section">
@@ -128,9 +137,9 @@ body{
 
                 <!-- Modal footer -->
                 <div class="modal-footer" align="center">
-                    <a href="insert.me">회원가입</button>
-                    <a href="selectId.me">아이디찾기</a>
-                    <a href="selectPwd.me">비밀번호찾기</a>
+                    <a href="<%=contextPath %>/insertPage.me">회원가입</a>
+                    <a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+                    <a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
                 </div>
             </div>
         </div>

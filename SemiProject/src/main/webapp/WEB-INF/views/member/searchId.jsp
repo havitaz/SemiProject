@@ -18,14 +18,14 @@
     <div class="memberInput" align="center">
     	<h1 style="color: black;" align="center">아이디 찾기</h1>
         <br><br>
-        <form id="memberInfo">
+        <form action="searchId.me" id="memberInfo">
             <table class="input-table">
                 <tr>
                     <td>
                         핸드폰 번호
                     </td>
                     <td>
-                        <input type="text" id="phone">
+                        <input type="text" id="phone" name="phone" required>
                     </td>
                 </tr>
                 <tr>
@@ -33,7 +33,7 @@
                         이메일
                     </td>
                     <td>
-                        <input type="text" id="email">
+                        <input type="text" id="email" name="email" required>
                     </td>
                 </tr>
             </table>

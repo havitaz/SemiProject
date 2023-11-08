@@ -15,11 +15,36 @@ public class MemberServiceImpl implements MemberService{
 	public Member loginMember(Member m) {
 		
 		SqlSession sqlSession = Template.getSqlSession();
-		
 		Member loginMember = mDao.loginMember(sqlSession, m);
 		
-		sqlSession close;
+		sqlSession.close();
 		return loginMember;
+	}
+
+	@Override
+	public int insertMember(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.insertMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
+	@Override
+	public Member SearchMember(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		Member SearchMember = mDao.SearchMember(sqlSession, m);
+		
+		return SearchMember;
 	}
 
 }

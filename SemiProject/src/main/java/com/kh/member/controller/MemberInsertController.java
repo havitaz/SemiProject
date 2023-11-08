@@ -2,6 +2,7 @@ package com.kh.member.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +14,16 @@ import com.kh.member.model.MemeberServiceImpl.MemberServiceImpl;
 import com.kh.member.model.vo.Member;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class MemberInsertController
  */
-@WebServlet("/login.me")
-public class LoginController extends HttpServlet {
+@WebServlet("/insert.me")
+public class MemberInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public MemberInsertController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,19 +33,25 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
-		Member m = new Member();
-		m.setMemberId("memberId");
-		m.setMemberPwd("memberPwd");
+		String memberId = request.getParameter("memberId");
+		String memberPwd = request.getParameter("memberPwd");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
 		
-		Member loginMember = new MemberServiceImpl().loginMember(m);
+		Member m = new Member(memberId, memberPwd, phone, email);
 		
-		if (loginMember == null) {
-			request.setAttribute("errorMsg", "로그인 실패");
-			response.sendRedirect(request.getContextPath());
+		int result = new MemberServiceImpl().insertMember(m);
+		
+		if (result > 0) {
+			HttpSession session = request.getSession();
+			session.setAttribute("alertMsg", "성공적으로 회원가입이 완료되었습니다");
+			
+			request.getRequestDispatcher("WEB-INF/views/common/menubar.jsp").forward(request, response);
 		} else {
-			request.getSession().setAttribute("loginMember", loginMember);
-			response.sendRedirect(request.getContextPath());
+			request.setAttribute("errorMsg", "회원가입 실패");
+			
+			RequestDispatcher view = request.getRequestDispatcher("views/common/errorPage.jsp");
+			view.forward(request, response);
 		}
 	}
 
