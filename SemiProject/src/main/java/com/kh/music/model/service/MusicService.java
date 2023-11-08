@@ -13,4 +13,7 @@ public interface MusicService {
 	
 	//관리자 노래제목 리스트
 	ArrayList<Music> selectMusicTitleList();
+	
+	//최신곡 10곡 노래제목 리스트
+	public ArrayList<Music> selectNewList();
 }

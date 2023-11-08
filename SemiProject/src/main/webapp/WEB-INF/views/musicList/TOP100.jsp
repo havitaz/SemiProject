@@ -66,5 +66,6 @@
 			</c:if>
 		</ul>
 	</div>
+	<a href="newList.mu">임시 버튼입니다.</a>
 </body>
 </html>
