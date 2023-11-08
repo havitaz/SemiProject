@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <% 
-    	String contextPath = request.getContextPath();
-    %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<% 
+	String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +38,7 @@
 	box-sizing: border-box;
 }
 
-
+/*
  details {
 	background:rgba(133, 90, 71, 0.8);
 	border-radius: 10px;
@@ -51,15 +53,15 @@
 	margin-top: 3px;
 	height: 40px;
  }
+*/ 
 .sidebar-list{
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 1px;
+	margin-bottom: 0px;
 	list-style: none;
 	height: 40px;
 	border: 1px solid rgba(51, 51, 51, 0.5);
 	border-left: none;
 	border-right: none;
-	border-bottom: none;
 	background:  rgba(51, 51, 51, 0.7);
 	color: white;
 	display: flex;
@@ -129,9 +131,11 @@
 .pl-title {
 	font-size: 14px;
 }
+
 .playList{
 	overflow-y: auto;
 	height: 100%;
+	width: 100%;
 }
 
 
@@ -152,7 +156,25 @@
   background: #84848447;  스크롤바 뒷 배경 색상
 }
 */
+.volume{
+	display: flex;
+	margin-left: 10px;
+	align-items: center;
+}
 
+.vol-btn{
+	width: 35px;
+	cursor: pointer;
+}
+
+.form-range-thumb-active-bg{
+	tint-color($component-active-bg, 70%);
+}   
+
+
+
+.modal-backdrop {	z-index: 0;
+}
 </style>
 
 </head>
@@ -191,14 +213,16 @@
                 </div>
                 
             </div>
-            
-
+			<div class="volume">
+                <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>
+				<input type="range" class="form-range" min="0" max="100" step="0.5" id="customRange3">
+			</div>
         </div>
-
+  
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login">로그인</button>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
         </div>
 
     </header>
@@ -207,314 +231,380 @@
     <nav class="sidebar">    
 
         <div class="top-section">
-                <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
-                <div class="Member-profile">
-	                <ul class="profileImg ul">
-	                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
-	                </ul>
-                    <ul class="detail-profile ul">
-                        <li>&lt; userId &gt;님</li>
-                        <li>&lt;010-xxxx-xxxx&gt;</li>
-                        <li>asd12345@naver.com</li>
-                    </ul>
-					<ul class="profile-button ul">
-						<button class="a_button">마이페이지</button>
-						<button class="a_button">로그아웃</button>
-					</ul>
-                </div>
-
-        </div>
-        
-        
-		<div class="playList" align="center">
-			<div class="createPlayList">
-				<h4 class="pltitle">
-					재생목록
-					<img class="addPlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/add_icon.png" alt="메뉴"/>
-					<img class="minusPlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
-
-				</h4>
-			</div>
-
-			<div class="accordion accordion-flush" id="accordionFlushExample">
+                <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>  
+                
+                
+                
+                <c:choose>
+                	<c:when test="${ empty loginUser }">  
+                	
+                	  
+                 	               	
+                	<!-- 로그인 전 -->        
+	                	<form action="login.me" method="post">
+			                <div class="Member-profile">
+				                <ul class="profileImg ul">
+				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/NotaMember.jpg" alt="멤버"/>               
+				                </ul>
+			                    <ul class="detail-profile ul">
+			                        <li style="font-size: 14px;">&nbsp;&nbsp;비회원</li>
+			                        <li style="font-size: 12px;"> &nbsp;&nbsp;로그인 후 이용바랍니다.</li>
+			                        <li></li>
+			                    </ul>
+								<ul class="profile-button ul">
+									<button class="a_button">로그인</button>
+									<button class="a_button">회원가입</button>
+								</ul>
+			                </div>
 
 
-
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        재생목록 #1
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-		<li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-	  </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        재생목록 #2
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">			  
-			<li class="sidebar-list">                 
-				<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
- 				<p class="pl-title">Road to Ruin</p> 
- 				
- 				<p class="pl-musician">Mr.big</p>			
- 			</li>
-			 <li class="sidebar-list">                 
-				<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
- 				<p class="pl-title">Road to Ruin</p> 
- 				
- 				<p class="pl-musician">Mr.big</p>			
- 			</li>
-			 <li class="sidebar-list">                 
-				<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
- 				<p class="pl-title">Road to Ruin</p> 
- 				
- 				<p class="pl-musician">Mr.big</p>			
- 			</li>
-			 <li class="sidebar-list">                 
-				<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
- 				<p class="pl-title">Road to Ruin</p> 
- 				
- 				<p class="pl-musician">Mr.big</p>			
- 			</li>
-	  </div>
-    </div>
-  </div>
+										                 <!-- loginModal -->
+														 <div class="modal" id="loginModal" style="color: black;">
+															<div class="modal-dialog modal-dialog-centered">
+																<div class="modal-content">
+							
+																	<!-- Modal Header-->
+																	<div class="modal-header">
+																			<h4>
+																			Quokka Player
+																			<br>
+																			Login
+																			</h4>
+																			<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+																	</div>
+							
+															<!-- Modal body -->
+															<div class="modal-body" align="center">
+															<form action="login.me" method="post">
+																<table>
+																	<tr>
+																		<td>아이디</td>
+																		<td><input type="text" name="MemberId"></td>
+																	</tr>
+																	<tr>
+																		<td>
+																			비밀번호
+																		</td>
+																		<td><input type="password" name="MemberPwd"></td>
+																	</tr>
+																	<tr colspan="2" align="center">
+																	<td>
+																		<button type="submit">로그인</button>
+																	</td>
+																	</tr>
+																</table>
+															</form>
+															</div>
+							
+															<!-- Modal footer -->
+															<div class="modal-footer" align="center">
+																<a href="<%=contextPath %>/insertPage.me">회원가입</a>
+																<a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+																<a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+															</div>
+														</div>
+													</div>
+												</div>
+							
 
 
+		                </form>
 
 
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        재생목록 #3
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-		<li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-		 <li class="sidebar-list">                 
-			<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			 <p class="pl-title">Road to Ruin</p> 
-			 
-			 <p class="pl-musician">Mr.big</p>			
-		 </li>
-	  </div>
-    </div>
-  </div>
-</div>
-			
 						
-			<!-- 
-			<details>
-			  <summary>
-			  재생목록 N 					
-			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
-			 </summary>
-			  <!-- 반복문 -->
-			<!-- 
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
-			  <li class="sidebar-list">제목 가수 이름 등등</li>
+               		</c:when>
+               		
+               		
+               		
+               		
+               		
+               		
+               		
+               		
+               		
+               		
+               		
+               		<c:otherwise>
+               		<!-- 로그인 후 -->
+               			<div>
+               			 	<div class="Member-profile">
+				                <ul class="profileImg ul">
+				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
+				                </ul>
+			                    <ul class="detail-profile ul">
+			                        <li>&lt; userId &gt;님</li>
+			                        <li>&lt;010-xxxx-xxxx&gt;</li>
+			                        <li>asd12345@naver.com</li>
+			                    </ul>
+								<ul class="profile-button ul">
+									<button class="a_button">마이페이지</button>
+									<button class="a_button">로그아웃</button>
+								</ul>
+			                </div>
+			            </div>    
+			            			            			        
 
-			</details>
+							            
+               		</c:otherwise>             			 
+				</c:choose> 
+        </div>
+
 			
-			<details>
-			  <summary>
-			  재생목록 N 					
-			  <img class="removePlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
-			 </summary>
-			  <!-- 반복문 -->
-			   <!-- 
-			  <div class="player-row">                
-			  <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-			  We  raeraerareu
-			  </div>
-			  
-			  
-			  <p>Road to Ruin Mr.big</p>
-			  <p>제목 가수 이름 등등</p>
-			  <p>제목 가수 이름 등등</p>
-			</details>
-			 -->
-			 
-			 
+
+                <c:choose>
+             		<c:when test="${ !empty loginUser }">  
+
+						<div class="playList" align="center">
+							<div class="createPlayList">
+								<h4 class="pltitle">
+									재생목록
+									<img class="addPlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/add_icon.png" alt="메뉴"/>
+									<img class="minusPlayList" src="<%=contextPath %>/resources/icon/TOP100Icon/minus.png" alt="메뉴"/>
+				
+								</h4>
+							</div>
+				
+							<div class="accordion accordion-flush" id="accordionFlushExample">
+				
+							  <div class="accordion-item">
+							    <h2 class="accordion-header">
+							      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+							        재생목록 #1
+							      </button>
+							    </h2>
+							    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+							      <div class="accordion-body">
+									<li class="sidebar-list">                 
+										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+										 <p class="pl-title">Road to Ruin</p> 
+										 
+										 <p class="pl-musician">Mr.big</p>			
+									 </li>
+									 <li class="sidebar-list">                 
+										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+										 <p class="pl-title">Road to Ruin</p> 
+										 
+										 <p class="pl-musician">Mr.big</p>			
+									 </li>
+									 <li class="sidebar-list">                 
+										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+										 <p class="pl-title">Road to Ruin</p> 
+										 
+										 <p class="pl-musician">Mr.big</p>			
+									 </li>
+									 <li class="sidebar-list">                 
+										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+										 <p class="pl-title">Road to Ruin</p> 
+										 
+										 <p class="pl-musician">Mr.big</p>			
+									 </li>
+								  </div>
+							    </div>
+							  </div>
+							
+							
+							
+							
+							  <div class="accordion-item">
+							    <h2 class="accordion-header">
+							      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+							        재생목록 #2
+							      </button>
+							    </h2>
+							    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+							      <div class="accordion-body">			  
+										<li class="sidebar-list">                 
+											<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+							 				<p class="pl-title">Road to Ruin</p> 
+							 				
+							 				<p class="pl-musician">Mr.big</p>			
+							 			</li>
+										 <li class="sidebar-list">                 
+											<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+							 				<p class="pl-title">Road to Ruin</p> 
+							 				
+							 				<p class="pl-musician">Mr.big</p>			
+							 			</li>
+										 <li class="sidebar-list">                 
+											<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+							 				<p class="pl-title">Road to Ruin</p> 
+							 				
+							 				<p class="pl-musician">Mr.big</p>			
+							 			</li>
+										 <li class="sidebar-list">                 
+											<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+							 				<p class="pl-title">Road to Ruin</p> 
+							 				
+							 				<p class="pl-musician">Mr.big</p>			
+							 			</li>
+								  </div>
+							    </div>
+							  </div>
+							
+							
+							
+							
+							  <div class="accordion-item">
+						    <h2 class="accordion-header">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+						        재생목록 #3
+						      </button>
+						    </h2>
+						    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+						      <div class="accordion-body">
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+								 <li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									 <p class="pl-title">Road to Ruin</p> 
+									 
+									 <p class="pl-musician">Mr.big</p>			
+								 </li>
+							  </div>
+						    </div>
+						  </div>
+						</div>
+			 		</c:when>
+			 		<c:otherwise>
+			 		</c:otherwise>             			 
+				</c:choose> 
+			 	     	<!-- 로그인 전 -->      
 		</div>
 
     </nav>

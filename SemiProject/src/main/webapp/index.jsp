@@ -9,7 +9,7 @@
 <body>
 
 	
-	<%@ include file="WEB-INF/views/common/menubar.jsp" %> 
+	<%@ include file="WEB-INF/views/common/modal.jsp" %> 
 
 
 	<%-- 

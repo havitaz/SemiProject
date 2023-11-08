@@ -6,5 +6,6 @@ public interface MemberService {
 	
 	Member loginMember(Member m);
 	int insertMember(Member m);
-	Member SearchMember(Member m);
+	Member searchMember(Member m);
+	Member searchMemberPwd(Member m);
 }
