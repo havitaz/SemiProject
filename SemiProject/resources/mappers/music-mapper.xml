@@ -64,6 +64,6 @@
 		        	ALBUM_PATH
 			FROM MUSIC
 			ORDER BY ENROLL_DATE DESC)
-		WHERE ROWNUM <![CDATA[<]]>= 10
+		WHERE ROWNUM <![CDATA[<]]>= 15
 	</select>
 </mapper>
