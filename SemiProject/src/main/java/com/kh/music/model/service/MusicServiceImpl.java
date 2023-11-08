@@ -39,4 +39,12 @@ public class MusicServiceImpl implements MusicService{
 		return list;
 	}
 
+	@Override
+	public ArrayList<Music> selectNewList() {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Music> list = mDao.selectNewList(sqlSession);
+		sqlSession.close();
+		return list;
+	}
+
 }
