@@ -53,7 +53,21 @@
 			   EMAIL,
 			   STATUS
 		 FROM MEMBER
-		WHERE MEM_ID = #{memberId}
+		WHERE PHONE = #{phone}
+		 AND  EMAIL = #{email}
 		 AND  STATUS='Y'
-	</select>	
+	</select>
+	<select id="searchMemberPwd" parameterType="Member" resultMap="memberResultSet">
+		SELECT MEM_NO,
+			   MEM_ID,
+			   MEM_PWD,
+			   PHONE,
+			   EMAIL,
+			   STATUS
+		 FROM MEMBER
+		WHERE MEM_ID = #{memberId}
+		 AND  PHONE = #{phone}
+		 AND  EMAIL = #{email}
+		 AND  STATUS='Y'
+	</select>		
 </mapper>

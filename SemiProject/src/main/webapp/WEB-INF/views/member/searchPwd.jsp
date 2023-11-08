@@ -18,14 +18,14 @@
     <div class="memberInput" align="center">
     	<h1 style="color: black;" align="center">비밀번호찾기</h1>
         <br><br>
-        <form id="memberInfo">
+        <form action="searchPwd.me" id="memberInfo">
             <table class="input-table">
                 <tr>
                     <td>
                         아이디
                     </td>
                     <td>
-                        <input type="text" id="memberId">
+                        <input type="text" id="memberId" name="memberId">
                     </td>
                 </tr>
                 <tr>
@@ -33,7 +33,7 @@
                         핸드폰 번호
                     </td>
                     <td>
-                        <input type="text" id="phone">
+                        <input type="text" id="phone" name="phone">
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +41,7 @@
                         이메일
                     </td>
                     <td>
-                        <input type="text" id="email">
+                        <input type="text" id="email" name="email">
                     </td>
                 </tr>
             </table>

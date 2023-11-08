@@ -15,7 +15,11 @@ public class MemberDao {
 		return result;
 	}
 		
-	public Member SearchMember(SqlSession sqlSession, Member m) {
-		return sqlSession.selectOne("memberMapper.searchMember");
+	public Member searchMember(SqlSession sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.searchMember", m);
+	}
+	
+	public Member searchMemberPwd(SqlSession sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.searchMemberPwd", m);
 	}
 }

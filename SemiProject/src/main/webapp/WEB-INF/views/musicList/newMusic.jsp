@@ -135,58 +135,11 @@
 	<hr style="color: black;">
 	<br>
 	<br>
-	
-	<div class="newMusic-area"></div>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	<ul style="color: black;">
-		<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-		<li>노래이름</li>
-		<li>가수명</li>
-	</ul>
-	
+		<ul style="color: black;">
+			<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
+			<li>노래이름</li>
+			<li>가수명</li>
+		</ul>
+	<!-- selectNewMusicList 구조만들어서 erollDate 최근 순으로 정렬해서 10개만 가져오기 -->
 </body>
 </html>

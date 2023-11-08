@@ -1,6 +1,7 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.kh.music.model.service.MusicServiceImpl;
+import com.kh.music.model.vo.Music;
 
 /**
  * Servlet implementation class ManagerMusicController
@@ -28,8 +32,13 @@ public class ManagerMusicController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp");
-		view.forward(request, response);
+		// 요청처리 (응답페이지에 필요한 데이터를 조회)
+		ArrayList<Music> list = new MusicServiceImpl().selectMusicTitleList();
+		
+		//응답뷰
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
+
 	}
 
 	/**
