@@ -34,13 +34,13 @@ public class LoginController extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		Member m = new Member();
-		m.setMemberId("memberId");
-		m.setMemberPwd("memberPwd");
-		System.out.println(m);
+		m.setMemberId(request.getParameter("memberId"));
+		m.setMemberPwd(request.getParameter("memberPwd"));
+		
 		Member loginUser = new MemberServiceImpl().loginUser(m);
 		
 		if (loginUser == null) {
-			System.out.println(loginUser);
+			
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
