@@ -66,11 +66,4 @@
 			ORDER BY ENROLL_DATE DESC)
 		WHERE ROWNUM <![CDATA[<]]>= 15
 	</select>
-	<select id="selectSearchMusic" resultMap="MusicResultSet">
-				SELECT MUS_NAME
-					FROM MUSIC
-				WHERE STATUS = 'Y'
-				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
-				   ORDER BY MUS_NO DESC
-	</select>
 </mapper>

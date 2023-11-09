@@ -1,6 +1,7 @@
 package com.kh.music.model.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -46,5 +47,15 @@ public class MusicServiceImpl implements MusicService{
 		sqlSession.close();
 		return list;
 	}
+
+	@Override
+	public ArrayList<Music> selectSearchMusic(HashMap<String,String> map) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Music> list = mDao.selectSearchMusic(sqlSession, map);
+		sqlSession.close();
+		return list;
+	}
+	
+	
 
 }

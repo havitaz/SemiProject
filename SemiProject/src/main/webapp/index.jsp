@@ -21,6 +21,7 @@
 	 	<jsp:forward page="/WEB-INF/views/manager/managerMember.jsp"/> 관리자 페이지-회원
  	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 
+	<%@ include file="WEB-INF/views/common/modal.jsp" %> 
 
 	
 	 

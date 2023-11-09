@@ -25,12 +25,16 @@
                         <div class = "headerList">
                             <div class="left-area">
                                 <div class ="left-area-div">
-                                    <input class="left-area-div-input" type="text" name="keyword" placeholder="노래 검색" value="${keyword} }"/>
-                                    <a href="<%=contextPath %>search.mu"><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
+                                    <input class="left-area-div-input" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
+                                    <a  onclick = "keywordPass()"><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
                                 </div>
                             </div>
                         </div>
-
+						<script>
+						function keywordPass(){
+							location.href = "<%=contextPath %>/search.mu?keyword=" + document.querySelector(".left-area-div-input").value;
+						}
+						</script>
 
                         <div class="bodyList">
                             <div class="list-music">
