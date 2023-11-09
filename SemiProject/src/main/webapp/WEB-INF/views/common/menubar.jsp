@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     <% 
     	String contextPath = request.getContextPath();
+    	
+    	String alertMsg = (String)session.getAttribute("alertMsg"); 
     %>
 <!DOCTYPE html>
 <html>
@@ -10,6 +12,8 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
@@ -30,6 +34,13 @@ body{
 
 </style>
 <body>
+	<% if(alertMsg != null) { %>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
+
 	 <header class="header">
 
         <div class="left-section">
@@ -67,9 +78,8 @@ body{
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login">로그인</button>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
         </div>
-
     </header>
 
 
@@ -85,5 +95,54 @@ body{
         </div>
 
     </nav>
+
+
+     <!-- loginModal -->
+     <div class="modal" id="loginModal" style="color: black;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header-->
+                <div class="modal-header">
+                        <h4>
+                        Quokka Player
+                        <br>
+                        Login
+                        </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" align="center">
+                <form action="login.me" method="post">
+                    <table>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" name="MemberId"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                비밀번호
+                            </td>
+                            <td><input type="password" name="MemberPwd"></td>
+                        </tr>
+                        <tr colspan="2" align="center">
+                          <td>
+                            <button type="submit">로그인</button>
+                          </td>
+                        </tr>
+                    </table>
+                </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" align="center">
+                    <a href="<%=contextPath %>/insertPage.me">회원가입</a>
+                    <a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+                    <a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
