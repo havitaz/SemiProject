@@ -13,12 +13,12 @@ public class PlaylistServiceImpl implements PlaylistService{
 	private PlaylistDao pDao = new PlaylistDao();
 	
 	@Override
-	public ArrayList<Playlist> selectPlaylist() {
+	public ArrayList<Playlist> selectPlaylist(int memberNo) {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Playlist> playlist = pDao.selectPlaylist(sqlSession);
+		ArrayList<Playlist> list = pDao.selectPlaylist(sqlSession, memberNo);
+		
 		sqlSession.close();
-
-		return playlist;
+		return list;
 	}
 
 }

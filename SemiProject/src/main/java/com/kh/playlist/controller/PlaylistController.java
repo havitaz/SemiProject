@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kh.playlist.model.service.PlaylistService;
 import com.kh.playlist.model.service.PlaylistServiceImpl;
 import com.kh.playlist.model.vo.Playlist;
 
 /**
  * Servlet implementation class PlaylistController
  */
-@WebServlet("/searchList.pl")
+@WebServlet("/list.pl")
 public class PlaylistController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,10 +32,13 @@ public class PlaylistController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int memberNo = Integer.parseInt(request.getParameter("memberNo"));
 		
-		ArrayList<Playlist> playlist = new PlaylistServiceImpl().selectPlaylist();
+		PlaylistService plService = new PlaylistServiceImpl();
+		
+		ArrayList<Playlist> list = plService.selectPlaylist(memberNo);
 
-	    request.setAttribute("Playlist", playlist); 
+	    request.setAttribute("list", list); 
 
 	    request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
 		

@@ -277,19 +277,7 @@
 												 <p class="pl-musician">&nbsp;&nbsp;${pl.musArt}</p>			
 											 </li>
 										 </c:forEach>
-										 
-										 <script>
-										 	window.onload =function() {
-										 		a()
-										 	}
-										 	
-										 	function a(){
-										 		ajax{
-										 			
-										 			
-										 		}
-										 	}
-										 </script>
+	
 											<li class="sidebar-list">                 
 												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 												 <p class="pl-title">${pl.musName}</p> 
