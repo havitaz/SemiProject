@@ -6,8 +6,8 @@ import com.kh.member.model.vo.Member;
 
 public class MemberDao {
 	
-	public Member loginMember(SqlSession sqlSession, Member m) {
-		return sqlSession.selectOne("memberMapper.loginMember", m);
+	public Member loginUser(SqlSession sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.loginUser", m);
 	}
 	
 	public int insertMember(SqlSession sqlSession, Member m) {

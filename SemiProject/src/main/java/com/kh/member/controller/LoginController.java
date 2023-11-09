@@ -36,14 +36,15 @@ public class LoginController extends HttpServlet {
 		Member m = new Member();
 		m.setMemberId("memberId");
 		m.setMemberPwd("memberPwd");
+		System.out.println(m);
+		Member loginUser = new MemberServiceImpl().loginUser(m);
 		
-		Member loginMember = new MemberServiceImpl().loginMember(m);
-		
-		if (loginMember == null) {
+		if (loginUser == null) {
+			System.out.println(loginUser);
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
-			request.getSession().setAttribute("loginMember", loginMember);
+			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
 		}
 
