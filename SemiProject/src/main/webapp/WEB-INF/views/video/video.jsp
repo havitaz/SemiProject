@@ -315,10 +315,10 @@
                   <form action="login.me" method="post">
                       <table>
                           <tr>
-                              <td><input type="text" name="memberId" placeholder="아이디를 입력해주세요" style="width: 500px; height: 50px;"></td>
+                              <td><input type="text" name="memberId" style="width: 500px; height: 50px;"></td>
                           </tr>
                           <tr>
-                              <td><input type="password" name="memberPwd" placeholder="비밀번호를 입력해주세요" style="width: 500px; height: 50px;"></td>
+                              <td><input type="password" name="memberPwd" style="width: 500px; height: 50px;"></td>
                           </tr>
                       </table>
                   </form>
@@ -409,7 +409,7 @@
 			                        <li></li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button" data-bs-toggle="modal" data-bs-target="#loginModal2">로그인</button>
+									<button class="a_button">로그인</button>
 									<button class="a_button">회원가입</button>
 								</ul>
 			                </div>
@@ -421,53 +421,7 @@
                		</c:otherwise>             			 
 				</c:choose> 
         </div>
-					<!-- loginModal -->
-                  <div class="modal" id="loginModal2" style="color: black;">
-                  <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
 
-                          <!-- Modal Header-->
-                          <div class="modal-header">
-                            <h4>
-                            Quokka Player
-                            <br>
-                            Login
-                            </h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                          </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body" align="center">
-                  <form action="login.me" method="post">
-                      <table>
-                          <tr>
-                              <td>아이디</td>
-                              <td><input type="text" name="memberId"></td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  비밀번호
-                              </td>
-                              <td><input type="password" name="memberPwd"></td>
-                          </tr>
-                          <tr colspan="2" align="center">
-                          <td>
-                              <button type="submit">로그인</button>
-                          </td>
-                          </tr>
-                      </table>
-                  </form>
-                  </div>
-
-                  <!-- Modal footer -->
-                  <div class="modal-footer" align="center">
-                      <a href="<%=contextPath %>/selectId.me">아이디찾기</a>
-                      <a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-			
 
                 <c:choose>
              		<c:when test="${ !empty loginUser }">  
