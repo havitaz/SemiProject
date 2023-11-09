@@ -614,5 +614,73 @@
 		</div>
 
     </nav>
+    
+    
+    
+    <script>
+    	        onload = function(){
+            mute();
+        }
+
+
+        // 음소거
+        function mute(){
+            
+            $.ajax({
+                url : "off.pl",
+                data : {
+                    
+                    
+                },
+                success: function(res){
+                    let str1 = "";
+                    if(res){  
+                        str1 += '<img src="../../resources/icon/menmubarIcon/vol.png" alt=" 음소거 제거" class="vol" onclick="removeMute()">'
+                    } else {  
+                        str1 += '<img src="../../resources/icon/menmubarIcon/mute.png" alt=" 음소거" class="vol" onclick="mute()">'
+                    }
+                    document.querySelector(".vol-btn").innerHTML = str1;
+
+                },
+                error : function(){
+                    console.log("실패");
+                }
+            })
+        }
+
+
+
+        // 음소거 취소
+        function removeMute(){
+            $.ajax({
+                url : "remove.li",
+                data : {
+                    memNo : "${loginUser.memberNo}"
+                },
+                success: function(res){
+                    mute();
+                },
+                error : function(){
+                    console.log("실패");
+                }
+            })
+        }
+        
+        // 소리켜기
+        function mute(){
+            $.ajax({
+                url : "on.li",
+                data : {
+                    memNo : "${loginUser.userNo}"
+                },
+                success: function(res){
+                    mute();
+                },
+                error : function(){
+                    console.log("=실패");
+                }
+            })
+        }
+     </script>
 </body>
 </html>
