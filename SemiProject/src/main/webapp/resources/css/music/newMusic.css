@@ -4,8 +4,11 @@
   		background: transparent;
   		background-color: transparent;
 		margin-left: 3%;
-		
   	}
+.table > thead > th{
+	background: transparent;
+  		background-color: transparent;
+}
   	.table>:not(caption)>*>* {
   		background: transparent;
   		background-color: transparent;
