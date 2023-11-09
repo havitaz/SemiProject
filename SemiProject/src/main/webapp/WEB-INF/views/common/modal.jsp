@@ -137,6 +137,9 @@
 	height: 100%;
 	width: 100%;
 }
+
+
+ 
  
 .playList::-webkit-scrollbar {
   width: 0px;  /* 스크롤바의 너비 */
@@ -169,6 +172,10 @@
 	tint-color($component-active-bg, 70%);
 }   
 
+
+
+.modal-backdrop {	z-index: 0;
+}
 </style>
 
 </head>
@@ -196,7 +203,7 @@
             
             
            	    <c:choose>
-              		<c:when test="${ !empty loginUser }">
+              		<c:when test="${ empty loginUser }">
               		
               		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 
@@ -218,21 +225,6 @@
             		<c:otherwise>
             		
             		
-            		              	<img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-
-					                <div class="flex-item time">
-					                    00:00
-					                </div>       
-					                                
-					                <div class="flex-item mp_info"> 
-					               		 {musName} - {musArt}
-					                </div>  
-					                                 
-					                <div  class="flex-item time align">
-					                    00:00
-					                </div>
-              		
-            		
             		</c:otherwise>
             	</c:choose>	
             
@@ -252,7 +244,7 @@
 			
 			
              	    <c:choose>
-                		<c:when test="${ empty loginUser }">              
+                		<c:when test="${ !empty loginUser }">              
               				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>               
                 		</c:when>
                 		                		               		
@@ -283,7 +275,7 @@
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login">로그인</button>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
         </div>
 
     </header>
@@ -328,7 +320,62 @@
 									<button class="a_button">로그아웃</button>
 								</ul>
 			                </div>
+
+
+										                 <!-- loginModal -->
+														 <div class="modal" id="loginModal" style="color: black;">
+															<div class="modal-dialog modal-dialog-centered">
+																<div class="modal-content">
+							
+																	<!-- Modal Header-->
+																	<div class="modal-header">
+																			<h4>
+																			Quokka Player
+																			<br>
+																			Login
+																			</h4>
+																			<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+																	</div>
+							
+															<!-- Modal body -->
+															<div class="modal-body" align="center">
+															<form action="login.me" method="post">
+																<table>
+																	<tr>
+																		<td>아이디</td>
+																		<td><input type="text" name="MemberId"></td>
+																	</tr>
+																	<tr>
+																		<td>
+																			비밀번호
+																		</td>
+																		<td><input type="password" name="MemberPwd"></td>
+																	</tr>
+																	<tr colspan="2" align="center">
+																	<td>
+																		<button type="submit">로그인</button>
+																	</td>
+																	</tr>
+																</table>
+															</form>
+															</div>
+							
+															<!-- Modal footer -->
+															<div class="modal-footer" align="center">
+																<a href="<%=contextPath %>/insertPage.me">회원가입</a>
+																<a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+																<a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+															</div>
+														</div>
+													</div>
+												</div>
+							
+
+
 		                </form>
+
+
+						
                		</c:when>
                		
                		
@@ -359,7 +406,6 @@
 								</ul>
 			                </div>
 			            </div>    
-			            
 			            			            			        
 
 							            
@@ -370,7 +416,7 @@
 			
 
                 <c:choose>
-             		<c:when test="${ empty loginUser }">  
+             		<c:when test="${ !empty loginUser }">  
 
 						<div class="playList" align="center">
 							<div class="createPlayList">
@@ -394,27 +440,27 @@
 							      <div class="accordion-body">
 									<li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-										 <p class="pl-title">{musName}</p> 
+										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">&nbsp;&nbsp;백예린</p>			
+										 <p class="pl-musician">Mr.big</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">Sia</p>			
+										 <p class="pl-musician">Mr.big</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">AC/DC</p>			
+										 <p class="pl-musician">Mr.big</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">백예린</p>			
+										 <p class="pl-musician">Mr.big</p>			
 									 </li>
 								  </div>
 							    </div>
@@ -626,5 +672,73 @@
 		</div>
 
     </nav>
+    
+    
+    
+    <script>
+    	        onload = function(){
+            mute();
+        }
+
+
+        // 음소거
+        function mute(){
+            
+            $.ajax({
+                url : "off.pl",
+                data : {
+                    
+                    
+                },
+                success: function(res){
+                    let str1 = "";
+                    if(res){  
+                        str1 += '<img src="../../resources/icon/menmubarIcon/vol.png" alt=" 음소거 제거" class="vol" onclick="removeMute()">'
+                    } else {  
+                        str1 += '<img src="../../resources/icon/menmubarIcon/mute.png" alt=" 음소거" class="vol" onclick="mute()">'
+                    }
+                    document.querySelector(".vol-btn").innerHTML = str1;
+
+                },
+                error : function(){
+                    console.log("실패");
+                }
+            })
+        }
+
+
+
+        // 음소거 취소
+        function removeMute(){
+            $.ajax({
+                url : "remove.li",
+                data : {
+                    memNo : "${loginUser.memberNo}"
+                },
+                success: function(res){
+                    mute();
+                },
+                error : function(){
+                    console.log("실패");
+                }
+            })
+        }
+        
+        // 소리켜기
+        function mute(){
+            $.ajax({
+                url : "on.li",
+                data : {
+                    memNo : "${loginUser.userNo}"
+                },
+                success: function(res){
+                    mute();
+                },
+                error : function(){
+                    console.log("=실패");
+                }
+            })
+        }
+     </script>
 </body>
 </html>

@@ -1,50 +1,64 @@
 package com.kh.member.model.vo;
 
 public class Member {
-	
-	private int memNo;
-	private String memId;
-	private String memPwd;
+	private int memberNo;
+	private String memberId;
+	private String memberPwd;
 	private String phone;
 	private String email;
 	private String status;
 	
-	public Member() {}
-	
-	public Member(int memNo, String memId, String memPwd, String phone, String email, String status) {
+	public Member() {
+		
+	}
+
+	public Member(int memberNo, String memberId, String memberPwd, String phone, String email, String status) {
 		super();
-		this.memNo = memNo;
-		this.memId = memId;
-		this.memPwd = memPwd;
+		this.memberNo = memberNo;
+		this.memberId = memberId;
+		this.memberPwd = memberPwd;
 		this.phone = phone;
 		this.email = email;
 		this.status = status;
 	}
 
+	public Member(String memberId, String memberPwd, String phone, String email) {
+		super();
+		this.memberId = memberId;
+		this.memberPwd = memberPwd;
+		this.phone = phone;
+		this.email = email;
+	}
 	
 
-	public int getMemNo() {
-		return memNo;
+	public Member(String phone, String email) {
+		super();
+		this.phone = phone;
+		this.email = email;
 	}
 
-	public void setMemNo(int memNo) {
-		this.memNo = memNo;
+	public int getMemberNo() {
+		return memberNo;
 	}
 
-	public String getMemId() {
-		return memId;
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
 	}
 
-	public void setMemId(String memId) {
-		this.memId = memId;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public String getMemPwd() {
-		return memPwd;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
-	public void setMemPwd(String memPwd) {
-		this.memPwd = memPwd;
+	public String getMemberPwd() {
+		return memberPwd;
+	}
+
+	public void setMemberPwd(String memberPwd) {
+		this.memberPwd = memberPwd;
 	}
 
 	public String getPhone() {
@@ -73,9 +87,9 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [memNo=" + memNo + ", memId=" + memId + ", memPwd=" + memPwd + ", phone=" + phone + ", email="
-				+ email + ", status=" + status + "]";
-	}	
-
-		
+		return "Member [memberNo=" + memberNo + ", memberId=" + memberId + ", memberPwd=" + memberPwd + ", phone="
+				+ phone + ", email=" + email + ", status=" + status + "]";
+	}
+	
+	
 }
