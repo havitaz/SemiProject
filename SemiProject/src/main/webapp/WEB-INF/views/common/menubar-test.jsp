@@ -160,6 +160,7 @@
 	display: flex;
 	margin-left: 10px;
 	align-items: center;
+	accent-color: rgb(133, 90, 71);
 }
 
 .vol-btn{
@@ -194,25 +195,77 @@
         <div class="middle-section"> 
   
             <div class="player-bar"> 
-                <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+            
+            
+            
+           	    <c:choose>
+              		<c:when test="${ empty loginUser }">
+              		
+              		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 
-                <div class="flex-item time">
-                    0:8
-                </div>       
-                                
-                <div class="flex-item mp_info"> 
-               		 &lt; 제목 - 가수 &gt;
-                </div>  
-                                 
-                <div  class="flex-item time align">
-                    14:48
-                </div>
+					                <div class="flex-item time">
+					                    00:00
+					                </div>       
+					                                
+					                <div class="flex-item mp_info"> 
+					               		 ---- ---- ----
+					                </div>  
+					                                 
+					                <div  class="flex-item time align">
+					                    00:00
+					                </div>
+              		
+              		
+              		                    
+            		</c:when>
+            		<c:otherwise>
+            		
+            		
+            		</c:otherwise>
+            	</c:choose>	
+            
+            
+
+                
+                
+                
+                
+                
                 
             </div>
+            
+            
+            
 			<div class="volume">
-                <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>
-				<input type="range" class="form-range" min="0" max="100" step="0.5" id="customRange3">
+			
+			
+             	    <c:choose>
+                		<c:when test="${ !empty loginUser }">              
+              				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>               
+                		</c:when>
+                		                		               		
+                		<c:otherwise>	
+              				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/vol.png"/>                         		
+                	    </c:otherwise>  
+					</c:choose>
+                
+                
+				<input type="range" min="0" max="100" step="0.5">
 			</div>
+			
+			<script>
+			  function changeImage() {
+			    var img = document.getElementsByClassName('vol-btn')[0];
+			    if (img.getAttribute('src') === '<%=contextPath %>/resources/icon/menubarIcon/mute.png') {
+			      img.setAttribute('src', '<%=contextPath %>/resources/icon/menubarIcon/vol.png');
+			    } else {
+			      img.setAttribute('src', '<%=contextPath %>/resources/icon/menubarIcon/mute.png');
+			    }
+			  }
+			</script>
+			
+			
+			
         </div>
   
         <div class="right-section">
@@ -222,6 +275,17 @@
         </div>
 
     </header>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <nav class="sidebar">    
@@ -236,20 +300,20 @@
                 	
                 	  
                  	               	
-                	<!-- 로그인 전 -->        
-	                	<form action="login.me" method="post">
-			                <div class="Member-profile">
+                	<!-- 로그인 후 -->        
+	                	<form action="logout.me" method="post">
+               			 	<div class="Member-profile">
 				                <ul class="profileImg ul">
-				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/NotaMember.jpg" alt="멤버"/>               
+				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
 				                </ul>
 			                    <ul class="detail-profile ul">
-			                        <li style="font-size: 14px;">&nbsp;&nbsp;비회원</li>
-			                        <li style="font-size: 12px;"> &nbsp;&nbsp;로그인 후 이용바랍니다.</li>
-			                        <li></li>
+			                        <li>&lt; userId &gt;님</li>
+			                        <li>&lt;010-xxxx-xxxx&gt;</li>
+			                        <li>asd12345@naver.com</li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button">로그인</button>
-									<button class="a_button">회원가입</button>
+									<button class="a_button">마이페이지</button>
+									<button class="a_button">로그아웃</button>
 								</ul>
 			                </div>
 		                </form>
@@ -266,20 +330,20 @@
                		
                		
                		<c:otherwise>
-               		<!-- 로그인 후 -->
+               		<!-- 로그인 전 -->
                			<div>
-               			 	<div class="Member-profile">
+               				<div class="Member-profile">
 				                <ul class="profileImg ul">
-				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
+				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/NotaMember.jpg" alt="멤버"/>               
 				                </ul>
 			                    <ul class="detail-profile ul">
-			                        <li>&lt; userId &gt;님</li>
-			                        <li>&lt;010-xxxx-xxxx&gt;</li>
-			                        <li>asd12345@naver.com</li>
+			                        <li style="font-size: 14px;">&nbsp;&nbsp;비회원</li>
+			                        <li style="font-size: 12px;"> &nbsp;&nbsp;로그인 후 이용바랍니다.</li>
+			                        <li></li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button">마이페이지</button>
-									<button class="a_button">로그아웃</button>
+									<button class="a_button">로그인</button>
+									<button class="a_button">회원가입</button>
 								</ul>
 			                </div>
 			            </div>    
@@ -294,7 +358,7 @@
 			
 
                 <c:choose>
-             		<c:when test="${ empty loginUser }">  
+             		<c:when test="${ !empty loginUser }">  
 
 						<div class="playList" align="center">
 							<div class="createPlayList">
