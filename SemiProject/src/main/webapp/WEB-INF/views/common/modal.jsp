@@ -171,6 +171,10 @@
 	tint-color($component-active-bg, 70%);
 }   
 
+
+
+.modal-backdrop {	z-index: 0;
+}
 </style>
 
 </head>
@@ -218,7 +222,7 @@
         <div class="right-section">
             <div class="notifications-icon-container">    
             </div>
-            <button class="btn-login">로그인</button>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
         </div>
 
     </header>
@@ -232,7 +236,7 @@
                 
                 
                 <c:choose>
-                	<c:when test="${ !empty loginUser }">  
+                	<c:when test="${ empty loginUser }">  
                 	
                 	  
                  	               	
@@ -252,7 +256,62 @@
 									<button class="a_button">회원가입</button>
 								</ul>
 			                </div>
+
+
+										                 <!-- loginModal -->
+														 <div class="modal" id="loginModal" style="color: black;">
+															<div class="modal-dialog modal-dialog-centered">
+																<div class="modal-content">
+							
+																	<!-- Modal Header-->
+																	<div class="modal-header">
+																			<h4>
+																			Quokka Player
+																			<br>
+																			Login
+																			</h4>
+																			<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+																	</div>
+							
+															<!-- Modal body -->
+															<div class="modal-body" align="center">
+															<form action="login.me" method="post">
+																<table>
+																	<tr>
+																		<td>아이디</td>
+																		<td><input type="text" name="MemberId"></td>
+																	</tr>
+																	<tr>
+																		<td>
+																			비밀번호
+																		</td>
+																		<td><input type="password" name="MemberPwd"></td>
+																	</tr>
+																	<tr colspan="2" align="center">
+																	<td>
+																		<button type="submit">로그인</button>
+																	</td>
+																	</tr>
+																</table>
+															</form>
+															</div>
+							
+															<!-- Modal footer -->
+															<div class="modal-footer" align="center">
+																<a href="<%=contextPath %>/insertPage.me">회원가입</a>
+																<a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+																<a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+															</div>
+														</div>
+													</div>
+												</div>
+							
+
+
 		                </form>
+
+
+						
                		</c:when>
                		
                		
@@ -283,7 +342,6 @@
 								</ul>
 			                </div>
 			            </div>    
-			            
 			            			            			        
 
 							            
@@ -294,7 +352,7 @@
 			
 
                 <c:choose>
-             		<c:when test="${ empty loginUser }">  
+             		<c:when test="${ !empty loginUser }">  
 
 						<div class="playList" align="center">
 							<div class="createPlayList">

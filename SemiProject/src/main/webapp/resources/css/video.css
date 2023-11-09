@@ -135,3 +135,13 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
+
+.modal-header > .btn-close{
+    position: relative;
+    top: -28px;
+}
+
+.modal-footer > a{
+	flex: 1
+}
