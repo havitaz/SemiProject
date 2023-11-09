@@ -1,28 +1,28 @@
-package com.kh.member.controller;
+package com.kh.manager.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.kh.member.model.MemeberServiceImpl.MemberServiceImpl;
-import com.kh.member.model.vo.Member;
+import com.kh.music.model.service.MusicService;
+import com.kh.music.model.service.MusicServiceImpl;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class ManagerSearchController
  */
-@WebServlet("/login.me")
-public class LoginController extends HttpServlet {
+@WebServlet("/search.mu")
+public class ManagerSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public ManagerSearchController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,22 +31,13 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("UTF-8");
-		Member m = new Member();
-		m.setMemberId("memberId");
-		m.setMemberPwd("memberPwd");
-		
-		Member loginMember = new MemberServiceImpl().loginMember(m);
-		
-		if (loginMember == null) {
-			request.setAttribute("errorMsg", "로그인 실패");
-			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
-		} else {
-			request.getSession().setAttribute("loginMember", loginMember);
-			response.sendRedirect(request.getContextPath());
-		}
-
+			String keyword = request.getParameter("keyword");
+			
+			HashMap<String, String> map = new HashMap<>();
+			map.put("keyword", keyword);
+			
+			MusicService mService =new MusicServiceImpl();
+			int searchMusic = mService.
 	}
 
 	/**

@@ -25,16 +25,14 @@
                         <div class = "headerList">
                             <div class="left-area">
                                 <div class ="left-area-div">
-                                    <input class="left-area-div-input" type="text" name="musicText" placeholder="노래 검색"/>
-                                    <a href=""><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
+                                    <input class="left-area-div-input" type="text" name="keyword" placeholder="노래 검색" value="${keyword} }"/>
+                                    <a href="<%=contextPath %>search.mu"><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
                                 </div>
                             </div>
                         </div>
 
 
                         <div class="bodyList">
-                        
-                       
                             <div class="list-music">
                             <c:forEach var="m" items="${ list }">
                                 <div  class ="left-list-div">

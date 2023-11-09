@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% 
 	String contextPath = request.getContextPath();
+	String albumPath = "resources/icon/musicAlbumCover/";
 %>
 <!DOCTYPE html>
 <html>
@@ -13,11 +15,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/newMusic.css">
+  <style>
+	.new-grid{
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		
+	}
+	.new-grid > ul{
+		display: block;
+		height: 280px;
+		margin: 2%;
+		padding: 1px;
+	}
+  </style>
 </head>
 <body>
 	<jsp:include page="../common/menubar.jsp"/>
 	
-	<h1 style="color: black;">최신곡</h1>
+	<h1 style="color: black;">추천곡</h1>
 	<hr style="color: black;">
 	
 	<table class="table" style="align-content: center; align-items: center;">
@@ -33,10 +50,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -60,10 +77,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -87,10 +104,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -114,10 +131,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -132,14 +149,19 @@
 			</th>
 		</thead>
 	</table>
+	<br>
+	<h1 style="color: black;">최신곡</h1>
 	<hr style="color: black;">
 	<br>
-	<br>
-		<ul style="color: black;">
-			<li><img style="width: 180px; height: 180px;" src="resources/images/newMusicAlbum/Old Ways (feat. Above Average Al & Trouble Chee).jpg"></li>
-			<li>노래이름</li>
-			<li>가수명</li>
-		</ul>
-	<!-- selectNewMusicList 구조만들어서 erollDate 최근 순으로 정렬해서 10개만 가져오기 -->
+	<div class="new-grid">
+		<c:forEach var="n" items="${ list }">
+				<ul style="color: black; width: 180px;">
+					<li><img style="width: 180px; height: 180px;" src="<%=albumPath %>${n.musName}.jpg"></li>
+					<li style="font-weight: bold; font-size: 17px">${n.musName}</li>
+					<li style="font-size: 14px">${n.musArt}</li>
+				</ul>
+		</c:forEach>
+		<!-- contextPath + ALBUM_PATH적용해서 사진불러오기..? -->
+	</div>
 </body>
 </html>
