@@ -5,9 +5,13 @@
 
 <mapper namespace="playlistMapper">
 
-	<resultMap id="PlaylistResultSet" type="playlist">
+	<resultMap id="PlaylistResultSet" type="Playlist">
 		<result column="MUS_NO" property="musNo"/>
 		<result column="MEM_NO" property="memberNo" />
+		<result column="MUS_NAME" property="musName"/>
+		<result column="MUS_ART" property="musArt"/>
+		<result column="MUS_TIME" property="musTime"/>					
+		<result column="ALBUM_PATH" property="albumPath"/>			
 		<result column="STATUS" property="status"/>
 	</resultMap>
 	
@@ -19,9 +23,9 @@
 			FROM PLAYLIST P
 			JOIN MUSIC MU ON (MU.MUS_NO = P.MUS_NO)
 			JOIN MEMBER ME ON (ME.MEM_NO = P.MEM_NO)
-			WHERE P.STATUS = 'Y' AND ME.MEM_NO = #{memberNo};
+			WHERE P.STATUS = 'Y' AND ME.MEM_NO = 4;
 
 	</select>
-
+<!-- WHERE P.STATUS = 'Y' AND ME.MEM_NO = #{memberNo}; -->
 
 </mapper>

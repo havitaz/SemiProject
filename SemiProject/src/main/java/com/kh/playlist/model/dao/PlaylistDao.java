@@ -8,7 +8,7 @@ import com.kh.playlist.model.vo.Playlist;
 
 public class PlaylistDao {
 	
-	public ArrayList<Playlist> selectMusicTitleList(SqlSession sqlSession) {
+	public ArrayList<Playlist> selectPlaylist(SqlSession sqlSession) {
 		return (ArrayList)sqlSession.selectList("playlistMapper.selectPlaylist");
 	}
 	

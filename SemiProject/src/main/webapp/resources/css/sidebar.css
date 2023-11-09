@@ -96,3 +96,83 @@
     box-sizing: border-box;
 }
 
+  .minusPlayList {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    left: 25px;
+	box-sizing: border-box;
+}
+
+.sidebar-list{
+	margin-top: 1px;
+	margin-bottom: 0px;
+	list-style: none;
+	height: 40px;
+	border: 1px solid rgba(51, 51, 51, 0.5);
+	border-left: none;
+	border-right: none;
+	background:  rgba(51, 51, 51, 0.7);
+	color: white;
+	display: flex;
+	cursor: pointer;
+ }
+ .sidebar-list:hover{
+	background: rgba(107, 106, 106, 0.256);
+	border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+ }
+ 
+ 
+ 
+ 
+ 
+  .pltitle{
+	display: flex;
+	flex-direction: row;
+	font-weight: bold;
+	margin-top: 5px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	right: 45px;
+ }
+
+ .pl-thumb {
+	position: relative;
+    height: 40px;
+    width: 40px;
+    right: -1px;
+    top: -1px;
+	margin-right: 3px;
+}
+
+.pl-musician{
+	display: flex;
+	flex-direction: column-reverse;
+	left: -83px;
+    position: relative;
+    font-size: 12px;
+    color: rgba(152, 152, 152, 0.792);
+
+}
+
+.pl-title {
+	font-size: 14px;
+}
+
+.playList{
+	overflow-y: auto;
+	height: 100%;
+	width: 100%;
+}
+ 
+.playList::-webkit-scrollbar {
+  width: 0px;  /* 스크롤바의 너비 */
+}
+
+/*
+.form-range-thumb-active-bg{
+	tint-color($component-active-bg, 70%);
+}   
+*/

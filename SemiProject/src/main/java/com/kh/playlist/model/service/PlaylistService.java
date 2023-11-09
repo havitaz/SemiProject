@@ -7,7 +7,8 @@ import com.kh.playlist.model.vo.Playlist;
 
 public interface PlaylistService {
 
-	public ArrayList<Playlist> selectList(PageInfo pi);
+	//플레이리스트 목록 조회
+	public ArrayList<Playlist> selectPlaylist();
 
 	
 }
