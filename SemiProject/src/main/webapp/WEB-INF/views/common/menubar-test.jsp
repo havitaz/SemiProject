@@ -137,9 +137,6 @@
 	height: 100%;
 	width: 100%;
 }
-
-
- 
  
 .playList::-webkit-scrollbar {
   width: 0px;  /* 스크롤바의 너비 */
@@ -199,7 +196,7 @@
             
             
            	    <c:choose>
-              		<c:when test="${ empty loginUser }">
+              		<c:when test="${ !empty loginUser }">
               		
               		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 
@@ -221,6 +218,21 @@
             		<c:otherwise>
             		
             		
+            		              	<img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+
+					                <div class="flex-item time">
+					                    00:00
+					                </div>       
+					                                
+					                <div class="flex-item mp_info"> 
+					               		 {musName} - {musArt}
+					                </div>  
+					                                 
+					                <div  class="flex-item time align">
+					                    00:00
+					                </div>
+              		
+            		
             		</c:otherwise>
             	</c:choose>	
             
@@ -240,7 +252,7 @@
 			
 			
              	    <c:choose>
-                		<c:when test="${ !empty loginUser }">              
+                		<c:when test="${ empty loginUser }">              
               				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>               
                 		</c:when>
                 		                		               		
@@ -296,7 +308,7 @@
                 
                 
                 <c:choose>
-                	<c:when test="${ !empty loginUser }">  
+                	<c:when test="${ empty loginUser }">  
                 	
                 	  
                  	               	
@@ -358,7 +370,7 @@
 			
 
                 <c:choose>
-             		<c:when test="${ !empty loginUser }">  
+             		<c:when test="${ empty loginUser }">  
 
 						<div class="playList" align="center">
 							<div class="createPlayList">
@@ -382,27 +394,27 @@
 							      <div class="accordion-body">
 									<li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-										 <p class="pl-title">Road to Ruin</p> 
+										 <p class="pl-title">{musName}</p> 
 										 
-										 <p class="pl-musician">Mr.big</p>			
+										 <p class="pl-musician">&nbsp;&nbsp;백예린</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">Mr.big</p>			
+										 <p class="pl-musician">Sia</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">Mr.big</p>			
+										 <p class="pl-musician">AC/DC</p>			
 									 </li>
 									 <li class="sidebar-list">                 
 										<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
 										 <p class="pl-title">Road to Ruin</p> 
 										 
-										 <p class="pl-musician">Mr.big</p>			
+										 <p class="pl-musician">백예린</p>			
 									 </li>
 								  </div>
 							    </div>
