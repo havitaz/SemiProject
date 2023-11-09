@@ -352,13 +352,13 @@
 																<table>
 																	<tr>
 																		<td>아이디</td>
-																		<td><input type="text" name="MemberId"></td>
+																		<td><input type="text" name="memberId"></td>
 																	</tr>
 																	<tr>
 																		<td>
 																			비밀번호
 																		</td>
-																		<td><input type="password" name="MemberPwd"></td>
+																		<td><input type="password" name="memberPwd"></td>
 																	</tr>
 																	<tr colspan="2" align="center">
 																	<td>
