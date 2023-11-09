@@ -1,9 +1,0 @@
-diff a/SemiProject/resources/mappers/member-mapper.xml b/SemiProject/resources/mappers/member-mapper.xml	(rejected hunks)
-@@ -62,6 +62,7 @@
- 	</resultMap>
- 
- 	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
-+>>>>>>> 32a2eab79859e4dff0d38bacb6c798f8b409e2eb
- 		SELECT MEM_NO,
- 			   MEM_ID,
- 			   MEM_PWD,
