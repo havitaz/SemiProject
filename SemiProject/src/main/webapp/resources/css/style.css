@@ -1,3 +1,4 @@
+/*공용 메뉴바 김경보*/
 P{
     margin: 0;
 }
@@ -17,7 +18,6 @@ P{
     padding-inline-start: 40px;
 }
 
-
   .removePlayList {
     width: 15px;
     height: 15px;
@@ -34,10 +34,72 @@ P{
     
 }
 
-.a_button{
+.a_button{ /*로그인 회원가입 로그아웃 마이페이지 버튼*/
     cursor: pointer;
 
 }
+
+
+/*재생목록 아코디언*/
+ .accordion-body{
+	list-style: none;
+	padding: 0;
+ }
+
+ .accordion {
+	--bs-accordion-bg: none;
+	--bs-accordion-border-color: rgba(51, 51, 51, 0.8);
+	border-radius: 5px;
+	background:rgba(133, 90, 71, 0.8);
+	--bs-accordion-active-bg: none;
+	--bs-accordion-btn-focus-box-shadow: rgb(51, 51, 51); ;
+ }
+
+ .accordion-button{
+	font-weight: 600;
+	color: white;
+	font-size: 13px;
+ }
+ 
+ 
+.accordion-button:not(.collapsed) { /*눌렸을떄*/
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*이선우 - video*/
 
 	#top100{
 		border: 1px;
@@ -77,3 +139,6 @@ P{
 	scale: 1.1;
 	margin: 6px;
 	}
+	
+	
+	
