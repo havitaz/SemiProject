@@ -21,19 +21,19 @@
 		  <link rel="stylesheet" href="<%=contextPath %>/resources/css/manager/manager_music.css">
 		 
                 <div class="all">
-                    <div class="left">
+                    <div class="left" >
                         <div class = "headerList">
                             <div class="left-area">
                                 <div class ="left-area-div">
-                                    <input class="left-area-div-input" onkeyup="a(event)" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
-                                    <a><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
+                                    <input class="left-area-div-input" onkeyup="searchBtn(event)" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
+                                    <img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30">
                                 </div>
                             </div>
                         </div>
 						<script>
 
                         
-                        function a(e){
+                        function searchBtn(e){
                          if(e.keyCode === 13){
                             	location.href = "<%=contextPath %>/search.mu?keyword=" + document.querySelector(".left-area-div-input").value;
                         	 }
@@ -48,8 +48,8 @@
                                 <div  class ="left-list-div">
                            
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <li class="music-title">${ m.musName }</li>
-                                 
+                                    <a href="<%=contextPath %>/detail.mu?mno=${m.musNo}" style="text-decoration: none;"><li class="music-title">${ m.musName }</li></a>
+                                 	
                                 </div>
                                 <hr>
                                  </c:forEach>
@@ -66,17 +66,17 @@
                                     <div class="music-info-class">
                                         <div>
                                             <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                            <input type="text" id="musicInfo" placeholder="Vancouver" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${m.musName }" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                            <input type="text" id="musicInfo" placeholder="BIG Naughty(서동현)" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${m.musArt }" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                            <input type="text" id="musicInfo" placeholder="R&B" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${m.musGen }" readonly/>
                                         </div>
 
                                         
