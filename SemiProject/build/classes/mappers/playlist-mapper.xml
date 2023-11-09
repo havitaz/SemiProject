@@ -12,15 +12,15 @@
 	</resultMap>
 	
 	<select id="selectPlaylist" resultMap="PlaylistResultSet">
-		SELECT	MUS_NO,
-				MUS_NAME,
-				MUS_ART,				
-				MUS_TIME,				
-				STATUS,				
-				ALBUM_PATH				 				
-		FROM PLAYLIST
-		WHERE STATUS = 'Y'
-		AND MEM_NO = #{memNo}
+			SELECT MU.MUS_NAME,
+			       MU.MUS_ART,
+			       MU.ALBUM_PATH,
+			       MUS_TIME
+			FROM PLAYLIST P
+			JOIN MUSIC MU ON (MU.MUS_NO = P.MUS_NO)
+			JOIN MEMBER ME ON (ME.MEM_NO = P.MEM_NO)
+			WHERE P.STATUS = 'Y' AND ME.MEM_NO = #{memberNo};
+
 	</select>
 
 
