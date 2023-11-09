@@ -32,14 +32,14 @@
   </style>
 </head>
 <body>
-	<jsp:include page="../common/menubar.jsp"/>
+	<jsp:include page="../common/menubar-test.jsp"/>
 	
-	<h1 style="color: black;">추천곡</h1>
+	<h1 style="color: black;">추천곡&gt;</h1>
 	<hr style="color: black;">
 	
 	<table class="table" style="align-content: center; align-items: center;">
 		<thead>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo1" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -66,7 +66,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo2" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -93,7 +93,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo3" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -120,7 +120,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -150,13 +150,13 @@
 		</thead>
 	</table>
 	<br>
-	<h1 style="color: black;">최신곡</h1>
+	<h1 style="color: black;">최신곡-&gt;</h1>
 	<hr style="color: black;">
 	<br>
 	<div class="new-grid">
 		<c:forEach var="n" items="${ list }">
 				<ul style="color: black; width: 180px;">
-					<li><img style="width: 180px; height: 180px;" src="<%=albumPath %>${n.musName}.jpg"></li>
+					<li><img style="width: 180px; height: 180px;" src="${n.albumPath}"></li>
 					<li style="font-weight: bold; font-size: 17px">${n.musName}</li>
 					<li style="font-size: 14px">${n.musArt}</li>
 				</ul>
