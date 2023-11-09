@@ -1,6 +1,7 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.music.model.service.MusicService;
 import com.kh.music.model.service.MusicServiceImpl;
+import com.kh.music.model.vo.Music;
 
 /**
  * Servlet implementation class ManagerSearchController
@@ -37,7 +39,12 @@ public class ManagerSearchController extends HttpServlet {
 			map.put("keyword", keyword);
 			
 			MusicService mService =new MusicServiceImpl();
-			int searchMusic = mService.
+			ArrayList<Music> list = mService.selectSearchMusic(map);
+			
+			request.setAttribute("list", list);
+			request.setAttribute("keyword", keyword);
+
+			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
 	}
 
 	/**

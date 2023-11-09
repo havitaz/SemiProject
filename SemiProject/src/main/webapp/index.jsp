@@ -8,8 +8,8 @@
 </head>
 <body>
 
+ 	 	<jsp:forward page="/WEB-INF/views/common/managerMenubar.jsp"/> 관리자 페이지-메뉴바
 
-		<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
 
 	<%-- 
 		<%@ include file="WEB-INF/views/video/video.jsp" %>   비디오(메인)
