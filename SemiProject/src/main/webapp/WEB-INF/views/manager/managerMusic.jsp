@@ -25,15 +25,21 @@
                         <div class = "headerList">
                             <div class="left-area">
                                 <div class ="left-area-div">
-                                    <input class="left-area-div-input" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
-                                    <a  onclick = "keywordPass()"><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
+                                    <input class="left-area-div-input" onkeyup="a(event)" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
+                                    <a><img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30"></a>
                                 </div>
                             </div>
                         </div>
 						<script>
-						function keywordPass(){
-							location.href = "<%=contextPath %>/search.mu?keyword=" + document.querySelector(".left-area-div-input").value;
-						}
+
+                        
+                        function a(e){
+                         if(e.keyCode === 13){
+                            	location.href = "<%=contextPath %>/search.mu?keyword=" + document.querySelector(".left-area-div-input").value;
+                        	 }
+                            
+                        }
+
 						</script>
 
                         <div class="bodyList">

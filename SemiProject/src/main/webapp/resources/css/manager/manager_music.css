@@ -13,7 +13,6 @@
     border-style: none;
     border-radius: 5% 0 0 5%;
     overflow-y: scroll;
-    box-shadow: 0 0 rgb(67, 56, 41);
 }
 
   .left::-webkit-scrollbar {
