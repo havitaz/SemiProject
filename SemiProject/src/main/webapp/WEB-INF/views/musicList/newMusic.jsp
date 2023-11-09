@@ -32,14 +32,14 @@
   </style>
 </head>
 <body>
-	<jsp:include page="../common/menubar.jsp"/>
+	<jsp:include page="../common/menubar-test.jsp"/>
 	
 	<h1 style="color: black;">추천곡</h1>
 	<hr style="color: black;">
 	
 	<table class="table" style="align-content: center; align-items: center;">
 		<thead>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo1" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -66,7 +66,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo2" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -93,7 +93,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo3" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -120,7 +120,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
