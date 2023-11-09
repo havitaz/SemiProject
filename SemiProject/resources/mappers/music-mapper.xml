@@ -51,7 +51,8 @@
 				ORDER BY COUNT DESC)
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
-				SELECT MUS_NAME
+				SELECT MUS_NO, 
+							MUS_NAME
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 	</select>

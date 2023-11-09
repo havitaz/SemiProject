@@ -86,8 +86,8 @@ ul{
                     </ul>
                     
 					<ul class="profile-button">
-                        <a href="<%=contextPath %>/music.bt" class="music-btn">노래관리</a>
-                        <a href="<%=contextPath %>/member.bt" class="member-btn">회원관리</a>
+                        <a href="<%=contextPath %>/music.bt" rel="wobble-vertical" class="music-btn">노래관리</a>
+                        <a href="<%=contextPath %>/member.bt" rel="wobble-vertical"  class="member-btn">회원관리</a>
 					</ul>
                 </div>
 
