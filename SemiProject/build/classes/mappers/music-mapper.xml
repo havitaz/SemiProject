@@ -55,4 +55,15 @@
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 	</select>
+		<select id="selectNewList" resultMap="MusicResultSet">
+		SELECT  MUS_NAME,
+		        MUS_ART,
+		        ALBUM_PATH
+		FROM(SELECT MUS_NAME,
+		        	MUS_ART,
+		        	ALBUM_PATH
+			FROM MUSIC
+			ORDER BY ENROLL_DATE DESC)
+		WHERE ROWNUM <![CDATA[<]]>= 15
+	</select>
 </mapper>
