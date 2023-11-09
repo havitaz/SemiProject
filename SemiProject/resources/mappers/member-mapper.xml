@@ -13,7 +13,7 @@
 	<result column="STATUS" property="status" />
 </resultMap>
 
-	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+	<select id="loginUser" parameterType="Member" resultMap="memberResultSet">
 			SELECT MEM_NO,
 				   MEM_ID,
 				   MEM_PWD,
