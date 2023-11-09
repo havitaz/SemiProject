@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
-import com.kh.member.model.MemeberServiceImpl.MemberServiceImpl;
+import com.kh.member.model.service.MemberServiceImpl;
 import com.kh.member.model.vo.Member;
 
 /**
