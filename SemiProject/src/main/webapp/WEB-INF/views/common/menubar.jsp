@@ -118,13 +118,13 @@ body{
                     <table>
                         <tr>
                             <td>아이디</td>
-                            <td><input type="text" name="memberId"></td>
+                            <td><input type="text" name="memberId" required placeholder="아이디를 입력해주세요"></td>
                         </tr>
                         <tr>
                             <td>
                                 비밀번호
                             </td>
-                            <td><input type="password" name="memberPwd"></td>
+                            <td><input type="password" name="memberPwd" required placeholder="비밀번호를 입력해주세요"></td>
                         </tr>
                         <tr colspan="2" align="center">
                           <td>
