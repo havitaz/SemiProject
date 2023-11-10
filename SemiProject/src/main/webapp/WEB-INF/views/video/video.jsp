@@ -371,7 +371,7 @@
                 	  
                  	               	
                 	<!-- 로그인 후 -->        
-	                	<form action="" method="post">
+	                	<form action="myPage.me" method="post">
                			 	<div class="Member-profile">
                			 		<input type = "hidden" name = "mno" value = "${loginUser.memberNo }">
 				                <ul class="profileImg ul">
