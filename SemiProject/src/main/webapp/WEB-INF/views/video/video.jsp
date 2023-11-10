@@ -281,7 +281,8 @@
 			
 			
         </div>
-        
+      
+    <!-- 로그인 전 -->
   	  <c:choose>
   	  	<c:when test="${ empty loginUser }">
          <div class="right-section">
@@ -290,16 +291,22 @@
             <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
         </div>
         </c:when>
+        
+
         <c:otherwise>
-          
+          <div class="right-section">
+            <div class="notifications-icon-container">    
+            </div>
+            <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal" disabled>로그인</button>
+        </div>
         </c:otherwise>
 	  </c:choose>
     </header>
 
 				 <!-- loginModal -->
-                  <div class="modal" id="loginModal" style="color: black;">
+        <div class="modal" id="loginModal" style="color: black;">
                   <div class="modal-dialog modal-dialog-centered modal-lg">
-                      <div class="modal-content">
+                    <div class="modal-content">
 
                           <!-- Modal Header-->
                           <div class="modal-header">
@@ -315,34 +322,31 @@
                   <form action="login.me" method="post">
                       <table>
                           <tr>
-                              <td><input type="text" name="memberId" style="width: 500px; height: 50px;"></td>
+                              <td><input type="text" name="memberId" style="width: 500px; height: 50px;" required placeholder="아이디를 입력해주세요"></td>
                           </tr>
                           <tr>
-                              <td><input type="password" name="memberPwd" style="width: 500px; height: 50px;"></td>
+                              <td><input type="password" name="memberPwd" style="width: 500px; height: 50px;" required placeholder="비밀번호를 입력해주세요"></td>
                           </tr>
+                          <tr>
+                          	<td><button class="modal-loginButton" type="submit">로그인</button></td>
+                          <tr>
                       </table>
                   </form>
                   </div>
 
                   <!-- Modal footer -->
-                  <div class="modal-footer" align="center">
-                  	<table>
-                  		<tr>
-                  			<td><button class="modal-loginButton" type="submit">로그인</button></td>
-                  		</tr>
-                  		<tr>
-                  			<td class="link-style">
-                  				<a href="<%=contextPath %>/insertPage.me">회원가입</a>
-                      			<a href="<%=contextPath %>/selectId.me">아이디찾기</a>
-                      			<a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
-                      		</td>
-                  		</tr>	
-                  	</table>
-                  		<img class="memberIcon" src="<%=contextPath %>/resources/images/login.jpg" />
+                  <div class="modal-footer" align="center" style="justify-content: center; height:210px">
+						<div class="link-style" >
+							<a href="<%=contextPath %>/insertPage.me">회원가입</a>
+							<a href="<%=contextPath %>/selectId.me">아이디찾기</a>
+							<a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+						</div>
+						<img class="memberIcon" src="<%=contextPath %>/resources/images/login.jpg" style="position: absolute; right: 0px;" />
+                  		
                   </div>
               </div>
           </div>
-      </div>
+      	</div>
 
 
 
@@ -409,7 +413,7 @@
 			                        <li></li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button">로그인</button>
+									<button class="a_button" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
 									<button class="a_button">회원가입</button>
 								</ul>
 			                </div>

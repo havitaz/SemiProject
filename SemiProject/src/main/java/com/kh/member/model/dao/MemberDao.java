@@ -22,4 +22,8 @@ public class MemberDao {
 	public Member searchMemberPwd(SqlSession sqlSession, Member m) {
 		return sqlSession.selectOne("memberMapper.searchMemberPwd", m);
 	}
+	
+	public int idCheck(SqlSession sqlSession, String checkId) {
+		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
 }

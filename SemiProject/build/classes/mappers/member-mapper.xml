@@ -69,5 +69,10 @@
 		 AND  PHONE = #{phone}
 		 AND  EMAIL = #{email}
 		 AND  STATUS='Y'
+	</select>
+	<select id="idCheck" parameterType="Member">
+		SELECT COUNT(*) "COUNT"
+	  	 FROM MEMBER
+	 	WHERE USER_ID = ?
 	</select>		
 </mapper>
