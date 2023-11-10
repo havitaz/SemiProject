@@ -42,18 +42,18 @@
 }
 
 
-    .player-bar{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        width: 100%;
-        /*flex-direction: row | column */
-        height: 40px;
-    	background: rgba(63, 47, 34, 0.9);
-    	border-radius: 12px 12px 12px 12px;   
-    	flex: 1px;
-    	text-align: center;
-    }
+.player-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    /*flex-direction: row | column */
+    height: 40px;
+	background: rgba(63, 47, 34, 0.9);
+	border-radius: 12px 12px 12px 12px;   
+	flex: 1px;
+	text-align: center;
+}
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
