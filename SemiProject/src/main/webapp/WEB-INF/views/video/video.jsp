@@ -371,8 +371,9 @@
                 	  
                  	               	
                 	<!-- 로그인 후 -->        
-	                	<form action="logout.me" method="post">
+	                	<form action="" method="post">
                			 	<div class="Member-profile">
+               			 		<input type = "hidden" name = "mno" value = "${loginUser.memberNo }">
 				                <ul class="profileImg ul">
 				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
 				                </ul>
@@ -382,24 +383,13 @@
 			                        <li>${logunUser.email}</li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button">마이페이지</button>
-									<button class="a_button">로그아웃</button>
+									<button type = "submit" class="a_button">마이페이지</button>
+									<input type = "button" onclick = "logout()"  class="a_button" value = "로그아웃">
 								</ul>
 			                </div>
 			          
 		                </form>
                		</c:when>
-               		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
                		<c:otherwise>
                		<!-- 로그인 전 -->
                			<div>
@@ -425,6 +415,11 @@
                		</c:otherwise>             			 
 				</c:choose> 
         </div>
+        <script>
+         	function logout(){
+        	 	location.href = "logout.me"
+         	}
+        </script>
 
 
                 <c:choose>
