@@ -70,6 +70,7 @@
             
             
            	    <c:choose>
+              		<c:when test="${ !empty loginUser }">
               		
               		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 
@@ -125,7 +126,6 @@
 			
 			<!-- 
              	    <c:choose>
-              				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>               
                 		<c:when test="${ empty loginUser }">              
               				  <img id="vol-btn" class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>   
               				  <button onclick="changeImage()">toggle</button>          
@@ -260,6 +260,7 @@
 			
 
                 <c:choose>
+             		<c:when test="${ empty loginUser }">  
 
 						<div class="playList" align="center">
 							<div class="createPlayList">
