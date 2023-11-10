@@ -123,29 +123,47 @@
             
 			<div class="volume">
 			
-			
+			<!-- 
              	    <c:choose>
               				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>               
+                		<c:when test="${ empty loginUser }">              
+              				  <img id="vol-btn" class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>   
+              				  <button onclick="changeImage()">toggle</button>          
                 		</c:when>
                 		                		               		
                 		<c:otherwise>	
               				  <img class="vol-btn" src="<%=contextPath %>/resources/icon/menubarIcon/vol.png"/>                         		
                 	    </c:otherwise>  
 					</c:choose>
-                
-                
-				<input type="range" min="0" max="100" step="0.5">
+                 -->
+            	<img id="vol" class="vol-btn" onclick="changeImage()" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>   
+				<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
 			</div>
+			
 			
 			<script>
 			  function changeImage() {
-			    var img = document.getElementsByClassName('vol-btn')[0];
-			    if (img.getAttribute('src') === '<%=contextPath %>/resources/icon/menubarIcon/mute.png') {
-			      img.setAttribute('src', '<%=contextPath %>/resources/icon/menubarIcon/vol.png');
+			    let volCheck = document.getElementById("vol");
+			    
+			    // 현재 이미지의 파일명을 추출
+			    let currentImage = volCheck.src.substring(volCheck.src.lastIndexOf('/') + 1);
+			    
+			    if (currentImage === "mute.png") {
+			      // 현재가 mute 이미지면 vol 이미지로 변경
+			      volCheck.src = "<%=contextPath %>/resources/icon/menubarIcon/vol.png";
 			    } else {
-			      img.setAttribute('src', '<%=contextPath %>/resources/icon/menubarIcon/mute.png');
+			      // 현재가 vol 이미지면 mute 이미지로 변경
+			      volCheck.src = "<%=contextPath %>/resources/icon/menubarIcon/mute.png";
 			    }
 			  }
+			  
+			  function changeVolume() {
+				    let volumeRange = document.getElementById("volumeRange");
+				    let volCheck = document.getElementById("vol");
+			
+				    // volumeRange의 값이 0인 경우 mute 이미지로, 그 외에는 vol 이미지로 변경
+				    volCheck.src = volumeRange.value == 0 ? "<%=contextPath %>/resources/icon/menubarIcon/mute.png" : "<%=contextPath %>/resources/icon/menubarIcon/vol.png";
+				  }
 			</script>
 			
 			
@@ -266,7 +284,7 @@
 							      
 							      
 							      
-									      <c:forEach var="pl" items="${ list }">		   
+									      <c:forEach var="pl" items="${ playList }">		   
 											<li class="sidebar-list">                 
 												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 												 <p class="pl-title">${pl.musName}</p> 
@@ -303,9 +321,9 @@
 							      <div class="accordion-body">			  
 										<li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-							 				<p class="pl-title">Road to Ruin</p> 
+							 				<p class="pl-title">Snowman</p> 
 							 				
-							 				<p class="pl-musician">Mr.big</p>			
+							 				<p class="pl-musician">Sia</p>			
 							 			</li>
 										 <li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
