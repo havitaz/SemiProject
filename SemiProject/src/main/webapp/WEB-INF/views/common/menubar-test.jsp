@@ -493,6 +493,7 @@
 						</div>
 			 		</c:when>
 			 		<c:otherwise>
+			 				<!-- 비회원은 재생목록 공백 -->
 			 		</c:otherwise>             			 
 				</c:choose> 
 			 	     	<!-- 로그인 전 -->      
