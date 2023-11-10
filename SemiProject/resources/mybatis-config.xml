@@ -15,7 +15,7 @@
      <typeAliases>
         <typeAlias type="com.kh.music.model.vo.Music" alias="Music"/>
         <typeAlias type="com.kh.member.model.vo.Member" alias="Member" />
-        <typeAlias type="com.kh.Playlist.model.vo.Playlist" alias="Playlist" />
+        <typeAlias type="com.kh.playlist.model.vo.Playlist" alias="Playlist" />
      </typeAliases>
      
      <!--  environment : mybatis에서 연동할 DB정보들을 등록하는 영역 -->
