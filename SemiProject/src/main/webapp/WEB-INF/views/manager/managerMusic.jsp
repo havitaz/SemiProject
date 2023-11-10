@@ -48,16 +48,16 @@
                                 <div  class ="left-list-div">
                            
                                     <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <a href="<%=contextPath %>/detail.mu?mno=${m.musNo}" style="text-decoration: none;"><li class="music-title">${ m.musName }</li></a>
+                                    <a onclick="postFormSubmit(${m.musNo})" style="text-decoration: none;"><li class="music-title">${ m.musName }</li></a>
                                  	
                                 </div>
                                 <hr>
                                  </c:forEach>
                             </div>
-                          
                         </div>
                     </div>
                     
+                   
                     <div class="right">
                         <div class="right-area" align="center">
                             <h1 style="color: #41382b; margin-top: 50px;">노래 상세정보</h1>
@@ -66,23 +66,28 @@
                                     <div class="music-info-class">
                                         <div>
                                             <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                            <input type="text" id="musicInfo" placeholder="${m.musName }" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${ m.musName }" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                            <input type="text" id="musicInfo" placeholder="${m.musArt }" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${ m.musArt }" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                            <input type="text" id="musicInfo" placeholder="${m.musGen }" readonly/>
+                                            <input type="text" id="musicInfo" placeholder="${ m.musGen }" readonly/>
                                         </div>
 
-                                        
                                     </div>
                             </form>
 
+ 						<script>
+		            		function postFormSubmit(num) {
+		            			location.href = "<%=contextPath %>/detail.mu?mno=" + num
+		            		}
+            		</script>
+                    
 
                             <div class="musicButton">
                                 <div>

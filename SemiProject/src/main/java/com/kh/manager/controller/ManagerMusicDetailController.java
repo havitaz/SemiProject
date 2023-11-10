@@ -1,6 +1,7 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,11 @@ public class ManagerMusicDetailController extends HttpServlet {
 			
 			MusicService mService = new MusicServiceImpl();
 			
-			//Music m = mService.selectMusic(musNo);
+			Music m = mService.selectDetailMusic(musNo);
+			
+			request.setAttribute("m", m);
+			
+			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);			
 			
 	}
 

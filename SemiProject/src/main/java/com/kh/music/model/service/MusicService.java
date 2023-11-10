@@ -18,6 +18,9 @@ public interface MusicService {
 	//관리자 노래 검색
 	ArrayList<Music> selectSearchMusic(HashMap<String,String> map);
 	
+	//관리자 노래 상세정보조회
+	Music selectDetailMusic(int musNo);
+	
 	//최신곡 10곡 노래제목 리스트
 	public ArrayList<Music> selectNewList();
 }
