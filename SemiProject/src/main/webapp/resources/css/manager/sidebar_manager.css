@@ -84,11 +84,19 @@
     height: 30px;
     box-shadow:0px 4px 0px rgb(67, 56, 41);
     text-decoration: none;
+    display: inline-block;
+    @include hideTapHighlightColor();
+    @include hardwareAccel();
+    @include improveAntiAlias();
 }
 
 
 .music-btn:hover {
     background-color: rgb(205, 165, 130);
+    animation-name: wobble-vertical;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
 }
 
 .music-btn:active {
@@ -96,6 +104,34 @@
     box-shadow: 0 0 rgb(67, 56, 41);
     background-color: rgb(205, 165, 130);
 }
+
+@keyframes wobble-vertical {
+    16.65% {
+      transform: translateY(8px);
+    }
+  
+    33.3% {
+      transform: translateY(-6px);
+    }
+  
+    49.95% {
+      transform: translateY(4px);
+    }
+  
+    66.6% {
+      transform: translateY(-2px);
+    }
+  
+    83.25% {
+      transform: translateY(1px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
 
 .member-btn{
     background: rgb(58, 36, 14);
@@ -110,10 +146,18 @@
     margin-bottom: 20px;
     box-shadow:0px 4px 0px rgb(67, 56, 41);
     text-decoration: none;
+    display: inline-block;
+    @include hideTapHighlightColor();
+    @include hardwareAccel();
+    @include improveAntiAlias();
 }
 
 .member-btn:hover {
     background-color: rgb(205, 165, 130);
+    animation-name: wobble-vertical;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
 }
 
 .member-btn:active {

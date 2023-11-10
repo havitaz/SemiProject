@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/top100.css">
 <body>
 
-	<jsp:include page="../common/menubar-test.jsp"/>
+	<jsp:include page="../common/menubar.jsp"/>
 	
 	<h1 style="color: black; margin-bottom: 0px;">TOP 100 ></h1>
 	<hr style="color: black;">
@@ -37,13 +37,13 @@
 			<c:forEach var="m" items="${ list }">
 				<tr class="music-row">
 					<td>${m.rownum} </td>
-					<td><img src="resources/icon/musicAlbumCover/LoveLee.jpg"></td>
+					<td><img style="width: 48px; height: 48px" src="${m.albumPath}"></td>
 					<td style="text-align: left; font-weight: bolder;">${m.musName}</td>
 					<td>${m.musArt}</td>
 					<td>${m.musGen}</td>
 					<td>${m.musTime}</td>
 					<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-					<td><a href=""><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
+					<td><a href="insert.pl"><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
 					<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 				</tr>
 			</c:forEach>
