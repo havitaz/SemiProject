@@ -2,6 +2,7 @@ package com.kh.music.model.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +38,10 @@ public class MusicDao {
 	
 	public ArrayList<Music> selectSearchMusic(SqlSession sqlSession, HashMap<String, String> map){
 		return (ArrayList)sqlSession.selectList("musicMapper.selectSearchMusic", map);
+	}
+	
+	public  Music selectDetailMusic(SqlSession sqlSession, int musNo){
+		return  sqlSession.selectOne("musicMapper.selectDetailMusic", musNo);
 	}
 	
 }

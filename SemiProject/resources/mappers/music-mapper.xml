@@ -74,4 +74,11 @@
 				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
 				   ORDER BY MUS_NO DESC
 	</select>
+	<select id="selectDetailMusic" resultMap="MusicResultSet">
+				SELECT MUS_NAME,
+								MUS_ART,
+								MUS_GEN
+					FROM MUSIC
+				WHERE MUS_NO = #{musNo}
+	</select>
 </mapper>

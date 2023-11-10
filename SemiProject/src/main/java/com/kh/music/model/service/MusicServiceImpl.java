@@ -55,6 +55,16 @@ public class MusicServiceImpl implements MusicService{
 		sqlSession.close();
 		return list;
 	}
+
+	@Override
+	public Music selectDetailMusic(int musNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Music m = mDao.selectDetailMusic(sqlSession, musNo);
+
+		sqlSession.close();
+		return m;
+		
+	}
 	
 	
 
