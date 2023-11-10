@@ -28,5 +28,14 @@
 	</select>
 <!-- WHERE P.STATUS = 'Y' 
 	 AND ME.MEM_NO = #{memberNo}; -->
-
+	
+	<insert id="insertPlayList">
+		INSERT INTO PLAYLIST (MUS_NO,
+								MEM_NO,
+								STATUS)
+		VALUES (#{musNo},
+				#{memberNo},
+				'Y'
+				)
+	</insert>
 </mapper>
