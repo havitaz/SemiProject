@@ -288,18 +288,13 @@
 									      <c:forEach var="pl" items="${ playList }">		   
 											<li class="sidebar-list">                 
 												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-												 <p class="pl-title">${pl.musName}</p> 
-												 
-												 <p class="pl-musician">&nbsp;&nbsp;${pl.musArt}</p>			
+												<div>
+												 	<p class="pl-title">${pl.musName}</p> 
+												 	<p class="pl-musician">${pl.musArt}</p>
+												</div>
 											 </li>
 										 </c:forEach>
 	
-											<li class="sidebar-list">                 
-												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-												 <p class="pl-title">${pl.musName}</p> 
-												 
-												 <p class="pl-musician">&nbsp;&nbsp;${pl.musArt}</p>			
-											 </li>
 											 <li>
 											  	<c:out value="${Playlist}" />
 											 </li>
@@ -322,28 +317,32 @@
 							      <div class="accordion-body">			  
 										<li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-							 				<p class="pl-title">Snowman</p> 
-							 				
-							 				<p class="pl-musician">Sia</p>			
+											<div>
+								 				<p class="pl-title">가나다라마바사아자차카타파하에헤에에에에헤우헤우헤우오오</p> 							 				
+								 				<p class="pl-musician">Sia</p>
+							 				</div>			
 							 			</li>
-										 <li class="sidebar-list">                 
+										<li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-							 				<p class="pl-title">Road to Ruin</p> 
-							 				
-							 				<p class="pl-musician">Mr.big</p>			
-							 			</li>
-										 <li class="sidebar-list">                 
+											<div>
+								 				<p class="pl-title">Snowman</p> 							 				
+								 				<p class="pl-musician">Sia</p>
+							 				</div>			
+							 			</li>							 			
+										<li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-							 				<p class="pl-title">Road to Ruin</p> 
-							 				
-							 				<p class="pl-musician">Mr.big</p>			
+											<div>
+								 				<p class="pl-title">Snowman</p> 							 				
+								 				<p class="pl-musician">Sia</p>
+							 				</div>			
 							 			</li>
-										 <li class="sidebar-list">                 
+										<li class="sidebar-list">                 
 											<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-							 				<p class="pl-title">Road to Ruin</p> 
-							 				
-							 				<p class="pl-musician">Mr.big</p>			
-							 			</li>
+											<div>
+								 				<p class="pl-title">Snowman</p> 							 				
+								 				<p class="pl-musician">Sia</p>
+							 				</div>			
+							 			</li>								 										 					
 								  </div>
 							    </div>
 							  </div>
@@ -361,148 +360,207 @@
 						      <div class="accordion-body">
 								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
-								 <li class="sidebar-list">                 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
 									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
-									 <p class="pl-title">Road to Ruin</p> 
-									 
-									 <p class="pl-musician">Mr.big</p>			
-								 </li>
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>	
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>		
+								<li class="sidebar-list">                 
+									<img class="pl-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
+									<div>
+						 				<p class="pl-title">Road to Ruin</p> 							 				
+						 				<p class="pl-musician">Mr.big</p>
+					 				</div>			
+					 			</li>
 							  </div>
 						    </div>
 						  </div>
