@@ -269,7 +269,7 @@
 							      
 							      
 							      
-									      <c:forEach var="pl" items="${ Playlist }">		   
+									      <c:forEach var="pl" items="${ list }">		   
 											<li class="sidebar-list">                 
 												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 												 <p class="pl-title">${pl.musName}</p> 
@@ -493,6 +493,7 @@
 						</div>
 			 		</c:when>
 			 		<c:otherwise>
+			 				<!-- 비회원은 재생목록 공백 -->
 			 		</c:otherwise>             			 
 				</c:choose> 
 			 	     	<!-- 로그인 전 -->      
