@@ -269,7 +269,7 @@
 							      
 							      
 							      
-									      <c:forEach var="pl" items="${ Playlist }">		   
+									      <c:forEach var="pl" items="${ list }">		   
 											<li class="sidebar-list">                 
 												<img class="pl-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
 												 <p class="pl-title">${pl.musName}</p> 
