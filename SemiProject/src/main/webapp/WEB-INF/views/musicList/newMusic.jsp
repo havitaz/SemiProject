@@ -150,7 +150,7 @@
 		</thead>
 	</table>
 	<br>
-	<h1 style="color: black;">최신곡-&gt;</h1>
+	<h1 style="color: black;">최신곡&gt;</h1>
 	<hr style="color: black;">
 	<br>
 	<div class="new-grid">

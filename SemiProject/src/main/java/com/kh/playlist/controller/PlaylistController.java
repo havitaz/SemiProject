@@ -38,7 +38,7 @@ public class PlaylistController extends HttpServlet {
 		
 		ArrayList<Playlist> list = plService.selectPlaylist(memberNo);
 
-	    request.setAttribute("list", list); 
+	    request.setAttribute("playList", list); 
 
 	    request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
 		
