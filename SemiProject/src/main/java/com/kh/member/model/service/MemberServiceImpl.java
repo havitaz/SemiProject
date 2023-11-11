@@ -56,5 +56,14 @@ public class MemberServiceImpl implements MemberService{
 		return searchMemberPwd;
 	}
 
+	@Override
+	public int idCheck(String checkId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int count = new MemberDao().idCheck(sqlSession, checkId);
+		
+		return count;
+	}
+
 
 }
