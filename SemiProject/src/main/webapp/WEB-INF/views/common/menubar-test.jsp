@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
     
 <style>
@@ -44,7 +46,41 @@
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+		    <%
+		        out.println("loginUser: " + session.getAttribute("loginUser"));
+		        out.println("memberNo: " + session.getAttribute("memberNo"));
+		    %>
+
+
+			<c:choose>
+			    <c:when test="${!empty loginUser}">
+			        <script>
+			            // 이미 요청을 보냈는지 여부를 localStorage에서 확인
+			            var hasSentRequest = localStorage.getItem("hasSentRequest");
+			
+			            if (!hasSentRequest) {
+			                // loginUser에 memberNo 속성이 있다고 가정합니다.
+			                var memberNo = "${loginUser.memberNo}";
+			
+			                // "list.pl"로의 요청을 생성합니다.
+							var requestUrl = "/se/list.pl?memberNo=" + memberNo;
+			
+			                // "list.pl" 페이지로 리다이렉트합니다.
+			                window.location.href = requestUrl;
+			
+			                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
+			                localStorage.setItem("hasSentRequest", "true");
+			            }
+			        </script>
+			    </c:when>
+			</c:choose>
+
+
+
+
+
+
 
 
 
@@ -64,90 +100,26 @@
             <div class="player-bar"> 
             
             
-            
-           	    <c:choose>
-              		<c:when test="${ !empty loginUser }">
-              		
-              		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
-
-					                <div class="flex-item time">
-					                    00:00
-					                </div>       
-					                                
-					                <div class="flex-item mp_info"> 
-					               		 ---- ---- ----
-					                </div>  
-					                                 
-					                <div  class="flex-item time align">
-					                    00:00
-					                </div>
-              		
-              		
-              		                    
-            		</c:when>
-            		<c:otherwise>
-            		
-            		
-            		              	<img class="album-thumb" src="${pl.albumPath}"> 
-									 <%--src="<%=contextPath/resources/images/temp.jpg"> --%>
-					                <div class="flex-item time">
-					                    00:00
-					                </div>       
-					                                
-					                <div class="flex-item mp_info"> 
-					               		 ${pl.musName} - ${pl.musArt}
-					               		 <!--제목            가수  -->
-					                </div>  
-					                                 
-					                <div  class="flex-item time align">
-					                    ${pl.musTime}
-					                </div>
-              		
-            		
-            		</c:otherwise>
-            	</c:choose>	
-                                    
-            </div>                      
-            
-			<div class="volume">			
-            	<img id="vol" class="vol-btn" onclick="changeImage()" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>   
-				<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			<script>
-				  function changeImage() {
+            <script>
+			  function changeImage() {
 				    let volCheck = document.getElementById("vol");
 				    
-				    // 현재 이미지의 파일명을 추출
 				    let currentImage = volCheck.src.substring(volCheck.src.lastIndexOf('/') + 1);
 				    
 				    if (currentImage === "mute.png") {
-				      // 현재가 mute 이미지면 vol 이미지로 변경
 				      volCheck.src = "<%=contextPath %>/resources/icon/menubarIcon/vol.png";
 				    } else {
-				      // 현재가 vol 이미지면 mute 이미지로 변경
 				      volCheck.src = "<%=contextPath %>/resources/icon/menubarIcon/mute.png";
 				    }
 				  }
 				  			 
 				  function changeImagePlay() {
 					    let plbtn = document.getElementById("playButton");
-					    
-					    // 현재 이미지의 파일명을 추출
 					    let currentImage = plbtn.src.substring(plbtn.src.lastIndexOf('/') + 1);
 					    
 					    if (currentImage === "play.png") {
-					      // 현재가 play 이미지면 pause 이미지로 변경
 					      plbtn.src = "<%=contextPath %>/resources/icon/menubarIcon/pause-button.png";
 					    } else {
-					      // 현재가 pause 이미지면 play 이미지로 변경
 					      plbtn.src = "<%=contextPath %>/resources/icon/menubarIcon/play.png";
 					    }
 					  }
@@ -155,14 +127,11 @@
 				  
 				  function changeVolume() {
 					    let volumeRange = document.getElementById("volumeRange");
-					    let volCheck = document.getElementById("vol");
-				
+					    let volCheck = document.getElementById("vol");				
 					    // volumeRange의 값이 0인 경우 mute 이미지로, 그 외에는 vol 이미지로 변경
 					    volCheck.src = volumeRange.value == 0 ? "<%=contextPath %>/resources/icon/menubarIcon/mute.png" : "<%=contextPath %>/resources/icon/menubarIcon/vol.png";
 					  }
-				  			 
-				  
-				  
+				  			 		  
 				  
 				    // 이미지 클릭 이벤트 핸들러 등록
 				    document.getElementById("shuffleButton").addEventListener("click", function() {
@@ -222,32 +191,113 @@
 				        }
 				    }
 				    
-				    
-				    
-				    
-				    function sendMusicInfo(musName, musArt, musTime) {
-				        // 클릭한 음악 정보를 서버로 전달하는 코드
-				        // 이 부분에 Ajax 또는 다른 통신 방법을 사용할 수 있습니다.
-				        // 예: Ajax 요청을 사용한 경우 jQuery를 이용한 예시
-				        $.ajax({
-				            type: 'POST',
-				            url: 'your-server-endpoint', // 서버 엔드포인트 URL
-				            data: {
-				                musName: musName,
-				                musArt: musArt,
-				                musTime: musTime
-				            },
-				            success: function (response) {
-				                // 서버 응답에 대한 처리 (예: 콘솔에 로그)
-				                console.log(response);
-				            },
-				            error: function (error) {
-				                // 에러 처리
-				                console.error(error);
-				            }
-				        });
-				    }
-				    
+            
+            
+			 // 함수 정의: 음악 정보를 서버로 전송
+			    function sendMusicInfo(musName, musArt, musTime) {
+			        // Ajax 요청을 통해 음악 정보를 서버로 전송
+			        $.ajax({
+			            type: 'POST', // 요청 메서드
+			            url: '<%=request.getContextPath()%>/playbar.pl', // 서버 엔드포인트 URL
+			            data: {
+			                musName: musName,
+			                musArt: musArt,
+			                musTime: musTime
+			            },
+			            success: function (response) {
+			                // 서버 응답에 대한 처리
+			                console.log(response);
+
+			                // 받은 응답을 이용하여 UI 업데이트 등의 작업 수행
+			                updateUI(response);
+			            },
+			            error: function (error) {
+			                // 에러 처리
+			                console.error(error);
+			            }
+			        });
+			    }
+
+			    function updateUI(response) {
+			        // 서버 응답에 따라 UI 업데이트 수행
+			        // 이 부분에 받은 데이터를 이용하여 UI를 업데이트하는 로직을 추가할 수 있습니다.
+			        var musicInfoDiv = $("#musicInfoDiv"); // 업데이트할 div의 ID
+			        musicInfoDiv.text(response);
+			    }
+			    
+		        $(document).ready(function () {
+		            var hasSentRequest = localStorage.getItem("hasSentRequest");
+
+		            if (!hasSentRequest) {
+		                // 여기에 기존의 sendMusicInfo 호출 코드 추가
+		                // ...
+
+		                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
+		                localStorage.setItem("hasSentRequest", "true");
+		            }
+		        });
+            </script>
+            
+            
+            
+           	    <c:choose>
+              		<c:when test="${ empty loginUser }">
+              		
+              		                <img class="album-thumb" src="<%=contextPath %>/resources/images/default-albumArt.png"> 
+
+					                <div class="flex-item time">
+					                    00:00
+					                </div>       
+					                                
+					                <div class="flex-item mp_info"> 
+					               		 ---- ---- ----
+					                </div>  
+					                                 
+					                <div  class="flex-item time align">
+					                    00:00
+					                </div>
+              		
+              		
+              		                    
+            		</c:when>
+            		<c:otherwise>
+            		
+            		
+            		              	<img class="album-thumb" src="${pl.albumPath}"> 
+									 <%--src="<%=contextPath/resources/images/temp.jpg"> --%>
+					                <div class="flex-item time">
+					                    00:00
+					                </div>       
+					                                
+					                <div class="flex-item mp_info"> 
+					               		 ${pl.musName} - ${pl.musArt}
+					               		 <!--제목            가수  -->
+					                </div>  
+					                                 
+					                <div  class="flex-item time align">
+					                    ${pl.musTime}
+					                </div>
+              		
+            		
+            		</c:otherwise>
+            	</c:choose>	
+                                    
+            </div>                      
+            
+			<div class="volume">			
+            	<img id="vol" class="vol-btn" onclick="changeImage()" src="<%=contextPath %>/resources/icon/menubarIcon/mute.png"/>   
+				<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			<script>
+
 			</script>
 			
 			
@@ -338,12 +388,11 @@
                 
                 
                 <c:choose>
-                	<c:when test="${ empty loginUser }">  
-                	
-                	  
-                 	               	
-                	<!-- 로그인 전 -->        
-	                	<form action="logout.me" method="post">
+                	<c:when test="${ empty loginUser }">             
+                	 	               	
+                		<!-- 로그인 전 -->        
+                		
+	                	<form action="" method="post">
                			 	<div class="Member-profile">
 				                <ul class="profileImg ul">
 				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/NotaMember.jpg" alt="멤버"/>               
@@ -363,14 +412,6 @@
                		
                		
                		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
-               		
                		<c:otherwise>
                		<!-- 로그인 후 -->
                			<div>
@@ -379,29 +420,33 @@
 				                  <img class= "pro_admin" src="<%=contextPath %>/resources/images/member.jpg" alt="멤버"/>               
 				                </ul>
 			                    <ul class="detail-profile ul">
-			                        <li>&lt; userId &gt;님</li>
-			                        <li>&lt;010-xxxx-xxxx&gt;</li>
-			                        <li>asd12345@naver.com</li>
+			                        <li>${loginUser.memberId }님</li>
+			                        <li>${loginUser.phone }</li>
+			                        <li>${logunUser.email}</li>
 			                    </ul>
 								<ul class="profile-button ul">
-									<button class="a_button">마이페이지</button>
-									<button class="a_button">로그아웃</button>
+									<button type = "submit" class="a_button">마이페이지</button>
+									<input type = "button" onclick = "logout()"  class="a_button" value = "로그아웃">
 								</ul>
 			                </div>
-			            </div>    
-			            
-			            			            			        
-
-							            
-               		</c:otherwise>             			 
+			            </div>    							            
+               		</c:otherwise>                   		         			 
 				</c:choose> 
         </div>
 
+        <script>
+         	function logout(){
+        	 	location.href = "logout.me"
+         	}
+        </script>
+			
 			
 
                 <c:choose>
              		<c:when test="${ empty loginUser }">  
-
+			 				<!-- 비회원은 재생목록 공백 -->
+			 		</c:when>
+			 		<c:otherwise>			 				
 						<div class="playList" align="center">
 							<div class="createPlayList">
 								<h4 class="pltitle">
@@ -425,7 +470,7 @@
 							      
 							      
 							      
-									      <c:forEach var="pl" items="${ list }">		   
+									      <c:forEach var="pl" items="${ playlist }">		   
 											<li class="sidebar-list" onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}')">                 
 												<img class="pl-thumb" src="${pl.albumPath}"> 
 												<div>
@@ -437,6 +482,8 @@
 								  </div>
 							    </div>
 							  </div>
+							
+							
 							
 							
 							
@@ -699,9 +746,6 @@
 						    </div>
 						  </div>
 						</div>
-			 		</c:when>
-			 		<c:otherwise>
-			 				<!-- 비회원은 재생목록 공백 -->
 			 		</c:otherwise>             			 
 				</c:choose> 
 			 	     	<!-- 로그인 전 -->      

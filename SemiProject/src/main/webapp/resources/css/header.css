@@ -56,15 +56,10 @@
 }
 
 .album-thumb{
-    border-radius: 12px 12px 12px 12px;
+    border-radius: 5px;
     height: 40px;
     width: 40px;
-    right: 12px;
-}
-
-
-
-.album-thumb{
+    right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
