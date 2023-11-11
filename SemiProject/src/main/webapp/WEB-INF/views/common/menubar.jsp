@@ -114,6 +114,9 @@ body{
                 <a href="">아이디찾기</a>
                 <a href="">비밀번호찾기</a>
                 <a href="">회원가입</a>
+                <button class="btn-serachId" data-bs-toggle="modal" data-bs-target="#searchId">아이디찾기</a>
+                <button class="btn-searchPwd" data-bs-toggle="modal" data-bs-target="#searchPwd">비밀번호찾기</a>
+                <button class="btn-insertMember" data-bs-toggle="modal" data-bs-target="#insertMember">회원가입</a>
             </div>
         </div>
     </div>
