@@ -12,17 +12,23 @@
 	<div class="memberInput" align="center">
         <form action="" id="memberInfo">
             <table class="input-table">
+            	<tr>
+            		<td>아이디</td>
+            	</tr>
                 <tr>
-                    <td>아이디</td>
+                    <td>${loginUser.memberId }</td>
                 </tr>
                 <tr>
-                    <td>비밀번호 </td>
+                	<td>핸드폰번호</td>
                 </tr>
                 <tr>
-                	<td>핸드폰 번호</td>
+                	<td>${loginUser.phone}</td>
                 </tr>
                 <tr>
-                    <td>이메일</td>
+                	<td>이메일</td>
+                </tr>
+                <tr>
+                    <td>${loginUser.email}</td>
                 </tr>
             </table>
         </form>

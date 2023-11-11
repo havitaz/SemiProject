@@ -27,7 +27,7 @@ public class MyPageController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("WEB-INF/views/member/searchPwd.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/member/myPage.jsp").forward(request, response);
 	}
 
 	/**
