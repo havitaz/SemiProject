@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.playlist.model.service.PlaylistService;
 import com.kh.playlist.model.service.PlaylistServiceImpl;
@@ -32,24 +33,29 @@ public class PlaylistController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int memberNo = Integer.parseInt(request.getParameter("memberNo"));
-		
-		PlaylistService plService = new PlaylistServiceImpl();
-		
-		ArrayList<Playlist> list = plService.selectPlaylist(memberNo);
+	    HttpSession session = request.getSession();
+	    
+	    // 세션에서 memberNo를 읽어옴
+	    int memberNo = (int) session.getAttribute("memberNo");
+	    
+	    PlaylistService plService = new PlaylistServiceImpl();
+	    
+	    ArrayList<Playlist> playlist = plService.selectPlaylist(memberNo);
 
-	    request.setAttribute("playList", list); 
+	    request.setAttribute("playlist", playlist); 
 
 	    request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
-		
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		String musName = request.getParameter("musName");
+        String musArt = request.getParameter("musArt");
+        String musTime = request.getParameter("musTime");
+
+        response.getWriter().write("Received music info: " + musName + " - " + musArt + " - " + musTime);
 	}
 
 }
