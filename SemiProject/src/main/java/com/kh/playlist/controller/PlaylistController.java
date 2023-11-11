@@ -38,7 +38,7 @@ public class PlaylistController extends HttpServlet {
 		
 		ArrayList<Playlist> list = plService.selectPlaylist(memberNo);
 
-	    request.setAttribute("playList", list); 
+	    request.setAttribute("playlist", list); 
 
 	    request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
 		
@@ -48,8 +48,12 @@ public class PlaylistController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		String musName = request.getParameter("musName");
+        String musArt = request.getParameter("musArt");
+        String musTime = request.getParameter("musTime");
+
+        response.getWriter().write("Received music info: " + musName + " - " + musArt + " - " + musTime);
 	}
 
 }

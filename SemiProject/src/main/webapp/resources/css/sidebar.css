@@ -183,3 +183,16 @@
 	tint-color($component-active-bg, 70%);
 }   
 */
+
+
+.player-menu:hover {
+	scale: 1.1;
+}
+
+.addPlayList:hover{
+	scale: 1.1;
+}
+
+.minusPlayList:hover{
+	scale: 1.1;
+}
