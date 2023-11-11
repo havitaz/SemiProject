@@ -1,3 +1,4 @@
+/*공용 메뉴바 김경보*/
 P{
     margin: 0;
 }
@@ -13,13 +14,8 @@ P{
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 3px;
-    margin-inline-end: -42px;
+    margin-inline-end: -34px;
     padding-inline-start: 40px;
-}
-  .addPlayList {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
 }
 
   .removePlayList {
@@ -38,7 +34,111 @@ P{
     
 }
 
-.a_button{
+.a_button{ /*로그인 회원가입 로그아웃 마이페이지 버튼*/
     cursor: pointer;
 
 }
+
+
+/*재생목록 아코디언*/
+ .accordion-body{
+	list-style: none;
+	padding: 0;
+ }
+
+ .accordion {
+	--bs-accordion-bg: none;
+	--bs-accordion-border-color: rgba(51, 51, 51, 0.8);
+	border-radius: 5px;
+	background:rgba(133, 90, 71, 0.8);
+	--bs-accordion-active-bg: none;
+	--bs-accordion-btn-focus-box-shadow: rgb(51, 51, 51); ;
+ }
+
+ .accordion-button{
+	font-weight: 600;
+	color: white;
+	font-size: 13px;
+ }
+ 
+ 
+.accordion-button:not(.collapsed) { /*눌렸을떄*/
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*이선우 - video*/
+
+	#top100{
+		border: 1px;
+		text-align: center;
+		width: 100%;
+	}
+	#top100 > thead > tr > th, #top100 > tbody > tr > td{
+		font-size: medium;
+		font-weight: bolder;
+		color: black;
+	}
+	#top100 > thead > tr > th{
+		border-bottom: 8px solid rgb(255, 252, 227);
+	}
+	#top100 > tbody > tr > td{
+		height: 35px;
+		padding-top: 10px;
+		color: white;
+	}
+	#top100 > tbody > tr:hover{
+		opacity: 0.9;
+	}
+	#top100 > tbody > tr > td > a > img:hover{
+		scale: 1.2;
+	}
+	a{
+	cursor: pointer;
+	}
+	.music-row{
+	background: rgba(77,58,44,0.7365);
+	color: white;
+	}
+	.page-link{
+	background-color:transparent;
+	background: rgba(77,58,44,0.7365);
+	color: white;
+	scale: 1.1;
+	margin: 6px;
+	}
+	
+	
+	

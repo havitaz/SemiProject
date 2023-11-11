@@ -1,0 +1,69 @@
+package com.kh.member.model.service;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.kh.common.template.Template;
+import com.kh.member.model.vo.Member;
+import com.kh.member.model.dao.MemberDao;
+
+public class MemberServiceImpl implements MemberService{
+	
+	private MemberDao mDao = new MemberDao();
+	
+	@Override
+	public Member loginUser(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		Member loginUser = mDao.loginUser(sqlSession, m);
+		
+		sqlSession.close();
+		return loginUser;
+	}
+
+	@Override
+	public int insertMember(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.insertMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
+	@Override
+	public Member searchMember(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		Member searchMember = mDao.searchMember(sqlSession, m);
+		
+		return searchMember;
+	}
+
+	@Override
+	public Member searchMemberPwd(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		Member searchMemberPwd = mDao.searchMemberPwd(sqlSession, m);
+		
+		return searchMemberPwd;
+	}
+
+	@Override
+	public int idCheck(String checkId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int count = new MemberDao().idCheck(sqlSession, checkId);
+		
+		return count;
+	}
+
+
+}

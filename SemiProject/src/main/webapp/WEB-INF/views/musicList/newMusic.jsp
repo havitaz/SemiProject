@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% 
+	String contextPath = request.getContextPath();
+	String albumPath = "resources/icon/musicAlbumCover/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,30 +13,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/newMusic.css">
   <style>
-  	.table{
-  		width: 100%;
-  		background: transparent;
-  		background-color: transparent;
-		margin-left: 3%;
+	.new-grid{
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		
-  	}
-  	.table>:not(caption)>*>* {
-  		background: transparent;
-  		background-color: transparent;
-  		border-bottom: none;
-  	}
+	}
+	.new-grid > ul{
+		display: block;
+		height: 280px;
+		margin: 2%;
+		padding: 1px;
+	}
   </style>
 </head>
 <body>
-	<jsp:include page="../common/menubar.jsp"/>
+	<jsp:include page="../common/menubar-test.jsp"/>
 	
-	<h1 style="color: black;">최신곡</h1>
+	<h1 style="color: black;">추천곡&gt;</h1>
 	<hr style="color: black;">
 	
 	<table class="table" style="align-content: center; align-items: center;">
 		<thead>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo1" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -42,10 +50,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -58,7 +66,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo2" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -69,10 +77,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -85,7 +93,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo3" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -96,10 +104,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -112,7 +120,7 @@
 					</button>
 				</div>
 			</th>
-			<th><!-- Bootstrap 5 Carousel -->
+			<th style="background: transparent;"><!-- Bootstrap 5 Carousel -->
 				<div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 282px; height: 282px;">
 					<!-- Indicators/dots -->
 					<div class="carousel-indicators">
@@ -123,10 +131,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="resources/images/newMusicAlbum/new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="resources/images/newMusicAlbum/new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -141,7 +149,19 @@
 			</th>
 		</thead>
 	</table>
-
+	<br>
+	<h1 style="color: black;">최신곡&gt;</h1>
 	<hr style="color: black;">
+	<br>
+	<div class="new-grid">
+		<c:forEach var="n" items="${ list }">
+				<ul style="color: black; width: 180px;">
+					<li><img style="width: 180px; height: 180px;" src="${n.albumPath}"></li>
+					<li style="font-weight: bold; font-size: 17px">${n.musName}</li>
+					<li style="font-size: 14px">${n.musArt}</li>
+				</ul>
+		</c:forEach>
+		<!-- contextPath + ALBUM_PATH적용해서 사진불러오기..? -->
+	</div>
 </body>
 </html>

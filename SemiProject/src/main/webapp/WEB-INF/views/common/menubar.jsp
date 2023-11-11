@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     <% 
     	String contextPath = request.getContextPath();
+    	
+    	String alertMsg = (String)session.getAttribute("alertMsg"); 
     %>
 <!DOCTYPE html>
 <html>
@@ -32,6 +34,13 @@ body{
 
 </style>
 <body>
+	<% if(alertMsg != null) { %>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
+
 	 <header class="header">
 
         <div class="left-section">
@@ -89,25 +98,41 @@ body{
 
 
      <!-- loginModal -->
-     <div class="modal" id="loginModal">
-        <div class="modal-dialog">
+     <div class="modal" id="loginModal" style="color: black;">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <!-- Modal Header-->
                 <div class="modal-header">
-                    <div>
-                        <h4>Quokka Player
-                            <br>
-                            Login
+                        <h4>
+                        Quokka Player
+                        <br>
+                        Login
                         </h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
-                    아이디<input type="text" name="MemberId">
-                    비밀번호<input type="password" name="MemberPwd">
+                <div class="modal-body" align="center">
+                <form action="login.me" method="post">
+                    <table>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" name="memberId" required placeholder="아이디를 입력해주세요"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                비밀번호
+                            </td>
+                            <td><input type="password" name="memberPwd" required placeholder="비밀번호를 입력해주세요"></td>
+                        </tr>
+                        <tr colspan="2" align="center">
+                          <td>
+                            <button type="submit">로그인</button>
+                          </td>
+                        </tr>
+                    </table>
+                </form>
                 </div>
 
                 <!-- Modal footer -->

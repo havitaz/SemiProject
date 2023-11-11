@@ -35,36 +35,25 @@
 .middle-section{
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 625px;
     margin-left: 70px;
     margin-right: 35px;
     flex: 1;
 }
 
 
-    .player-bar{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        width: 100%;
-        /*flex-direction: row | column */
-        height: 40px;
-    	background: rgba(63, 47, 34, 0.9);
-    	border-radius: 12px 12px 12px 12px;   
-    	flex: 1px;
-    	text-align: center;
-    }
-
-/*
-.player-bar-dummy{
-    height: 40px;
-    background: rgba(63, 47, 34, 0.9);
-    border-radius: 12px 12px 12px 12px;   
-    flex: 1px;
+.player-bar{
     display: flex;
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    /*flex-direction: row | column */
+    height: 40px;
+	background: rgba(63, 47, 34, 0.9);
+	border-radius: 12px 12px 12px 12px;   
+	flex: 1px;
+	text-align: center;
 }
-*/
 
 .album-thumb{
     border-radius: 12px 12px 12px 12px;
@@ -105,16 +94,16 @@
     height: 25px;
     color: #FFFFFF;
     cursor: pointer;
-    
+    font-size: 13px;
 }
 
 .playlist{
     color: rgba(63, 47, 34, 0.9);
 }
 
-/* 플레이어 바 */
 
 
+/* 상단 재생 바 정렬 */
 .musicplayer-lefttime{
     position: absolute;
     bottom: 8px;
@@ -141,8 +130,6 @@
     text-align: right;
 }
 
-
-
     .flex-item{
         color: black;
         text-align: center;
@@ -154,7 +141,8 @@
     }
     .time{
         align-self:flex-end;
-        color: white;
+        color: rgba(152, 152, 152, 0.792);
+        font-size: 12px;
         order: 1;
     }
     .mp_info{
@@ -166,3 +154,18 @@
     position: relative;
     right: 15px;
     }
+    
+    
+    /*볼륨*/
+    
+    .volume{
+	display: flex;
+	margin-left: 10px;
+	align-items: center;
+	accent-color: rgb(133, 90, 71);
+	}
+	
+	.vol-btn{
+		width: 35px;
+		cursor: pointer;
+	}
