@@ -46,6 +46,19 @@ body {
   border-radius: 10px;
 }
 */
+
+
+.progressBar{
+    position: absolute;
+    display: flex;
+    top: 45px;
+    width: 410px;
+    right: 630px;
+    height: 3px;
+    accent-color: rgb(100 59 41);
+}
+
+
 </style>
 
 </head>
@@ -116,6 +129,13 @@ body {
 
 
 				<script>
+				
+					
+				
+				
+				
+				
+				
 					/*반복*/	
 					var audioElement = document.getElementById('audioPlayer');
 					var repeatButton = document.getElementById('repeatButton');
@@ -170,7 +190,21 @@ body {
 					    }
 					}, 1000);
 					
+					  // 오디오 시간이 업데이트 될 때 호출되는 이벤트 핸들러
+					  audioElement.addEventListener('timeupdate', function () {
+					    // 시간을 화면에 업데이트
+					    var formattedTime = formatTime(audioElement.currentTime);
+					    $(".flex-item.time.flow").text(formattedTime);
+					  });
+
+					  // 시간을 00:00 형식으로 포맷하는 함수
+					  function formatTime(timeInSeconds) {
+					    var minutes = Math.floor(timeInSeconds / 60);
+					    var seconds = Math.floor(timeInSeconds % 60);
+					    return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+					  }
 					
+					  
 					
 				  // 오디오 요소와 버튼 요소 가져오기
 				  var audioElement = document.getElementById('audioPlayer');
@@ -187,20 +221,7 @@ body {
 				    }
 				  }
 
-				  // 오디오 시간이 업데이트 될 때 호출되는 이벤트 핸들러
-				  audioElement.addEventListener('timeupdate', function () {
-				    // 시간을 화면에 업데이트
-				    var formattedTime = formatTime(audioElement.currentTime);
-				    $(".flex-item.time").text(formattedTime);
-				  });
 
-				  // 시간을 00:00 형식으로 포맷하는 함수
-				  function formatTime(timeInSeconds) {
-				    var minutes = Math.floor(timeInSeconds / 60);
-				    var seconds = Math.floor(timeInSeconds % 60);
-				    return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-				  }
-				
 				/*음소거 이미지 변경*/
 			  function changeImage() {
 				    let volCheck = document.getElementById("vol");				    
@@ -257,67 +278,20 @@ body {
 			    }
 		
 				audioElement.addEventListener('click', playAudio);
-
-
-				  			 		  
-				  
-				    // 이미지 클릭 이벤트 핸들러 등록
-				    document.getElementById("shuffleButton").addEventListener("click", function() {
-				        // 셔플 버튼 클릭 시 실행할 함수 호출
-				        shuffleFunction();
-				    });
+				
+				audioElement.addEventListener('ended', function() {
+					 if (isRepeat) {
+					        // 반복 상태일 때, 오디오를 처음부터 다시 재생
+					        audioElement.currentTime = 0;
+					        playAudio();
+					    } else {
+					        // 반복 상태가 아닐 때, 
+					        // 다음 곡 재생 함수 
+					        
+					    }
+					});
 	
-				    document.getElementById("prevButton").addEventListener("click", function() {
-				        // 이전 버튼 클릭 시 실행할 함수 호출
-				        playPrevious();
-				    });
-	
-				    document.getElementById("playButton").addEventListener("click", function() {
-				        // 재생 버튼 클릭 시 실행할 함수 호출
-				        togglePlay(playAudio);  // playAudio에 대한 토글 함수 호출 (기존 코드 참고)
-				    });
-	
-				    document.getElementById("nextButton").addEventListener("click", function() {
-				        // 다음 버튼 클릭 시 실행할 함수 호출
-				        playNext();
-				    });
-	
-				    document.getElementById("repeatButton").addEventListener("click", function() {
-				        // 반복 버튼 클릭 시 실행할 함수 호출
-				        togglePlay(repeatAudio);  // repeatAudio에 대한 토글 함수 호출 (기존 코드 참고)
-				    });
-	
-				    // 셔플 기능을 담당하는 함수
-				    function shuffleFunction() {
-				        // 여기에 셔플 기능을 구현
-				        console.log("셔플 기능을 실행합니다.");
-				        // 추가적인 동작을 구현하세요.
-				    }
-	
-				    // 이전 곡을 재생하는 함수
-				    function playPrevious() {
-				        // 여기에 이전 곡 재생 기능을 구현
-				        console.log("이전 곡을 재생합니다.");
-				        // 추가적인 동작을 구현하세요.
-				    }
-	
-				    // 다음 곡을 재생하는 함수
-				    function playNext() {
-				        // 여기에 다음 곡 재생 기능을 구현
-				        console.log("다음 곡을 재생합니다.");
-				        // 추가적인 동작을 구현하세요.
-				    }
-				    
-				    
-				    function togglePlay(audioElement) {
-				        if (audioElement.paused) {
-				            // 일시 정지 중이면 재생
-				            audioElement.play();
-				        } else {
-				            // 재생 중이면 일시 정지
-				            audioElement.pause();
-				        }
-				    }
+				  			 		 
 				    
             
             
@@ -377,7 +351,22 @@ body {
 					
 					
 					
-					
+					  // 오디오 요소 가져오기
+					  var audioElement = document.getElementById('audioPlayer');
+					  // 프로그레스바 요소 가져오기
+					  var progressBar = document.getElementById('progressBar');
+
+					  // 오디오의 시간 업데이트 이벤트 처리
+					  audioElement.addEventListener('timeupdate', function () {
+					    // 프로그레스바의 값 변경
+					    progressBar.value = (audioElement.currentTime / audioElement.duration) * 100;
+					  });
+
+					  // 프로그레스바를 조작할 때 오디오의 시간 변경
+					  progressBar.addEventListener('input', function () {
+					    var seekTime = (progressBar.value / 100) * audioElement.duration;
+					    audioElement.currentTime = seekTime;
+					  });
 					
 					
 
@@ -398,6 +387,7 @@ body {
 
 						<div class="flex-item time align">00:00</div>
 
+					<!-- <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
 
 
 					</c:when>
@@ -406,7 +396,7 @@ body {
 
 						<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}">
 						<%--src="<%=contextPath/resources/images/temp.jpg"> --%>
-						<div class="flex-item time">00:00</div>
+						<div class="flex-item time flow">00:00</div>
 
 						<div id="musicInfoDiv" class="flex-item mp_info">
 							${pl.musName} - ${pl.musArt}
@@ -416,7 +406,9 @@ body {
 						<div id="musicInfoDiv" class="flex-item time align">
 							${pl.musTime}</div>
 
-
+						<!--  <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
+						
+						
 					</c:otherwise>
 				</c:choose>
 
@@ -528,9 +520,17 @@ body {
 	<nav class="sidebar">
 
 		<div class="top-section">
-			<img class="logo" src="<%=contextPath%>/resources/images/logo.png"
-				alt="로고" />
-
+			<img class="logo" src="<%=contextPath%>/resources/images/logo.png" alt="로고" onclick="redirectToHome()" />
+			
+			<script>
+			  function redirectToHome() {
+			    // 클릭 시 리다이렉션을 수행할 URL을 지정합니다.
+			    var redirectUrl = '<%=request.getContextPath()%>/';  // 리다이렉션할 경로
+			
+			    // JavaScript에서 페이지 리다이렉션을 수행합니다.
+			    window.location.href = redirectUrl;
+			  }
+			</script>
 
 
 			<c:choose>
