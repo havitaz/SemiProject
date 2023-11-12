@@ -140,6 +140,9 @@
         font-size: 12px;
         order: 1;
     }
+    .flow{
+		
+	}
     .time1{
         align-self:flex-end;
         color: rgba(152, 152, 152, 0.792);
