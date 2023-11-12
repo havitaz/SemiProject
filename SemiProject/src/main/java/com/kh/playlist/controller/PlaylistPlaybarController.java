@@ -22,14 +22,19 @@ public class PlaylistPlaybarController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
+
         String musName = request.getParameter("musName");
         String musArt = request.getParameter("musArt");
         String musTime = request.getParameter("musTime");
+        String albumPath = request.getParameter("albumPath"); 
+
 
         // 콘솔에 받은 음악 정보를 출력합니다.
-        System.out.println("Received music info: " + musName + " - " + musArt + " - " + musTime);
+        System.out.println("플레이리스트 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - "+ albumPath);
 
         // 클라이언트에게 필요한 경우 응답을 보낼 수 있습니다.
-        response.getWriter().write("음악 정보가 성공적으로 수신되었습니다!");
+        response.setContentType("application/json; charset=UTF-8");
+        response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\", \"albumPath\": \"" + albumPath + "\"}");
     }
 }

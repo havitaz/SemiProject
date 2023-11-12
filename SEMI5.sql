@@ -390,67 +390,67 @@ VALUES (SEQ_MUS_NO.NEXTVAL, 'Take Five
 ', 'Dave Brubeck', 'Jazz', '05:29', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Out of Time', 'The Weeknd', 'POP', '03:35', 'https://youtu.be/2fDzCWNS3ig?si=Xt_9AyLEpdKM5QNU', 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Out of Time', 'The Weeknd', 'POP', '03:35', 'https://youtu.be/2fDzCWNS3ig?si=Xt_9AyLEpdKM5QNU', 'Y', 0, 'resources/icon/musicAlbumCover/Out of Time.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Steal The Show (From ¡°¿¤¸®¸àÅ»¡±)', 'Lauv', 'POP', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Steal The Show (From ¡°¿¤¸®¸àÅ»¡±)', 'Lauv', 'POP', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Steal The Show (From ¡°¿¤¸®¸àÅ»¡±).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'I Don''t Think That I Like Her', 'Charlie Puth', 'POP', '03:09', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'I Don''t Think That I Like Her', 'Charlie Puth', 'POP', '03:09', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/I Don''t Think That I Like Her.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Dangerously', 'Charlie Puth', 'POP', '03:20', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Dangerously', 'Charlie Puth', 'POP', '03:20', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Dangerously.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'STAY', 'The Kid LAROI, Justin Bieber', 'POP', '02:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'STAY', 'The Kid LAROI, Justin Bieber', 'POP', '02:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/STAY.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'That''s Hilarious', 'Charlie Puth', 'POP', '02:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'That''s Hilarious', 'Charlie Puth', 'POP', '02:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/That''s Hilarious.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers [Music from the FIFA World Cup Qatar 2022 Official Soundtrack] (Feat. FIFA Sound)', 'Á¤±¹', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers', 'Á¤±¹', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Dreamers.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, '2002', 'Anne-Marie', 'POP', '03:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '2002', 'Anne-Marie', 'POP', '03:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/2002.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'I''m Not The Only One', 'Sam Smith', 'POP', '04:00', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'I''m Not The Only One', 'Sam Smith', 'POP', '04:00', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/I''m Not The Only One.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Shape of You', 'Ed Sheeran', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Shape of You', 'Ed Sheeran', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Shape of You.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Blinding Lights', 'The Weeknd', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Blinding Lights', 'The Weeknd', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Blinding Lights.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Without Me', 'Eminem', 'POP', '04:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Without Me', 'Eminem', 'POP', '04:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Without Me.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Another One Bites The Dust', 'Queen', 'POP', '03:35', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Another One Bites The Dust', 'Queen', 'POP', '03:35', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Another One Bites The Dust.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Feels(feat. ÆÛ·¼ Àª¸®¾ö½º(Pharrell Williams), Katy Perry(ÄÉÀÌÆ¼ Æä¸®), Big Sean)', 'Calvin Harris', 'POP', '03:44', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Feels(feat. ÆÛ·¼ Àª¸®¾ö½º(Pharrell Williams), Katy Perry(ÄÉÀÌÆ¼ Æä¸®), Big Sean)', 'Calvin Harris', 'POP', '03:44', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Feels(feat. ÆÛ·¼ Àª¸®¾ö½º(Pharrell Williams), Katy Perry(ÄÉÀÌÆ¼ Æä¸®), Big Sean).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Starboy(feat. Daft Punk)', 'The Weeknd', 'POP', '03:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Starboy(feat. Daft Punk)', 'The Weeknd', 'POP', '03:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Starboy(feat. Daft Punk).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Treasure', 'Bruno Mars', 'POP', '02:59', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Treasure', 'Bruno Mars', 'POP', '02:59', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Treasure.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Leave The Door Open', 'Bruno Mars, Anderson .Paak ¹× Silk Sonic', 'POP', '04:03', NULL, 'Y', 4, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Leave The Door Open', 'Bruno Mars, Anderson .Paak ¹× Silk Sonic', 'POP', '04:03', NULL, 'Y', 4, 'resources/icon/musicAlbumCover/Leave The Door Open.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Save Your Tears', 'The Weeknd', 'POP', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Save Your Tears', 'The Weeknd', 'POP', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Save Your Tears.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Day 1 ¢Å', 'HONNE', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Day 1 ¢Å', 'HONNE', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Day 1 ¢Å.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Lost Stars', 'Adam Levine', 'POP', '04:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Lost Stars', 'Adam Levine', 'POP', '04:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Lost Stars.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'This Love', 'Maroon 5', 'POP', '03:27', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'This Love', 'Maroon 5', 'POP', '03:27', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/This Love.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Young, Wild & Free(feat. Bruno Mars)', 'Wiz Khalifa ¹× Snoop Dogg', 'POP', '03:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Young, Wild & Free(feat. Bruno Mars).jpg', SYSDATE);
@@ -466,5 +466,11 @@ VALUES (SEQ_MUS_NO.NEXTVAL, 'Snowman', 'Sia', 'POP', '02:46', NULL, 'Y', 0, 'res
 
 --ÇÃ·¹ÀÌ¸®½ºÆ® ´õ¹Ìµ¥ÀÌÅÍ
 INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
-VALUES (100, 2);
+VALUES (100, 3);
+INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
+VALUES (151, 3);
+INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
+VALUES (125, 3);
+INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
+VALUES (177, 3);
 commit;
