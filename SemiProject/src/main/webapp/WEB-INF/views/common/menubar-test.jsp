@@ -421,8 +421,8 @@
 				                </ul>
 			                    <ul class="detail-profile ul">
 			                        <li>${loginUser.memberId }님</li>
-			                        <li>${loginUser.phone }</li>
-			                        <li>${logunUser.email}</li>
+			                        <li>${loginUser.phone}</li>
+			                        <li>${loginUser.email}</li>
 			                    </ul>
 								<ul class="profile-button ul">
 									<button type = "submit" class="a_button">마이페이지</button>
