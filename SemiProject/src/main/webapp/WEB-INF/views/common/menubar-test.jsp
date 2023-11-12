@@ -233,54 +233,25 @@ body {
 					function updateUI(response) {
 						// 서버 응답에 따라 UI 업데이트 수행
 						// 이 부분에 받은 데이터를 이용하여 UI를 업데이트하는 로직을 추가할 수 있습니다.
-						var musicInfoDiv = $(".flex-item.mp_info"); // 업데이트할 div의 ID
-						musicInfoDiv.html("<p>" + response.musName + " - "
-								+ response.musArt + "</p>");
-						var musicTimeDiv = $(".flex-item.time.align")
-						musicTimeDiv.html("<p>" + response.musTime + "</p>");
+						var musicInfoDiv = $(".flex-item.mp_info"); // 업데이트할 div의 ID						
+						var musicTimeDiv = $(".flex-item.time.align")						
 						var albumThumb = $(".album-thumb");
+						
+					    if (!response) {
+					        musicInfoDiv.html("<p>---- ---- ----</p>");
+					        musicTimeDiv.html("<p>00:00</p>");
+					        albumThumb.attr("src", "<%=contextPath%>/resources/images/default-albumArt.png");
+					    } else {				    
+						musicInfoDiv.html("<p>" + response.musName + " - " + response.musArt + "</p>");
+						musicTimeDiv.html("<p>" + response.musTime + "</p>");
 						albumThumb.attr("src", response.albumPath);
-
+					    }
 					}
 
-					$(document).ready(
-							function() {
-								var hasSentRequest = localStorage
-										.getItem("hasSentRequest");
 
-								if (!hasSentRequest) {
-									// 여기에 기존의 sendMusicInfo 호출 코드 추가
-									// ...
-
-									// localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
-									localStorage.setItem("hasSentRequest",
-											"true");
-								}
-							});
-
-					$(document).ready(
-							function() {
-								$(".album-thumb").click(
-										function() {
-											// 클릭된 요소의 데이터를 가져와서 sendMusicInfo 호출
-											var musName = $(this).siblings(
-													".flex-item.mp_info")
-													.text().split(" - ")[0]
-													.trim();
-											var musArt = $(this).siblings(
-													".flex-item.mp_info")
-													.text().split(" - ")[1]
-													.trim();
-											var musTime = $(this).siblings(
-													".flex-item.time.align")
-													.text().trim();
-											var albumPath = $(this).data(
-													"album-path");
-
-											sendMusicInfo(musName, musArt,
-													musTime, albumPath);
-										});
-							});
+					$(document).ready(function () {
+					    updateUI();
+					});
 				</script>
 
 
