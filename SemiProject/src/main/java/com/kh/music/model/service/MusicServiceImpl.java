@@ -74,7 +74,6 @@ public class MusicServiceImpl implements MusicService{
 		if(result > 0) {
 			sqlSession.commit();
 		}
-		
 		sqlSession.close();
 		
 		return result;
