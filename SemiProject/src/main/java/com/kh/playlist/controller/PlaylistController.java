@@ -54,8 +54,9 @@ public class PlaylistController extends HttpServlet {
 		String musName = request.getParameter("musName");
         String musArt = request.getParameter("musArt");
         String musTime = request.getParameter("musTime");
+        String albumPath = request.getParameter("albumPath");
 
-        response.getWriter().write("Received music info: " + musName + " - " + musArt + " - " + musTime);
+        response.getWriter().write("선택된 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - " + albumPath);
 	}
 
 }
