@@ -44,8 +44,11 @@ public class LoginController extends HttpServlet {
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
+		    HttpSession session = request.getSession();
 			request.getSession().setAttribute("loginUser", loginUser);
-			response.sendRedirect(request.getContextPath());
+		    request.getSession().setAttribute("memberNo", loginUser.getMemberNo());
+		    response.sendRedirect(request.getContextPath() + "/list.pl");
+
 		}
 
 	}

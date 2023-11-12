@@ -15,10 +15,17 @@ public class PlaylistServiceImpl implements PlaylistService{
 	@Override
 	public ArrayList<Playlist> selectPlaylist(int memberNo) {
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Playlist> list = pDao.selectPlaylist(sqlSession, memberNo);
-		
-		sqlSession.close();
-		return list;
+	    ArrayList<Playlist> playlist = null;
+
+	    try {
+	        playlist = pDao.selectPlaylist(sqlSession, memberNo);
+	    } finally {
+	        if (sqlSession != null) {
+	            sqlSession.close();
+	        }
+	    }
+
+	    return playlist;
 	}
 
 	@Override
