@@ -1,9 +1,13 @@
 package com.kh.member.model.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.common.template.Template;
 import com.kh.member.model.vo.Member;
+import com.kh.music.model.vo.Music;
 import com.kh.member.model.dao.MemberDao;
 
 public class MemberServiceImpl implements MemberService{
@@ -65,5 +69,32 @@ public class MemberServiceImpl implements MemberService{
 		return count;
 	}
 
+	@Override
+	public ArrayList<Member> selectMemberTitleList() {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Member> list = mDao.selectMemberTitleList(sqlSession);
+		sqlSession.close();
+		
+		return list;
+	}
 
+	@Override
+	public ArrayList<Member> selectSearchMember(HashMap<String,String> map) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Member> list = mDao.selectSearchMember(sqlSession, map);
+		sqlSession.close();
+		
+		return list;
+	}
+
+	@Override
+	public Member selectDetailMember(int memberNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member m = mDao.selectDetailMember(sqlSession, memberNo);
+
+		sqlSession.close();
+		return m;
+	}
+	
+	
 }

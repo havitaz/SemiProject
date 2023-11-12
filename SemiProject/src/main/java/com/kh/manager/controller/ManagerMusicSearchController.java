@@ -1,30 +1,31 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.kh.member.model.service.MemberServiceImpl;
+import com.google.gson.Gson;
+import com.kh.music.model.service.MusicService;
 import com.kh.music.model.service.MusicServiceImpl;
 import com.kh.music.model.vo.Music;
 
 /**
- * Servlet implementation class ManagerInsertController
+ * Servlet implementation class ManagerSearchController
  */
-@WebServlet("/insert.mu")
-public class ManagerInsertController extends HttpServlet {
+@WebServlet("/search.mu")
+public class ManagerMusicSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerInsertController() {
+    public ManagerMusicSearchController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,24 +34,18 @@ public class ManagerInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String musName = request.getParameter("musName");
-		String musArt = request.getParameter("musArt");
-		String musGen = request.getParameter("musGen");
-		
-		Music m = new Music(musName, musArt, musGen);
-		
-		int result = new MusicServiceImpl().insertMusic(m);
-		
-		if (result > 0) {
-			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "노래 추가 완료");
+			request.setCharacterEncoding("UTF-8");
 			
-			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
-		} else {
-			request.setAttribute("errorMsg", "노래 추가 실패");
+			String keyword = request.getParameter("keyword");
 			
-			 request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
-		}
+			HashMap<String, String> map = new HashMap<>();
+			map.put("keyword", keyword);
+			
+			MusicService mService =new MusicServiceImpl();
+			ArrayList<Music> list = mService.selectSearchMusic(map);
+
+			response.setContentType("application/json; charset=utf-8");
+            new Gson().toJson(list, response.getWriter());
 	}
 
 	/**
