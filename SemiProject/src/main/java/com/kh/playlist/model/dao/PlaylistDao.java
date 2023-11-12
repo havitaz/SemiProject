@@ -12,4 +12,8 @@ public class PlaylistDao {
 		return (ArrayList)sqlSession.selectList("playlistMapper.selectPlaylist", memberNo);
 	}
 	
+	public int insertPlayList(SqlSession sqlSession, Playlist p) {
+		return sqlSession.insert("playlistMapper.insertPlayList", p);
+	}
+	
 }

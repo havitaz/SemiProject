@@ -43,7 +43,7 @@
 					<td>${m.musGen}</td>
 					<td>${m.musTime}</td>
 					<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
-					<td><a href="insert.pl"><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
+					<td><a href="insert.pl?memberNo=${loginUser.memberNo}&musNo=${m.musNo}&cpage=${pi.currentPage}"><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
 					<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
 				</tr>
 			</c:forEach>

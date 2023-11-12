@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kh.playlist.model.service.PlaylistServiceImpl;
+import com.kh.playlist.model.vo.Playlist;
+
 /**
  * Servlet implementation class PlayListInsertController
  */
@@ -26,10 +29,30 @@ public class PlayListInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		/**
+		 * 현재페이지에대한 cpage정보 int
+		 * 현재 로그인한 유저의 userNo int 
+		 * add아이콘을 누른 항목(노래)에대한 musNo
+		 */
+		int memberNo = Integer.parseInt(request.getParameter("memberNo"));
+		int musNo = Integer.parseInt(request.getParameter("musNo"));
+		
+		Playlist p = new Playlist();
+		p.setMemberNo(memberNo);
+		p.setMusNo(musNo);
+		
+		int cpage = Integer.parseInt(request.getParameter("cpage"));
+		
+		int result = new PlaylistServiceImpl().insertPlayList(p);
+		
+		if(result > 0) {
+			response.sendRedirect("list.mu?cpage=" + cpage);
+		} else {
+			request.setAttribute("errorMsg", "재생목록에 추가 실패");
+			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+		}
 		
 		
-		response.sendRedirect("list.mu?cpage=1");
 	}
 
 	/**
