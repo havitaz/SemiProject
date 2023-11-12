@@ -56,7 +56,7 @@
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 	</select>
-		<select id="selectNewList" resultMap="MusicResultSet">
+	<select id="selectNewList" resultMap="MusicResultSet">
 		SELECT  MUS_NAME,
 		        MUS_ART,
 		        ALBUM_PATH
@@ -68,14 +68,16 @@
 		WHERE ROWNUM <![CDATA[<]]>= 15
 	</select>
 	<select id="selectSearchMusic" resultMap="MusicResultSet">
-				SELECT MUS_NAME
+				SELECT MUS_NO,
+							 MUS_NAME
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
 				   ORDER BY MUS_NO DESC
 	</select>
 	<select id="selectDetailMusic" resultMap="MusicResultSet">
-				SELECT MUS_NAME,
+				SELECT     MUS_NO, 
+							MUS_NAME,
 								MUS_ART,
 								MUS_GEN
 					FROM MUSIC
@@ -100,4 +102,16 @@
 			   '3:00'
 			)
 	</insert>
+  		<update id="updateMusic">
+  			UPDATE MUSIC
+   				  SET MUS_NAME = #{musName},
+   						 MUS_ART = #{musArt},
+   						 MUS_GEN = #{musGen}
+   				  WHERE MUS_NO = #{musNo}
+  		</update>
+  		<update id="deleteMusic">
+  				UPDATE MUSIC
+						SET STATUS = 'N'
+				WHERE MUS_NO = #{musNo}
+  		</update>
 </mapper>
