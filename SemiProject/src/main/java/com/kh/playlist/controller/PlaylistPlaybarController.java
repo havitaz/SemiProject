@@ -22,6 +22,8 @@ public class PlaylistPlaybarController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
+
         String musName = request.getParameter("musName");
         String musArt = request.getParameter("musArt");
         String musTime = request.getParameter("musTime");
@@ -30,6 +32,7 @@ public class PlaylistPlaybarController extends HttpServlet {
         System.out.println("Received music info: " + musName + " - " + musArt + " - " + musTime);
 
         // 클라이언트에게 필요한 경우 응답을 보낼 수 있습니다.
-        response.getWriter().write("음악 정보가 성공적으로 수신되었습니다!");
+        response.setContentType("application/json; charset=UTF-8");
+        response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\"}");
     }
 }

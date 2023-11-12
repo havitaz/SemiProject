@@ -194,7 +194,7 @@
             
             
 			 // 함수 정의: 음악 정보를 서버로 전송
-			    function sendMusicInfo(musName, musArt, musTime) {
+			    function sendMusicInfo(musName, musArt, musTime, albumPath) {
 			        // Ajax 요청을 통해 음악 정보를 서버로 전송
 			        $.ajax({
 			            type: 'POST', // 요청 메서드
@@ -202,7 +202,8 @@
 			            data: {
 			                musName: musName,
 			                musArt: musArt,
-			                musTime: musTime
+			                musTime: musTime,
+			                albumPath : albumPath
 			            },
 			            success: function (response) {
 			                // 서버 응답에 대한 처리
@@ -221,8 +222,13 @@
 			    function updateUI(response) {
 			        // 서버 응답에 따라 UI 업데이트 수행
 			        // 이 부분에 받은 데이터를 이용하여 UI를 업데이트하는 로직을 추가할 수 있습니다.
-			        var musicInfoDiv = $("#musicInfoDiv"); // 업데이트할 div의 ID
-			        musicInfoDiv.text(response);
+			        var musicInfoDiv = $(".flex-item.mp_info"); // 업데이트할 div의 ID
+			        musicInfoDiv.html("<p>" + response.musName + " - " + response.musArt + "</p>");
+			        var musicTimeDiv = $(".flex-item.time.align")
+			        musicTimeDiv.html("<p>" + response.musTime + "</p>");
+			        var albumThumb = $(".album-thumb");
+			        albumThumb.attr("src", response.albumPath);
+
 			    }
 			    
 		        $(document).ready(function () {
@@ -235,6 +241,18 @@
 		                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
 		                localStorage.setItem("hasSentRequest", "true");
 		            }
+		        });
+		        
+		        $(document).ready(function() {
+		            $(".album-thumb").click(function() {
+		                // 클릭된 요소의 데이터를 가져와서 sendMusicInfo 호출
+		                var musName = $(this).siblings(".flex-item.mp_info").text().split(" - ")[0].trim();
+		                var musArt = $(this).siblings(".flex-item.mp_info").text().split(" - ")[1].trim();
+		                var musTime = $(this).siblings(".flex-item.time.align").text().trim();
+		                var albumPath = $(this).data("album-path");
+
+		                sendMusicInfo(musName, musArt, musTime, albumPath);
+		            });
 		        });
             </script>
             
@@ -263,18 +281,18 @@
             		<c:otherwise>
             		
             		
-            		              	<img class="album-thumb" src="${pl.albumPath}"> 
+            		              	<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}"> 
 									 <%--src="<%=contextPath/resources/images/temp.jpg"> --%>
 					                <div class="flex-item time">
 					                    00:00
 					                </div>       
 					                                
-					                <div class="flex-item mp_info"> 
+					                <div id="musicInfoDiv" class="flex-item mp_info"> 
 					               		 ${pl.musName} - ${pl.musArt}
 					               		 <!--제목            가수  -->
 					                </div>  
 					                                 
-					                <div  class="flex-item time align">
+					                <div id="musicInfoDiv"  class="flex-item time align">
 					                    ${pl.musTime}
 					                </div>
               		
