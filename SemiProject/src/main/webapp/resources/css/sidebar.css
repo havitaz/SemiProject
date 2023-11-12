@@ -124,10 +124,6 @@
 	border-bottom: 1px solid rgba(51, 51, 51, 0.5);
  }
  
- 
- 
- 
- 
   .pltitle{
 	display: flex;
 	flex-direction: row;
@@ -183,3 +179,16 @@
 	tint-color($component-active-bg, 70%);
 }   
 */
+
+
+.player-menu:hover {
+	scale: 1.1;
+}
+
+.addPlayList:hover{
+	scale: 1.1;
+}
+
+.minusPlayList:hover{
+	scale: 1.1;
+}

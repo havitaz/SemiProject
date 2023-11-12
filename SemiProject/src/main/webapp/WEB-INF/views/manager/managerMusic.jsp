@@ -108,21 +108,21 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="<%=contextPath %>/insert.in" method="post">
+                                                <form action="<%=contextPath %>/insert.mu" method="post">
                                                     <div class="musicTitle">
                                                         <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="내용을 입력하세요."/>
+                                                        <input type="text" id="musicInfo_modal" name="musName" placeholder="내용을 입력하세요."/>
                                                     </div>
                                                     <div class="musicArtist">
                                                         <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="내용을 입력하세요."/>
+                                                        <input type="text" id="musicInfo_modal" name="musArt"  placeholder="내용을 입력하세요."/>
                                                     </div>
                                                     <div class="musicgenre">
                                                         <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="내용을 입력하세요."/>
+                                                        <input type="text" id="musicInfo_modal" name="musGen" placeholder="내용을 입력하세요."/>
                                                         </label>
                                                     </div>
-                                                    <button type="button" class="btnAdd">추가</button>
+                                                    <button type="submit" class="btnAdd">추가</button>
                                                 </form>
                                             </div>
                                 

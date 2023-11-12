@@ -24,7 +24,7 @@
 			 JOIN MUSIC MU ON (MU.MUS_NO = P.MUS_NO)
 			 JOIN MEMBER ME ON (ME.MEM_NO = P.MEM_NO)
             WHERE P.STATUS = 'Y' 
-              AND ME.MEM_NO = 4
+              AND ME.MEM_NO = #{memberNo}
 	</select>
 <!-- WHERE P.STATUS = 'Y' 
 	 AND ME.MEM_NO = #{memberNo}; -->
