@@ -81,4 +81,23 @@
 					FROM MUSIC
 				WHERE MUS_NO = #{musNo}
 	</select>
+	<insert id="insertMusic" parameterType="Music">
+			INSERT 
+				INTO MUSIC
+				(
+				  MUS_NO,
+				  MUS_NAME,
+				  MUS_ART,
+				  MUS_GEN,
+				  MUS_TIME
+				)
+			VALUES
+			(
+			   SEQ_MUS_NO.NEXTVAL,
+			   #{musName},
+			   #{musArt},
+			   #{musGen},
+			   '3:00'
+			)
+	</insert>
 </mapper>
