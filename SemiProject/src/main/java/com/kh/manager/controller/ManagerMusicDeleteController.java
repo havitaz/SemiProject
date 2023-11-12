@@ -1,9 +1,6 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,19 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kh.music.model.service.MusicServiceImpl;
-import com.kh.music.model.vo.Music;
 
 /**
- * Servlet implementation class ManagerMusicController
+ * Servlet implementation class ManagerDeleteController
  */
-@WebServlet("/music.bt")
-public class ManagerMusicController extends HttpServlet {
+@WebServlet("/delete.mu")
+public class ManagerMusicDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerMusicController() {
+    public ManagerMusicDeleteController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,9 +28,20 @@ public class ManagerMusicController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
-
+			request.setCharacterEncoding("UTF-8");
+			int musNo = Integer.parseInt(request.getParameter("mno"));
+			
+			int result =  new MusicServiceImpl().deleteMusic(musNo);
+			
+			System.out.println(result);
+			
+			if(result > 0) {
+				request.getSession().setAttribute("alertMsg", "성공적으로 삭제되었습니다.");
+				response.sendRedirect(request.getContextPath() + "/music.bt");
+			} else {
+				request.setAttribute("alertMsg", "삭제 실패하였습니다.");
+				request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
+			}
 	}
 
 	/**

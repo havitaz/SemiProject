@@ -1,6 +1,10 @@
 package com.kh.member.model.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.kh.member.model.vo.Member;
+import com.kh.music.model.vo.Music;
 
 public interface MemberService {
 	
@@ -9,4 +13,13 @@ public interface MemberService {
 	Member searchMember(Member m);
 	Member searchMemberPwd(Member m);
 	int idCheck(String checkId);
+	
+	//관리자 회원 리스트
+	ArrayList<Member> selectMemberTitleList();
+	
+	//관리자 회원검색
+	ArrayList<Member> selectSearchMember(HashMap<String,String> map);
+	
+	//관리자 회원정보조회
+	Member selectDetailMember(int memberNo);
 }

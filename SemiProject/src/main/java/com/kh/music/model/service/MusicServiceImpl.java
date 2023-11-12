@@ -80,7 +80,22 @@ public class MusicServiceImpl implements MusicService{
 		return result;
 		
 	}
+
+	@Override
+	public int updateMusic(Music m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.updateMusic(sqlSession, m);
+		
+		sqlSession.close();
+		return result;
+	}
 	
-	
+	public int deleteMusic(int musNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.deleteMusic(sqlSession, musNo);
+		
+		sqlSession.close();
+		return result;
+	}
 
 }
