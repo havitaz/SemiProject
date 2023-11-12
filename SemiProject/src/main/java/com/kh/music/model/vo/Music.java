@@ -33,6 +33,13 @@ public class Music {
 		this.rownum = rownum;
 	}
 
+	public Music(String musName, String musArt, String musGen) {
+		super();
+		this.musName = musName;
+		this.musArt = musArt;
+		this.musGen = musGen;
+	}
+
 	public int getMusNo() {
 		return musNo;
 	}

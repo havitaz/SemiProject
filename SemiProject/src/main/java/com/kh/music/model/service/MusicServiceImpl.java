@@ -65,6 +65,21 @@ public class MusicServiceImpl implements MusicService{
 		return m;
 		
 	}
+
+	@Override
+	public int insertMusic(Music m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.insertMusic(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+		
+	}
 	
 	
 

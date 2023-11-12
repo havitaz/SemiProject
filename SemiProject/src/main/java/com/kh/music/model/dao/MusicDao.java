@@ -44,4 +44,7 @@ public class MusicDao {
 		return  sqlSession.selectOne("musicMapper.selectDetailMusic", musNo);
 	}
 	
+	public int insertMusic(SqlSession sqlSession, Music m) {
+		return sqlSession.insert("musicMapper.insertMusic", m);
+	}
 }
