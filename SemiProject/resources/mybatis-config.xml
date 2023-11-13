@@ -49,6 +49,7 @@
         <mapper resource="/mappers/music-mapper.xml" />
         <mapper resource="/mappers/member-mapper.xml" />
         <mapper resource="/mappers/playlist-mapper.xml" />
+        <mapper resource="/mappers/video-mapper.xml" />
      </mappers>
      
   </configuration>

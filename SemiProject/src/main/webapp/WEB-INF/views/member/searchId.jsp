@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
 </head>
 <body>
-	<jsp:include page="../common/menubar.jsp"/>
+	<jsp:include page="../common/menubar-test.jsp"/>
     <div class="memberInput" align="center">
     	<h1 style="color: black;" align="center">아이디 찾기</h1>
         <br><br>

@@ -97,5 +97,4 @@
 				FROM MEMBER
 			WHERE MEM_NO = #{memberNo}
 	</select>
-	
 </mapper>

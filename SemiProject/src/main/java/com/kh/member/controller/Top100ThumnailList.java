@@ -1,25 +1,28 @@
-package com.kh.manager.controller;
+package com.kh.member.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.music.model.service.MusicServiceImpl;
+import com.kh.member.model.service.MemberServiceImpl;
+import com.kh.music.model.vo.Music;
 
 /**
- * Servlet implementation class ManagerDeleteController
+ * Servlet implementation class Top100ThumnailList
  */
-@WebServlet("/delete.mu")
-public class ManagerMusicDeleteController extends HttpServlet {
+@WebServlet("/Top100ThumnailList")
+public class Top100ThumnailList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerMusicDeleteController() {
+    public Top100ThumnailList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,20 +31,13 @@ public class ManagerMusicDeleteController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			request.setCharacterEncoding("UTF-8");
-			int musNo = Integer.parseInt(request.getParameter("mno"));
-			
-			int result =  new MusicServiceImpl().deleteMusic(musNo);
-			
-			System.out.println(result);
-			
-			if(result > 0) {
-				request.getSession().setAttribute("alertMsg", "노래가 성공적으로 삭제되었습니다.");
-				response.sendRedirect(request.getContextPath() + "/music.bt");
-			} else {
-				request.setAttribute("alertMsg", "노래 삭제 실패하였습니다.");
-				request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
-			}
+		ArrayList<Music> list = new MemberServiceImpl().selectTopList();
+
+		
+		request.setAttribute("list", list);
+
+		System.out.println(list);
+		request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 	}
 
 	/**
