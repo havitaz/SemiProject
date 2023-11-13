@@ -36,10 +36,10 @@ public class ManagerMusicDeleteController extends HttpServlet {
 			System.out.println(result);
 			
 			if(result > 0) {
-				request.getSession().setAttribute("alertMsg", "성공적으로 삭제되었습니다.");
+				request.getSession().setAttribute("alertMsg", "노래가 성공적으로 삭제되었습니다.");
 				response.sendRedirect(request.getContextPath() + "/music.bt");
 			} else {
-				request.setAttribute("alertMsg", "삭제 실패하였습니다.");
+				request.setAttribute("alertMsg", "노래 삭제 실패하였습니다.");
 				request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 			}
 	}
