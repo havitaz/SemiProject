@@ -71,31 +71,31 @@ body {
 	out.println("memberNo: " + session.getAttribute("memberNo"));
 	%>
 
-
+<%-- 
 	<c:choose>
 		<c:when test="${!empty loginUser}">
 			<script>
-			            // 이미 요청을 보냈는지 여부를 localStorage에서 확인
-			            var hasSentRequest = localStorage.getItem("hasSentRequest");
-			
-			            if (!hasSentRequest) {
-			                // loginUser에 memberNo 속성이 있다고 가정합니다.
-			                var memberNo = "${loginUser.memberNo}";
-			
-			                // "list.pl"로의 요청을 생성합니다.
-							var requestUrl = "/se/list.pl?memberNo=" + memberNo;
-			
-			                // "list.pl" 페이지로 리다이렉트합니다.
-			                window.location.href = requestUrl;
-			
-			                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
-			                localStorage.setItem("hasSentRequest", "true");
-			            }
-			        </script>
+	            // 이미 요청을 보냈는지 여부를 localStorage에서 확인
+	            var hasSentRequest = localStorage.getItem("hasSentRequest");
+	
+	            if (!hasSentRequest) {
+	                // loginUser에 memberNo 속성이 있다고 가정합니다.
+	                var memberNo = "${loginUser.memberNo}";
+	
+	                // "list.pl"로의 요청을 생성합니다.
+					var requestUrl = "/se/list.pl?memberNo=" + memberNo;
+	
+	                // "list.pl" 페이지로 리다이렉트합니다.
+	                window.location.href = requestUrl;
+	
+	                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
+	                localStorage.setItem("hasSentRequest", "true");
+	            }
+			</script>
 		</c:when>
 	</c:choose>
 
-
+--%>
 
 
 

@@ -1,6 +1,8 @@
 package com.kh.playlist.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,15 +39,16 @@ public class PlayListInsertController extends HttpServlet {
 		int memberNo = Integer.parseInt(request.getParameter("memberNo"));
 		int musNo = Integer.parseInt(request.getParameter("musNo"));
 		
-		Playlist p = new Playlist();
-		p.setMemberNo(memberNo);
-		p.setMusNo(musNo);
-		
+		Playlist p = new Playlist(musNo, memberNo);
+		System.out.println(p);
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
 		
 		int result = new PlaylistServiceImpl().insertPlayList(p);
-		
+		System.out.println(result);
 		if(result > 0) {
+			ArrayList<Playlist> playlist = new PlaylistServiceImpl().selectPlaylist(memberNo);
+
+			request.getSession().setAttribute("playlist", playlist); 
 			response.sendRedirect("list.mu?cpage=" + cpage);
 		} else {
 			request.setAttribute("errorMsg", "재생목록에 추가 실패");
