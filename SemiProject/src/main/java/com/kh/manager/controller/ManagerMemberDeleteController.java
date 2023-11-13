@@ -8,22 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-import com.kh.member.model.service.MemberService;
 import com.kh.member.model.service.MemberServiceImpl;
-import com.kh.member.model.vo.Member;
 
 /**
- * Servlet implementation class ManagerMemberDetailController
+ * Servlet implementation class ManagerMemberDeleteController
  */
-@WebServlet("/detail.me")
-public class ManagerMemberDetailController extends HttpServlet {
+@WebServlet("/delete.me")
+public class ManagerMemberDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerMemberDetailController() {
+    public ManagerMemberDeleteController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,13 +32,15 @@ public class ManagerMemberDetailController extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 			int memberNo = Integer.parseInt(request.getParameter("meno"));
 			
-			MemberService mService = new MemberServiceImpl();
+			int result = new MemberServiceImpl().deleteMember(memberNo);
 			
-			Member m = mService.selectDetailMember(memberNo);
-			
-			response.setContentType("application/json; charset=utf-8");
-            new Gson().toJson(m, response.getWriter());
-				
+			if(result > 0) {
+				request.getSession().setAttribute("alertMsg", "회원이 성공적으로 강제 탈퇴되었습니다.");
+				response.sendRedirect(request.getContextPath() + "/member.bt");
+			} else {
+				request.setAttribute("alertMsg", "회원 강제 탈퇴에 실패하였습니다.");
+				request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
+			}
 	}
 
 	/**

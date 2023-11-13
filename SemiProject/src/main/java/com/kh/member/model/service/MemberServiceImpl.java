@@ -95,6 +95,19 @@ public class MemberServiceImpl implements MemberService{
 		sqlSession.close();
 		return m;
 	}
+
+	@Override
+	public int deleteMember(int memberNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.deleteMember(sqlSession, memberNo);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		return result;
+	}
 	
 	
 }

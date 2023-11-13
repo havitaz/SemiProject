@@ -42,4 +42,8 @@ public class MemberDao {
 	public  Member selectDetailMember(SqlSession sqlSession, int memberNo){
 		return  sqlSession.selectOne("memberMapper.selectDetailMember", memberNo);
 	}
+	
+	public  int deleteMember(SqlSession sqlSession, int memberNo){
+		return  sqlSession.update("memberMapper.deleteMember", memberNo);
+	}
 }

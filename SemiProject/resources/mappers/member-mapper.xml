@@ -97,5 +97,9 @@
 				FROM MEMBER
 			WHERE MEM_NO = #{memberNo}
 	</select>
-	
+	 <update id="deleteMember">
+  				UPDATE MEMBER
+						SET STATUS = 'N'
+				WHERE  MEM_NO = #{meno}
+  	</update>
 </mapper>

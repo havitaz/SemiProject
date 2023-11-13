@@ -37,6 +37,7 @@
                         </div>
                         
                         <script>
+                        //회원 검색
                         function searchBtn(e){
 	                         if(e.keyCode === 13){
 	                         	
@@ -107,6 +108,7 @@
  									memberList();	
  							}
  						 	
+ 						 	//회원 리스트
  						 	function memberList() {
  						 			$.ajax({
  						 				url: "<%=contextPath %>/member.li",
@@ -132,44 +134,63 @@
                                     }
                                 })
 		            		} 
-
+							
+ 						 	//회원 상세 조회
                             function postFormSubmit(num) {
                                 $.ajax({
-                                    url: "<%=contextPath %>/detail.me?mno=" + num,
+                                    url: "<%=contextPath %>/detail.me",
                                     data : {
-                                    		mno : '${m.memberNo}'
+                                    		meno : num
                                     	},
                                     success: function(result){
-                                        console.log(result);
-
+										
+                                    	//회원 상세 정보
                                         let str = "";
-                                			 str += '<input type="hidden" name="mno" value="' + result.memberNo + '"/>'
-												   + '<div>' + '<label for="memInfo" style="margin-right: 45px;">아이디</label>'
+                                			 str +=
+												    '<div>' + '<label for="memInfo" style="margin-right: 45px;">아이디</label>'
 												   + '<input type="text" id="memInfo" value="' + result.memberId + '"readonly/>' + '</div>'
                                 			 	   + '<div>' + '<label for="memInfo" style="margin-right: 45px;">이메일</label>'
                                 			 	   + '<input type="text" id="memInfo" value="' + result.email + '"readonly/>' + '</div>'
                                 			 	   + '<div>' + '<label for="memInfo" style="margin-right: 30px;">전화번호</label>'
                                 			 	   + '<input type="text" id="memInfo" value="' + result.phone + '"readonly/>' + '</div>'
+                                			 	   + '<button type="button" onclick= "deleteMember(' + result.memberNo + ')"  class="deleteBtnMem">강제탈퇴</button>';
+                                			 
                                 			 	   
                                     			 document.querySelector(".member-info-class").innerHTML = str;
-							
                                     },
                                     error: function(){
                                         	console.log("리스트 조회 안됨");
                                     }
                                 })
-		            		} 
+		            		}
+                            
                    </script>
+					<script>
+							function deleteMember(num){
+								$.ajax({
+                                    url: "<%=contextPath %>/delete.me",
+                                    data : {
+                                    		meno : num
+                                    	},
+                                    success: function(result){
+                                    	console.log(result);
+                                    	if(result > 0){
+                                    		alert("성공")
+                                    	}
+                                    	
+                                    },
+                                    error: function(){
+                                    	console.log("리스트 조회 안됨");
+                               		 }
+                                    
+                              })
+								
+							}
+					</script>
 
-                            <div class="deleteButton">
-                            	<div><button type="button" class="deleteBtnMem ">강제탈퇴</button></div>
-                            </div>
-                        
+                            
                         </div>
                     </div>
                 </div>
- 
-    
-        
 </body>
 </html>
