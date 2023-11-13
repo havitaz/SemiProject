@@ -2,7 +2,6 @@ package com.kh.manager.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.music.model.service.MusicService;
-import com.kh.music.model.service.MusicServiceImpl;
-import com.kh.music.model.vo.Music;
+import com.google.gson.Gson;
+import com.kh.member.model.service.MemberServiceImpl;
+import com.kh.member.model.vo.Member;
 
 /**
- * Servlet implementation class ManagerSearchController
+ * Servlet implementation class ManagerMemberListController
  */
-@WebServlet("/search.mu")
-public class ManagerSearchController extends HttpServlet {
+@WebServlet("/member.li")
+public class ManagerMemberListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManagerSearchController() {
+    public ManagerMemberListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,18 +32,10 @@ public class ManagerSearchController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String keyword = request.getParameter("keyword");
+			ArrayList<Member> list = new MemberServiceImpl().selectMemberTitleList();
 			
-			HashMap<String, String> map = new HashMap<>();
-			map.put("keyword", keyword);
-			
-			MusicService mService =new MusicServiceImpl();
-			ArrayList<Music> list = mService.selectSearchMusic(map);
-			
-			request.setAttribute("list", list);
-			request.setAttribute("keyword", keyword);
-
-			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
+			response.setContentType("application/json; charset=utf-8");
+	        new Gson().toJson(list, response.getWriter());
 	}
 
 	/**

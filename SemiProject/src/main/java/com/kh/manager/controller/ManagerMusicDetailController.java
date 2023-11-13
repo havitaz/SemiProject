@@ -1,7 +1,6 @@
 package com.kh.manager.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.kh.music.model.service.MusicService;
 import com.kh.music.model.service.MusicServiceImpl;
 import com.kh.music.model.vo.Music;
@@ -32,15 +32,17 @@ public class ManagerMusicDetailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+			request.setCharacterEncoding("UTF-8");
 			int musNo = Integer.parseInt(request.getParameter("mno"));
 			
 			MusicService mService = new MusicServiceImpl();
 			
 			Music m = mService.selectDetailMusic(musNo);
 			
-			request.setAttribute("m", m);
-			
-			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);			
+			response.setContentType("application/json; charset=utf-8");
+            new Gson().toJson(m, response.getWriter());
+				
 			
 	}
 

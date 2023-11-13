@@ -14,6 +14,8 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -24,39 +26,56 @@
                     <div class="left" >
                         <div class = "headerList">
                             <div class="left-area">
+                            
                                 <div class ="left-area-div">
                                     <input class="left-area-div-input" onkeyup="searchBtn(event)" type="text" name="keyword" placeholder="노래 검색" value="${keyword}"/>
                                     <img class="music-search" src="<%=contextPath %>/resources/icon/manager/search_item.png" width="30">
                                 </div>
+                                
                             </div>
                         </div>
 						<script>
-
                         
                         function searchBtn(e){
-                         if(e.keyCode === 13){
-                            	location.href = "<%=contextPath %>/search.mu?keyword=" + document.querySelector(".left-area-div-input").value;
-                        	 }
-                            
-                        }
+	                         if(e.keyCode === 13){
 
+                            		$.ajax({
+ 						 				url: "<%=contextPath %>/search.mu",
+ 						 				data : {
+ 						 					keyword : document.querySelector(".left-area-div-input").value
+ 						 				},
+						 				success: function(result) {
+ 						 					console.log(result);
+ 						 					
+ 						 					let str ="";
+ 						 					for(let r of result) {
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="'
+ 						 							   + '<%=contextPath %>/resources/images/member.jpg">'
+ 						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
+ 						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
+ 						 							   + '</div>' + '<hr>'
+ 						 							   
+ 						 							  
+ 						 					}
+ 						 					
+ 						 					document.querySelector(".list-music").innerHTML = str;
+ 						 					
+ 						 				},
+ 						 				
+ 	                                    error: function(){
+                                        	console.log("리스트 조회 안됨");
+                                    }
+                                })
+		            		} 
+                        }
 						</script>
 
                         <div class="bodyList">
                             <div class="list-music">
-                            <c:forEach var="m" items="${ list }">
-                                <div  class ="left-list-div">
-                           
-                                    <input type="image" src="<%=contextPath %>/resources/images/member.jpg">
-                                    <a onclick="postFormSubmit(${m.musNo})" style="text-decoration: none;"><li class="music-title">${ m.musName }</li></a>
-                                 	
-                                </div>
-                                <hr>
-                                 </c:forEach>
+
                             </div>
                         </div>
                     </div>
-                    
                    
                     <div class="right">
                         <div class="right-area" align="center">
@@ -66,29 +85,109 @@
                                     <div class="music-info-class">
                                         <div>
                                             <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                            <input type="text" id="musicInfo" placeholder="${ m.musName }" readonly/>
+                                            <input type="text" id="musicInfo" readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                            <input type="text" id="musicInfo" placeholder="${ m.musArt }" readonly/>
+                                            <input type="text" id="musicInfo"readonly/>
                                         </div>
                                         
                                         <div>
                                             <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                            <input type="text" id="musicInfo" placeholder="${ m.musGen }" readonly/>
+                                            <input type="text" id="musicInfo"readonly/>
                                         </div>
 
                                     </div>
                             </form>
 
  						<script>
+ 							
+ 						 	window.onload = function(){
+ 									musicList();	
+ 							}
+ 						 	
+ 						 	function musicList() {
+ 						 			$.ajax({
+ 						 				url: "<%=contextPath %>/music.li",
+ 						 			
+ 						 				success: function(result) {
+ 						 					console.log(result);
+ 						 					
+ 						 					let str ="";
+ 						 					for(let r of result) {
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="'
+ 						 							   + '<%=contextPath %>/resources/images/member.jpg">'
+ 						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
+ 						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
+ 						 							   + '</div>' + '<hr>'
+ 						 					}
+ 						 					
+ 						 					document.querySelector(".list-music").innerHTML = str;
+ 						 					
+ 						 				},
+ 						 				
+ 	                                    error: function(){
+                                        	console.log("리스트 조회 안됨");
+                                    }
+                                })
+		            		} 
+ 							
+ 							
+ 						 	
 		            		function postFormSubmit(num) {
-		            			location.href = "<%=contextPath %>/detail.mu?mno=" + num
-		            		}
-            		</script>
-                    
+                                $.ajax({
+                                    url: "<%=contextPath %>/detail.mu?mno=" + num,
+                                    data : {
+                                    		mno : '${m.musNo}'
+                                    	},
+                                    success: function(result){
+            								console.log(result);
+            								let str = "";
+            								str += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
+            										+ '<div>' + '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>' 
+            										+ '<input type="text" id="musicInfo" value="' + result.musName + '"readonly/>' + ' </div>'
+            										+ '<div>' + '<label for="musicInfo" style="margin-right: 70px;">가수</label>'
+            										+ ' <input type="text" id="musicInfo" value="' + result.musArt + '" readonly/>' + ' </div>'
+            										+ '<div>' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
+            										+ '<input type="text" id="musicInfo" value="' + result.musGen + '" readonly/>' + ' </div>'
 
+            										document.querySelector(".music-info-class").innerHTML = str;
+                                    
+                                    	let str2 = "";
+                                    	str2 += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
+                                    			 + '<div class="musicTitle">' +  '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musName" value="' + result.musName + '"/>' + '</div>'
+                                    			 + '<div class="musicArtist">' + '<label for="musicInfo" style="margin-right: 70px;">가수</label>'
+                                    			 + '<input type="text" id="musicInfo_modal"  name="musArt" value="' + result.musArt + '"/>'  + '</div>'
+                                    			 + ' <div class="musicgenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"/>' + '</div>'
+                                    			 + '<button type="submit" class="btnAdd">수정</button>'
+ 	
+                                    			 document.querySelector("#updateMusicModal").innerHTML = str2;
+                                    			 
+                                    	let str3 = "";
+                                			 str3 += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
+                                    			 + '<div class="musicTitle">' +  '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musName" value="' + result.musName + '"readonly/>' + '</div>'
+                                    			 + '<div class="musicArtist">' + '<label for="musicInfo" style="margin-right: 70px;">가수</label>'
+                                    			 + '<input type="text" id="musicInfo_modal"  name="musArt" value="' + result.musArt + '"readonly/>'  + '</div>'
+                                    			 + ' <div class="musicgenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"readonly/>' + '</div>'
+                                    			 + '<button type="submit" class="btnAdd">삭제</button>'		 
+                                    			 
+                                    			 document.querySelector("#deleteMusicModal").innerHTML = str3;
+                                    		
+                                    
+                                    },
+                                    error: function(){
+                                        	console.log("리스트 조회 안됨");
+                                    }
+                                })
+		            		} 
+                   </script>
+                    
+ 
                             <div class="musicButton">
                                 <div>
                                     <!-- 모달영역 : 노래 추가-->
@@ -149,21 +248,8 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="/action_page.php">
-                                                    <div class="musicTitle">
-                                                        <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="Trip(feat. Hannah)"/>
-                                                    </div>
-                                                    <div class="musicArtist">
-                                                        <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="릴러말즈" />
-                                                    </div>
-                                                    <div class="musicgenre">
-                                                        <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="R&B"/>
-                                                        </label>
-                                                    </div>
-                                                    <button type="button" class="btnAdd">수정</button>
+                                                <form action="<%=contextPath %>/update.mu" id="updateMusicModal">
+                                                  
                                                 </form>
                                             </div>
                                 
@@ -177,7 +263,7 @@
 
 
                                 <div>
-                                    <!-- 모달영역 : 노래 수정-->
+                                    <!-- 모달영역 : 노래 삭제-->
                                     <!-- Button to Open the Modal -->
                                     <button type="button" class="musicBtnDelete" data-bs-toggle="modal" data-bs-target="#myModalDelete">노래삭제</button>
      
@@ -194,21 +280,8 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="/action_page.php">
-                                                    <div class="musicTitle">
-                                                        <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="곁에 있어줘(feat. 원슈타인)" readonly/>
-                                                    </div>
-                                                    <div class="musicArtist">
-                                                        <label for="musicInfo" style="margin-right: 70px;">가수</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="SOLE(쏠)" readonly/>
-                                                    </div>
-                                                    <div class="musicgenre">
-                                                        <label for="musicInfo" style="margin-right: 70px;">장르</label>
-                                                        <input type="text" id="musicInfo_modal" placeholder="R&B" readonly/>
-                                                        </label>
-                                                    </div>
-                                                    <button type="button" class="btnAdd">삭제</button>
+                                                <form action= "<%=contextPath %>/delete.mu" id="deleteMusicModal">
+                                            
                                                 </form>
                                             </div>
                                 

@@ -74,5 +74,28 @@
 		SELECT COUNT(*) "COUNT"
 	  	 FROM MEMBER
 	 	WHERE USER_ID = ?
-	</select>		
+	</select>	
+	<select id="selectMemberTitleList" parameterType="Member" resultMap="memberResultSet">
+			SELECT MEM_NO, 
+						MEM_ID
+				FROM MEMBER
+			WHERE STATUS = 'Y'
+	</select>
+		<select id="selectSearchMember" resultMap="memberResultSet">
+			SELECT MEM_NO, 
+						MEM_ID
+				FROM MEMBER
+			WHERE STATUS = 'Y'
+			AND MEM_ID LIKE '%' || #{keyword} || '%'
+			ORDER BY MEM_NO DESC
+	</select>
+	<select id="selectDetailMember" resultMap="memberResultSet">
+			SELECT MEM_NO, 
+						 MEM_ID,
+						 EMAIL,
+						 PHONE
+				FROM MEMBER
+			WHERE MEM_NO = #{memberNo}
+	</select>
+	
 </mapper>

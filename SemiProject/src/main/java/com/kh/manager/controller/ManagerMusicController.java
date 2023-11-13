@@ -32,11 +32,7 @@ public class ManagerMusicController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 요청처리 (응답페이지에 필요한 데이터를 조회)
-		ArrayList<Music> list = new MusicServiceImpl().selectMusicTitleList();
-		
-		//응답뷰
-		request.setAttribute("list", list);
+
 		request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
 
 	}

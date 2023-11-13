@@ -24,6 +24,12 @@ public interface MusicService {
 	//관리자 노래 추가
 	int insertMusic(Music m);
 	
+	//관리자 노래 수정
+	int updateMusic(Music m);
+	
+	//관리자 노래 삭제
+	int deleteMusic(int musNo);
+	
 	//최신곡 10곡 노래제목 리스트
 	public ArrayList<Music> selectNewList();
 }

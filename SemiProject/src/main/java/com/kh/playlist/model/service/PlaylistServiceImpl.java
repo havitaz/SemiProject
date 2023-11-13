@@ -28,4 +28,13 @@ public class PlaylistServiceImpl implements PlaylistService{
 	    return playlist;
 	}
 
+	@Override
+	public int insertPlayList(Playlist p) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = pDao.insertPlayList(sqlSession , p);
+		
+		sqlSession.close();
+		return result;
+	}
+
 }

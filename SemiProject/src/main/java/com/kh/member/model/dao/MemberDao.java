@@ -1,8 +1,12 @@
 package com.kh.member.model.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.member.model.vo.Member;
+import com.kh.music.model.vo.Music;
 
 public class MemberDao {
 	
@@ -25,5 +29,17 @@ public class MemberDao {
 	
 	public int idCheck(SqlSession sqlSession, String checkId) {
 		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
+	
+	public ArrayList<Member> selectMemberTitleList(SqlSession sqlSession) {
+		return (ArrayList)sqlSession.selectList("memberMapper.selectMemberTitleList");
+	}
+	
+	public ArrayList<Member> selectSearchMember(SqlSession sqlSession, HashMap<String, String> map) {
+		return (ArrayList)sqlSession.selectList("memberMapper.selectSearchMember", map);
+	}
+	
+	public  Member selectDetailMember(SqlSession sqlSession, int memberNo){
+		return  sqlSession.selectOne("memberMapper.selectDetailMember", memberNo);
 	}
 }

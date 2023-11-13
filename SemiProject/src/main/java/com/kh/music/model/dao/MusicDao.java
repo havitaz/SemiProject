@@ -47,4 +47,12 @@ public class MusicDao {
 	public int insertMusic(SqlSession sqlSession, Music m) {
 		return sqlSession.insert("musicMapper.insertMusic", m);
 	}
+	
+	public int updateMusic(SqlSession sqlSession, Music m) {
+		return sqlSession.update("musicMapper.updateMusic", m);
+	}
+	
+	public int deleteMusic(SqlSession sqlSession, int musNo) {
+		return sqlSession.update("musicMapper.deleteMusic", musNo);
+	}
 }
