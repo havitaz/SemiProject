@@ -12,31 +12,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
+
 </head>
 <body>
     <jsp:include page="../common/menubar-test.jsp"/>
     <div class="memberInput" align="center">
-    	<h1 style="color: black;" align="center">비밀번호찾기</h1>
+    	<p class="h1-style" style="color: black;" align="center">비밀번호찾기</p>
+    	<button type="button" class="btn-close"></button>
         <br><br>
         <form action="searchPwd.me" id="memberInfo">
-            <table class="input-table">
-                <tr>
-                    <td>아이디</td>
-                    <td><input type="text" id="memberId" name="memberId"></td>
-                </tr>
-                <tr>
-                    <td>핸드폰 번호</td>
-                    <td><input type="text" id="phone" name="phone"></td>
-                </tr>
-                <tr>
-                    <td>이메일</td>
-                    <td><input type="text" id="email" name="email"></td>
-                </tr>
-            </table>
-            
+
+            <div class="inputGroup-table">
+               <p class="p-style2">아이디</p>
+               <input class="input-table" type="text" id="memberId" name="memberId">
+               <p class="p-style2">핸드폰 번호</p>
+               <input class="input-table" type="text" id="phone" name="phone">
+               <p class="p-style2">이메일</p>
+               <input class="input-table" type="text" id="email" name="email">
             <br><br>
-            
             <button type="submit" id="btn-member">비밀번호찾기</button>
+            </div>
         </form>
     </div>
 </body>

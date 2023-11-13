@@ -139,7 +139,9 @@
 
 .modal-header > .btn-close{
     position: relative;
-    top: -28px;
+    top: -35px;
+    background-color: #8b8b8b;
+    border-radius: 25px 25px 25px 25px;
 }
 
 .modal-header > h2{
@@ -148,7 +150,6 @@
 }
 
 .modal-footer .link-style a{
-	text-decoration:none;
     color: rgb(218, 15, 71);
 }
 
@@ -165,12 +166,14 @@
     border-radius: 5px;
     width: 400px;
     height: 45px;
-    box-shadow: 0px 4px 0px rgb(67, 56, 41);
+    z-index: 200;
+    position: relative;
 }
 
 .memberIcon {
 	width: 200px;
 	border-radius: 5px;
+	bottom: -4px;
 }
 
 .modal-style{
@@ -186,4 +189,42 @@
 
 .modal-footer{
 	border-top: none;
+	margin-top: -100px;
+}
+
+.input-modal {
+    width: 400px;
+    height: 40px;
+    padding: 6px 12px;
+    resize: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 4px;
+}
+
+body{
+	
+	    margin: 0;
+    padding-top: 80px;
+    padding-left: 310px;
+    padding-right: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* background-image: url(/SemiProject/resources/images/background.png); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    background-color: rgb(30 30 27 / 71%);
+}
+
+.enroll{
+position: absolute;
+    left: 200px;
+}
+.searchId{
+position: absolute;
+    left: 355px;
+}
+.searchPwd{
+    position: absolute;
+    left: 500px;
 }

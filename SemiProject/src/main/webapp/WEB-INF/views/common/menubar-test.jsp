@@ -57,8 +57,9 @@ body {
     height: 3px;
     accent-color: rgb(100 59 41);
 }
-
-
+.link-style{
+	display:flex;
+}
 </style>
 
 </head>
@@ -472,21 +473,20 @@ body {
 				<!-- Modal body -->
 				<div class="modal-body" align="center">
 					<form action="login.me" method="post">
-						<table>
-							<tr>
-								<td><input type="text" name="memberId"
-									style="width: 500px; height: 50px;" required
-									placeholder="아이디를 입력해주세요"></td>
-							</tr>
-							<tr>
-								<td><input type="password" name="memberPwd"
-									style="width: 500px; height: 50px;" required
-									placeholder="비밀번호를 입력해주세요"></td>
-							</tr>
-							<tr>
-								<td><button class="modal-loginButton" type="submit">로그인</button></td>
-							<tr>
-						</table>
+						<div>
+							
+								<input class="input-modal" type="text" name="memberId"
+									required
+									placeholder="아이디를 입력해주세요">
+						
+							
+								<input class="input-modal"  type="password" name="memberPwd"
+									required
+									placeholder="비밀번호를 입력해주세요">
+							
+								<button class="modal-loginButton" type="submit">로그인</button>
+							
+						</div>
 					</form>
 				</div>
 
@@ -494,9 +494,9 @@ body {
 				<div class="modal-footer" align="center"
 					style="justify-content: center; height: 210px">
 					<div class="link-style">
-						<a href="<%=contextPath%>/insertPage.me">회원가입</a> <a
-							href="<%=contextPath%>/selectId.me">아이디찾기</a> <a
-							href="<%=contextPath%>/selectPwd.me">비밀번호찾기</a>
+						<a href="<%=contextPath%>/insertPage.me" class="enroll">회원가입</a> 
+						<a href="<%=contextPath%>/selectId.me" class="searchId">아이디찾기</a> 
+							<a	href="<%=contextPath%>/selectPwd.me" class="searchPwd">비밀번호찾기</a>
 					</div>
 					<img class="memberIcon"
 						src="<%=contextPath%>/resources/images/login.jpg"
@@ -551,8 +551,7 @@ body {
 								<li></li>
 							</ul>
 							<ul class="profile-button ul">
-								<button class="a_button" data-bs-toggle="modal"
-									data-bs-target="#loginModal">로그인</button>
+								<button class="a_button" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
 								<button class="a_button">회원가입</button>
 							</ul>
 						</div>
@@ -576,8 +575,7 @@ body {
 							</ul>
 							<ul class="profile-button ul">
 								<button type="submit" class="a_button">마이페이지</button>
-								<input type="button" onclick="logout()" class="a_button"
-									value="로그아웃">
+								<input type="button" onclick="logout()" class="a_button" value="로그아웃">
 							</ul>
 						</div>
 					</div>
