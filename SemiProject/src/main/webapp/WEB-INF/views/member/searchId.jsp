@@ -21,20 +21,12 @@
         <form action="searchId.me" id="memberInfo">
             <table class="input-table">
                 <tr>
-                    <td>
-                        핸드폰 번호
-                    </td>
-                    <td>
-                        <input type="text" id="phone" name="phone" required>
-                    </td>
+                    <td>핸드폰 번호</td>
+                    <td><input type="text" id="phone" name="phone" required></td>
                 </tr>
                 <tr>
-                    <td>
-                        이메일
-                    </td>
-                    <td>
-                        <input type="text" id="email" name="email" required>
-                    </td>
+                    <td> 이메일 </td>
+                    <td><input type="text" id="email" name="email" required></td>
                 </tr>
             </table>
             <br><br>

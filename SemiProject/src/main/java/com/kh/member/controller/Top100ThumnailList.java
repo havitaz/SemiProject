@@ -31,12 +31,13 @@ public class Top100ThumnailList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("asdasdasc");
 		ArrayList<Music> list = new MemberServiceImpl().selectTopList();
 
 		
 		request.setAttribute("list", list);
 
-		System.out.println(list);
+		System.out.println("asdasd" + list);
 		request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 	}
 
