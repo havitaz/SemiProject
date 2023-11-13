@@ -538,7 +538,7 @@ body {
 
 					<!-- 로그인 전 -->
 
-					<form action="" method="post">
+
 						<div class="Member-profile">
 							<ul class="profileImg ul">
 								<img class="pro_admin"
@@ -552,10 +552,9 @@ body {
 							</ul>
 							<ul class="profile-button ul">
 								<button class="a_button" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
-								<button class="a_button">회원가입</button>
+								<input type="button" onclick="insertMember()" class="a_button" value="회원가입"></input>
 							</ul>
 						</div>
-					</form>
 				</c:when>
 
 
@@ -586,6 +585,10 @@ body {
 		<script>
 			function logout() {
 				location.href = "logout.me"
+			}
+			
+			function insertMember() {
+				location.href = "insert.me"
 			}
 		</script>
 

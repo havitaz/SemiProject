@@ -90,8 +90,8 @@
                <table>
 			    <c:forEach var="t" items="${list}">
 			        <tr height="120">
-			            <th><img class="thumbnail" src="${albumPath}/resources/images/cp.jpg" alt="Thumbnail Image"/></th>
-			            <td>Nine Tracks Mind Deluxe<br>Charlie Puth</td>
+			            <th><img class="thumbnail" src="${t.albumPath}"/></th>
+			            <td>${t.musName}<br>${t.musArt}</td>
 			        </tr>
 			    </c:forEach>
 			</table>

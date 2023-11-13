@@ -25,6 +25,7 @@
                   <input class="input-table" type="text" id="phone" name="phone" required>
                   <p class="p-style2">이메일</p>
                   <input class="input-table" type="text" id="email" name="email" required>
+                   <img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 25px; bottom: 245px;" />
             <br><br>
             <button type="submit" id="btn-member">아이디찾기</button>
            	</div>
