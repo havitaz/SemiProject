@@ -1,8 +1,8 @@
 package com.kh.manager.controller;
 
+import java.io.File;
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.kh.member.model.service.MemberServiceImpl;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
+import com.kh.common.template.Attachment;
+import com.kh.common.template.MyFileRenamePolicy;
 import com.kh.music.model.service.MusicServiceImpl;
 import com.kh.music.model.vo.Music;
+import com.oreilly.servlet.MultipartRequest;
 
 /**
  * Servlet implementation class ManagerInsertController
@@ -35,23 +39,48 @@ public class ManagerMusicInsertController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String musName = request.getParameter("musName");
-		String musArt = request.getParameter("musArt");
-		String musGen = request.getParameter("musGen");
-		
-		Music m = new Music(musName, musArt, musGen);
-		
-		int result = new MusicServiceImpl().insertMusic(m);
-		
-		if (result > 0) {
-			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "노래 추가 완료");
+		if (ServletFileUpload.isMultipartContent(request)) {
+			int maxSize = 1024 * 1024 * 10;
 			
-			request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
-		} else {
-			request.setAttribute("errorMsg", "노래 추가 실패");
+			String savePath = request.getSession().getServletContext().getRealPath("/resources/icon/musicAlbumCover/");
 			
-			 request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
+			
+			String musName = request.getParameter("musName");
+			String musArt = request.getParameter("musArt");
+			String musGen = request.getParameter("musGen");
+			String musTime = request.getParameter("musTime");
+			
+			Music m = new Music();
+			m.setMusName(musName);
+			m.setMusArt(musArt);
+			m.setMusGen(musGen);
+			m.setMusTime(musTime);
+			
+			Attachment at = null;
+			
+			if(multiRequest.getOriginalFileName("upfile") != null) {
+				at = new Attachment();
+				at.setOriginName(multiRequest.getOriginalFileName("upfile"));
+				at.setChangeName(multiRequest.getFilesystemName("upfile"));
+				at.setFilePath("resources/icon/musicAlbumCover/");
+			}
+			
+			int result = new MusicServiceImpl().insertMusic(m, at);
+			
+			if (result > 0) {
+				HttpSession session = request.getSession();
+				session.setAttribute("alertMsg", "노래 추가 완료");
+				
+				request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
+			} else {
+				
+				if(at != null) {
+					new File(savePath + at.getChangeName()).delete();
+				}
+				request.setAttribute("errorMsg", "노래 추가 실패");
+				request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			}
 		}
 	}
 
