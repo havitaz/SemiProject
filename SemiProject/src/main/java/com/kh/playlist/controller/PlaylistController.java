@@ -42,9 +42,9 @@ public class PlaylistController extends HttpServlet {
 	    
 	    ArrayList<Playlist> playlist = plService.selectPlaylist(memberNo);
 
-	    request.setAttribute("playlist", playlist); 
+	    session.setAttribute("playlist", playlist); 
 
-	    request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
+	    request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
