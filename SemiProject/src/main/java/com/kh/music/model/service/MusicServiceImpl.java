@@ -85,6 +85,10 @@ public class MusicServiceImpl implements MusicService{
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.updateMusic(sqlSession, m);
 		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
 		sqlSession.close();
 		return result;
 	}
@@ -92,6 +96,10 @@ public class MusicServiceImpl implements MusicService{
 	public int deleteMusic(int musNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.deleteMusic(sqlSession, musNo);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
 		
 		sqlSession.close();
 		return result;
