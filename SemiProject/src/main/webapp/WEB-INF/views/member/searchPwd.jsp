@@ -14,38 +14,28 @@
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
 </head>
 <body>
-    <jsp:include page="../common/menubar.jsp"/>
+    <jsp:include page="../common/menubar-test.jsp"/>
     <div class="memberInput" align="center">
     	<h1 style="color: black;" align="center">비밀번호찾기</h1>
         <br><br>
         <form action="searchPwd.me" id="memberInfo">
             <table class="input-table">
                 <tr>
-                    <td>
-                        아이디
-                    </td>
-                    <td>
-                        <input type="text" id="memberId" name="memberId">
-                    </td>
+                    <td>아이디</td>
+                    <td><input type="text" id="memberId" name="memberId"></td>
                 </tr>
                 <tr>
-                    <td>
-                        핸드폰 번호
-                    </td>
-                    <td>
-                        <input type="text" id="phone" name="phone">
-                    </td>
+                    <td>핸드폰 번호</td>
+                    <td><input type="text" id="phone" name="phone"></td>
                 </tr>
                 <tr>
-                    <td>
-                        이메일
-                    </td>
-                    <td>
-                        <input type="text" id="email" name="email">
-                    </td>
+                    <td>이메일</td>
+                    <td><input type="text" id="email" name="email"></td>
                 </tr>
             </table>
+            
             <br><br>
+            
             <button type="submit" id="btn-member">비밀번호찾기</button>
         </form>
     </div>

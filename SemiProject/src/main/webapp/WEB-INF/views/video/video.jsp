@@ -4,6 +4,7 @@
 
 <% 
 	String contextPath = request.getContextPath();
+	String albumPath = "resources/icon/musicAlbumCover/";
 %>
 <!DOCTYPE html>
 <html>
@@ -371,7 +372,7 @@
                 	  
                  	               	
                 	<!-- 로그인 후 -->        
-	                	<form action="" method="post">
+	                	<form action="myPage.me" method="post">
                			 	<div class="Member-profile">
                			 		<input type = "hidden" name = "mno" value = "${loginUser.memberNo }">
 				                <ul class="profileImg ul">
@@ -724,31 +725,18 @@
             </div>
             </div>
             <div>
-                <table>
-                    <tr height="120">
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
-                    <tr>
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
-                    <tr>
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
-                </table>
+            	
+               <table>
+			    <c:forEach var="t" items="${list}">
+			        <tr height="120">
+			            <th><img class="thumbnail" src="${albumPath}/resources/images/cp.jpg" alt="Thumbnail Image"/></th>
+			            <td>Nine Tracks Mind Deluxe<br>Charlie Puth</td>
+			        </tr>
+			    </c:forEach>
+			</table>
             </div>
             <div>
                 <table>
-                    <tr>
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
-                    <tr>
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
                     <tr>
                         <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
                         <td>Nine Tracks Mind Delux<br>Charlie Puth</td>

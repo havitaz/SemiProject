@@ -136,11 +136,131 @@ body{
                 </div>
 
                 <!-- Modal footer -->
-                <div class="modal-footer" align="center">
-                    <a href="<%=contextPath %>/insertPage.me">회원가입</a>
-                    <a href="<%=contextPath %>/selectId.me">아이디찾기</a>
-                    <a href="<%=contextPath %>/selectPwd.me">비밀번호찾기</a>
+                <a href="">아이디찾기</a>
+                <a href="">비밀번호찾기</a>
+                <a href="">회원가입</a>
+                <button class="btn-serachId" data-bs-toggle="modal" data-bs-target="#searchId">아이디찾기</a>
+                <button class="btn-searchPwd" data-bs-toggle="modal" data-bs-target="#searchPwd">비밀번호찾기</a>
+                <button class="btn-insertMember" data-bs-toggle="modal" data-bs-target="#insertMember">회원가입</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- 아이디찾기modal -->
+     <div class="modal" id="searchId">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <div>
+                        <h4>아이디 찾기</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
                 </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                        <table>
+
+                        </table>
+                    </form>
+                    이메일<input type="text" name="email">
+                    전화번호<input type=" text" name="phone">
+                </div>
+
+                <!-- Modal footer -->
+                <button>아이디찾기</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- 비밀번호 찾기 모달 -->
+     <div class="modal" id="searchPwd">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <div>
+                        <h4>비밀번호 찾기</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                        <table>
+                            <tr>
+                                <td>
+                                    아이디<input type="text" name="MemberId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    이메일<input type="text" name="email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    전화번호<input type="text" name="phone">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <button type="submit">비밀번호 찾기</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- loginModal -->
+     <div class="modal" id="insertMember">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <div>
+                        <h4>회원가입</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                        <table>
+                            <tr>
+                                <td>
+                                    아이디<input type="text" name="MemberId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    비밀번호<input type="password" name="MemberPwd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    전화번호<input type="text" name="phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    이메일<input type="text" name="email">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <button type="submit">회원가입</button>
             </div>
         </div>
     </div>
