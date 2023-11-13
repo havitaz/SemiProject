@@ -103,6 +103,8 @@ public class MemberServiceImpl implements MemberService{
 		
 		if(result > 0) {
 			sqlSession.commit();
+		}else {
+			
 		}
 		
 		sqlSession.close();

@@ -99,6 +99,8 @@
                                             <label for="memInfo" style="margin-right: 30px;">전화번호</label>
                                             <input type="text" id="memInfo"  readonly/><br>
                                         </div>
+                                        <br><br>
+                                        <button type="button"  class="deleteBtnMem">강제탈퇴</button>
                                     </div>
                             </form>
                             
@@ -152,8 +154,8 @@
                                 			 	   + '<div>' + '<label for="memInfo" style="margin-right: 45px;">이메일</label>'
                                 			 	   + '<input type="text" id="memInfo" value="' + result.email + '"readonly/>' + '</div>'
                                 			 	   + '<div>' + '<label for="memInfo" style="margin-right: 30px;">전화번호</label>'
-                                			 	   + '<input type="text" id="memInfo" value="' + result.phone + '"readonly/>' + '</div>'
-                                			 	   + '<button type="button" onclick= "deleteMember(' + result.memberNo + ')"  class="deleteBtnMem">강제탈퇴</button>';
+                                			 	   + '<input type="text" id="memInfo" value="' + result.phone + '"readonly/>' + '</div>' + '<br><br>'
+                                			 	   + '<button type="button"  onclick= "deleteMember(' + result.memberNo + ')"  class="deleteBtnMem">강제탈퇴</button>';
                                 			 
                                 			 	   
                                     			 document.querySelector(".member-info-class").innerHTML = str;
@@ -167,23 +169,7 @@
                    </script>
 					<script>
 							function deleteMember(num){
-								$.ajax({
-                                    url: "<%=contextPath %>/delete.me",
-                                    data : {
-                                    		meno : num
-                                    	},
-                                    success: function(result){
-                                    	console.log(result);
-                                    	if(result > 0){
-                                    		alert("성공")
-                                    	}
-                                    	
-                                    },
-                                    error: function(){
-                                    	console.log("리스트 조회 안됨");
-                               		 }
-                                    
-                              })
+								location.href = '<%=contextPath %>/deleteform.me?meno='+num;
 								
 							}
 					</script>
