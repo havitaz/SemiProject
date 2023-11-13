@@ -1,28 +1,28 @@
 package com.kh.member.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.kh.member.model.service.MemberServiceImpl;
-import com.kh.member.model.vo.Member;
+import com.kh.music.model.vo.Music;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class Top100ThumnailList
  */
-@WebServlet("/login.me")
-public class LoginController extends HttpServlet {
+@WebServlet("/Top100ThumnailList")
+public class Top100ThumnailList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public Top100ThumnailList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,25 +31,13 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("UTF-8");
-		Member m = new Member();
-		m.setMemberId(request.getParameter("memberId"));
-		m.setMemberPwd(request.getParameter("memberPwd"));
-		
-		Member loginUser = new MemberServiceImpl().loginUser(m);
-		
-		if (loginUser == null) {
-			
-			request.setAttribute("errorMsg", "로그인 실패");
-			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
-		} else {
-		    HttpSession session = request.getSession();
-			request.getSession().setAttribute("loginUser", loginUser);
-		    response.sendRedirect(request.getContextPath() + "/list.pl?memberNo=" + loginUser.getMemberNo());
+		ArrayList<Music> list = new MemberServiceImpl().selectTopList();
 
-		}
+		
+		request.setAttribute("list", list);
 
+		System.out.println(list);
+		request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 	}
 
 	/**

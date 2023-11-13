@@ -108,6 +108,17 @@ public class MemberServiceImpl implements MemberService{
 		sqlSession.close();
 		return result;
 	}
+	public ArrayList<Music> selectTopList() {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Music> list = mDao.selectTopList(sqlSession);
+		return list;
+	}
+//
+//	@Override
+//	public ArrayList<Music> selectTopList2() {
+//		
+//		return null;
+//	}
 	
 	
 }

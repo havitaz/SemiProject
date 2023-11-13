@@ -2,6 +2,7 @@ package com.kh.member.model.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -46,4 +47,11 @@ public class MemberDao {
 	public  int deleteMember(SqlSession sqlSession, int memberNo){
 		return  sqlSession.update("memberMapper.deleteMember", memberNo);
 	}
+	public ArrayList<Music> selectTopList(SqlSession sqlSession){
+		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList");
+	}
+	
+//	public ArrayList<Music> selectTopList2(SqlSession sqlSession){
+//		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList2");
+//	}
 }
