@@ -13,7 +13,7 @@ import com.kh.member.model.service.MemberServiceImpl;
 /**
  * Servlet implementation class ManagerMemberDeleteController
  */
-@WebServlet("/delete.me")
+@WebServlet("/deleteform.me")
 public class ManagerMemberDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -100,6 +100,6 @@
 	 <update id="deleteMember">
   				UPDATE MEMBER
 						SET STATUS = 'N'
-				WHERE  MEM_NO = #{meno}
+				WHERE  MEM_NO = #{memberNo}
   	</update>
 </mapper>
