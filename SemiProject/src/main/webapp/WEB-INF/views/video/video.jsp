@@ -40,7 +40,7 @@
 <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-
+	<jsp:include page="../common/menubar-test.jsp"/>
 
     <main>
         <h1 class="main-title" style="color: black;">지금 듣기</h1><br>

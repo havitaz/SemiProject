@@ -36,7 +36,8 @@ public class PlaylistController extends HttpServlet {
 	    HttpSession session = request.getSession();
 	    
 	    // 세션에서 memberNo를 읽어옴
-	    int memberNo = (int) session.getAttribute("memberNo");
+	    int memberNo = Integer.parseInt(request.getParameter("memberNo"));
+	    System.out.print("여기여기여기 : " + memberNo);
 	    
 	    PlaylistService plService = new PlaylistServiceImpl();
 	    
