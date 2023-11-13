@@ -588,7 +588,7 @@ body {
 			}
 			
 			function insertMember() {
-				location.href = "insert.me"
+				location.href = "insertPage.me"
 			}
 		</script>
 

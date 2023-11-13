@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +14,7 @@
 	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 >>>>>>> 510a840ef92ecf6a8a1bd759705264a457124eb1
 
+	 <jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/>
 
 	<%-- 
  	<jsp:forward page="/WEB-INF/views/common/managerMenubar.jsp"/> 관리자 페이지-메뉴바
