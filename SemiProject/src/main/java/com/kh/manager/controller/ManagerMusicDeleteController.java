@@ -32,9 +32,7 @@ public class ManagerMusicDeleteController extends HttpServlet {
 			int musNo = Integer.parseInt(request.getParameter("mno"));
 			
 			int result =  new MusicServiceImpl().deleteMusic(musNo);
-			
-			System.out.println(result);
-			
+
 			if(result > 0) {
 				request.getSession().setAttribute("alertMsg", "노래가 성공적으로 삭제되었습니다.");
 				response.sendRedirect(request.getContextPath() + "/music.bt");

@@ -36,6 +36,7 @@
                         </div>
 						<script>
                         
+						//노래 검색
                         function searchBtn(e){
 	                         if(e.keyCode === 13){
 
@@ -103,10 +104,12 @@
 
  						<script>
  							
+ 							
  						 	window.onload = function(){
  									musicList();	
  							}
  						 	
+ 						 	//노래 리스트
  						 	function musicList() {
  						 			$.ajax({
  						 				url: "<%=contextPath %>/music.li",
@@ -134,15 +137,15 @@
 		            		} 
  							
  							
- 						 	
+ 						
 		            		function postFormSubmit(num) {
                                 $.ajax({
-                                    url: "<%=contextPath %>/detail.mu?mno=" + num,
+                                    url: "<%=contextPath %>/detail.mu",
                                     data : {
-                                    		mno : '${m.musNo}'
+                                    		mno : num
                                     	},
-                                    success: function(result){
-            								console.log(result);
+                                    success: function(result){				
+            							 	//노래 상세정보
             								let str = "";
             								str += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
             										+ '<div>' + '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>' 
@@ -153,7 +156,8 @@
             										+ '<input type="text" id="musicInfo" value="' + result.musGen + '" readonly/>' + ' </div>'
 
             										document.querySelector(".music-info-class").innerHTML = str;
-                                    
+            										
+                                    	//노래 수정
                                     	let str2 = "";
                                     	str2 += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
                                     			 + '<div class="musicTitle">' +  '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>'
@@ -166,6 +170,7 @@
  	
                                     			 document.querySelector("#updateMusicModal").innerHTML = str2;
                                     			 
+                                    	//노래 삭제
                                     	let str3 = "";
                                 			 str3 += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
                                     			 + '<div class="musicTitle">' +  '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>'

@@ -32,7 +32,11 @@ public class PlaylistServiceImpl implements PlaylistService{
 	public int insertPlayList(Playlist p) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = pDao.insertPlayList(sqlSession , p);
-		
+		if(result > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
 		sqlSession.close();
 		return result;
 	}

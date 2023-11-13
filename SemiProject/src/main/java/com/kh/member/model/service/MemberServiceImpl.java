@@ -97,6 +97,19 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
+	public int deleteMember(int memberNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.deleteMember(sqlSession, memberNo);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}else {
+			
+		}
+		
+		sqlSession.close();
+		return result;
+	}
 	public ArrayList<Music> selectTopList() {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Music> list = mDao.selectTopList(sqlSession);

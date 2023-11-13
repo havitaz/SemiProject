@@ -39,10 +39,8 @@ public class ManagerMusicUpdateController extends HttpServlet {
 			
 			
 			Music m = new Music(musNo, musName, musArt, musGen);
-			System.out.println(m);
 			
 			int result =  new MusicServiceImpl().updateMusic(m);
-			System.out.println(result);
 
 			request.setAttribute("alertMsge", "성공적으로 수정");
 			response.sendRedirect(request.getContextPath() + "/music.bt");

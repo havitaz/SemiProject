@@ -13,6 +13,15 @@ public class Playlist {
 	
 	public Playlist() {}
 	
+	
+	public Playlist(int musNo, int memberNo) {
+		super();
+		this.musNo = musNo;
+		this.memberNo = memberNo;
+	}
+
+
+
 	public Playlist(int musNo, int memberNo, String musName, String musArt, String musTime, String albumPath,
 			String status) {
 		super();

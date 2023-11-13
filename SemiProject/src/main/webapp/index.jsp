@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +9,11 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 	 <jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/>
+=======
+	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
+>>>>>>> 510a840ef92ecf6a8a1bd759705264a457124eb1
 
 
 	<%-- 
@@ -17,8 +22,13 @@
 	<jsp:forward page="/WEB-INF/views/musicList/TOP100.jsp"/> top100
 	 <jsp:forward page="/WEB-INF/views/musicList/newMusic.jsp"/> newMusic
 	 	<jsp:forward page="/WEB-INF/views/manager/managerMember.jsp"/> 관리자 페이지-회원
+<<<<<<< HEAD
  	<jsp:forward page="/WEB-INF/views/manager/managerMusic.jsp"/> 관리자 페이지-노래
 	<jsp:foward page="/WEB-INF/views/video/video.jsp"/>
+=======
+ 
+	 <jsp:forward page="/WEB-INF/views/video/video.jsp"/> 
+>>>>>>> 510a840ef92ecf6a8a1bd759705264a457124eb1
 		<%@ include file="WEB-INF/views/common/modal.jsp" %> 
 
 			 <jsp:forward page="/WEB-INF/views/common/menubar-test.jsp"/> 메뉴바(로그인)
