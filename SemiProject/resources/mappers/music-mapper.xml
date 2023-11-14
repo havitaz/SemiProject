@@ -99,19 +99,36 @@
 			   #{musName},
 			   #{musArt},
 			   #{musGen},
-			   '3:00'
+			   #{musTime}
 			)
 	</insert>
-  		<update id="updateMusic">
-  			UPDATE MUSIC
-   				  SET MUS_NAME = #{musName},
-   						 MUS_ART = #{musArt},
-   						 MUS_GEN = #{musGen}
-   				  WHERE MUS_NO = #{musNo}
-  		</update>
-  		<update id="deleteMusic">
-  				UPDATE MUSIC
-						SET STATUS = 'N'
-				WHERE MUS_NO = #{musNo}
-  		</update>
+	<update id="updateMusic">
+		UPDATE MUSIC
+				  SET MUS_NAME = #{musName},
+						 MUS_ART = #{musArt},
+						 MUS_GEN = #{musGen}
+				  WHERE MUS_NO = #{musNo}
+	</update>
+	<update id="deleteMusic">
+			UPDATE MUSIC
+			SET STATUS = 'N'
+			WHERE MUS_NO = #{musNo}
+	</update>
+	<insert id="insertAttachment">
+		INSERT
+		INTO ATTACHMENT (
+						FILE_NO,
+						REF_BNO,
+						ORIGIN_NAME,
+						CHANGE_NAME,
+						FILE_PATH,
+						)
+			VALUES (
+				SEQ_FILE_NO.NEXTVAL,
+				#{refBoardNo},
+				#{originName},
+				#{changeName},
+				#{filePath},
+				)
+	</insert>
 </mapper>
