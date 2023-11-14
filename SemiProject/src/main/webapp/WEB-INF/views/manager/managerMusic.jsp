@@ -212,7 +212,7 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="<%=contextPath %>/insert.mu" method="post">
+                                                <form action="insert.mu" method="post" enctype="multipart/form-data">
                                                     <div class="musicTitle">
                                                         <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
                                                         <input type="text" id="musicInfo_modal" name="musName" placeholder="내용을 입력하세요."/>

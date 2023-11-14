@@ -69,6 +69,18 @@ CREATE TABLE RECORD(
     MUS_NO2 NUMBER REFERENCES MUSIC (MUS_NO)
 );
 
+--ATTACHMENT테이블
+CREATE TABLE ATTACHMENT(
+    FILE_NO NUMBER PRIMARY KEY,
+    REF_BNO NUMBER REFERENCES MUSIC(MUS_NO),
+    ORIGIN_NAME VARCHAR2(300) NOT NULL,
+    CHANGE_NAME VARCHAR2(300) NOT NULL,
+    FILE_PATH VARCHAR2(2000),
+    UPLOAD_DATE DATE DEFAULT SYSDATE NOT NULL,
+    FILE_LEVEL NUMBER DEFAULT 1,
+    STATUS VARCHAR2(3) DEFAULT 'Y'
+);
+
 
 -------------------------------------시퀀스--------------------------------------
 --멤버테이블의 멤버 번호 시퀀스 (2부터 시작하여 1씩 증가(1은 관리자 넘버)하고 최대99까지)
@@ -94,6 +106,14 @@ NOCACHE;
 --MAXVALUE 1999
 --NOCYCLE
 --NOCACHE;
+
+--ATTACHMENT 테이블의 FILE_NO 시퀀스
+CREATE SEQUENCE SEQ_FILE_NO
+START WITH 10000
+INCREMENT BY 1
+MAXVALUE 20000
+NOCYCLE
+NOCACHE;
 
 ------------------------------------더미데이터------------------------------------
 --MEMBER데이터
