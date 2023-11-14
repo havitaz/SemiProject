@@ -112,14 +112,14 @@
 		INSERT
 		INTO ATTACHMENT (
 						FILE_NO,
-						REF_BNO,
+						REF_MNO,
 						ORIGIN_NAME,
 						CHANGE_NAME,
 						FILE_PATH
 						)
 			VALUES (
 						SEQ_FILE_NO.NEXTVAL,
-						#{refBoardNo},
+						SEQ_MUS_NO.CURRVAL,
 						#{originName},
 						#{changeName},
 						#{filePath}

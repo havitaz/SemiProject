@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Attachment {
 	private int fileNo;
-	private int refBoardNo;
+	private int refMusicNo;
 	private String originName;
 	private String changeName;
 	private String filePath;
@@ -14,11 +14,11 @@ public class Attachment {
 	
 	public Attachment() {}
 
-	public Attachment(int fileNo, int refBoardNo, String originName, String changeName, String filePath,
+	public Attachment(int fileNo, int refMusicNo, String originName, String changeName, String filePath,
 			Date uploadDate, int fileLevel, String status) {
 		super();
 		this.fileNo = fileNo;
-		this.refBoardNo = refBoardNo;
+		this.refMusicNo = refMusicNo;
 		this.originName = originName;
 		this.changeName = changeName;
 		this.filePath = filePath;
@@ -35,12 +35,12 @@ public class Attachment {
 		this.fileNo = fileNo;
 	}
 
-	public int getRefBoardNo() {
-		return refBoardNo;
+	public int getRefMusicNo() {
+		return refMusicNo;
 	}
 
-	public void setRefBoardNo(int refBoardNo) {
-		this.refBoardNo = refBoardNo;
+	public void setRefMusicNo(int refMusicNo) {
+		this.refMusicNo = refMusicNo;
 	}
 
 	public String getOriginName() {
@@ -93,7 +93,7 @@ public class Attachment {
 
 	@Override
 	public String toString() {
-		return "Attachment [fileNo=" + fileNo + ", refBoardNo=" + refBoardNo + ", originName=" + originName
+		return "Attachment [fileNo=" + fileNo + ", refMusicNo=" + refMusicNo + ", originName=" + originName
 				+ ", changeName=" + changeName + ", filePath=" + filePath + ", uploadDate=" + uploadDate
 				+ ", fileLevel=" + fileLevel + ", status=" + status + "]";
 	}
