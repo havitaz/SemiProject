@@ -46,8 +46,7 @@ public class LoginController extends HttpServlet {
 		} else {
 		    HttpSession session = request.getSession();
 			request.getSession().setAttribute("loginUser", loginUser);
-		    request.getSession().setAttribute("memberNo", loginUser.getMemberNo());
-		    response.sendRedirect(request.getContextPath() + "/list.pl");
+		    response.sendRedirect(request.getContextPath() + "/list.pl?memberNo=" + loginUser.getMemberNo());
 
 		}
 

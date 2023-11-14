@@ -24,4 +24,7 @@ public interface MemberService {
 	
 	//관리자 회원정보조회
 	Member selectDetailMember(int memberNo);
+	
+	//관리자 회원 삭제
+	int deleteMember(int memberNo);
 }
