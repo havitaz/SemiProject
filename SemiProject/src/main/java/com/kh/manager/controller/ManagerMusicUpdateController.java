@@ -36,9 +36,10 @@ public class ManagerMusicUpdateController extends HttpServlet {
 			String musName = request.getParameter("musName");
 			String musArt = request.getParameter("musArt");
 			String musGen = request.getParameter("musGen");
+			String musTime = request.getParameter("musTime");
+			String albumPath = request.getParameter("albumPath");
 			
-			
-			Music m = new Music(musNo, musName, musArt, musGen);
+			Music m = new Music(musNo, musName, musArt, musGen, musTime, albumPath);
 			
 			int result =  new MusicServiceImpl().updateMusic(m);
 

@@ -75,14 +75,18 @@
 				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
 				   ORDER BY MUS_NO DESC
 	</select>
+	<!-- 관리자 노래상세정보 -->
 	<select id="selectDetailMusic" resultMap="MusicResultSet">
 				SELECT     MUS_NO, 
 							MUS_NAME,
 								MUS_ART,
-								MUS_GEN
+								MUS_GEN,
+								MUS_TIME,
+							ALBUM_PATH
 					FROM MUSIC
 				WHERE MUS_NO = #{musNo}
 	</select>
+	<!-- 관리자 노래 추가 -->
 	<insert id="insertMusic" parameterType="Music">
 			INSERT 
 				INTO MUSIC
@@ -91,7 +95,8 @@
 				  MUS_NAME,
 				  MUS_ART,
 				  MUS_GEN,
-				  MUS_TIME
+				  MUS_TIME,
+				  ALBUM_PATH
 				)
 			VALUES
 			(
@@ -99,21 +104,10 @@
 			   #{musName},
 			   #{musArt},
 			   #{musGen},
-			   #{musTime}
+			   #{musTime},
+			   #{albumPath}
 			)
 	</insert>
-	<update id="updateMusic">
-		UPDATE MUSIC
-				  SET MUS_NAME = #{musName},
-						 MUS_ART = #{musArt},
-						 MUS_GEN = #{musGen}
-				  WHERE MUS_NO = #{musNo}
-	</update>
-	<update id="deleteMusic">
-			UPDATE MUSIC
-			SET STATUS = 'N'
-			WHERE MUS_NO = #{musNo}
-	</update>
 	<insert id="insertAttachment">
 		INSERT
 		INTO ATTACHMENT (
@@ -121,14 +115,31 @@
 						REF_BNO,
 						ORIGIN_NAME,
 						CHANGE_NAME,
-						FILE_PATH,
+						FILE_PATH
 						)
 			VALUES (
-				SEQ_FILE_NO.NEXTVAL,
-				#{refBoardNo},
-				#{originName},
-				#{changeName},
-				#{filePath},
+						SEQ_FILE_NO.NEXTVAL,
+						#{refBoardNo},
+						#{originName},
+						#{changeName},
+						#{filePath}
 				)
 	</insert>
+	
+	<!-- 관리자 노래수정 -->
+	<update id="updateMusic">
+		UPDATE MUSIC
+				  SET MUS_NAME = #{musName},
+						 MUS_ART = #{musArt},
+						 MUS_GEN = #{musGen},
+						 MUS_TIME = #{musTime}
+				  WHERE MUS_NO = #{musNo}
+	</update>
+	<!-- 관리자 노래삭제 -->
+	<update id="deleteMusic">
+			UPDATE MUSIC
+			SET STATUS = 'N'
+			WHERE MUS_NO = #{musNo}
+	</update>
+	
 </mapper>
