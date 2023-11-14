@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- jquery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
 <style>
 
@@ -87,13 +88,10 @@
             </div>
             <div>
             	
-               <table>
-			    <c:forEach var="t" items="${list}">
+               <table id="top100List">
 			        <tr height="120">
-			            <th><img class="thumbnail" src="${t.albumPath}"/></th>
-			            <td>${t.musName}<br>${t.musArt}</td>
+			        
 			        </tr>
-			    </c:forEach>
 			</table>
             </div>
             <div>
@@ -105,7 +103,32 @@
                 </table>
             </div>
         </div>
+        <script>
+            $(function(){
+                top100List();
+            })
+            function top100List(){
+                $ajax({
+                    url:"top100list.bo",
+                    success: function(data){
+                        drawTop100List(data);
+                    },
+                    error: function(data){
+                        console.log("top100 ajax 실패");
+                    }
+                })
+            }
 
+            function drawTop100List(){
+                for(let rowData of data){
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = "<th>" + rowData.albumPath + "</th>" +
+                                   "<td>" + rowData.musArt + "</td>" +
+                                   "<td>" + rowData.musName + "</td>";
+                }
+                document.querySelector("#top100List").appendChild(tr);
+            }
+        </script>
     </main>
 	
 </body>

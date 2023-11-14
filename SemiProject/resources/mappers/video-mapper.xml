@@ -28,6 +28,6 @@
 		        	ALBUM_PATH
 			FROM MUSIC
 			ORDER BY ENROLL_DATE DESC)
-		WHERE ROWNUM <![CDATA[<]]>= 4
+		WHERE ROWNUM BETWEEN 1 AND 6
 	</select>
   </mapper>
