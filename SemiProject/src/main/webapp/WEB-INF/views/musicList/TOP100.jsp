@@ -11,6 +11,7 @@
 <title>TOP100</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/top100.css">
+ </head>
 <body>
 
 	<jsp:include page="../common/menubar-test.jsp"/>
