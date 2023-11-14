@@ -52,7 +52,8 @@
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
 				SELECT MUS_NO, 
-							MUS_NAME
+							MUS_NAME,
+							ALBUM_PATH
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 	</select>
@@ -69,7 +70,8 @@
 	</select>
 	<select id="selectSearchMusic" resultMap="MusicResultSet">
 				SELECT MUS_NO,
-							 MUS_NAME
+							 MUS_NAME,
+							 ALBUM_PATH
 					FROM MUSIC
 				WHERE STATUS = 'Y'
 				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
