@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <% 
     String contextPath = request.getContextPath();
 %>
@@ -16,30 +17,25 @@
 <body>
 	<jsp:include page="../common/menubar-test.jsp"/>
     <div class="memberInput" align="center">
-    	<h1 style="color: black;" align="center">아이디 찾기</h1>
+    	<p class="h1-style" style="color: black;" align="center">아이디 찾기</p>
+    	<button type="button" class="btn-close" onclick="closeMenu()"></button>
         <br><br>
         <form action="searchId.me" id="memberInfo">
-            <table class="input-table">
-                <tr>
-                    <td>
-                        핸드폰 번호
-                    </td>
-                    <td>
-                        <input type="text" id="phone" name="phone" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        이메일
-                    </td>
-                    <td>
-                        <input type="text" id="email" name="email" required>
-                    </td>
-                </tr>
-            </table>
+            <div class="inputGroup-table">
+                  <p class="p-style2">핸드폰 번호</p>
+                  <input class="input-table" type="text" id="phone" name="phone" required placeholder="내용을 입력해주세요">
+                  <p class="p-style2">이메일</p>
+                  <input class="input-table" type="text" id="email" name="email" required placeholder="내용을 입력해주세요">
+                   <img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 25px; bottom: 245px;" />
             <br><br>
             <button type="submit" id="btn-member">아이디찾기</button>
+           	</div>
         </form>
     </div>
+    <script>
+	    function closeMenu(){
+        location.href="backPage.me"
+      }
+	</script>
 </body>
 </html>

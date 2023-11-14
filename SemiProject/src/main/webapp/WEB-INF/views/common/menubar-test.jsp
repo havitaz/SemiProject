@@ -8,21 +8,13 @@ String contextPath = request.getContextPath();
 <!DOCTYPE html>
 <html>
 <head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="<%=contextPath%>/resources/css/header.css">
 <link rel="stylesheet" href="<%=contextPath%>/resources/css/style.css">
-<link rel="stylesheet"
-	href="<%=contextPath%>/resources/css/sidebar.css">
+<link rel="stylesheet" href="<%=contextPath%>/resources/css/sidebar.css">
 <link rel="stylesheet" href="<%=contextPath%>/resources/css/video.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 
 <style>
@@ -39,72 +31,17 @@ body {
 	background-color: rgb(255, 252, 227);
 }
 
-/*
-.accodient-box::-webkit-scrollbar-thumb {
-  height: 30%;  스크롤바의 길이 
-  background: #848484;  스크롤바의 색상 
-  border-radius: 10px;
-}
-*/
-
-
-.progressBar{
-    position: absolute;
-    display: flex;
-    top: 45px;
-    width: 410px;
-    right: 630px;
-    height: 3px;
-    accent-color: rgb(100 59 41);
-}
-
-
 </style>
 
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-
 	<%
 	out.println("loginUser: " + session.getAttribute("loginUser"));
 	out.println("memberNo: " + session.getAttribute("memberNo"));
 	%>
-
-<%-- 
-	<c:choose>
-		<c:when test="${!empty loginUser}">
-			<script>
-	            // 이미 요청을 보냈는지 여부를 localStorage에서 확인
-	            var hasSentRequest = localStorage.getItem("hasSentRequest");
-	
-	            if (!hasSentRequest) {
-	                // loginUser에 memberNo 속성이 있다고 가정합니다.
-	                var memberNo = "${loginUser.memberNo}";
-	
-	                // "list.pl"로의 요청을 생성합니다.
-					var requestUrl = "/se/list.pl?memberNo=" + memberNo;
-	
-	                // "list.pl" 페이지로 리다이렉트합니다.
-	                window.location.href = requestUrl;
-	
-	                // localStorage에 표시하여 더 이상 요청을 보내지 않도록 함
-	                localStorage.setItem("hasSentRequest", "true");
-	            }
-			</script>
-		</c:when>
-	</c:choose>
-
---%>
-
-
-
-
-
-
-
 	<header class="header">
-
 		<div class="left-section">
 			<img class="player-menu" id="shuffleButton" src="<%=contextPath%>/resources/icon/menubarIcon/shuffle.png" alt="셔플" />
 			<img class="player-menu" id="prevButton" src="<%=contextPath%>/resources/icon/menubarIcon/left.png" alt="이전" />
@@ -112,30 +49,13 @@ body {
 			<img class="player-menu" id="nextButton" src="<%=contextPath%>/resources/icon/menubarIcon/right.png" alt="다음" /> 
 			<img class="player-menu" id="repeatButton" src="<%=contextPath%>/resources/icon/menubarIcon/repeat.png" alt="반복" />
 		</div>
-
-		
-		
 		<audio id="audioPlayer" style="display: none;">
 		  <source src="<%=contextPath%>/resources/audio/King Gnu-Specialz.mp3" type="audio/mp3">
 		</audio>
 		
-		
-		
-
-
 		<div class="middle-section">
-
 			<div class="player-bar">
-
-
-				<script>
-				
-					
-				
-				
-				
-				
-				
+				<script>			
 					/*반복*/	
 					var audioElement = document.getElementById('audioPlayer');
 					var repeatButton = document.getElementById('repeatButton');
@@ -143,7 +63,6 @@ body {
 					repeatButton.addEventListener('click', function() {
 					    // 반복 상태 토글
 					    isRepeat = !isRepeat;
-
 					    // 반복 상태에 따라 이미지 변경
 					    if (isRepeat) {
 					        repeatButton.src = "<%=contextPath%>/resources/icon/menubarIcon/repeat1.png";
@@ -203,9 +122,7 @@ body {
 					    var seconds = Math.floor(timeInSeconds % 60);
 					    return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 					  }
-					
-					  
-					
+										  					
 				  // 오디오 요소와 버튼 요소 가져오기
 				  var audioElement = document.getElementById('audioPlayer');
 				  var playButton = document.getElementById('playButton');
@@ -373,84 +290,44 @@ body {
 					
 				</script>
 
-
-
 				<c:choose>
 					<c:when test="${ empty loginUser }">
-
-						<img class="album-thumb"
-							src="<%=contextPath%>/resources/images/default-albumArt.png">
-
+						<img class="album-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
 						<div class="flex-item time">00:00</div>
-
 						<div class="flex-item mp_info">---- ---- ----</div>
-
 						<div class="flex-item time align">00:00</div>
-
 					<!-- <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
-
-
 					</c:when>
 					<c:otherwise>
-
-
-						<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}">
-						<%--src="<%=contextPath/resources/images/temp.jpg"> --%>
+						<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}">						
 						<div class="flex-item time flow">00:00</div>
-
 						<div id="musicInfoDiv" class="flex-item mp_info">
 							${pl.musName} - ${pl.musArt}
-							<!--제목            가수  -->
 						</div>
-
 						<div id="musicInfoDiv" class="flex-item time align">
-							${pl.musTime}</div>
-
+							${pl.musTime}
+						</div>
 						<!--  <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
-						
-						
 					</c:otherwise>
 				</c:choose>
-
 			</div>
-
 			<div class="volume">
-				<img id="vol" class="vol-btn" onclick="changeImage()"
-					src="<%=contextPath%>/resources/icon/menubarIcon/vol.png" /> 
-					<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
+				<img id="vol" class="vol-btn" onclick="changeImage()" src="<%=contextPath%>/resources/icon/menubarIcon/vol.png" /> 
+				<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
 			</div>
-
-
-
-
-
-
-
-
-			<script>
-				
-			</script>
-
-
-
 		</div>
-
 		<!-- 로그인 전 -->
 		<c:choose>
 			<c:when test="${ empty loginUser }">
 				<div class="right-section">
 					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal"
-						data-bs-target="#loginModal">로그인</button>
+					<button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
 				</div>
 			</c:when>
-
-
 			<c:otherwise>
 				<div class="right-section">
 					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal"
-						data-bs-target="#loginModal" disabled>로그인</button>
+					<button class="btn-login" data-bs-toggle="modal"data-bs-target="#loginModal" disabled>로그인</button>
 				</div>
 			</c:otherwise>
 		</c:choose>
@@ -460,90 +337,48 @@ body {
 	<div class="modal" id="loginModal" style="color: black;">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
-
-				<!-- Modal Header-->
 				<div class="modal-header">
 					<h2>
 						Welcome to <br> 쿼카 플레이어
 					</h2>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
-
-				<!-- Modal body -->
 				<div class="modal-body" align="center">
 					<form action="login.me" method="post">
-						<table>
-							<tr>
-								<td><input type="text" name="memberId"
-									style="width: 500px; height: 50px;" required
-									placeholder="아이디를 입력해주세요"></td>
-							</tr>
-							<tr>
-								<td><input type="password" name="memberPwd"
-									style="width: 500px; height: 50px;" required
-									placeholder="비밀번호를 입력해주세요"></td>
-							</tr>
-							<tr>
-								<td><button class="modal-loginButton" type="submit">로그인</button></td>
-							<tr>
-						</table>
+						<div>							
+								<input class="input-modal" type="text" name="memberId" required placeholder="아이디를 입력해주세요">						
+								<input class="input-modal"  type="password" name="memberPwd" required placeholder="비밀번호를 입력해주세요">							
+								<button class="modal-loginButton" type="submit">로그인</button>							
+						</div>
 					</form>
 				</div>
-
-				<!-- Modal footer -->
-				<div class="modal-footer" align="center"
-					style="justify-content: center; height: 210px">
+				<div class="modal-footer" align="center" style="justify-content: center; height: 210px">
 					<div class="link-style">
-						<a href="<%=contextPath%>/insertPage.me">회원가입</a> <a
-							href="<%=contextPath%>/selectId.me">아이디찾기</a> <a
-							href="<%=contextPath%>/selectPwd.me">비밀번호찾기</a>
+						<a href="<%=contextPath%>/insertPage.me" class="enroll">회원가입</a> 
+						<a href="<%=contextPath%>/selectId.me" class="searchId">아이디찾기</a> 
+						<a	href="<%=contextPath%>/selectPwd.me" class="searchPwd">비밀번호찾기</a>
 					</div>
-					<img class="memberIcon"
-						src="<%=contextPath%>/resources/images/login.jpg"
-						style="position: absolute; right: 0px;" />
-
+					<img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 0px;" />
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
-
 	<nav class="sidebar">
-
 		<div class="top-section">
 			<img class="logo" src="<%=contextPath%>/resources/images/logo.png" alt="로고" onclick="redirectToHome()" />
-			
 			<script>
-			  function redirectToHome() {
-			    // 클릭 시 리다이렉션을 수행할 URL을 지정합니다.
-			    var redirectUrl = '<%=request.getContextPath()%>/';  // 리다이렉션할 경로
-			
-			    // JavaScript에서 페이지 리다이렉션을 수행합니다.
+			  function redirectToHome() {  // 클릭 시 리다이렉션을 수행할 URL을 지정합니다.
+			    var redirectUrl = '<%=request.getContextPath()%>/'; 
 			    window.location.href = redirectUrl;
 			  }
 			</script>
-
-
 			<c:choose>
 				<c:when test="${ empty loginUser }">
-
 					<!-- 로그인 전 -->
-
-					<form action="" method="post">
 						<div class="Member-profile">
 							<ul class="profileImg ul">
-								<img class="pro_admin"
-									src="<%=contextPath%>/resources/images/NotaMember.jpg"
-									alt="멤버" />
+								<img class="pro_admin" src="<%=contextPath%>/resources/images/NotaMember.jpg" alt="멤버" />
 							</ul>
 							<ul class="detail-profile ul">
 								<li style="font-size: 14px;">&nbsp;&nbsp;비회원</li>
@@ -551,23 +386,17 @@ body {
 								<li></li>
 							</ul>
 							<ul class="profile-button ul">
-								<button class="a_button" data-bs-toggle="modal"
-									data-bs-target="#loginModal">로그인</button>
-								<button class="a_button">회원가입</button>
+								<button class="a_button" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
+								<input type="button" onclick="insertMember()" class="a_button" value="회원가입"></input>
 							</ul>
 						</div>
-					</form>
 				</c:when>
-
-
-
 				<c:otherwise>
 					<!-- 로그인 후 -->
 					<div>
 						<div class="Member-profile">
 							<ul class="profileImg ul">
-								<img class="pro_admin"
-									src="<%=contextPath%>/resources/images/member.jpg" alt="멤버" />
+								<img class="pro_admin" src="<%=contextPath%>/resources/images/member.jpg" alt="멤버" />
 							</ul>
 							<ul class="detail-profile ul">
 								<li>${loginUser.memberId }님</li>
@@ -575,9 +404,8 @@ body {
 								<li>${loginUser.email}</li>
 							</ul>
 							<ul class="profile-button ul">
-								<button type="submit" class="a_button">마이페이지</button>
-								<input type="button" onclick="logout()" class="a_button"
-									value="로그아웃">
+								<input type="button" class="a_button" onclick="myPage()" value="마이페이지">
+								<input type="button" onclick="logout()" class="a_button" value="로그아웃">
 							</ul>
 						</div>
 					</div>
@@ -589,9 +417,15 @@ body {
 			function logout() {
 				location.href = "logout.me"
 			}
+			
+			function insertMember() {
+				location.href = "insertPage.me"
+			}
+			
+			function myPage(){
+				location.href="myPage.me"
+			}
 		</script>
-
-
 
 		<c:choose>
 			<c:when test="${ empty loginUser }">
@@ -601,33 +435,22 @@ body {
 				<div class="playList" align="center">
 					<div class="createPlayList">
 						<h4 class="pltitle">
-							재생목록 <img class="addPlayList"
-								src="<%=contextPath%>/resources/icon/TOP100Icon/add_icon.png"
-								alt="메뉴" /> <img class="minusPlayList"
-								src="<%=contextPath%>/resources/icon/TOP100Icon/minus.png"
-								alt="메뉴" />
-
+							재생목록 
+							<img class="addPlayList" src="<%=contextPath%>/resources/icon/TOP100Icon/add_icon.png" alt="메뉴" /> 
+							<img class="minusPlayList" src="<%=contextPath%>/resources/icon/TOP100Icon/minus.png" alt="메뉴" />
 						</h4>
 					</div>
-
 					<div class="accordion accordion-flush" id="accordionFlushExample">
-
 						<div class="accordion-item">
 							<h2 class="accordion-header">
-								<button class="accordion-button collapsed" type="button"
-									data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-									aria-expanded="false" aria-controls="flush-collapseOne">
-									재생목록 #1</button>
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+									재생목록 #1
+								</button>
 							</h2>
-							<div id="flush-collapseOne" class="accordion-collapse collapse"
-								data-bs-parent="#accordionFlushExample">
+							<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
-
-
-
 									<c:forEach var="pl" items="${ playlist }">
-										<li class="sidebar-list"
-											onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}', '${pl.albumPath}')">
+										<li class="sidebar-list" onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}', '${pl.albumPath}')">
 											<img class="pl-thumb" src="${pl.albumPath}">
 											<div>
 												<p class="pl-title">${pl.musName}</p>
@@ -638,246 +461,263 @@ body {
 								</div>
 							</div>
 						</div>
-
-
-
-
-
-
 						<div class="accordion-item">
 							<h2 class="accordion-header">
-								<button class="accordion-button collapsed" type="button"
-									data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-									aria-expanded="false" aria-controls="flush-collapseTwo">
-									재생목록 #2</button>
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+									재생목록 #2
+								</button>
 							</h2>
-							<div id="flush-collapseTwo" class="accordion-collapse collapse"
-								data-bs-parent="#accordionFlushExample">
+							<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
 									<li class="sidebar-list">
-									<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
+										<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
 										<div>
 											<p class="pl-title">가나다라마바사아자차카타파하</p>
 											<p class="pl-musician">Sia</p>
-										</div></li>
+										</div>
+									</li>
 									<li class="sidebar-list">
-									<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
+										<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
 										<div>
 											<p class="pl-title">Snowman</p>
 											<p class="pl-musician">Sia</p>
-										</div></li>
+										</div>
+									</li>
 									<li class="sidebar-list">
-									<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
+										<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
 										<div>
 											<p class="pl-title">Snowman</p>
 											<p class="pl-musician">Sia</p>
-										</div></li>
+										</div>
+									</li>
 									<li class="sidebar-list">
-									<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
+										<img class="pl-thumb" src="<%=contextPath%>/resources/images/default-albumArt.png">
 										<div>
 											<p class="pl-title">Snowman</p>
 											<p class="pl-musician">Sia</p>
-										</div></li>
+										</div>
+									</li>
 								</div>
 							</div>
 						</div>
-
-
-
-
 						<div class="accordion-item">
 							<h2 class="accordion-header">
-								<button class="accordion-button collapsed" type="button"
-									data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-									aria-expanded="false" aria-controls="flush-collapseThree">
-									재생목록 #3</button>
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+									재생목록 #3
+								</button>
 							</h2>
-							<div id="flush-collapseThree" class="accordion-collapse collapse"
-								data-bs-parent="#accordionFlushExample">
+							<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
-									<li class="sidebar-list"><img class="pl-thumb"
-										src="<%=contextPath%>/resources/images/temp.jpg">
+										</div>
+									</li>
+									<li class="sidebar-list">
+										<img class="pl-thumb"src="<%=contextPath%>/resources/images/temp.jpg">
 										<div>
 											<p class="pl-title">Road to Ruin</p>
 											<p class="pl-musician">Mr.big</p>
-										</div></li>
+										</div>
+									</li>
 								</div>
 							</div>
 						</div>
 					</div>
 			</c:otherwise>
 		</c:choose>
-		<!-- 로그인 전 -->
 		</div>
-
 	</nav>
 </body>
 </html>
