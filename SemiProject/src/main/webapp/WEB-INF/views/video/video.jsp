@@ -9,36 +9,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/header.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/style.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/sidebar.css">
-    <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
-<style>
-
- body {
-    margin: 0;
-    padding-top: 80px;
-    padding-left: 310px;
-    padding-right: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    background-image: url("<%=contextPath %>/resources/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgb(255, 252, 227);
-  }
-
-</style>
-
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 		<jsp:include page="../common/menubar-test.jsp"/>
 
 
