@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.kh.common.model.vo.PageInfo;
+import com.kh.common.template.Attachment;
 import com.kh.music.model.vo.Music;
 
 public interface MusicService {
@@ -22,7 +23,7 @@ public interface MusicService {
 	Music selectDetailMusic(int musNo);
 	
 	//관리자 노래 추가
-	int insertMusic(Music m);
+	int insertMusic(Music m, Attachment at);
 	
 	//관리자 노래 수정
 	int updateMusic(Music m);

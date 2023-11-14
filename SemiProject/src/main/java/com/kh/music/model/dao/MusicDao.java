@@ -8,6 +8,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.common.model.vo.PageInfo;
+import com.kh.common.template.Attachment;
 import com.kh.music.model.vo.Music;
 
 public class MusicDao {
@@ -54,5 +55,9 @@ public class MusicDao {
 	
 	public int deleteMusic(SqlSession sqlSession, int musNo) {
 		return sqlSession.update("musicMapper.deleteMusic", musNo);
+	}
+	
+	public int insertAttachment(SqlSession sqlSession, Attachment at) {
+		return sqlSession.insert("musicMapper.insertAttachment", at);
 	}
 }

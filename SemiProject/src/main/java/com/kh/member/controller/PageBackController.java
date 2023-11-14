@@ -1,26 +1,23 @@
 package com.kh.member.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.member.model.service.MemberServiceImpl;
-
 /**
- * Servlet implementation class IdCheck
+ * Servlet implementation class PageBackController
  */
-@WebServlet("/idCheck.me")
-public class IdCheck extends HttpServlet {
+@WebServlet("/backPage.me")
+public class PageBackController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IdCheck() {
+    public PageBackController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,16 +26,8 @@ public class IdCheck extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String checkId = request.getParameter("checkId");
-		
-		int count = new MemberServiceImpl().idCheck(checkId);
-		
-		if (count > 0) { 
-			response.getWriter().print("NNNNN"); 
-		} else { 
-			response.getWriter().print("NNNNY");
-		}
+		request.setCharacterEncoding("UTF-8");
+		request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
 	}
 
 	/**

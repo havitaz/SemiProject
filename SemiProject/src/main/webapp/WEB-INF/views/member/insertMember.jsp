@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
  <% 
     	String contextPath = request.getContextPath();
  %>
@@ -11,72 +12,39 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  	<jsp:include page="../common/menubar-test.jsp"/>
   
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
-
 </head>
 <body class="insertMember">
-    <jsp:include page="../common/menubar-test.jsp"/>
-    
+
     <div class="memberInput" align="center">
-    	<h1 style="color: black;" align="center">회원가입</h1>
+    	<p class="h1-style" style="color: black;" align="center">회원가입</p>
+    	<button type="button" class="btn-close" onclick="closeMenu()"></button>
         <br><br>
-        <form action="insert.me" method="post" id="memberInfo">
-            <table class="input-table">
-                <tr>
-                    <td>아이디</td>
-                    <td><input type="text" id="memberId" name="memberId" required></td>
-                    <td><button type="button" onclick="idCheck()">중복확인</button></td>
-                </tr>
-                <tr>
-                    <td>비밀번호 </td>
-                    <td><input type="password" id="memberPwd" name="memberPwd" required></td>
-                </tr>
-                <tr><td>핸드폰 번호</td>
-                    <td><input type="text" id="phone" name="phone"></td>
-                </tr>
-                <tr>
-                    <td>이메일</td>
-                    <td><input type="text" id="email" name="email"></td>
-                </tr>
-            </table>
+        <form id="close-btn" action="insert.me" method="post" id="memberInfo">
+            
+         <div class="inputGroup-table">
+           <p class="p-style">아이디</p>
+           <input class="input-table" type="text" id="memberId" name="memberId" required placeholder="내용을 입력해주세요"> 
+           <p class="p-style">비밀번호</p>
+           <input class="input-table" type="password" id="memberPwd" name="memberPwd" required placeholder="내용을 입력해주세요">
+           <p class="p-style">이메일</p>
+           <input class="input-table" type="text" id="phone" name="phone" placeholder="내용을 입력해주세요">
+           <p class="p-style">핸드폰 번호</p>
+           <input class="input-table" type="text" id="email" name="email" placeholder="내용을 입력해주세요">
+           <img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 25px; bottom: 55px;" />
             <br><br>
             <button type="submit" id="btn-member">회원가입</button>
+          </div>
         </form>
     </div>
     
-    <script>
+  <script>
+	    function closeMenu(){
+        location.href="backPage.me"
+      }
+	</script>
 
-            function idCheck() {
-            	
-                const idInput = document.querySelector("#memberInfo input[name=memberId]");
-                console.log(idInput.value);
-
-                $.ajax({
-                    url: "idCheck.me",
-                    data: {
-                        "checkId" : idInput.value
-                    },
-                    success: function(result){
-						if(result == "NNNNY" ) {
-							if(confirm("사용가능한 아이디입니다. 사용하시겠습니까?")) {
-								let submitBtn = document.querySelector("#memberInfo button[type=submit]");
-								submitBtn.removeAttribute("disabled");
-								
-								idInput.setAttribute("readonly", true);
-							} else {
-								idInput.focus();
-							}
-						} else {
-							alert("이미 존재하거나 탈퇴한 회원입니다.");
-							idInput.focus();
-						}
-                    },
-                    error: function(){
-                        console.log("아이디 중복체크용 ajax통신실패");
-                    }
-                })
-            }
-        </script>
 </body>
 </html>

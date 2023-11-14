@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.common.model.vo.PageInfo;
+import com.kh.common.template.Attachment;
 import com.kh.common.template.Template;
 import com.kh.music.model.dao.MusicDao;
 import com.kh.music.model.vo.Music;
@@ -67,16 +68,23 @@ public class MusicServiceImpl implements MusicService{
 	}
 
 	@Override
-	public int insertMusic(Music m) {
+	public int insertMusic(Music m, Attachment at) {
 		SqlSession sqlSession = Template.getSqlSession();
-		int result = mDao.insertMusic(sqlSession, m);
+		int result1 = mDao.insertMusic(sqlSession, m);
+		int result2 = 1;
 		
-		if(result > 0) {
+		if(at != null) {
+			result2 = mDao.insertAttachment(sqlSession, at);
+		}
+		
+		if(result1 > 0 && result2 > 0) {
 			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
 		}
 		sqlSession.close();
 		
-		return result;
+		return result1 * result2;
 		
 	}
 
