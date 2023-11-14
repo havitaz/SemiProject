@@ -46,7 +46,14 @@
 					<td>${m.musTime}</td>
 					<td><a href=""><img src="resources/icon/TOP100Icon/play_icon.png" width="27"></a></td>
 					<td><a href="insert.pl?memberNo=${loginUser.memberNo}&musNo=${m.musNo}&cpage=${pi.currentPage}" onclick="refreshList"><img src="resources/icon/TOP100Icon/add_icon_white.png" width="30"></a></td>
-					<td><a href=""><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+					<c:choose>
+						<c:when test="${not empty m.musMv}">
+							<td><a target="_blank" href="${m.musMv}"><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+						</c:when>
+						<c:otherwise>
+							<td><a href="#"><img src="resources/icon/TOP100Icon/video_production_icon.png" width="30"></a></td>
+						</c:otherwise>
+					</c:choose>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -71,9 +78,7 @@
 	<a href="newList.mu">임시 버튼입니다.</a>
 	
 	<script>
-		function refreshList() {
-			
-		}
+		
 	</script>
 </body>
 </html>
