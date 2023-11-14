@@ -45,18 +45,21 @@ public class ManagerMusicInsertController extends HttpServlet {
 			String savePath = request.getSession().getServletContext().getRealPath("/resources/icon/musicAlbumCover/");
 			
 			MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
-			
-			String musName = request.getParameter("musName");
-			String musArt = request.getParameter("musArt");
-			String musGen = request.getParameter("musGen");
-			String musTime = request.getParameter("musTime");
+		
+			String musName = multiRequest.getParameter("musName");
+			String musArt = multiRequest.getParameter("musArt");
+			String musGen = multiRequest.getParameter("musGen");
+			String musTime = multiRequest.getParameter("musTime");
+			String albumPath = multiRequest.getParameter("albumPath");
 			
 			Music m = new Music();
 			m.setMusName(musName);
 			m.setMusArt(musArt);
 			m.setMusGen(musGen);
 			m.setMusTime(musTime);
+			m.setAlbumPath(albumPath);
 			
+			System.out.println(m);
 			Attachment at = null;
 			
 			if(multiRequest.getOriginalFileName("upfile") != null) {

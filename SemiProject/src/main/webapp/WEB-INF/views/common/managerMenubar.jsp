@@ -115,18 +115,9 @@ ul{
 
 
 		<div class="middle-section">
-
 			<div class="player-bar">
-
-
 				<script>
-				
-					
-				
-				
-				
-				
-				
+	
 					/*반복*/	
 					var audioElement = document.getElementById('audioPlayer');
 					var repeatButton = document.getElementById('repeatButton');

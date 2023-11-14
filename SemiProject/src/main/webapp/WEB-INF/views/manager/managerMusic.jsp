@@ -99,12 +99,14 @@
                                             <input type="text" id="musicInfo"readonly/>
                                         </div>
 
+                                        <div>
+                                            <label for="musicInfo" style="margin-right: 35px;">재생시간</label>
+                                            <input type="text" id="musicInfo"readonly/>
+                                        </div>
                                     </div>
                             </form>
 
  						<script>
- 							
- 							
  						 	window.onload = function(){
  									musicList();	
  							}
@@ -154,7 +156,9 @@
             										+ ' <input type="text" id="musicInfo" value="' + result.musArt + '" readonly/>' + ' </div>'
             										+ '<div>' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
             										+ '<input type="text" id="musicInfo" value="' + result.musGen + '" readonly/>' + ' </div>'
-
+            										+ '<div>' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
+            										+ '<input type="text" id="musicInfo" value="' + result.musTime + '" readonly/>' + ' </div>'
+            										
             										document.querySelector(".music-info-class").innerHTML = str;
             										
                                     	//노래 수정
@@ -164,8 +168,10 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musName" value="' + result.musName + '"/>' + '</div>'
                                     			 + '<div class="musicArtist">' + '<label for="musicInfo" style="margin-right: 70px;">가수</label>'
                                     			 + '<input type="text" id="musicInfo_modal"  name="musArt" value="' + result.musArt + '"/>'  + '</div>'
-                                    			 + ' <div class="musicgenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
+                                    			 + '<div class="musicGenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"/>' + '</div>'
+                                    			 + '<div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"/>' + '</div>'
                                     			 + '<button type="submit" class="btnAdd">수정</button>'
  	
                                     			 document.querySelector("#updateMusicModal").innerHTML = str2;
@@ -177,8 +183,10 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musName" value="' + result.musName + '"readonly/>' + '</div>'
                                     			 + '<div class="musicArtist">' + '<label for="musicInfo" style="margin-right: 70px;">가수</label>'
                                     			 + '<input type="text" id="musicInfo_modal"  name="musArt" value="' + result.musArt + '"readonly/>'  + '</div>'
-                                    			 + ' <div class="musicgenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
+                                    			 + ' <div class="musicGenre">' + '<label for="musicInfo" style="margin-right: 70px;">장르</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"readonly/>' + '</div>'
+                                    			 + ' <div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
+                                    			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"readonly/>' + '</div>'
                                     			 + '<button type="submit" class="btnAdd">삭제</button>'		 
                                     			 
                                     			 document.querySelector("#deleteMusicModal").innerHTML = str3;
@@ -221,10 +229,17 @@
                                                         <label for="musicInfo" style="margin-right: 70px;">가수</label>
                                                         <input type="text" id="musicInfo_modal" name="musArt"  placeholder="내용을 입력하세요."/>
                                                     </div>
-                                                    <div class="musicgenre">
+                                                    <div class="musicGenre">
                                                         <label for="musicInfo" style="margin-right: 70px;">장르</label>
                                                         <input type="text" id="musicInfo_modal" name="musGen" placeholder="내용을 입력하세요."/>
-                                                        </label>
+                                                    </div>
+                                                     <div class="musicTime">
+                                                        <label for="musicInfo" style="margin-right: 35px;">재생시간</label>
+                                                        <input type="text" id="musicInfo_modal" name="musTime" placeholder="내용을 입력하세요."/>
+                                                    </div>
+                                                    <div class="musicAlbumPath">
+                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>
+                                                        <input type="file" name="upfile" />
                                                     </div>
                                                     <button type="submit" class="btnAdd">추가</button>
                                                 </form>
