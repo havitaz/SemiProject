@@ -37,8 +37,12 @@
 			<c:forEach var="m" items="${ list }">
 				<tr class="music-row">
 					<td>${m.rownum} </td>
-					<td><img style="width: 48px; height: 48px" src="${m.albumPath}"></td>
-					<td style="text-align: left; font-weight: bolder;">${m.musName}</td>
+				
+					<td colspan=2 style="text-align: center; font-weight: bolder;">
+						<div style="display: flex; align-items: center; justify-content: flex-start;"><img style="width: 48px; height: 48px; margin-left: 8px; margin-right: 3px; margin-bottom: 3px;" src="${m.albumPath}"> 
+								&nbsp;&nbsp;&nbsp;${m.musName}
+						</div>
+					</td>
 					<td>${m.musArt}</td>
 					<td>${m.musGen}</td>
 					<td>${m.musTime}</td>
