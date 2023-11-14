@@ -41,50 +41,7 @@
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
   }
-#top100List{
-	display: grid;
-    column-gap: 16px;
-    row-gap: 40px;
-    grid-template-columns: 1fr 1fr;
-    margin-left: -50px;
-    margin-top: 20px;
-}
-
-.top100play-btn{
-	width: 165px;
-    margin-top: 75px;
-}
-
-.speech-bubble {
-    position: relative;
-    background-color: rgb(228, 183, 8); 
-    padding: 10px; 
-    border-radius: 15px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    width: 350px; 
-    height: 50px; 
-    margin-bottom: 20px; 
-}
-
-.speech-bubble::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -10px; 
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent #fff transparent;
-}
-
-.top100-h1 {
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    margin: 0; 
-    width: 300px;
-}
-
+  
 </style>
 
 </head>
@@ -128,7 +85,7 @@
                 <div class="top100part">
                 <div class="speech-bubble">
                 <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-                이번 주 추천 곡
+                <u>이번 주 추천 곡</u>
             	</div>
                 <h1 class="top100-h1">쿼카 플레이어
                     <br>top 100
@@ -145,9 +102,8 @@
             </div>
             </div>
             <div>
-               <div id="top100List">
-               	  
-				</div>
+               <div id="top100List"></div>
+               
             </div>
         </div>
         <script>

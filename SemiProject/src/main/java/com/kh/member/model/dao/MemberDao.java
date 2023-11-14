@@ -51,4 +51,12 @@ public class MemberDao {
 		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList");
 	}
 	
+	public int updateMember(SqlSession sqlSession, Member m) {
+		return sqlSession.update("memberMapper.updateMember", m);
+	}
+	
+	public Member selectMember(SqlSession sqlSession, String memberId) {
+		return sqlSession.selectOne("memberMapper.selectMember", memberId);
+	}
+	
 }

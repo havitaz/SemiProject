@@ -11,12 +11,11 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
+  <jsp:include page="../common/menubar-test.jsp"/>
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
 
 </head>
 <body>
-    <jsp:include page="../common/menubar-test.jsp"/>
     <div class="memberInput" align="center">
     	<p class="h1-style" style="color: black;" align="center">비밀번호찾기</p>
     	<button type="button" class="btn-close" onclick="closeMenu()"></button>

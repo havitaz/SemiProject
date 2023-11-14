@@ -15,21 +15,22 @@
 <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
 </head>
 <body>
-	<jsp:include page="../common/menubar-test.jsp"/>
-	
 	<div class="memberInput" align="center">
        <p class="h1-style" style="color: black;" align="center">마이페이지</p>
     	<button type="button" class="btn-close" onclick="closeMenu()"></button>
         <br><br>
-        <form id="close-btn" action="insert.me" method="post" id="memberInfo">
+        <form id="close-btn" action="enrollForm.me" method="post" id="memberInfo">
 			 <div class="inputGroup-table">
             	<p class="p-style">아이디</p>
 				<input class="input-table" type="text" id="memberId" name="memberId" value="${loginUser.memberId }" readonly>
 				<p class="p-style">핸드폰번호</p>
-				<input class="input-table" type="text" id="phone" name="phone" value="${loginUser.phone}" readonly>
+				<input class="input-table" type="text" id="phone" name="phone" value="${loginUser.phone}" required>
 				<p class="p-style">이메일</p>	
-				<input class="input-table" type="text" id="email" name="email" value="${loginUser.email}" readonly>
+				<input class="input-table" type="text" id="email" name="email" value="${loginUser.email}" required>
 				<img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 25px; bottom: 298px;;" />
+		</div>
+		<div>
+			<button type="submit" id="btn-member">수정하기</button>
 		</div>
 	   </form>
     </div>

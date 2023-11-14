@@ -46,7 +46,7 @@ public class SerachIdController extends HttpServlet {
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("alertMsg", "환영합니다" + searchMember.getMemberId() + "님");
-			request.getRequestDispatcher("WEB-INF/views/common/menubar.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
 		}
 	}
 

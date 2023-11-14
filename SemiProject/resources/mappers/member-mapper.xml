@@ -102,4 +102,19 @@
 						SET STATUS = 'N'
 				WHERE  MEM_NO = #{memberNo}
   	</update>
+  	<update id="updateMember">
+		UPDATE MEMBER
+		SET PHONE = #{phone},
+			EMAIL = #{email}
+		WHERE MEM_ID = #{memberId}
+	</update>
+	<select id="selectMember" resultMap="memberResultSet">
+		SELECT MEM_NO,
+			   MEM_ID,
+			   MEM_PWD,
+			   EMAIL,
+			   PHONE
+	     FROM MEMBER
+	    WHERE MEM_ID = #{memberId}
+	</select>
 </mapper>
