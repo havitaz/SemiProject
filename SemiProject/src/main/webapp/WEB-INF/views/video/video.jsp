@@ -39,8 +39,8 @@
 <title>Quokka Player</title>
 <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+		<jsp:include page="../common/menubar-test.jsp"/>
 
-	<jsp:include page="../common/menubar-test.jsp"/>
 
     <main>
         <h1 class="main-title" style="color: black;">지금 듣기</h1><br>
@@ -90,8 +90,8 @@
                <table>
 			    <c:forEach var="t" items="${list}">
 			        <tr height="120">
-			            <th><img class="thumbnail" src="${albumPath}/resources/images/cp.jpg" alt="Thumbnail Image"/></th>
-			            <td>Nine Tracks Mind Deluxe<br>Charlie Puth</td>
+			            <th><img class="thumbnail" src="${t.albumPath}"/></th>
+			            <td>${t.musName}<br>${t.musArt}</td>
 			        </tr>
 			    </c:forEach>
 			</table>
