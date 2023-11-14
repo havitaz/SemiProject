@@ -15,7 +15,7 @@ import com.kh.music.model.vo.Music;
 /**
  * Servlet implementation class Top100ThumnailList
  */
-@WebServlet("/Top100ThumnailList")
+@WebServlet("/top100list.bo")
 public class Top100ThumnailList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

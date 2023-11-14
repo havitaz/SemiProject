@@ -573,7 +573,7 @@ body {
 								<li>${loginUser.email}</li>
 							</ul>
 							<ul class="profile-button ul">
-								<button type="submit" class="a_button">마이페이지</button>
+								<input type="button" class="a_button" onclick="myPage()" value="마이페이지">
 								<input type="button" onclick="logout()" class="a_button" value="로그아웃">
 							</ul>
 						</div>
@@ -589,6 +589,10 @@ body {
 			
 			function insertMember() {
 				location.href = "insertPage.me"
+			}
+			
+			function myPage(){
+				location.href="myPage.me"
 			}
 		</script>
 
