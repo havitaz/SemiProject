@@ -115,12 +115,4 @@ public class MemberServiceImpl implements MemberService{
 		ArrayList<Music> list = mDao.selectTopList(sqlSession);
 		return list;
 	}
-//
-//	@Override
-//	public ArrayList<Music> selectTopList2() {
-//		
-//		return null;
-//	}
-	
-	
 }

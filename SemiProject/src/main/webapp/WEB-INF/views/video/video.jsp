@@ -1,10 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 <% 
 	String contextPath = request.getContextPath();
 	String albumPath = "resources/icon/musicAlbumCover/";
+%>
+
+<%
+    // 현재 시간을 가져오기
+    LocalDateTime now = LocalDateTime.now();
+
+    // 날짜 및 시간 형식 지정
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    String formattedDateTime = now.format(formatter);
 %>
 <!DOCTYPE html>
 <html>
@@ -16,9 +27,7 @@
     <link rel="stylesheet" href="<%=contextPath %>/resources/css/video.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jquery 3.7.1 -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 
  body {
@@ -32,6 +41,49 @@
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
   }
+#top100List{
+	display: grid;
+    column-gap: 16px;
+    row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    margin-left: -50px;
+    margin-top: 20px;
+}
+
+.top100play-btn{
+	width: 165px;
+    margin-top: 75px;
+}
+
+.speech-bubble {
+    position: relative;
+    background-color: rgb(228, 183, 8); 
+    padding: 10px; 
+    border-radius: 15px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 350px; 
+    height: 50px; 
+    margin-bottom: 20px; 
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px; 
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.top100-h1 {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin: 0; 
+    width: 300px;
+}
 
 </style>
 
@@ -74,32 +126,28 @@
         <div class="music-grid" onclick="location.href='list.mu?cpage=1';" style="cursor: pointer;">
             <div>
                 <div class="top100part">
-                <h1>쿼카 플레이어
+                <div class="speech-bubble">
+                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
+                이번 주 추천 곡
+            	</div>
+                <h1 class="top100-h1">쿼카 플레이어
                     <br>top 100
                 </h1>
                 <div class="top100info">
-                    총 100곡!
+                	<br><br>
+                    총 6곡!
+                    <br><br>
+                    <%= formattedDateTime %>
                     <br><br><br>
-                    플레이버튼
+                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
                 </div>
 
             </div>
             </div>
             <div>
-            	
-               <table id="top100List">
-			        <tr height="120">
-			        
-			        </tr>
-			</table>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <th><img class="thumbnail" src="<%=contextPath %>/resources/images/cp.jpg"/></th>
-                        <td>Nine Tracks Mind Delux<br>Charlie Puth</td>
-                    </tr>
-                </table>
+               <div id="top100List">
+               	  
+				</div>
             </div>
         </div>
         <script>
@@ -107,7 +155,7 @@
                 top100List();
             })
             function top100List(){
-                $ajax({
+                $.ajax({
                     url:"top100list.bo",
                     success: function(data){
                         drawTop100List(data);
@@ -118,14 +166,15 @@
                 })
             }
 
-            function drawTop100List(){
+            function drawTop100List(data){
                 for(let rowData of data){
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = "<th>" + rowData.albumPath + "</th>" +
-                                   "<td>" + rowData.musArt + "</td>" +
-                                   "<td>" + rowData.musName + "</td>";
+                    const tr = document.createElement('div');
+                    tr.innerHTML = "<div><img src='" + rowData.albumPath + "'>"+ 
+                                    "<div>" + "<p>" + rowData.musArt + "</p>"+   
+                                    "<p>" + rowData.musName + "</p>" + "</div>" + "</div>";
+                    document.querySelector("#top100List").appendChild(tr);
                 }
-                document.querySelector("#top100List").appendChild(tr);
+               
             }
         </script>
     </main>

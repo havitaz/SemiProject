@@ -34,12 +34,12 @@ public class Top100ThumnailList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ArrayList<Music> list = new MemberServiceImpl().selectTopList();
-
+		
 		
 		request.setAttribute("list", list);
-
+		
 		response.setContentType("application/json; charset=UTF-8");
-		new Gson().toJson(list);
+		new Gson().toJson(list, response.getWriter());
 	}
 
 	/**

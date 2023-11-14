@@ -51,7 +51,4 @@ public class MemberDao {
 		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList");
 	}
 	
-//	public ArrayList<Music> selectTopList2(SqlSession sqlSession){
-//		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList2");
-//	}
 }

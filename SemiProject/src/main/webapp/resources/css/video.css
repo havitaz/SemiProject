@@ -228,3 +228,16 @@ position: absolute;
     position: absolute;
     left: 500px;
 }
+
+
+#top100List img{
+    width: 150px;
+}
+
+#top100List p {
+	margin: 0;
+    position: relative;
+    left: 160px;
+    top: -100px;
+    color: white;
+}

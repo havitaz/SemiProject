@@ -14,7 +14,6 @@ public interface MemberService {
 	Member searchMemberPwd(Member m);
 	int idCheck(String checkId);
 	ArrayList<Music> selectTopList();
-//	ArrayList<Music> selectTopList2();
 	
 	//관리자 회원 리스트
 	ArrayList<Member> selectMemberTitleList();
