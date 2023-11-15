@@ -39,6 +39,10 @@
     background-color: rgb(255, 252, 227);
   }
   
+  .musRec{
+  color: white;
+  text-decoration-line: none
+  }
 </style>
 
 </head>
@@ -82,7 +86,7 @@
                 <div class="top100part">
                 <div class="speech-bubble">
                 <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-                <u><a href="newList.mu">이번 주 추천 곡</a></u>
+                <u><a class="musRec" href="newList.mu">이번 주 추천 곡</a></u>
             	</div>
                 <h1 class="top100-h1">쿼카 플레이어
                     <br>top 100

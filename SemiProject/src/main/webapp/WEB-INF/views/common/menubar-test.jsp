@@ -37,10 +37,10 @@ body {
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-	<%
+	<%--
 	out.println("loginUser: " + session.getAttribute("loginUser"));
 	out.println("memberNo: " + session.getAttribute("memberNo"));
-	%>
+	--%>
 	<header class="header">
 		<div class="left-section">
 			<img class="player-menu" id="shuffleButton" src="<%=contextPath%>/resources/icon/menubarIcon/shuffle.png" alt="셔플" />
@@ -308,7 +308,6 @@ body {
 			<c:when test="${ empty loginUser }">
 				<div class="right-section">
 					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">로그인</button>
 				</div>
 			</c:when>
 			<c:otherwise>
