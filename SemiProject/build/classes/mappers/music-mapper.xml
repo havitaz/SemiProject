@@ -17,6 +17,8 @@
 		<result column="ALBUM_PATH" property="albumPath"/>
 		<result column="ENROLL_DATE" property="enrollDate"/>
 		<result column="ROWNUM" property="rownum"/>
+		<result column="FILE_PATH" property="filePath"/>
+		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
@@ -25,29 +27,32 @@
 		WHERE STATUS = 'Y'
 	</select>
 	<select id="selectList" resultMap="MusicResultSet">
-		SELECT ROWNUM,
-		        MUS_NO,
+				SELECT ROWNUM,
+		         MUS_NO,
 					MUS_NAME,
 					MUS_ART,
-					MUS_GEN,
+                    MUS_GEN,
 					MUS_TIME,
 					MUS_MV,
 					STATUS,
 					COUNT,
 					ALBUM_PATH,
-					ENROLL_DATE
-		FROM (SELECT MUS_NO,
-					MUS_NAME,
-					MUS_ART,
-					MUS_GEN,
-					MUS_TIME,
-					MUS_MV,
-					STATUS,
-					COUNT,
-					ALBUM_PATH,
-					ENROLL_DATE
-				FROM MUSIC
-				WHERE STATUS = 'Y'
+                    FILE_PATH,
+                    CHANGE_NAME
+		FROM (SELECT M.MUS_NO,
+					M.MUS_NAME,
+					M.MUS_ART,
+					M.MUS_GEN,
+					M.MUS_TIME,
+					M.MUS_MV,
+					M.STATUS,
+					M.COUNT,
+					M.ALBUM_PATH,
+                    FILE_PATH,
+                    CHANGE_NAME
+				FROM MUSIC M, ATTACHMENT A
+				WHERE M.STATUS = 'Y'
+                AND M.MUS_NO = A.REF_MNO
 				ORDER BY COUNT DESC)
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">

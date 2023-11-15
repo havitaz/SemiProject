@@ -21,6 +21,15 @@ public class Member {
 		this.email = email;
 		this.status = status;
 	}
+	
+	
+
+	public Member(String memberId, String phone, String email) {
+		super();
+		this.memberId = memberId;
+		this.phone = phone;
+		this.email = email;
+	}
 
 	public Member(String memberId, String memberPwd, String phone, String email) {
 		super();
