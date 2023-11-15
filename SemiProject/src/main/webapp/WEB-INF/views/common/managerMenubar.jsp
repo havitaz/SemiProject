@@ -61,11 +61,7 @@ ul{
             </div>
         </div>
 
-        <div class="right-section">
-            <div class="notifications-icon-container">    
-            </div>
-            <button class="btn-login">로그아웃</button>
-        </div>
+        
 
     </header>
 
@@ -386,9 +382,15 @@ ul{
 
 				<div class="right-section">
 					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal"
-						data-bs-target="#loginModal">로그아웃</button>
+					<input type="button" onclick="logout()" class="btn-login" data-bs-toggle="modal"
+						data-bs-target="#loginModal" value="로그아웃"></input>
 				</div>
+				
+				<script>
+					function logout() {
+						location.href = "logout.me"
+					}
+				</script>
 
 	</header>
 </body>
