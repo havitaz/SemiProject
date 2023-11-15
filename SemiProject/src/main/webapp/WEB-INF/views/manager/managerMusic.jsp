@@ -179,7 +179,7 @@
                                                  modifyFileBtn.onclick = function(){
                                                     const fileInput = document.querySelector("#musicAlbumPath > input[type='file']");
                                                     fileInput.onchange = function(ev){
-                                                        console.log(ev.target.files)
+                                                        console.log(ev.target.files);
                                                         modifyFileBtn.innerHTML = ev.target.files[0].name;
                                                     }
 

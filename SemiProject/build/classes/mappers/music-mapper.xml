@@ -116,8 +116,7 @@
 				  MUS_NAME,
 				  MUS_ART,
 				  MUS_GEN,
-				  MUS_TIME,
-				  ALBUM_PATH
+				  MUS_TIME
 				)
 			VALUES
 			(
@@ -125,8 +124,7 @@
 			   #{musName},
 			   #{musArt},
 			   #{musGen},
-			   #{musTime},
-			   #{albumPath}
+			   #{musTime}
 			)
 	</insert>
 	<insert id="insertAttachment">
