@@ -39,7 +39,7 @@ public class MusicListController extends HttpServlet {
 		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 10);
 		
 		ArrayList<Music> list = new MusicServiceImpl().selectList(pi);
-		
+		System.out.println(list);
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		

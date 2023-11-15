@@ -37,7 +37,7 @@
 					<td>${m.rownum} </td>
 				
 					<td colspan=2 style="text-align: center; font-weight: bolder;">
-						<div style="display: flex; align-items: center; justify-content: flex-start;"><img style="width: 48px; height: 48px; margin-left: 8px; margin-right: 3px; margin-bottom: 3px;" src="${m.albumPath}"> 
+						<div style="display: flex; align-items: center; justify-content: flex-start;"><img style="width: 48px; height: 48px; margin-left: 8px; margin-right: 3px; margin-bottom: 3px;" src="${m.filePath}${m.changeName}"> 
 								&nbsp;&nbsp;&nbsp;${m.musName}
 						</div>
 					</td>
@@ -75,7 +75,6 @@
 			</c:if>
 		</ul>
 	</div>
-	<a href="newList.mu">임시 버튼입니다.</a>
 	
 	<script>
 		
