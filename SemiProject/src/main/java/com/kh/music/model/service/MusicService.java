@@ -26,7 +26,7 @@ public interface MusicService {
 	int insertMusic(Music m, Attachment at);
 	
 	//관리자 노래 수정
-	int updateMusic(Music m);
+	int updateMusic(Music m, Attachment at);
 	
 	//관리자 노래 삭제
 	int deleteMusic(int musNo);

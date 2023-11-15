@@ -357,8 +357,8 @@ ul{
 
 
 
-				<c:choose>
-					<c:when test="${ empty loginUser }">
+			
+
 
 						<img class="album-thumb"
 							src="<%=contextPath%>/resources/images/default-albumArt.png">
@@ -371,28 +371,7 @@ ul{
 
 					<!-- <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
 
-
-					</c:when>
-					<c:otherwise>
-
-
-						<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}">
-						<%--src="<%=contextPath/resources/images/temp.jpg"> --%>
-						<div class="flex-item time flow">00:00</div>
-
-						<div id="musicInfoDiv" class="flex-item mp_info">
-							${pl.musName} - ${pl.musArt}
-							<!--제목            가수  -->
-						</div>
-
-						<div id="musicInfoDiv" class="flex-item time align">
-							${pl.musTime}</div>
-
-						<!--  <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
-						
-						
-					</c:otherwise>
-				</c:choose>
+					
 
 			</div>
 
@@ -401,41 +380,16 @@ ul{
 					src="<%=contextPath%>/resources/icon/menubarIcon/vol.png" /> 
 					<input type="range" id="volumeRange" min="0" max="100" step="0.5" oninput="changeVolume()">
 			</div>
-
-
-
-
-
-
-
-
-			<script>
-				
-			</script>
-
-
-
 		</div>
 
 		<!-- 로그인 전 -->
-		<c:choose>
-			<c:when test="${ empty loginUser }">
+
 				<div class="right-section">
 					<div class="notifications-icon-container"></div>
 					<button class="btn-login" data-bs-toggle="modal"
 						data-bs-target="#loginModal">로그아웃</button>
 				</div>
-			</c:when>
 
-
-			<c:otherwise>
-				<div class="right-section">
-					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal"
-						data-bs-target="#loginModal" disabled>로그아웃</button>
-				</div>
-			</c:otherwise>
-		</c:choose>
 	</header>
 </body>
 </html>

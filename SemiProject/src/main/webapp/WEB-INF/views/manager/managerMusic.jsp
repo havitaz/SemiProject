@@ -46,11 +46,10 @@
  						 					keyword : document.querySelector(".left-area-div-input").value
  						 				},
 						 				success: function(result) {
- 						 					console.log(result);
  						 					
  						 					let str ="";
  						 					for(let r of result) {
- 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.albumPath + '"/>'
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.filePath + r.changeName + '"/>'
  						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
  						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
  						 							   + '</div>' + '<hr>'
@@ -119,7 +118,7 @@
 
  						 					let str ="";
  						 					for(let r of result) {
- 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.albumPath + '"/>'
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.filePath + r.changeName + '"/>'
  						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
  						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
  						 							   + '</div>' + '<hr>'
@@ -169,6 +168,8 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"/>' + '</div>'
                                     			 + '<div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"/>' + '</div>'
+                                    			 + '<div class="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
+                                    			 + '<input type="file" name="upfile" value="' + result.filePath + result.originName + '"/>'  + '</div>'
                                     			 + '<button type="submit" class="btnAdd">수정</button>'
  	
                                     			 document.querySelector("#updateMusicModal").innerHTML = str2;
@@ -236,11 +237,8 @@
                                                         <input type="text" id="musicInfo_modal" name="musTime" placeholder="내용을 입력하세요."/>
                                                     </div>
                                                     <div class="musicAlbumPath">
-                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>
-                                                           
-																<input type="hidden"	name="albumPath"	value="${ m.getFileNo }">
-													        
-                                                        <input type="file" name="upfile" />
+                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>    
+                                                        <input type="file" name="upfile"/>
                                                     </div>
                                                     <button type="submit" class="btnAdd">추가</button>
                                                 </form>

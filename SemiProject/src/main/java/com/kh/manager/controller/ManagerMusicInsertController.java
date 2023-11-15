@@ -69,6 +69,7 @@ public class ManagerMusicInsertController extends HttpServlet {
 				at.setFilePath("resources/icon/musicAlbumCover/");
 			}
 			
+			
 			int result = new MusicServiceImpl().insertMusic(m, at);
 			
 			if (result > 0) {
