@@ -230,6 +230,12 @@ body {
 
 				                // 받은 응답을 이용하여 UI 업데이트 등의 작업 수행
 				                updateUI(response);
+				                
+				                // 세션 값 받아오기
+				                var currentSongPath = response.filePath;
+
+				                // 현재 재생 중인 음악 파일을 설정
+				                playNewSong(currentSongPath);
 				            },
 				            error: function (error) {
 				                // 에러 처리
@@ -258,9 +264,8 @@ body {
 							musicTimeDiv.html("<p>" + response.musTime + "</p>");
 							albumThumb.attr("src", response.filePath);
 							
-							 var combinedPath = response.filePath + "/" + response.changeName;
-							
-							playAudio();
+					        playNewSong(response.filePath);
+							//playAudio();
 
 					    }
 					}
@@ -273,7 +278,22 @@ body {
 					
 				
 					
+					// 음악을 재생하는 함수
+					function playNewSong(filePath) {
+						// 만약 filePath에 .jpg가 있다면 .jpg를 제거하고 .mp3를 추가
+						if (filePath.endsWith('.jpg')) {
+						    filePath = filePath.replace('.jpg', '') + '.mp3';
+						}
+					    // audio 태그의 src 속성을 변경하여 새로운 음악을 재생
+					    var audioPlayer = document.getElementById('audioPlayer');
+					    audioPlayer.src = filePath;
 
+					    // 음악 재생
+					    audioPlayer.play();
+				        changeImagePlay(); /*재생버튼 반영*/
+
+					    console.log('filePath :',filePath)
+					}
 					
 				</script>
 
