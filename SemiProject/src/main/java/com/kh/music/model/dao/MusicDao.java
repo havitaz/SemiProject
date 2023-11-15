@@ -49,15 +49,20 @@ public class MusicDao {
 		return sqlSession.insert("musicMapper.insertMusic", m);
 	}
 	
+	public int insertAttachment(SqlSession sqlSession, Attachment at) {
+		return sqlSession.insert("musicMapper.insertAttachment", at);
+	}
+	
 	public int updateMusic(SqlSession sqlSession, Music m) {
 		return sqlSession.update("musicMapper.updateMusic", m);
+	}
+	
+	public int updateAttachment(SqlSession sqlSession, Attachment at) {
+		return sqlSession.update("musicMapper.updateAttachment", at);
 	}
 	
 	public int deleteMusic(SqlSession sqlSession, int musNo) {
 		return sqlSession.update("musicMapper.deleteMusic", musNo);
 	}
 	
-	public int insertAttachment(SqlSession sqlSession, Attachment at) {
-		return sqlSession.insert("musicMapper.insertAttachment", at);
-	}
 }

@@ -19,6 +19,8 @@
 		<result column="ROWNUM" property="rownum"/>
 		<result column="FILE_PATH" property="filePath"/>
 		<result column="CHANGE_NAME" property="changeName"/>
+		<result column="ORIGIN_NAME" property="originName"/>
+		<result column="FILE_NO" property="fileNo"/>
 	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
@@ -57,10 +59,13 @@
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
 				SELECT MUS_NO, 
-							MUS_NAME,
-							ALBUM_PATH
-					FROM MUSIC
-				WHERE STATUS = 'Y'
+				            MUS_NAME,
+				            ALBUM_PATH,
+				            FILE_PATH,
+                    		CHANGE_NAME
+   				 	FROM MUSIC M, ATTACHMENT A
+    				WHERE M.STATUS = 'Y'
+    				 AND M.MUS_NO = A.REF_MNO
 	</select>
 	<select id="selectNewList" resultMap="MusicResultSet">
 		SELECT  MUS_NAME,
@@ -147,6 +152,15 @@
 						 MUS_TIME = #{musTime}
 				  WHERE MUS_NO = #{musNo}
 	</update>
+	<update id="updateAttachment">
+		UPDATE ATTACHMENT
+				SET ORIGIN_NAME = #{originName},
+					   CHANGE_NAME = #{changeName},
+					   FILE_PATH = #{filePath}
+				WHERE FILE_NO = #{fileNo} 
+	</update>
+
+	
 	<!-- 관리자 노래삭제 -->
 	<update id="deleteMusic">
 			UPDATE MUSIC

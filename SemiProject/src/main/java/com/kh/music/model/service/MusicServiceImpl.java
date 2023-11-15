@@ -66,7 +66,8 @@ public class MusicServiceImpl implements MusicService{
 		return m;
 		
 	}
-
+	
+//	관리자 노래 추가
 	@Override
 	public int insertMusic(Music m, Attachment at) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -88,17 +89,27 @@ public class MusicServiceImpl implements MusicService{
 		
 	}
 
+	
+//	관리자 노래 수정	
 	@Override
-	public int updateMusic(Music m) {
+	public int updateMusic(Music m, Attachment at) {
 		SqlSession sqlSession = Template.getSqlSession();
-		int result = mDao.updateMusic(sqlSession, m);
+		int result1 = mDao.updateMusic(sqlSession, m);
+		int result2 = 1;
 		
-		if(result > 0) {
-			sqlSession.commit();
+		if(at != null) {
+			result2 = mDao.updateAttachment(sqlSession, at);
 		}
 		
+		if(result1 > 0 && result2 > 0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
 		sqlSession.close();
-		return result;
+		
+		return result1 * result2;
+		
 	}
 	
 	public int deleteMusic(int musNo) {

@@ -212,7 +212,7 @@ body {
 				    
             
             
-				    function sendMusicInfo(musName, musArt, musTime, albumPath) {
+				    function sendMusicInfo(musName, musArt, musTime, filePath, changeName) {
 				        // Ajax 요청을 통해 음악 정보를 서버로 전송
 				        $.ajax({
 				            type: 'POST', // 요청 메서드
@@ -221,7 +221,8 @@ body {
 				                musName: musName,
 				                musArt: musArt,
 				                musTime: musTime,
-				                albumPath: albumPath
+				                filePath: filePath,
+				                changeName: changeName
 				            },
 				            success: function (response) {
 				                // 서버 응답에 대한 처리
@@ -251,12 +252,15 @@ body {
 					        musicInfoDiv.html("<p>---- ---- ----</p>");
 					        musicTimeDiv.html("<p>00:00</p>");
 					        albumThumb.attr("src", "<%=contextPath%>/resources/images/default-albumArt.png");
-					    } else {				    
-						musicInfoDiv.html("<p>" + response.musName + " - " + response.musArt + "</p>");
-						musicTimeDiv.html("<p>" + response.musTime + "</p>");
-						albumThumb.attr("src", response.albumPath);
-						
-						playAudio();
+					    } else {			
+					    	console.log(response)
+							musicInfoDiv.html("<p>" + response.musName + " - " + response.musArt + "</p>");
+							musicTimeDiv.html("<p>" + response.musTime + "</p>");
+							albumThumb.attr("src", response.filePath);
+							
+							 var combinedPath = response.filePath + "/" + response.changeName;
+							
+							playAudio();
 
 					    }
 					}
@@ -267,24 +271,7 @@ body {
 					});
 					
 					
-					
-					  // 오디오 요소 가져오기
-					  var audioElement = document.getElementById('audioPlayer');
-					  // 프로그레스바 요소 가져오기
-					  var progressBar = document.getElementById('progressBar');
-
-					  // 오디오의 시간 업데이트 이벤트 처리
-					  audioElement.addEventListener('timeupdate', function () {
-					    // 프로그레스바의 값 변경
-					    progressBar.value = (audioElement.currentTime / audioElement.duration) * 100;
-					  });
-
-					  // 프로그레스바를 조작할 때 오디오의 시간 변경
-					  progressBar.addEventListener('input', function () {
-					    var seekTime = (progressBar.value / 100) * audioElement.duration;
-					    audioElement.currentTime = seekTime;
-					  });
-					
+				
 					
 
 					
@@ -299,7 +286,7 @@ body {
 					<!-- <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
 					</c:when>
 					<c:otherwise>
-						<img class="album-thumb" src="${pl.albumPath}" data-album-path="${pl.albumPath}">						
+						<img class="album-thumb" src="${pl.filePath}${pl.changeName}" data-album-path="${pl.filePath}${pl.changeName}">						
 						<div class="flex-item time flow">00:00</div>
 						<div id="musicInfoDiv" class="flex-item mp_info">
 							${pl.musName} - ${pl.musArt}
@@ -449,8 +436,8 @@ body {
 							<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
 									<c:forEach var="pl" items="${ playlist }">
-										<li class="sidebar-list" onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}', '${pl.albumPath}')">
-											<img class="pl-thumb" src="${pl.albumPath}">
+										<li class="sidebar-list" onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}', '${pl.filePath}${pl.changeName}')">
+											<img class="pl-thumb" src="${pl.filePath}${pl.changeName}">
 											<div>
 												<p class="pl-title">${pl.musName}</p>
 												<p class="pl-musician">${pl.musArt}</p>

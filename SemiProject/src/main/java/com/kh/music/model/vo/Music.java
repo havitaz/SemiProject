@@ -50,14 +50,13 @@ public class Music {
 
 	
 	
-	public Music(int musNo, String musName, String musArt, String musGen, String musTime, String albumPath) {
+	public Music(int musNo, String musName, String musArt, String musGen, String musTime) {
 		super();
 		this.musNo = musNo;
 		this.musName = musName;
 		this.musArt = musArt;
 		this.musGen = musGen;
 		this.musTime = musTime;
-		this.albumPath = albumPath;
 	}
 
 
