@@ -183,8 +183,6 @@
                                                         modifyFileBtn.innerHTML = ev.target.files[0].name;
                                                     }
 
-
-
                                                     fileInput.click();
                                                  }
                                     			 
@@ -199,6 +197,10 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"readonly/>' + '</div>'
                                     			 + ' <div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"readonly/>' + '</div>'
+                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
+                                    			 + '<span>'+result.filePath + result.originName + "</span>"
+                                                 + '<input type="file" name="upfile" style="display:none"/>'
+                                                 + '</div>'
                                     			 + '<button type="submit" class="btnAdd">삭제</button>'		 
                                     			 
                                     			 document.querySelector("#deleteMusicModal").innerHTML = str3;

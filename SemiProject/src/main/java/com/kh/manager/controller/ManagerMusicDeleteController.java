@@ -1,5 +1,6 @@
 package com.kh.manager.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,8 +33,11 @@ public class ManagerMusicDeleteController extends HttpServlet {
 			int musNo = Integer.parseInt(request.getParameter("mno"));
 			
 			int result =  new MusicServiceImpl().deleteMusic(musNo);
-
+			
+			String savePath = request.getSession().getServletContext().getRealPath("/resources/icon/musicAlbumCover/");
+			
 			if(result > 0) {
+				new File(savePath + request.getParameter("changeName")).delete();
 				request.getSession().setAttribute("alertMsg", "노래가 성공적으로 삭제되었습니다.");
 				response.sendRedirect(request.getContextPath() + "/music.bt");
 			} else {
