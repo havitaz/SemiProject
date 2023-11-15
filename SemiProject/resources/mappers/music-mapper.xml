@@ -86,11 +86,12 @@
 	<select id="selectSearchMusic" resultMap="MusicResultSet">
 				SELECT MUS_NO,
 							 MUS_NAME,
-							 ALBUM_PATH
-					FROM MUSIC
-				WHERE STATUS = 'Y'
-				   AND MUS_NAME LIKE '%' || #{keyword} || '%'
-				   ORDER BY MUS_NO DESC
+							 FILE_PATH,
+		        			CHANGE_NAME
+					FROM MUSIC M, ATTACHMENT A
+				WHERE M.STATUS = 'Y'
+					AND M.MUS_NO = A.REF_MNO
+				   AND M.MUS_NAME LIKE '%' || #{keyword} || '%'
 	</select>
 	<!-- 관리자 노래상세정보 -->
 	<select id="selectDetailMusic" resultMap="MusicResultSet">
