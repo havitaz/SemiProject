@@ -16,13 +16,16 @@ public class Music {
 	private int rownum;
 	private String filePath;
 	private String changeName;
+	private String originName;
 	
 	public Music() {}
 
 	
-
+	
+	
 	public Music(int musNo, String musName, String musArt, String musGen, String musTime, String musMv, String status,
-			int count, String albumPath, Date enrollDate, int rownum, String filePath, String changeName) {
+			int count, String albumPath, Date enrollDate, int rownum, String filePath, String changeName,
+			String originName) {
 		super();
 		this.musNo = musNo;
 		this.musName = musName;
@@ -37,7 +40,9 @@ public class Music {
 		this.rownum = rownum;
 		this.filePath = filePath;
 		this.changeName = changeName;
+		this.originName = originName;
 	}
+
 
 
 
@@ -215,14 +220,32 @@ public class Music {
 		this.changeName = changeName;
 	}
 
+	
+
+	public String getOriginName() {
+		return originName;
+	}
+
+
+
+
+	public void setOriginName(String originName) {
+		this.originName = originName;
+	}
+
+
+
 
 	@Override
 	public String toString() {
 		return "Music [musNo=" + musNo + ", musName=" + musName + ", musArt=" + musArt + ", musGen=" + musGen
 				+ ", musTime=" + musTime + ", musMv=" + musMv + ", status=" + status + ", count=" + count
 				+ ", albumPath=" + albumPath + ", enrollDate=" + enrollDate + ", rownum=" + rownum + ", filePath="
-				+ filePath + ", changeName=" + changeName + "]";
+				+ filePath + ", changeName=" + changeName + ", originName=" + originName + "]";
 	}
+
+
+
 
 	
 	

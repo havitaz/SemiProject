@@ -100,7 +100,8 @@
 								M.MUS_GEN,
 								M.MUS_TIME,
 							FILE_PATH,
-							CHANGE_NAME
+							CHANGE_NAME,
+							ORIGIN_NAME
 					FROM MUSIC M, ATTACHMENT A
 				WHERE M.MUS_NO = #{musNo}
 				AND M.MUS_NO = A.REF_MNO
