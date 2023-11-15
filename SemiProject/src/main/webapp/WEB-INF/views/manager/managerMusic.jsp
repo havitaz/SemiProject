@@ -50,8 +50,7 @@
  						 					
  						 					let str ="";
  						 					for(let r of result) {
- 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="'
- 						 							   + '<%=contextPath %>/resources/images/member.jpg">'
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.albumPath + '"/>'
  						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
  						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
  						 							   + '</div>' + '<hr>'
@@ -117,12 +116,10 @@
  						 				url: "<%=contextPath %>/music.li",
  						 			
  						 				success: function(result) {
- 						 					console.log(result);
- 						 					
+
  						 					let str ="";
  						 					for(let r of result) {
- 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="'
- 						 							   + '<%=contextPath %>/resources/images/member.jpg">'
+ 						 						str += '<div  class ="left-list-div">' + '<input type="image" src="' + r.albumPath + '"/>'
  						 							   + '<a onclick="postFormSubmit('+ r.musNo + ')" style="text-decoration: none;">'
  						 							   + '<li class="music-title">'+ r.musName +'</li></a>'
  						 							   + '</div>' + '<hr>'
@@ -221,6 +218,7 @@
                                             <!-- Modal body -->
                                             <div class="modal-body">
                                                 <form action="insert.mu" method="post" enctype="multipart/form-data">
+                                                <input type="hidden" name="rno" value="' + result.musNo + '"/>
                                                     <div class="musicTitle">
                                                         <label for="musicInfo" style="margin-right: 35px;">노래제목</label>
                                                         <input type="text" id="musicInfo_modal" name="musName" placeholder="내용을 입력하세요."/>
@@ -239,6 +237,9 @@
                                                     </div>
                                                     <div class="musicAlbumPath">
                                                         <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>
+                                                           
+																<input type="hidden"	name="albumPath"	value="${ m.getFileNo }">
+													        
                                                         <input type="file" name="upfile" />
                                                     </div>
                                                     <button type="submit" class="btnAdd">추가</button>
