@@ -37,7 +37,6 @@ public class PlaylistController extends HttpServlet {
 	    
 	    // 세션에서 memberNo를 읽어옴
 	    int memberNo = Integer.parseInt(request.getParameter("memberNo"));
-	    System.out.print("여기여기여기 : " + memberNo);
 	    
 	    PlaylistService plService = new PlaylistServiceImpl();
 	    
@@ -55,9 +54,10 @@ public class PlaylistController extends HttpServlet {
 		String musName = request.getParameter("musName");
         String musArt = request.getParameter("musArt");
         String musTime = request.getParameter("musTime");
-        String albumPath = request.getParameter("albumPath");
+        String filePath = request.getParameter("filePath");
+        String changeName = request.getParameter("changeName");
 
-        response.getWriter().write("선택된 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - " + albumPath);
+        response.getWriter().write("선택된 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - " + filePath + " - " + changeName );
 	}
 
 }

@@ -70,12 +70,17 @@
 	<select id="selectNewList" resultMap="MusicResultSet">
 		SELECT  MUS_NAME,
 		        MUS_ART,
-		        ALBUM_PATH
-		FROM(SELECT MUS_NAME,
-		        	MUS_ART,
-		        	ALBUM_PATH
-			FROM MUSIC
-			ORDER BY ENROLL_DATE DESC)
+		        FILE_PATH,
+		        CHANGE_NAME
+			FROM( SELECT M.MUS_NAME,
+		        	M.MUS_ART,
+		        	FILE_PATH,
+		        	CHANGE_NAME
+				FROM MUSIC M, ATTACHMENT A
+				WHERE M.STATUS = 'Y'
+				AND M.MUS_NO = A.REF_MNO
+				ORDER BY ENROLL_DATE DESC
+				)
 		WHERE ROWNUM <![CDATA[<]]>= 15
 	</select>
 	<select id="selectSearchMusic" resultMap="MusicResultSet">

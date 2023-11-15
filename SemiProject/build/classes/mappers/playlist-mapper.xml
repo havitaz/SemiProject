@@ -13,17 +13,22 @@
 		<result column="MUS_TIME" property="musTime"/>					
 		<result column="ALBUM_PATH" property="albumPath"/>			
 		<result column="STATUS" property="status"/>
+		<result column="FILE_PATH" property="filePath"/>
+		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	<select id="selectPlaylist" resultMap="PlaylistResultSet">
-			SELECT MU.MUS_NAME,
-			       MU.MUS_ART,
-			       MU.ALBUM_PATH,
-			       MUS_TIME
-   			 FROM PLAYLIST P
-			 JOIN MUSIC MU ON (MU.MUS_NO = P.MUS_NO)
-			 JOIN MEMBER ME ON (ME.MEM_NO = P.MEM_NO)
-            WHERE P.STATUS = 'Y' 
-              AND ME.MEM_NO = #{memberNo}
+             SELECT MU.MUS_NAME,
+					MU.MUS_ART,
+					MU.MUS_TIME,
+                    FILE_PATH,
+                    CHANGE_NAME
+				FROM PLAYLIST P
+                JOIN MUSIC MU ON (MU.MUS_NO = P.MUS_NO)
+                JOIN MEMBER ME ON (ME.MEM_NO = P.MEM_NO)
+                JOIN ATTACHMENT ON (MU.MUS_NO = REF_MNO)
+				WHERE ME.MEM_NO = #{memberNo}
+                
+
 	</select>
 <!-- WHERE P.STATUS = 'Y' 
 	 AND ME.MEM_NO = #{memberNo}; -->
