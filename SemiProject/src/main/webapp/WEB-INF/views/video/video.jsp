@@ -102,8 +102,10 @@
             </div>
             </div>
             <div>
-               <div id="top100List"></div>
+               <div id="top100List">
                
+               </div>
+ 
             </div>
         </div>
         <script>
@@ -122,15 +124,18 @@
                 })
             }
 
-            function drawTop100List(data){
-                for(let rowData of data){
+            function drawTop100List(data) {
+                for (let rowData of data) {
                     const tr = document.createElement('div');
-                    tr.innerHTML = "<div><img src='" + rowData.albumPath + "'>"+ 
-                                    "<div>" + "<p>" + rowData.musArt + "</p>"+   
-                                    "<p>" + rowData.musName + "</p>" + "</div>" + "</div>";
+                    const MusArt = rowData.musArt.length > 12 ? rowData.musArt.substring(0, 7) + '...' : rowData.musArt;
+                    const MusName = rowData.musName.length > 12 ? rowData.musName.substring(0, 7) + '...' : rowData.musName;
+
+                    tr.innerHTML = "<div><img src='" + rowData.albumPath + "'>" +
+                        "<div>" + "<p>" + MusArt + "</p>" +
+                        "<p>" + MusName + "</p>" + "</div>" + "</div>";
+
                     document.querySelector("#top100List").appendChild(tr);
                 }
-               
             }
         </script>
     </main>

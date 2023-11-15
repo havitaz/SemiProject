@@ -27,7 +27,7 @@
 		        	MUS_ART,
 		        	ALBUM_PATH
 			FROM MUSIC
-			ORDER BY ENROLL_DATE DESC)
+			ORDER BY COUNT DESC)
 		WHERE ROWNUM BETWEEN 1 AND 6
 	</select>
   </mapper>
