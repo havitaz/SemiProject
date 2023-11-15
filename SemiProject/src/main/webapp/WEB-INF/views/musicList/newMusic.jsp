@@ -47,10 +47,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Out of Time.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Bad guy.jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -74,10 +74,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>푸르름이 사는 곳.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Sakayme.jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -101,10 +101,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Sgt. Pepper's Lonely Hearts Club Band.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Long, Long Way from Home.jpg" class="d-block w-100">
 						</div>
 					</div>
 					
@@ -128,10 +128,10 @@
 					<!-- The slideshow/carousel -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<%=albumPath %>new_standing_next_to_you.jpg" class="d-block w-100">
+							<img src="<%=albumPath %>Vancouver.jpg" class="d-block w-100">
 						</div>
 						<div class="carousel-item">
-							<img src="<%=albumPath %>new_bye_bye_bye(Feat.Sion).jpg" class="d-block w-100">
+							<img src="<%=albumPath %>D.jpg" class="d-block w-100">
 						</div>
 					</div>
 					
