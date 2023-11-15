@@ -9,7 +9,7 @@
 <body>
 
 
-			<jsp:forward page="/WEB-INF/views/common/managerMenubar.jsp"/> 관리자 페이지-메뉴바	 		
+			<jsp:forward page="/WEB-INF/views/video/video.jsp"/> 		
 
 	<%-- 
 
