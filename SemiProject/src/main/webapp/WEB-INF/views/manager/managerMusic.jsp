@@ -46,7 +46,6 @@
  						 					keyword : document.querySelector(".left-area-div-input").value
  						 				},
 						 				success: function(result) {
- 						 					console.log(result);
  						 					
  						 					let str ="";
  						 					for(let r of result) {
@@ -236,11 +235,8 @@
                                                         <input type="text" id="musicInfo_modal" name="musTime" placeholder="내용을 입력하세요."/>
                                                     </div>
                                                     <div class="musicAlbumPath">
-                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>
-                                                           
-																<input type="hidden"	name="albumPath"	value="${ m.getFileNo }">
-													        
-                                                        <input type="file" name="upfile" />
+                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>    
+                                                        <input type="file" name="upfile"/>
                                                     </div>
                                                     <button type="submit" class="btnAdd">추가</button>
                                                 </form>

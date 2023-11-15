@@ -52,10 +52,10 @@
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
 				SELECT MUS_NO, 
-							MUS_NAME,
-							ALBUM_PATH
-					FROM MUSIC
-				WHERE STATUS = 'Y'
+				            MUS_NAME,
+				            ALBUM_PATH
+   				 	FROM MUSIC M
+    			WHERE M.STATUS = 'Y'
 	</select>
 	<select id="selectNewList" resultMap="MusicResultSet">
 		SELECT  MUS_NAME,
