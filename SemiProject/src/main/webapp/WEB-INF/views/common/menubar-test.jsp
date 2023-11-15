@@ -451,7 +451,7 @@ body {
 								<div class="accordion-body">
 									<c:forEach var="pl" items="${ playlist }">
 										<li class="sidebar-list" onclick="sendMusicInfo('${pl.musName}', '${pl.musArt}', '${pl.musTime}', '${pl.albumPath}')">
-											<img class="pl-thumb" src="${pl.albumPath}">
+											<img class="pl-thumb" src="${pl.filePath}${pl.changeName}">
 											<div>
 												<p class="pl-title">${pl.musName}</p>
 												<p class="pl-musician">${pl.musArt}</p>
