@@ -22,17 +22,16 @@
 	</resultMap>
 	
   	<select id="selectTopList" resultMap="MusicResultSet">
-		SELECT  MUS_NAME,
-		        MUS_ART,
-		        FILE_PATH,
-		        CHANGE_NAME
-		FROM(SELECT MUS_NAME,
-		        	MUS_ART,
-		        	FILE_PATH,
-		        	CHANGE_NAME
+		SELECT MUS_NAME,MUS_ART,FILE_PATH,CHANGE_NAME
+			FROM(   SELECT M.MUS_NAME,
+			               M.MUS_ART,
+			               FILE_PATH,
+			               CHANGE_NAME
 			FROM MUSIC M, ATTACHMENT A
+			WHERE M.STATUS = 'Y'
+				AND M.MUS_NO = A.REF_MNO
 			ORDER BY COUNT DESC)
 		WHERE ROWNUM BETWEEN 1 AND 6
-		AND JOIN M.MUS_NO = A.REF_MNO
+		
 	</select>
   </mapper>
