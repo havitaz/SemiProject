@@ -313,8 +313,7 @@ body {
 			</c:when>
 			<c:otherwise>
 				<div class="right-section">
-					<div class="notifications-icon-container"></div>
-					<button class="btn-login" data-bs-toggle="modal"data-bs-target="#loginModal" disabled>로그인</button>
+				
 				</div>
 			</c:otherwise>
 		</c:choose>

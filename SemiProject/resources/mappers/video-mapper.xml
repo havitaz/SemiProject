@@ -17,17 +17,21 @@
 		<result column="ALBUM_PATH" property="albumPath"/>
 		<result column="ENROLL_DATE" property="enrollDate"/>
 		<result column="ROWNUM" property="rownum"/>
+		<result column="FILE_PATH" property="filePath"/>
+		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	
   	<select id="selectTopList" resultMap="MusicResultSet">
-		SELECT  MUS_NAME,
-		        MUS_ART,
-		        ALBUM_PATH
-		FROM(SELECT MUS_NAME,
-		        	MUS_ART,
-		        	ALBUM_PATH
-			FROM MUSIC
-			ORDER BY ENROLL_DATE DESC)
+		SELECT MUS_NAME,MUS_ART,FILE_PATH,CHANGE_NAME
+			FROM(   SELECT M.MUS_NAME,
+			               M.MUS_ART,
+			               FILE_PATH,
+			               CHANGE_NAME
+			FROM MUSIC M, ATTACHMENT A
+			WHERE M.STATUS = 'Y'
+				AND M.MUS_NO = A.REF_MNO
+			ORDER BY COUNT DESC)
 		WHERE ROWNUM BETWEEN 1 AND 6
+		
 	</select>
   </mapper>
