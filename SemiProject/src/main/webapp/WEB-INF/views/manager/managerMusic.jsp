@@ -168,11 +168,25 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"/>' + '</div>'
                                     			 + '<div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"/>' + '</div>'
-                                    			 + '<div class="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
-                                    			 + '<input type="file" name="upfile" value="' + result.filePath + result.originName + '"/>'  + '</div>'
-                                    			 + '<button type="submit" class="btnAdd">수정</button>'
+                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
+                                    			 + '<span>'+result.filePath + result.originName + "</span>"
+                                                 + '<input type="file" name="upfile" style="display:none"/>'
+                                                 + '</div>'
+                                    			 + '<button type="submit" class="btnAdd">수정</button>' 
  	
                                     			 document.querySelector("#updateMusicModal").innerHTML = str2;
+                                    			 const modifyFileBtn = document.querySelector("#musicAlbumPath > span");
+                                                 modifyFileBtn.onclick = function(){
+                                                    const fileInput = document.querySelector("#musicAlbumPath > input[type='file']");
+                                                    fileInput.onchange = function(ev){
+                                                        console.log(ev.target.files)
+                                                        modifyFileBtn.innerHTML = ev.target.files[0].name;
+                                                    }
+
+
+
+                                                    fileInput.click();
+                                                 }
                                     			 
                                     	//노래 삭제
                                     	let str3 = "";
@@ -188,7 +202,8 @@
                                     			 + '<button type="submit" class="btnAdd">삭제</button>'		 
                                     			 
                                     			 document.querySelector("#deleteMusicModal").innerHTML = str3;
-                                    		
+                                    	
+                                        
                                     
                                     },
                                     error: function(){

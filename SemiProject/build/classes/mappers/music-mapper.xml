@@ -94,14 +94,16 @@
 	</select>
 	<!-- 관리자 노래상세정보 -->
 	<select id="selectDetailMusic" resultMap="MusicResultSet">
-				SELECT     MUS_NO, 
-							MUS_NAME,
-								MUS_ART,
-								MUS_GEN,
-								MUS_TIME,
-							ALBUM_PATH
-					FROM MUSIC
-				WHERE MUS_NO = #{musNo}
+				SELECT     M.MUS_NO, 
+							M.MUS_NAME,
+								M.MUS_ART,
+								M.MUS_GEN,
+								M.MUS_TIME,
+							FILE_PATH,
+							CHANGE_NAME
+					FROM MUSIC M, ATTACHMENT A
+				WHERE M.MUS_NO = #{musNo}
+				AND M.MUS_NO = A.REF_MNO
 	</select>
 	<!-- 관리자 노래 추가 -->
 	<insert id="insertMusic" parameterType="Music">
