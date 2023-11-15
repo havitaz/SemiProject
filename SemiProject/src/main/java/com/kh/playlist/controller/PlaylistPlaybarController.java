@@ -38,7 +38,7 @@ public class PlaylistPlaybarController extends HttpServlet {
         response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\", \"filePath\": \"" + filePath + "\"}");
     
         // 현재 재생 중인 음악 파일 경로를 설정
-        String currentSongPath = getServletContext().getRealPath("/resources/audio/") + musName + ".mp3";
+        String currentSongPath = getServletContext().getRealPath("/resources/icon/musicAlbumCover/") + musName + ".mp3";
         // 현재 재생 중인 음악 파일을 설정
         request.getSession().setAttribute("currentSongPath", currentSongPath);
     }

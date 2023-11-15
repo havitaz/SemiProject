@@ -69,8 +69,7 @@ body {
 					    } else {
 					        repeatButton.src = "<%=contextPath%>/resources/icon/menubarIcon/repeat.png";
 					    }
-					});	
-					
+					});						
 										
 					/*상단바 재생시간 */
 					function timeStringToSeconds(timeString) {
@@ -138,7 +137,6 @@ body {
 				    }
 				  }
 
-
 				/*음소거 이미지 변경*/
 			  function changeImage() {
 				    let volCheck = document.getElementById("vol");				    
@@ -153,7 +151,6 @@ body {
 
 				    }
 				  }
-				  			 
 				
 				  var audioElement = document.getElementById('audioPlayer');
 				  audioElement.volume = 0.5; //초기 볼륨 값 50%
@@ -170,10 +167,8 @@ body {
 				    // volumeRange의 값이 0인 경우 mute 이미지로, 그 외에는 vol 이미지로 변경
 				    volCheck.src = volumeRange.value == 0 ? "<%=contextPath%>/resources/icon/menubarIcon/mute.png" : "<%=contextPath%>/resources/icon/menubarIcon/vol.png";
 				}
-	
-					
-			/*재생버튼 이미지 변경*/
-
+			
+				/*재생버튼 이미지 변경*/
 				  function changeImagePlay() {
 					    let plbtn = document.getElementById("playButton");
 					    
@@ -206,12 +201,7 @@ body {
 					        // 다음 곡 재생 함수 
 					        
 					    }
-					});
-	
-				  			 		 
-				    
-            
-            
+					});    
 				    function sendMusicInfo(musName, musArt, musTime, filePath, changeName) {
 				        // Ajax 요청을 통해 음악 정보를 서버로 전송
 				        $.ajax({
@@ -230,23 +220,19 @@ body {
 
 				                // 받은 응답을 이용하여 UI 업데이트 등의 작업 수행
 				                updateUI(response);
-				                
+				                playNewSong(response.filePath);
 				                // 세션 값 받아오기
-				                var currentSongPath = response.filePath;
+				               // var currentSongPath = response.filePath;
 
 				                // 현재 재생 중인 음악 파일을 설정
-				                playNewSong(currentSongPath);
+				               // playNewSong(currentSongPath);
 				            },
 				            error: function (error) {
 				                // 에러 처리
 				                console.error(error);
 				            }
 				        });
-				    }
-
-
-				    
-				    
+				    }		    
 					function updateUI(response) {
 						// 서버 응답에 따라 UI 업데이트 수행
 						// 이 부분에 받은 데이터를 이용하여 UI를 업데이트하는 로직을 추가할 수 있습니다.
@@ -266,18 +252,14 @@ body {
 							
 					        playNewSong(response.filePath);
 							//playAudio();
-
 					    }
 					}
-
 
 					$(document).ready(function () {
 					    updateUI();
 					});
 					
-					
-				
-					
+	
 					// 음악을 재생하는 함수
 					function playNewSong(filePath) {
 						// 만약 filePath에 .jpg가 있다면 .jpg를 제거하고 .mp3를 추가
@@ -293,8 +275,7 @@ body {
 				        changeImagePlay(); /*재생버튼 반영*/
 
 					    console.log('filePath :',filePath)
-					}
-					
+					}				
 				</script>
 
 				<c:choose>
