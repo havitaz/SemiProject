@@ -27,7 +27,7 @@ public class PageBackController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.getRequestDispatcher("WEB-INF/views/common/menubar-test.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 	}
 
 	/**

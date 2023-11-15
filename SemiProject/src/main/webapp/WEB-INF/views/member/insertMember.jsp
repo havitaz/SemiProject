@@ -15,6 +15,7 @@
   	<jsp:include page="../common/menubar-test.jsp"/>
   
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
+
 </head>
 <body class="insertMember">
 

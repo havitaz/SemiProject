@@ -115,12 +115,20 @@ public class MemberServiceImpl implements MemberService{
 		ArrayList<Music> list = mDao.selectTopList(sqlSession);
 		return list;
 	}
-//
-//	@Override
-//	public ArrayList<Music> selectTopList2() {
-//		
-//		return null;
-//	}
-	
-	
+
+	@Override
+	public Member updateMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.updateMember(sqlSession, m);
+		
+		Member updateMem = null;
+		if(result > 0) {
+			sqlSession.commit();
+			updateMem = new MemberDao().selectMember(sqlSession, m.getMemberId());
+		} else {
+			sqlSession.rollback();
+		}
+		return updateMem;
+	}
 }

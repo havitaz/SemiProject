@@ -45,7 +45,7 @@ public class SearchPwdController extends HttpServlet {
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("alertMsg", "회원님의 비밀번호는" + searchMemberPwd.getMemberPwd() + "입니다.");
-			request.getRequestDispatcher("WEB-INF/views/common/menubar.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 		}
 		
 	}
