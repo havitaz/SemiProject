@@ -8,9 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.music.model.service.MusicService;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
+import com.kh.common.template.Attachment;
+import com.kh.common.template.MyFileRenamePolicy;
 import com.kh.music.model.service.MusicServiceImpl;
 import com.kh.music.model.vo.Music;
+import com.oreilly.servlet.MultipartRequest;
 
 /**
  * Servlet implementation class ManagerUpdateController
@@ -32,22 +36,58 @@ public class ManagerMusicUpdateController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			request.setCharacterEncoding("UTF-8");
+			
+			if(ServletFileUpload.isMultipartContent(request)) {
+				
+				int maxSize = 10 * 1024 * 1024;
+				
+				String savePath = request.getSession().getServletContext().getRealPath("/resources/icon/musicAlbumCover/");
+				
+				MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
+				
 			int musNo = Integer.parseInt(request.getParameter("mno"));
-			String musName = request.getParameter("musName");
-			String musArt = request.getParameter("musArt");
-			String musGen = request.getParameter("musGen");
-			String musTime = request.getParameter("musTime");
-			String albumPath = request.getParameter("albumPath");
+			String musName = multiRequest.getParameter("musName");
+			String musArt = multiRequest.getParameter("musArt");
+			String musGen = multiRequest.getParameter("musGen");
+			String musTime = multiRequest.getParameter("musTime");
 			
-			Music m = new Music(musNo, musName, musArt, musGen, musTime, albumPath);
-			
-			int result =  new MusicServiceImpl().updateMusic(m);
+			Music m = new Music();
+			m.setMusName(musName);
+			m.setMusArt(musArt);
+			m.setMusGen(musGen);
+			m.setMusTime(musTime);
 
-			request.setAttribute("alertMsge", "성공적으로 수정");
-			response.sendRedirect(request.getContextPath() + "/music.bt");
+			Attachment at = null;
+			if(multiRequest.getOriginalFileName("upfile") != null) {
+				//새로 넘어온 첨부파일이 있을때
+				at = new Attachment();
+				at.setOriginName(multiRequest.getOriginalFileName("upfile"));
+				at.setChangeName(multiRequest.getFilesystemName("upfile"));
+				at.setFilePath("resources/icon/musicAlbumCover/");
+				
+				//기존 첨부파일 있을때 => update attachment(기존첨부파일 번호)
+				if(multiRequest.getParameter("originName") != null) {
+						at.setFileNo(Integer.parseInt(multiRequest.getParameter("originName")));
+				} else {  
+						at.setRefMusicNo(musNo);
+				}
+				
+		}
 			
+			int result =  new MusicServiceImpl().updateMusic(m, at);
 
-	}
+			
+			if(result > 0) {
+				//성공 => /jsp/detail.bo?bno=해당게시글번호
+				request.getSession().setAttribute("alertMsg", "성공적으로 수정하였습니다.");
+				response.sendRedirect(request.getContextPath() + "/music.bt");
+			} else {
+				request.setAttribute("errorMsg", "게시글 수정 실패");
+				request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			}
+		}
+
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
