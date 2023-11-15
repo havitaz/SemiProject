@@ -14,11 +14,15 @@ public class Music {
 	private String albumPath;
 	private Date enrollDate;
 	private int rownum;
+	private String filePath;
+	private String changeName;
 	
 	public Music() {}
 
+	
+
 	public Music(int musNo, String musName, String musArt, String musGen, String musTime, String musMv, String status,
-			int count, String albumPath, Date enrollDate, int rownum) {
+			int count, String albumPath, Date enrollDate, int rownum, String filePath, String changeName) {
 		super();
 		this.musNo = musNo;
 		this.musName = musName;
@@ -31,7 +35,11 @@ public class Music {
 		this.albumPath = albumPath;
 		this.enrollDate = enrollDate;
 		this.rownum = rownum;
+		this.filePath = filePath;
+		this.changeName = changeName;
 	}
+
+
 
 	public Music(String musName, String musArt, String musGen) {
 		super();
@@ -52,102 +60,171 @@ public class Music {
 		this.albumPath = albumPath;
 	}
 
+
+
 	public int getMusNo() {
 		return musNo;
 	}
+
+
 
 	public void setMusNo(int musNo) {
 		this.musNo = musNo;
 	}
 
+
+
 	public String getMusName() {
 		return musName;
 	}
+
+
 
 	public void setMusName(String musName) {
 		this.musName = musName;
 	}
 
+
+
 	public String getMusArt() {
 		return musArt;
 	}
+
+
 
 	public void setMusArt(String musArt) {
 		this.musArt = musArt;
 	}
 
+
+
 	public String getMusGen() {
 		return musGen;
 	}
+
+
 
 	public void setMusGen(String musGen) {
 		this.musGen = musGen;
 	}
 
+
+
 	public String getMusTime() {
 		return musTime;
 	}
+
+
 
 	public void setMusTime(String musTime) {
 		this.musTime = musTime;
 	}
 
+
+
 	public String getMusMv() {
 		return musMv;
 	}
+
+
 
 	public void setMusMv(String musMv) {
 		this.musMv = musMv;
 	}
 
+
+
 	public String getStatus() {
 		return status;
 	}
+
+
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
+
+
 	public int getCount() {
 		return count;
 	}
+
+
 
 	public void setCount(int count) {
 		this.count = count;
 	}
 
+
+
 	public String getAlbumPath() {
 		return albumPath;
 	}
+
+
 
 	public void setAlbumPath(String albumPath) {
 		this.albumPath = albumPath;
 	}
 
+
+
 	public Date getEnrollDate() {
 		return enrollDate;
 	}
+
+
 
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
 	}
 
+
+
 	public int getRownum() {
 		return rownum;
 	}
+
+
 
 	public void setRownum(int rownum) {
 		this.rownum = rownum;
 	}
 
+
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+
+
+	public String getChangeName() {
+		return changeName;
+	}
+
+
+
+	public void setChangeName(String changeName) {
+		this.changeName = changeName;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Music [musNo=" + musNo + ", musName=" + musName + ", musArt=" + musArt + ", musGen=" + musGen
 				+ ", musTime=" + musTime + ", musMv=" + musMv + ", status=" + status + ", count=" + count
-				+ ", albumPath=" + albumPath + ", enrollDate=" + enrollDate + ", rownum=" + rownum + "]";
+				+ ", albumPath=" + albumPath + ", enrollDate=" + enrollDate + ", rownum=" + rownum + ", filePath="
+				+ filePath + ", changeName=" + changeName + "]";
 	}
 
-	
 	
 	
 }

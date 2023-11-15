@@ -85,7 +85,7 @@
                 <div class="top100part">
                 <div class="speech-bubble">
                 <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-                <u>이번 주 추천 곡</u>
+                <u><a href="newList.mu">이번 주 추천 곡</a></u>
             	</div>
                 <h1 class="top100-h1">쿼카 플레이어
                     <br>top 100
