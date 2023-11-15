@@ -1,5 +1,6 @@
 package com.kh.manager.controller;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -60,18 +61,12 @@ public class ManagerMusicUpdateController extends HttpServlet {
 			Attachment at = null;
 			if(multiRequest.getOriginalFileName("upfile") != null) {
 				//새로 넘어온 첨부파일이 있을때
+				new File(savePath + multiRequest.getParameter("originName")).delete();
+				
 				at = new Attachment();
 				at.setOriginName(multiRequest.getOriginalFileName("upfile"));
 				at.setChangeName(multiRequest.getFilesystemName("upfile"));
-				at.setFilePath("resources/icon/musicAlbumCover/");
-				
-				//기존 첨부파일 있을때 => update attachment(기존첨부파일 번호)
-				if(multiRequest.getParameter("originName") != null) {
-						at.setFileNo(Integer.parseInt(multiRequest.getParameter("originName")));
-				} else {  
-						at.setRefMusicNo(musNo);
-				}
-				
+				at.setFilePath("resources/icon/musicAlbumCover/");	
 		}
 			
 			int result =  new MusicServiceImpl().updateMusic(m, at);
