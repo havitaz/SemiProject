@@ -198,7 +198,7 @@
                                     			 + ' <div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"readonly/>' + '</div>'
                                     			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
-                                    			 + '<span>'+result.filePath + result.originName + "</span>"
+                                    			 + '<span>'+result.filePath + result.changeName + "</span>"
                                     			 + '<input type="hidden" name="changeName" value="'+result.changeName+'"/>'
                                                  + '<input type="file" name="upfile" style="display:none"/>'
                                                  + '</div>'
