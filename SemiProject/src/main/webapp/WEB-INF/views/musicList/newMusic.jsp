@@ -153,7 +153,7 @@
 	<div class="new-grid">
 		<c:forEach var="n" items="${ list }">
 				<ul style="color: black; width: 180px;">
-					<li><img style="width: 180px; height: 180px;" src="${n.albumPath}"></li>
+					<li><img style="width: 180px; height: 180px;" src="${n.filePath}${n.changeName}"></li>
 					<li style="font-weight: bold; font-size: 17px">${n.musName}</li>
 					<li style="font-size: 14px">${n.musArt}</li>
 				</ul>
