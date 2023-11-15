@@ -87,7 +87,6 @@
 				FROM MEMBER
 			WHERE STATUS = 'Y'
 			AND MEM_ID LIKE '%' || #{keyword} || '%'
-			ORDER BY MEM_NO DESC
 	</select>
 	<select id="selectDetailMember" resultMap="memberResultSet">
 			SELECT MEM_NO, 
