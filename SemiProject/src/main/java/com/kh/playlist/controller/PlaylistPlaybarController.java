@@ -31,10 +31,10 @@ public class PlaylistPlaybarController extends HttpServlet {
         String changeName = request.getParameter("changeName");
 
         // 콘솔에 받은 음악 정보를 출력합니다.
-        System.out.println("플레이리스트 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - " + filePath  + " - " + changeName);
+        System.out.println("플레이리스트 곡 정보: " + musName + " - " + musArt + " - " + musTime + " - " + filePath);
 
         // 클라이언트에게 필요한 경우 응답을 보낼 수 있습니다.
         response.setContentType("application/json; charset=UTF-8");
-        response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\", \"filePath\": \"" + filePath + changeName + "\"}");
+        response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\", \"filePath\": \"" + filePath + "\"}");
     }
 }
