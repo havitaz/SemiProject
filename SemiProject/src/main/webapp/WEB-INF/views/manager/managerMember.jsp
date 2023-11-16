@@ -81,7 +81,7 @@
                     
                     <div class="right">
                         <div class="right-area" align="center">
-                            <h1 style="color: #41382b; margin-top: 90px;">회원 정보</h1>
+                            <h1 style="color: #41382b;padding : 19px; margin-top: 30px; margin-bottom: 50px;">회원 정보</h1>
 
                             <form id="inputInfo" class="form-horizontal">
                                     <div class="member-info-class">

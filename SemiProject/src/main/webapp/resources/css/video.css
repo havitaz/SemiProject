@@ -151,6 +151,7 @@
 
 .modal-footer .link-style a{
     color: rgb(218, 15, 71);
+    font-size: 15px;
 }
 
 .modal-body{
@@ -291,5 +292,6 @@ position: absolute;
     font-weight: bolder;
 }
 .video-mv{
-  	margin-right: 27px;
+  	margin-right: 10px;
+  	width: 320px;
 }

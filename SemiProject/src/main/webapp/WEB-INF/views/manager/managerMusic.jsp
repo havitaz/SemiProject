@@ -120,7 +120,7 @@
                    
                     <div class="right">
                         <div class="right-area" align="center">
-                            <h1 style="color: #41382b; margin-top: 50px;">노래 상세정보</h1>
+                            <h1 style="color: #41382b;">노래 상세정보</h1>
 
                             <form id="inputInfo" class="form-horizontal">
                                     <div class="music-info-class">
@@ -316,8 +316,8 @@
                                     </div>
                                 </div>
 									<script>
-                                    			 const modifyFileBtn = document.querySelector("#musicAlbumPath > span");
-                                                 modifyFileBtn.onclick = function(){
+                                    			 const addFileBtn = document.querySelector("#musicAlbumPath > span");
+                                    			 addFileBtn.onclick = function(){
                                                     const fileInput = document.querySelector("#musicAlbumPath > input[type='file']");
                                                     fileInput.onchange = function(ev){
                                                         console.log(ev.target.files);
