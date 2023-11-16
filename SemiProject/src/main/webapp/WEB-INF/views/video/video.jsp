@@ -16,6 +16,8 @@
     // 날짜 및 시간 형식 지정
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     String formattedDateTime = now.format(formatter);
+    
+    String alertMsg = (String)session.getAttribute("alertMsg");
 %>
 <!DOCTYPE html>
 <html>
@@ -49,6 +51,12 @@
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
+<% if(alertMsg != null) { %>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
 		<jsp:include page="../common/menubar-test.jsp"/>
 
 

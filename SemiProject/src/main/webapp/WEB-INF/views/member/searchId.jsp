@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <% 
     String contextPath = request.getContextPath();
+
+	String alertMsg = (String)session.getAttribute("alertMsg");
 %>
 <!DOCTYPE html>
 <html>
@@ -16,6 +18,12 @@
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/member/member.css">
 </head>
 <body>
+<% if(alertMsg != null) { %>
+		<script>
+			alert("<%=alertMsg%>");
+		</script>
+		<% session.removeAttribute("alertMsg"); %>
+	<% } %>
     <div class="memberInput" align="center">
     	<p class="h1-style" style="color: black;" align="center">아이디 찾기</p>
     	<button type="button" class="btn-close" onclick="closeMenu()"></button>
