@@ -11,8 +11,7 @@
     background: rgb(67, 56, 41);
     border-style: none;
     border-radius: 5% 0 0 5%;
-    overflow-y: scroll;
-    
+    overflow-y: auto;
 }
 
   .left::-webkit-scrollbar {
@@ -34,7 +33,7 @@
 .bodyList{
     display: flex;
     width: 600px;
-    height: 700px;
+    height: 600px;
     justify-content: center;
     margin-left: 40px;
 }
@@ -222,22 +221,22 @@
 }
 
 
-.btnAdd{
+.btnSubmit{
     background: rgb(67, 56, 41);
     color: white;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 131px;
     width: 150px;
     height: 50px;
     box-shadow:0px 4px 0px rgb(67, 56, 41);
 }
 
 
-.btnAdd:hover {
+.btnSubmit:hover {
     background-color: rgb(205, 165, 130);
 }
 
-.btnAdd:active {
+.btnSubmit:active {
 	position:relative;
 	top:1px;
     box-shadow: 0 0 rgb(67, 56, 41);
@@ -245,8 +244,76 @@
 }
 
 
+.btnSubmitUpdate{
+    background: rgb(67, 56, 41);
+    color: white;
+    border-radius: 5px;
+    margin-top: 146px;
+    width: 150px;
+    height: 50px;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
+}
+
+
+.btnSubmitUpdate:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.btnSubmitUpdate:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
+}
+
+
+.btnSubmitDelete{
+    background: rgb(67, 56, 41);
+    color: white;
+    border-radius: 5px;
+    margin-top: 146px;
+    width: 150px;
+    height: 50px;
+    box-shadow:0px 4px 0px rgb(67, 56, 41);
+}
+
+
+.btnSubmitDelete:hover {
+    background-color: rgb(205, 165, 130);
+}
+
+.btnSubmitDelete:active {
+	position:relative;
+	top:1px;
+    box-shadow: 0 0 rgb(67, 56, 41);
+    background-color: rgb(205, 165, 130);
+}
+
+
+
 .modal-body{
     height: 700px;
     background: ivory;
+    top: -6px;
+    
 }
+
+
+input[type=file]::file-selector-button {
+    width: 100px;
+    height: 50px;
+    background: #fff;
+    border-radius: 5%;
+    cursor: pointer;
+  }
+
+  input[type=file]::file-selector-button:hover{
+    background: rgb(199 167 135);
+    border-radius: 5%;
+    color: #fff;
+  }
+
+  #updateMusicModal > span{
+    background: white;
+  }
 

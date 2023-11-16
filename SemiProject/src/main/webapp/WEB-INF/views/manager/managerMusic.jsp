@@ -16,7 +16,49 @@
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    #btnCloseModal{
+    top: -4px;
+    right: 10px;
+    position: relative;
+    background-color: #8b8b8b;
+    border-radius: 25px 25px 25px 25px;
+  } 
 
+  .musicUpdate {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    width: 380px;
+    height: 59px;
+    left: 276px;
+    top: 463px;
+    border: 2px solid rgb(199 167 135);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+  }
+
+
+  .musicUpdate > input {
+    border: none;
+  }
+  
+.coverImage{
+    margin-right: 70px;
+    margin-top: 38px;
+    left: 140px;
+    position: absolute;
+
+}
+
+  input#file-upload-button {
+    border: none;
+
+  }
+</style>
 </head>
 <body>
 		 <%@ include file="../common/managerMenubar.jsp" %>
@@ -168,11 +210,11 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"/>' + '</div>'
                                     			 + '<div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"/>' + '</div>'
-                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
-                                    			 + '<span>'+result.filePath + result.originName + "</span>"
+                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" class="coverImage">커버사진</label>'
+                                    			 + '<span class="musicUpdate">'+result.filePath + result.originName + "</span>"
                                                  + '<input type="file" name="upfile" style="display:none"/>'
                                                  + '</div>'
-                                    			 + '<button type="submit" class="btnAdd">수정</button>' 
+                                    			 + '<button type="submit" class="btnSubmitUpdate">수정</button>' 
  	
                                     			 document.querySelector("#updateMusicModal").innerHTML = str2;
                                     			 const modifyFileBtn = document.querySelector("#musicAlbumPath > span");
@@ -185,6 +227,7 @@
 
                                                     fileInput.click();
                                                  }
+                                                 
                                     			 
                                     	//노래 삭제
                                     	let str3 = "";
@@ -197,12 +240,12 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musGen" value="' + result.musGen + '"readonly/>' + '</div>'
                                     			 + ' <div class="musicTime">' + '<label for="musicInfo" style="margin-right: 35px;">재생시간</label>'
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"readonly/>' + '</div>'
-                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
-                                    			 + '<span>'+result.filePath + result.changeName + "</span>"
+                                    			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" class="coverImage">커버사진</label>'
+                                    			 + '<span class="musicUpdate">'+result.filePath + result.changeName + "</span>"
                                     			 + '<input type="hidden" name="changeName" value="'+result.changeName+'"/>'
                                                  + '<input type="file" name="upfile" style="display:none"/>'
                                                  + '</div>'
-                                    			 + '<button type="submit" class="btnAdd">삭제</button>'		 
+                                    			 + '<button type="submit" class="btnSubmitDelete">삭제</button>'		 
                                     			 
                                     			 document.querySelector("#deleteMusicModal").innerHTML = str3;
                                     	
@@ -231,7 +274,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header" style="background: rgb(199 167 135); color: white;">
                                                 <h4 class="modal-title" >노래 추가페이지</h4>
-                                                <button type="button" class="btn-close" style="color: ivory;" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close" id="btnCloseModal" data-bs-dismiss="modal"></button>
                                             </div>
                                         
                                             <!-- Modal body -->
@@ -254,18 +297,31 @@
                                                         <label for="musicInfo" style="margin-right: 35px;">재생시간</label>
                                                         <input type="text" id="musicInfo_modal" name="musTime" placeholder="내용을 입력하세요."/>
                                                     </div>
-                                                    <div class="musicAlbumPath">
-                                                        <label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>    
-                                                        <input type="file" name="upfile"/>
-                                                    </div>
-                                                    <button type="submit" class="btnAdd">추가</button>
+                                                    <div class="musicAlbumPath" id="musicAlbumPath">
+                                                       <label for="musicInfo" class="coverImage" style="margin-right: 70px; margin-top: 40px">커버사진</label>  
+                                                       <span class="musicUpdate">파일 첨부</span>
+                                                       <input type="hidden" name="changeName" value=""/>
+                                                        <input type="file" id = "createfile"  name="upfile" style="display:none;"/>
+                                                       </div>
+                                                    <button type="submit" class="btnSubmit">추가</button>
                                                 </form>
                                             </div>
                                 
                                         </div>
                                     </div>
                                 </div>
+									<script>
+                                    			 const modifyFileBtn = document.querySelector("#musicAlbumPath > span");
+                                                 modifyFileBtn.onclick = function(){
+                                                    const fileInput = document.querySelector("#musicAlbumPath > input[type='file']");
+                                                    fileInput.onchange = function(ev){
+                                                        console.log(ev.target.files);
+                                                        modifyFileBtn.innerHTML = ev.target.files[0].name;
+                                                    }
 
+                                                    fileInput.click();
+                                                 }
+									</script>
 
                                 <div>
                                     <!-- 모달영역 : 노래 수정-->
@@ -280,7 +336,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header" style="background: rgb(199 167 135); color: white;">
                                                 <h4 class="modal-title" >노래 수정페이지</h4>
-                                                <button type="button" class="btn-close" style="color: ivory;" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close" id="btnCloseModal"  data-bs-dismiss="modal"></button>
                                             </div>
                                         
                                             <!-- Modal body -->
@@ -312,7 +368,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header" style="background: rgb(199 167 135); color: white;">
                                                 <h4 class="modal-title" >노래 삭제페이지</h4>
-                                                <button type="button" class="btn-close" style="color: ivory;" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close" id="btnCloseModal" style="color: ivory;" data-bs-dismiss="modal"></button>
                                             </div>
                                         
                                             <!-- Modal body -->
