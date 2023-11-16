@@ -4,8 +4,6 @@
 
 <%
 String contextPath = request.getContextPath();
-
-String alertMsg = (String)session.getAttribute("alertMsg");
 %>
 <!DOCTYPE html>
 <html>
@@ -39,12 +37,6 @@ body {
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-<% if(alertMsg != null) { %>
-		<script>
-			alert("<%=alertMsg%>");
-		</script>
-		<% session.removeAttribute("alertMsg"); %>
-	<% } %>
 	<%--
 	out.println("loginUser: " + session.getAttribute("loginUser"));
 	out.println("memberNo: " + session.getAttribute("memberNo"));
