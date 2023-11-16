@@ -19,7 +19,8 @@
   	float: left;
   	margin-left: 5%;
   	}
-  		body {
-		background-image:
-		url("/semi/resources/images/background.png") no-repeat center center fixed;
-	}
+
+ body {
+    background: url('<%=contextPath%>/resources/images/background.png') no-repeat center center fixed; /* '이미지경로.jpg'를 실제 배경 이미지 경로로 교체하세요. */
+    background-size: cover;
+  }
