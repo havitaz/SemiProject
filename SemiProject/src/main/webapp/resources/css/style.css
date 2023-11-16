@@ -16,7 +16,6 @@ P{
     margin-inline-start: 3px;
     margin-inline-end: -30px;
     padding-inline-start: 40px;
-    font-size: 16px;
 }
 
   .removePlayList {
@@ -67,7 +66,10 @@ P{
     color: rgba(255, 255, 255, 0.9);
 }
 
-
+ body {
+    background: url('<%=contextPath%>/resources/images/background.png') no-repeat center center fixed; /* '이미지경로.jpg'를 실제 배경 이미지 경로로 교체하세요. */
+    background-size: cover;
+  }
 
 
 

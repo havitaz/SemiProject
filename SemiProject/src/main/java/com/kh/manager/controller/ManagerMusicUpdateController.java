@@ -66,7 +66,7 @@ public class ManagerMusicUpdateController extends HttpServlet {
 			Attachment at = null;
 			if(multiRequest.getOriginalFileName("upfile") != null) {
 				//새로 넘어온 첨부파일이 있을때
-				new File(savePath + multiRequest.getParameter("originName")).delete();
+				new File(savePath + multiRequest.getParameter("changeName")).delete();
 				
 				at = new Attachment();
 				at.setOriginName(multiRequest.getOriginalFileName("upfile"));

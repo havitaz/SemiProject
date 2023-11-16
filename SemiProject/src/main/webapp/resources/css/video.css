@@ -113,7 +113,7 @@
     position: absolute;
     z-index: 4;
     width: 280px;
-    padding: 40px 0 0 40px;
+    padding: 40px 0 0 70px;
     font-size: 22px;
     font-weight: 800;
     line-height: 40px;
@@ -241,15 +241,16 @@ position: absolute;
     left: 160px;
     top: -100px;
     color: white;
+    font-weight: 600;
 }
 
 #top100List{
 	display: grid;
-    column-gap: 16px;
+    column-gap: 200px;
     row-gap: 40px;
     grid-template-columns: 1fr 1fr;
-    margin-left: -50px;
-    margin-top: 20px;
+    margin-left: -230px;
+    margin-top: 30px;
     margin-right: 50px;
 }
 
