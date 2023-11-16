@@ -1,7 +1,7 @@
---CREATE USER SEMI5 IDENTIFIED BY SEMI5; Í≥ÑÏ†ïÏÉùÏÑ±(Í¥ÄÎ¶¨ÏûêÍ≥ÑÏ†ïÏúºÎ°ú)
---GRANT CONNECT, RESOURCE TO SEMI5; Í∂åÌïúÎ∂ÄÏó¨
-----------ÏÇ≠Ï†ú-------------
---Ï†ëÏÜçÏú†Ï†ÄÏùò Î™®Îì† ÌÖåÏù¥Î∏î Î∞è Ï†úÏïΩÏ°∞Í±¥ ÏÇ≠Ï†ú
+--CREATE USER SEMI5 IDENTIFIED BY SEMI5; ∞Ë¡§ª˝º∫(∞¸∏Æ¿⁄∞Ë¡§¿∏∑Œ)
+--GRANT CONNECT, RESOURCE TO SEMI5; ±««—∫Œø©
+----------ªË¡¶-------------
+--¡¢º”¿Ø¿˙¿« ∏µÁ ≈◊¿Ã∫Ì π◊ ¡¶æ‡¡∂∞« ªË¡¶
 BEGIN
     FOR C IN (SELECT TABLE_NAME FROM USER_TABLES) LOOP
     EXECUTE IMMEDIATE ('DROP TABLE '||C.TABLE_NAME||' CASCADE CONSTRAINTS');
@@ -9,7 +9,7 @@ BEGIN
 END;
 /
 
---Ï†ëÏÜçÏú†Ï†ÄÏùò Î™®Îì† ÏãúÌÄÄÏä§ ÏÇ≠Ï†ú
+--¡¢º”¿Ø¿˙¿« ∏µÁ Ω√ƒˆΩ∫ ªË¡¶
 BEGIN
 FOR C IN (SELECT * FROM USER_SEQUENCES) LOOP
   EXECUTE IMMEDIATE 'DROP SEQUENCE '||C.SEQUENCE_NAME;
@@ -17,7 +17,7 @@ END LOOP;
 END;
 /
 
---Ï†ëÏÜçÏú†Ï†ÄÏùò Î™®Îì† Î∑∞ ÏÇ≠Ï†ú
+--¡¢º”¿Ø¿˙¿« ∏µÁ ∫‰ ªË¡¶
 BEGIN
 FOR C IN (SELECT * FROM USER_VIEWS) LOOP
   EXECUTE IMMEDIATE 'DROP VIEW '||C.VIEW_NAME;
@@ -26,8 +26,8 @@ END;
 /
 --
 
--------------------------------------ÌÖåÏù¥Î∏î--------------------------------------
---Î©§Î≤ÑÌÖåÏù¥Î∏î
+-------------------------------------≈◊¿Ã∫Ì--------------------------------------
+--∏‚πˆ≈◊¿Ã∫Ì
 CREATE TABLE MEMBER(
     MEM_NO NUMBER PRIMARY KEY,
     MEM_ID VARCHAR2(32) UNIQUE,
@@ -37,7 +37,7 @@ CREATE TABLE MEMBER(
     STATUS VARCHAR2(2) DEFAULT 'Y'
 );
 
---ÎÆ§ÏßÅÌÖåÏù¥Î∏î
+--π¬¡˜≈◊¿Ã∫Ì
 CREATE TABLE MUSIC(
     MUS_NO NUMBER PRIMARY KEY,
     MUS_NAME VARCHAR2(100) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE MUSIC(
     ENROLL_DATE DATE DEFAULT SYSDATE
 );
 
---ÌîåÎ†àÏù¥Î¶¨Ïä§Ìä∏ÌÖåÏù¥Î∏î
+--«√∑π¿Ã∏ÆΩ∫∆Æ≈◊¿Ã∫Ì
 CREATE TABLE PLAYLIST(
 --    PLA_NO NUMBER,
     MUS_NO NUMBER REFERENCES MUSIC(MUS_NO),
@@ -64,12 +64,12 @@ CREATE TABLE PLAYLIST(
 --    PLA_TIME VARCHAR2(10) NOT NULL,
 --    PLA_STATUS VARCHAR2(10) NOT NULL,
 
---Í∏∞Î°ùÌÖåÏù¥Î∏î
-CREATE TABLE RECORD(
-    MUS_NO2 NUMBER REFERENCES MUSIC (MUS_NO)
-);
+----±‚∑œ≈◊¿Ã∫Ì
+--CREATE TABLE RECORD(
+--    MUS_NO2 NUMBER REFERENCES MUSIC (MUS_NO)
+--);
 
---ATTACHMENTÌÖåÏù¥Î∏î
+--ATTACHMENT≈◊¿Ã∫Ì
 CREATE TABLE ATTACHMENT(
     FILE_NO NUMBER PRIMARY KEY,
     REF_MNO NUMBER REFERENCES MUSIC(MUS_NO),
@@ -78,13 +78,12 @@ CREATE TABLE ATTACHMENT(
     FILE_PATH VARCHAR2(2000),
     UPLOAD_DATE DATE DEFAULT SYSDATE NOT NULL,
     FILE_LEVEL NUMBER DEFAULT 1,
-    STATUS VARCHAR2(3) DEFAULT 'Y',
-    REF_MENO NUMBER REFERENCES MEMBER(MEM_NO)
+    STATUS VARCHAR2(3) DEFAULT 'Y'
 );
 
 
--------------------------------------ÏãúÌÄÄÏä§--------------------------------------
---Î©§Î≤ÑÌÖåÏù¥Î∏îÏùò Î©§Î≤Ñ Î≤àÌò∏ ÏãúÌÄÄÏä§ (2Î∂ÄÌÑ∞ ÏãúÏûëÌïòÏó¨ 1Ïî© Ï¶ùÍ∞Ä(1ÏùÄ Í¥ÄÎ¶¨Ïûê ÎÑòÎ≤Ñ)ÌïòÍ≥† ÏµúÎåÄ99ÍπåÏßÄ)
+-------------------------------------Ω√ƒˆΩ∫--------------------------------------
+--∏‚πˆ≈◊¿Ã∫Ì¿« ∏‚πˆ π¯»£ Ω√ƒˆΩ∫ (2∫Œ≈Õ Ω√¿€«œø© 1æø ¡ı∞°(1¿∫ ∞¸∏Æ¿⁄ ≥—πˆ)«œ∞Ì √÷¥Î99±Ó¡ˆ)
 CREATE SEQUENCE SEQ_MEM_NO
 START WITH 2
 INCREMENT BY 1
@@ -92,7 +91,7 @@ MAXVALUE 99
 NOCYCLE
 NOCACHE;
 
---ÎÆ§ÏßÅÌÖåÏù¥Î∏îÏùò ÎÖ∏ÎûòÎ≤àÌò∏ ÏãúÌÄÄÏä§(100Î∂ÄÌÑ∞ÏãúÏûë 1Ïî©Ï¶ùÍ∞Ä 999ÍπåÏßÄ)
+--π¬¡˜≈◊¿Ã∫Ì¿« ≥Î∑°π¯»£ Ω√ƒˆΩ∫(100∫Œ≈ÕΩ√¿€ 1æø¡ı∞° 999±Ó¡ˆ)
 CREATE SEQUENCE SEQ_MUS_NO
 START WITH 100
 INCREMENT BY 1
@@ -100,7 +99,7 @@ MAXVALUE 999
 NOCYCLE
 NOCACHE;
 
-----ÌîåÎ†àÏù¥Î¶¨Ïä§Ìä∏ ÌÖåÏù¥Î∏îÏùò PLAÎ≤àÌò∏ ÏãúÌÄÄÏä§(1000Î∂ÄÌÑ∞ 1Ïî©Ï¶ùÍ∞Ä 1999ÍπåÏßÄ)
+----«√∑π¿Ã∏ÆΩ∫∆Æ ≈◊¿Ã∫Ì¿« PLAπ¯»£ Ω√ƒˆΩ∫(1000∫Œ≈Õ 1æø¡ı∞° 1999±Ó¡ˆ)
 --CREATE SEQUENCE SEQ_PLA_NO
 --START WITH 1000
 --INCREMENT BY 1
@@ -108,7 +107,7 @@ NOCACHE;
 --NOCYCLE
 --NOCACHE;
 
---ATTACHMENT ÌÖåÏù¥Î∏îÏùò FILE_NO ÏãúÌÄÄÏä§
+--ATTACHMENT ≈◊¿Ã∫Ì¿« FILE_NO Ω√ƒˆΩ∫
 CREATE SEQUENCE SEQ_FILE_NO
 START WITH 10000
 INCREMENT BY 1
@@ -116,8 +115,8 @@ MAXVALUE 20000
 NOCYCLE
 NOCACHE;
 
-------------------------------------ÎçîÎØ∏Îç∞Ïù¥ÌÑ∞------------------------------------
---MEMBERÎç∞Ïù¥ÌÑ∞
+------------------------------------¥ıπÃµ•¿Ã≈Õ------------------------------------
+--MEMBERµ•¿Ã≈Õ
 INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS) VALUES (1,'admin','1234','010-1234-5678','member01@kh.com','Y');
 
 INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS) VALUES (SEQ_MEM_NO.NEXTVAL,'member02','pass02','010-1234-5677','member02@kh.com','N');
@@ -175,7 +174,7 @@ INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS) VALUES (SEQ_M
 INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS) VALUES (SEQ_MEM_NO.NEXTVAL,'member28','pass28','010-1234-5651','member28@kh.com','Y');
 
 INSERT INTO MEMBER (MEM_NO, MEM_ID, MEM_PWD, PHONE, EMAIL, STATUS) VALUES (SEQ_MEM_NO.NEXTVAL,'member29','pass29','010-1234-5650','member29@kh.com','N');
---MUSICÎç∞Ïù¥ÌÑ∞
+--MUSICµ•¿Ã≈Õ
 SET DEFINE OFF
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Specialz', 'king Gnu', 'JPOP', '03:59', 'https://youtu.be/MIbt_Yn_rdw', 'Y', 0, 'resources/icon/musicAlbumCover/Specialz.jpg', SYSDATE);
@@ -199,7 +198,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Zankyosanka', 'Aimer', 'JPOP', '03:05', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Zankyosanka.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏÇ¨ÎûëÏùÑ Ï†ÑÌïòÍ≥† Ïã∂Îã§ÎçòÍ∞Ä', 'ÏïÑÏù¥¬íD', 'JPOP', '04:31', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÏÇ¨ÎûëÏùÑ Ï†ÑÌïòÍ≥† Ïã∂Îã§ÎçòÍ∞Ä.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'ªÁ∂˚¿ª ¿¸«œ∞Ì ΩÕ¥Ÿ¥¯∞°', 'æ∆¿ÃíD', 'JPOP', '04:31', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ªÁ∂˚¿ª ¿¸«œ∞Ì ΩÕ¥Ÿ¥¯∞°.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Betelgeuse', 'Yuuri', 'JPOP', '03:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Betelgeuse.jpg', SYSDATE);
@@ -208,16 +207,16 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'CryBaby', 'Official Hige Dandism', 'JPOP', '04:02', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/CryBaby.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Ìë∏Î•¥Î¶ÑÏù¥ ÏÇ¨Îäî Í≥≥', 'ÌÇ§ÌÉÄÎãà ÌÉÄÏ∏†Ïïº', 'JPOP', '03:14', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Ìë∏Î•¥Î¶ÑÏù¥ ÏÇ¨Îäî Í≥≥.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '«™∏£∏ß¿Ã ªÁ¥¬ ∞˜', '≈∞≈∏¥œ ≈∏√˜æﬂ', 'JPOP', '03:14', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/«™∏£∏ß¿Ã ªÁ¥¬ ∞˜.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Î∞§ÏùÑÎã¨Î¶¨Îã§', 'YOASOBI', 'JPOP', '04:19', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Î∞§ÏùÑÎã¨Î¶¨Îã§.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'π„¿ª¥ﬁ∏Æ¥Ÿ', 'YOASOBI', 'JPOP', '04:19', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/π„¿ª¥ﬁ∏Æ¥Ÿ.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÌîºÎÇ†Îûò', 'eill', 'JPOP', '04:01', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÌîºÎÇ†Îûò.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '««≥Ø∑°', 'eill', 'JPOP', '04:01', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/««≥Ø∑°.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Î≤öÍΩÉÎßåÏõî', 'SpyAir', 'JPOP', '03:33', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Î≤öÍΩÉÎßåÏõî.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∫¢≤…∏∏ø˘', 'SpyAir', 'JPOP', '03:33', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∫¢≤…∏∏ø˘.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'apdo', 'ado', 'JPOP', '03:58', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/apdo.jpg', SYSDATE);
@@ -244,7 +243,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Avid', 'SawanoHiroyuki', 'JPOP', '04:09', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Avid.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏïÑÎ¨¥Í≤ÉÎèÑ ÏïÑÎãàÏïº', 'RADWIMPS', 'JPOP', '05:48', NULL, 'Y', 1, 'resources/icon/musicAlbumCover/ÏïÑÎ¨¥Í≤ÉÎèÑ ÏïÑÎãàÏïº.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'æ∆π´∞Õµµ æ∆¥œæﬂ', 'RADWIMPS', 'JPOP', '05:48', NULL, 'Y', 1, 'resources/icon/musicAlbumCover/æ∆π´∞Õµµ æ∆¥œæﬂ.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Sparkle', 'RADWIMPS', 'JPOP', '04:38', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Sparkle.jpg', SYSDATE);
@@ -253,82 +252,82 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Spnning Globe', 'Kensi Yonezu', 'JPOP', '04:30', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Spnning Globe.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Bye bye my blue', 'Î∞±ÏòàÎ¶∞', 'R&B', '03:23', 'https://www.youtube.com/watch?v=WbhK3wMXluE', 'Y', 0, 'resources/icon/musicAlbumCover/Bye bye my blue.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Bye bye my blue', 'πÈøπ∏∞', 'R&B', '03:23', 'https://www.youtube.com/watch?v=WbhK3wMXluE', 'Y', 0, 'resources/icon/musicAlbumCover/Bye bye my blue.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Vancouver', 'BIG Naughty(ÏÑúÎèôÌòÑ)', 'R&B', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Vancouver.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Vancouver', 'BIG Naughty(º≠µø«ˆ)', 'R&B', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Vancouver.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'D', 'DEAN', 'R&B', '03:49', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/D.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÎπÑ', 'Ìè¥ÌÇ¥', 'R&B', '03:57', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÎπÑ.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∫Ò', '∆˙≈¥', 'R&B', '03:57', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∫Ò.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏûäÏñ¥Î≤ÑÎ¶¨ÏßÄÎßà(feat.ÌÉúÏó∞)', 'Crush', 'R&B', '03:39', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÏûäÏñ¥Î≤ÑÎ¶¨ÏßÄÎßà(feat.ÌÉúÏó∞).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '¿ÿæÓπˆ∏Æ¡ˆ∏∂(feat.≈¬ø¨)', 'Crush', 'R&B', '03:39', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/¿ÿæÓπˆ∏Æ¡ˆ∏∂(feat.≈¬ø¨).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏôÄÎ•¥Î•¥‚ô•', 'Colde(ÏΩúÎìú)', 'R&B', '04:32', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÏôÄÎ•¥Î•¥‚ô•.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'øÕ∏£∏£¢æ', 'Colde(ƒ›µÂ)', 'R&B', '04:32', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/øÕ∏£∏£¢æ.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'My Everything', 'Ïã†Ïö©Ïû¨(2F), Paul Blanco', 'R&B', '04:48', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/My Everything.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'My Everything', 'Ω≈øÎ¿Á(2F), Paul Blanco', 'R&B', '04:48', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/My Everything.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'All I Wanna Do(feat. Hoody, Loco)', 'Î∞ïÏû¨Î≤î', 'R&B', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/All I Wanna Do(feat. Hoody, Loco).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'All I Wanna Do(feat. Hoody, Loco)', 'π⁄¿Áπ¸', 'R&B', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/All I Wanna Do(feat. Hoody, Loco).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Î≤åÏç® ÏùºÎÖÑ', 'Î∏åÎùºÏö¥ ÏïÑÏù¥Ï¶à', 'R&B', '03:27', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Î≤åÏç® ÏùºÎÖÑ.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'π˙Ω· ¿œ≥‚', '∫Í∂ÛøÓ æ∆¿Ã¡Ó', 'R&B', '03:27', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/π˙Ω· ¿œ≥‚.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Îñ†ÎÇò', 'THAMA, Jayci yucca(Ï†úÏù¥Ïî®Ïú†Ïπ¥)', 'R&B', '04:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Îñ†ÎÇò.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∂∞≥™', 'THAMA, Jayci yucca(¡¶¿Ãææ¿Øƒ´)', 'R&B', '04:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∂∞≥™.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Thirsty', 'aespa', 'R&B', '03:13', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Thirsty.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Boat', 'Ï£†ÏßÄ', 'R&B', '03:12', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Boat.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Boat', '¡“¡ˆ', 'R&B', '03:12', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Boat.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÎÑàÎäî ÎÇò ÎÇòÎäî ÎÑà', 'ÏßÄÏΩî', 'R&B', '03:33', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÎÑàÎäî ÎÇò ÎÇòÎäî ÎÑà.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '≥ ¥¬ ≥™ ≥™¥¬ ≥ ', '¡ˆƒ⁄', 'R&B', '03:33', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/≥ ¥¬ ≥™ ≥™¥¬ ≥ .jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Hurt', 'New Jeans', 'R&B', '02:56', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Hurt.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÌåîÎ†àÌä∏(feat. G-DRAGON)', 'ÏïÑÏù¥Ïú†', 'R&B', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÌåîÎ†àÌä∏(feat. G-DRAGON).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∆»∑π∆Æ(feat. G-DRAGON)', 'æ∆¿Ã¿Ø', 'R&B', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∆»∑π∆Æ(feat. G-DRAGON).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Í≥ÅÏóê ÏûàÏñ¥Ï§ò(feat. ÏõêÏäàÌÉÄÏù∏)', 'SOLE(Ïè†)', 'R&B', '03:11', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Í≥ÅÏóê ÏûàÏñ¥Ï§ò(feat. ÏõêÏäàÌÉÄÏù∏).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∞Áø° ¿÷æÓ¡‡(feat. ø¯Ω¥≈∏¿Œ)', 'SOLE(ΩÚ)', 'R&B', '03:11', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∞Áø° ¿÷æÓ¡‡(feat. ø¯Ω¥≈∏¿Œ).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏûêÎãà(feat.Îã§Ïù¥ÎÇòÎØπÎìÄÏò§)', 'ÌîÑÎùºÏù¥Î®∏Î¶¨', 'R&B', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÏûêÎãà(feat.Îã§Ïù¥ÎÇòÎØπÎìÄÏò§).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '¿⁄¥œ(feat.¥Ÿ¿Ã≥™πÕµ‡ø¿)', '«¡∂Û¿Ã∏”∏Æ', 'R&B', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/¿⁄¥œ(feat.¥Ÿ¿Ã≥™πÕµ‡ø¿).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÏñëÌôîÎåÄÍµê', 'Zion.T', 'R&B', '03:49', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÏñëÌôîÎåÄÍµê.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'æÁ»≠¥Î±≥', 'Zion.T', 'R&B', '03:49', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/æÁ»≠¥Î±≥.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÎπÑÎèÑ Ïò§Í≥† Í∑∏ÎûòÏÑú(feat. Ïã†Ïö©Ïû¨)', 'Ìó§Ïù¥Ï¶à', 'R&B', '03:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÎπÑÎèÑ Ïò§Í≥† Í∑∏ÎûòÏÑú(feat. Ïã†Ïö©Ïû¨).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '∫Òµµ ø¿∞Ì ±◊∑°º≠(feat. Ω≈øÎ¿Á)', '«Ï¿Ã¡Ó', 'R&B', '03:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/∫Òµµ ø¿∞Ì ±◊∑°º≠(feat. Ω≈øÎ¿Á).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Trip(feat. Hannah)', 'Î¶¥Îü¨ÎßêÏ¶à', 'R&B', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Trip(feat. Hannah).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Trip(feat. Hannah)', '∏±∑Ø∏ª¡Ó', 'R&B', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Trip(feat. Hannah).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Summer(feat. ÎπÑÏò§)', 'Paul Blanco', 'R&B', '03:19', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Summer(feat. ÎπÑÏò§).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Summer(feat. ∫Òø¿)', 'Paul Blanco', 'R&B', '03:19', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Summer(feat. ∫Òø¿).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Nerdy Love(feat. Î∞±ÏòàÎ¶∞)', 'pH-1', 'R&B', '03:16', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Nerdy Love(feat. Î∞±ÏòàÎ¶∞).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Nerdy Love(feat. πÈøπ∏∞)', 'pH-1', 'R&B', '03:16', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Nerdy Love(feat. πÈøπ∏∞).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Ïñ¥ÎñªÍ≤å ÏßÄÎÇ¥', 'Ïò§Î∞ò', 'R&B', '03:50', NULL, 'Y', 2, 'resources/icon/musicAlbumCover/Ïñ¥ÎñªÍ≤å ÏßÄÎÇ¥.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'æÓ∂ª∞‘ ¡ˆ≥ª', 'ø¿π›', 'R&B', '03:50', NULL, 'Y', 2, 'resources/icon/musicAlbumCover/æÓ∂ª∞‘ ¡ˆ≥ª.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Ïò§Îäò Ï∑®ÌïòÎ©¥(feat. Ï∞ΩÎ™®)', 'ÏàòÎûÄ', 'R&B', '03:52', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Ïò§Îäò Ï∑®ÌïòÎ©¥(feat. Ï∞ΩÎ™®).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'ø¿¥√ √Î«œ∏È(feat. √¢∏)', 'ºˆ∂ı', 'R&B', '03:52', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ø¿¥√ √Î«œ∏È(feat. √¢∏).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'silly silly Love', 'Í∂åÏßÑÏïÑ', 'R&B', '03:34', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/silly silly Love.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'silly silly Love', '±«¡¯æ∆', 'R&B', '03:34', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/silly silly Love.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Alone(feat. Ïè†(SOLE), Îã§Ïö¥(Dvwn))', 'Cosmic Boy', 'R&B', '03:20', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Alone(feat. Ïè†(SOLE), Îã§Ïö¥(Dvwn)).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Alone(feat. ΩÚ(SOLE), ¥ŸøÓ(Dvwn))', 'Cosmic Boy', 'R&B', '03:20', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Alone(feat. ΩÚ(SOLE), ¥ŸøÓ(Dvwn)).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'To Be With You', 'Mr. Big', 'Rock', '03:30', 'https://youtu.be/L6-uJLteKek?si=Wej490cZTH2q6ZkY', 'Y', 0, 'resources/icon/musicAlbumCover/To Be With You.jpg', SYSDATE);
@@ -413,7 +412,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Out of Time', 'The Weeknd', 'POP', '03:35', 'https://youtu.be/2fDzCWNS3ig?si=Xt_9AyLEpdKM5QNU', 'Y', 0, 'resources/icon/musicAlbumCover/Out of Time.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Steal The Show (From ‚ÄúÏóòÎ¶¨Î©òÌÉà‚Äù)', 'Lauv', 'POP', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Steal The Show (From ‚ÄúÏóòÎ¶¨Î©òÌÉà‚Äù).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Steal The Show (From °∞ø§∏Æ∏‡≈ª°±)', 'Lauv', 'POP', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Steal The Show (From °∞ø§∏Æ∏‡≈ª°±).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'I Don''t Think That I Like Her', 'Charlie Puth', 'POP', '03:09', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/I Don''t Think That I Like Her.jpg', SYSDATE);
@@ -428,7 +427,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'That''s Hilarious', 'Charlie Puth', 'POP', '02:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/That''s Hilarious.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers', 'Ï†ïÍµ≠', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Dreamers.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers', '¡§±π', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Dreamers.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, '2002', 'Anne-Marie', 'POP', '03:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/2002.jpg', SYSDATE);
@@ -449,7 +448,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Another One Bites The Dust', 'Queen', 'POP', '03:35', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Another One Bites The Dust.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Feels(feat. ÌçºÎ†ê ÏúåÎ¶¨ÏóÑÏä§(Pharrell Williams), Katy Perry(ÏºÄÏù¥Ìã∞ ÌéòÎ¶¨), Big Sean)', 'Calvin Harris', 'POP', '03:44', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Feels(feat. ÌçºÎ†ê ÏúåÎ¶¨ÏóÑÏä§(Pharrell Williams), Katy Perry(ÏºÄÏù¥Ìã∞ ÌéòÎ¶¨), Big Sean).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Feels(feat. ∆€∑º ¿™∏ÆæˆΩ∫(Pharrell Williams), Katy Perry(ƒ…¿Ã∆º ∆‰∏Æ), Big Sean)', 'Calvin Harris', 'POP', '03:44', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Feels(feat. ∆€∑º ¿™∏ÆæˆΩ∫(Pharrell Williams), Katy Perry(ƒ…¿Ã∆º ∆‰∏Æ), Big Sean).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Starboy(feat. Daft Punk)', 'The Weeknd', 'POP', '03:51', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Starboy(feat. Daft Punk).jpg', SYSDATE);
@@ -458,13 +457,13 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Treasure', 'Bruno Mars', 'POP', '02:59', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Treasure.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Leave The Door Open', 'Bruno Mars, Anderson .Paak Î∞è Silk Sonic', 'POP', '04:03', NULL, 'Y', 4, 'resources/icon/musicAlbumCover/Leave The Door Open.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Leave The Door Open', 'Bruno Mars, Anderson .Paak π◊ Silk Sonic', 'POP', '04:03', NULL, 'Y', 4, 'resources/icon/musicAlbumCover/Leave The Door Open.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Save Your Tears', 'The Weeknd', 'POP', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Save Your Tears.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Day 1 ‚óë', 'HONNE', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Day 1 ‚óë.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Day 1 ¢≈', 'HONNE', 'POP', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Day 1 ¢≈.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Lost Stars', 'Adam Levine', 'POP', '04:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Lost Stars.jpg', SYSDATE);
@@ -473,7 +472,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'This Love', 'Maroon 5', 'POP', '03:27', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/This Love.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Young, Wild & Free(feat. Bruno Mars)', 'Wiz Khalifa Î∞è Snoop Dogg', 'POP', '03:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Young, Wild & Free(feat. Bruno Mars).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Young, Wild & Free(feat. Bruno Mars)', 'Wiz Khalifa π◊ Snoop Dogg', 'POP', '03:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Young, Wild & Free(feat. Bruno Mars).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'No One Else Like You', 'Adam Levine', 'POP', '03:29', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/No One Else Like You.jpg', SYSDATE);
@@ -484,7 +483,7 @@ VALUES (SEQ_MUS_NO.NEXTVAL, 'Bad guy', 'Billie Eilish', 'POP', '03:15', NULL, 'Y
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Snowman', 'Sia', 'POP', '02:46', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Snowman.jpg', SYSDATE);
 
---ÌîåÎ†àÏù¥Î¶¨Ïä§Ìä∏ ÎçîÎØ∏Îç∞Ïù¥ÌÑ∞
+--«√∑π¿Ã∏ÆΩ∫∆Æ ¥ıπÃµ•¿Ã≈Õ
 INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
 VALUES (100, 3);
 INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
@@ -494,7 +493,7 @@ VALUES (125, 3);
 INSERT INTO PLAYLIST (MUS_NO, MEM_NO)
 VALUES (177, 3);
 
---ATTACHMENT ÎçîÎØ∏Îç∞Ïù¥ÌÑ∞
+--ATTACHMENT ¥ıπÃµ•¿Ã≈Õ
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,100,'Specialz.jpg','Specialz.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -510,19 +509,19 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,106,'Zankyosanka.jpg','Zankyosanka.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,107,'ÏÇ¨ÎûëÏùÑ Ï†ÑÌïòÍ≥† Ïã∂Îã§ÎçòÍ∞Ä.jpg','ÏÇ¨ÎûëÏùÑ Ï†ÑÌïòÍ≥† Ïã∂Îã§ÎçòÍ∞Ä.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,107,'ªÁ∂˚¿ª ¿¸«œ∞Ì ΩÕ¥Ÿ¥¯∞°.jpg','ªÁ∂˚¿ª ¿¸«œ∞Ì ΩÕ¥Ÿ¥¯∞°.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,108,'Betelgeuse.jpg','Betelgeuse.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,109,'CryBaby.jpg','CryBaby.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,110,'Ìë∏Î•¥Î¶ÑÏù¥ ÏÇ¨Îäî Í≥≥.jpg','Ìë∏Î•¥Î¶ÑÏù¥ ÏÇ¨Îäî Í≥≥.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,110,'«™∏£∏ß¿Ã ªÁ¥¬ ∞˜.jpg','«™∏£∏ß¿Ã ªÁ¥¬ ∞˜.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,111,'Î∞§ÏùÑÎã¨Î¶¨Îã§.jpg','Î∞§ÏùÑÎã¨Î¶¨Îã§.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,111,'π„¿ª¥ﬁ∏Æ¥Ÿ.jpg','π„¿ª¥ﬁ∏Æ¥Ÿ.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,112,'ÌîºÎÇ†Îûò.jpg','ÌîºÎÇ†Îûò.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,112,'««≥Ø∑°.jpg','««≥Ø∑°.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,113,'Î≤öÍΩÉÎßåÏõî.jpg','Î≤öÍΩÉÎßåÏõî.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,113,'∫¢≤…∏∏ø˘.jpg','∫¢≤…∏∏ø˘.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,114,'apdo.jpg','apdo.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -540,7 +539,7 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,121,'Avid.jpg','Avid.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,122,'ÏïÑÎ¨¥Í≤ÉÎèÑ ÏïÑÎãàÏïº.jpg','ÏïÑÎ¨¥Í≤ÉÎèÑ ÏïÑÎãàÏïº.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,122,'æ∆π´∞Õµµ æ∆¥œæﬂ.jpg','æ∆π´∞Õµµ æ∆¥œæﬂ.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,123,'Sparkle.jpg','Sparkle.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -552,51 +551,51 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,127,'D.jpg','D.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,128,'ÎπÑ.jpg','ÎπÑ.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,128,'∫Ò.jpg','∫Ò.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,129,'ÏûäÏñ¥Î≤ÑÎ¶¨ÏßÄÎßà(feat.ÌÉúÏó∞).jpg','ÏûäÏñ¥Î≤ÑÎ¶¨ÏßÄÎßà(feat.ÌÉúÏó∞).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,129,'¿ÿæÓπˆ∏Æ¡ˆ∏∂(feat.≈¬ø¨).jpg','¿ÿæÓπˆ∏Æ¡ˆ∏∂(feat.≈¬ø¨).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,130,'ÏôÄÎ•¥Î•¥‚ô•.jpg','ÏôÄÎ•¥Î•¥‚ô•.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,130,'øÕ∏£∏£¢æ.jpg','øÕ∏£∏£¢æ.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,131,'My Everything.jpg','My Everything.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,132,'All I Wanna Do(feat. Hoody, Loco).jpg','All I Wanna Do(feat. Hoody, Loco).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,133,'Î≤åÏç® ÏùºÎÖÑ.jpg','Î≤åÏç® ÏùºÎÖÑ.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,133,'π˙Ω· ¿œ≥‚.jpg','π˙Ω· ¿œ≥‚.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,134,'Îñ†ÎÇò.jpg','Îñ†ÎÇò.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,134,'∂∞≥™.jpg','∂∞≥™.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,135,'Thirsty.jpg','Thirsty.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,136,'Boat.jpg','Boat.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,137,'ÎÑàÎäî ÎÇò ÎÇòÎäî ÎÑà.jpg','ÎÑàÎäî ÎÇò ÎÇòÎäî ÎÑà.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,137,'≥ ¥¬ ≥™ ≥™¥¬ ≥ .jpg','≥ ¥¬ ≥™ ≥™¥¬ ≥ .jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,138,'Hurt.jpg','Hurt.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,139,'ÌåîÎ†àÌä∏(feat. G-DRAGON).jpg','ÌåîÎ†àÌä∏(feat. G-DRAGON).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,139,'∆»∑π∆Æ(feat. G-DRAGON).jpg','∆»∑π∆Æ(feat. G-DRAGON).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,140,'Í≥ÅÏóê ÏûàÏñ¥Ï§ò(feat. ÏõêÏäàÌÉÄÏù∏).jpg','Í≥ÅÏóê ÏûàÏñ¥Ï§ò(feat. ÏõêÏäàÌÉÄÏù∏).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,140,'∞Áø° ¿÷æÓ¡‡(feat. ø¯Ω¥≈∏¿Œ).jpg','∞Áø° ¿÷æÓ¡‡(feat. ø¯Ω¥≈∏¿Œ).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,141,'ÏûêÎãà(feat.Îã§Ïù¥ÎÇòÎØπÎìÄÏò§).jpg','ÏûêÎãà(feat.Îã§Ïù¥ÎÇòÎØπÎìÄÏò§).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,141,'¿⁄¥œ(feat.¥Ÿ¿Ã≥™πÕµ‡ø¿).jpg','¿⁄¥œ(feat.¥Ÿ¿Ã≥™πÕµ‡ø¿).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,142,'ÏñëÌôîÎåÄÍµê.jpg','ÏñëÌôîÎåÄÍµê.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,142,'æÁ»≠¥Î±≥.jpg','æÁ»≠¥Î±≥.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,143,'ÎπÑÎèÑ Ïò§Í≥† Í∑∏ÎûòÏÑú(feat. Ïã†Ïö©Ïû¨).jpg','ÎπÑÎèÑ Ïò§Í≥† Í∑∏ÎûòÏÑú(feat. Ïã†Ïö©Ïû¨).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,143,'∫Òµµ ø¿∞Ì ±◊∑°º≠(feat. Ω≈øÎ¿Á).jpg','∫Òµµ ø¿∞Ì ±◊∑°º≠(feat. Ω≈øÎ¿Á).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,144,'Trip(feat. Hannah).jpg','Trip(feat. Hannah).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,145,'Summer(feat. ÎπÑÏò§).jpg','Summer(feat. ÎπÑÏò§).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,145,'Summer(feat. ∫Òø¿).jpg','Summer(feat. ∫Òø¿).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,146,'Nerdy Love(feat. Î∞±ÏòàÎ¶∞).jpg','Nerdy Love(feat. Î∞±ÏòàÎ¶∞).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,146,'Nerdy Love(feat. πÈøπ∏∞).jpg','Nerdy Love(feat. πÈøπ∏∞).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,147,'Ïñ¥ÎñªÍ≤å ÏßÄÎÇ¥.jpg','Ïñ¥ÎñªÍ≤å ÏßÄÎÇ¥.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,147,'æÓ∂ª∞‘ ¡ˆ≥ª.jpg','æÓ∂ª∞‘ ¡ˆ≥ª.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,148,'Ïò§Îäò Ï∑®ÌïòÎ©¥(feat. Ï∞ΩÎ™®).jpg','Ïò§Îäò Ï∑®ÌïòÎ©¥(feat. Ï∞ΩÎ™®).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,148,'ø¿¥√ √Î«œ∏È(feat. √¢∏).jpg','ø¿¥√ √Î«œ∏È(feat. √¢∏).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,149,'silly silly Love.jpg','silly silly Love.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,150,'Alone(feat. Ïè†(SOLE), Îã§Ïö¥(Dvwn)).jpg','Alone(feat. Ïè†(SOLE), Îã§Ïö¥(Dvwn)).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,150,'Alone(feat. ΩÚ(SOLE), ¥ŸøÓ(Dvwn)).jpg','Alone(feat. ΩÚ(SOLE), ¥ŸøÓ(Dvwn)).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,151,'To Be With You.jpg','To Be With You.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -652,7 +651,7 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,177,'Out of Time.jpg','Out of Time.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,178,'Steal The Show (From ‚ÄúÏóòÎ¶¨Î©òÌÉà‚Äù).jpg','Steal The Show (From ‚ÄúÏóòÎ¶¨Î©òÌÉà‚Äù).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,178,'Steal The Show (From °∞ø§∏Æ∏‡≈ª°±).jpg','Steal The Show (From °∞ø§∏Æ∏‡≈ª°±).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,179,'I Don''t Think That I Like Her.jpg','I Don''t Think That I Like Her.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -676,7 +675,7 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,189,'Another One Bites The Dust.jpg','Another One Bites The Dust.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,190,'Feels(feat. ÌçºÎ†ê ÏúåÎ¶¨ÏóÑÏä§(Pharrell Williams), Katy Perry(ÏºÄÏù¥Ìã∞ ÌéòÎ¶¨), Big Sean).jpg','Feels(feat. ÌçºÎ†ê ÏúåÎ¶¨ÏóÑÏä§(Pharrell Williams), Katy Perry(ÏºÄÏù¥Ìã∞ ÌéòÎ¶¨), Big Sean).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,190,'Feels(feat. ∆€∑º ¿™∏ÆæˆΩ∫(Pharrell Williams), Katy Perry(ƒ…¿Ã∆º ∆‰∏Æ), Big Sean).jpg','Feels(feat. ∆€∑º ¿™∏ÆæˆΩ∫(Pharrell Williams), Katy Perry(ƒ…¿Ã∆º ∆‰∏Æ), Big Sean).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,191,'Starboy(feat. Daft Punk).jpg','Starboy(feat. Daft Punk).jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
@@ -686,7 +685,7 @@ INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, U
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,194,'Save Your Tears.jpg','Save Your Tears.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
-INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,195,'Day 1 ‚óë.jpg','Day 1 ‚óë.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
+INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,195,'Day 1 ¢≈.jpg','Day 1 ¢≈.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 
 INSERT INTO ATTACHMENT (FILE_NO, REF_MNO, ORIGIN_NAME, CHANGE_NAME, FILE_PATH, UPLOAD_DATE, FILE_LEVEL, STATUS) VALUES (SEQ_FILE_NO.NEXTVAL,196,'Lost Stars.jpg','Lost Stars.jpg','resources/icon/musicAlbumCover/',SYSDATE,1,'Y');
 

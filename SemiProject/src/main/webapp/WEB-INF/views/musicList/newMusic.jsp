@@ -11,6 +11,7 @@
 <meta charset="UTF-8">
 <title>NEW-MUSIC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">  
+  
   <link rel="stylesheet" href="<%=contextPath %>/resources/css/music/newMusic.css">
   <style>
 	.new-grid{
@@ -26,6 +27,7 @@
 		margin: 2%;
 		padding: 1px;
 	}
+		
   </style>
 </head>
 <body>
@@ -158,7 +160,6 @@
 					<li style="font-size: 14px">${n.musArt}</li>
 				</ul>
 		</c:forEach>
-		<!-- contextPath + ALBUM_PATH적용해서 사진불러오기..? -->
 	</div>
 </body>
 </html>
