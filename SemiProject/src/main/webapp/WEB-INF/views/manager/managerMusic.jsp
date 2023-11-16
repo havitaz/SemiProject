@@ -158,6 +158,7 @@
             										document.querySelector(".music-info-class").innerHTML = str;
             										
                                     	//노래 수정
+                                    	console.log(result.fileNo)
                                     	let str2 = "";
                                     	str2 += '<input type="hidden" name="mno" value="' + result.musNo + '"/>'
                                     			 + '<div class="musicTitle">' +  '<label for="musicInfo" style="margin-right: 35px;">노래제목</label>'
@@ -170,6 +171,8 @@
                                     			 + '<input type="text" id="musicInfo_modal" name="musTime" value="' + result.musTime + '"/>' + '</div>'
                                     			 + '<div class="musicAlbumPath" id="musicAlbumPath">' + '<label for="musicInfo" style="margin-right: 70px; margin-top: 40px">커버사진</label>'
                                     			 + '<span>'+result.filePath + result.originName + "</span>"
+                                    			 + '<input type="hidden" name="changeName" value="'+result.changeName+'"/>'
+                                    			 + '<input type="hidden" name="fileNo" value="'+result.fileNo+'"/>'
                                                  + '<input type="file" name="upfile" style="display:none"/>'
                                                  + '</div>'
                                     			 + '<button type="submit" class="btnAdd">수정</button>' 
@@ -285,7 +288,7 @@
                                         
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="<%=contextPath %>/update.mu" id="updateMusicModal">
+                                                <form action="<%=contextPath %>/update.mu" id="updateMusicModal" method="post" enctype="multipart/form-data">
                                                   
                                                 </form>
                                             </div>

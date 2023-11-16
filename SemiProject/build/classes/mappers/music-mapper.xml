@@ -62,7 +62,8 @@
 				            MUS_NAME,
 				            ALBUM_PATH,
 				            FILE_PATH,
-                    		CHANGE_NAME
+                    		CHANGE_NAME,
+                    		FILE_NO
    				 	FROM MUSIC M, ATTACHMENT A
     				WHERE M.STATUS = 'Y'
     				 AND M.MUS_NO = A.REF_MNO
@@ -87,7 +88,8 @@
 				SELECT MUS_NO,
 							 MUS_NAME,
 							 FILE_PATH,
-		        			CHANGE_NAME
+		        			CHANGE_NAME,
+		        			FILE_NO
 					FROM MUSIC M, ATTACHMENT A
 				WHERE M.STATUS = 'Y'
 					AND M.MUS_NO = A.REF_MNO
@@ -102,7 +104,8 @@
 								M.MUS_TIME,
 							FILE_PATH,
 							CHANGE_NAME,
-							ORIGIN_NAME
+							ORIGIN_NAME,
+							FILE_NO
 					FROM MUSIC M, ATTACHMENT A
 				WHERE M.MUS_NO = #{musNo}
 				AND M.MUS_NO = A.REF_MNO
@@ -153,6 +156,7 @@
 						 MUS_GEN = #{musGen},
 						 MUS_TIME = #{musTime}
 				  WHERE MUS_NO = #{musNo}
+				  AND STATUS = 'Y'
 	</update>
 	<update id="updateAttachment">
 		UPDATE ATTACHMENT
