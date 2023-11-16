@@ -40,7 +40,6 @@ public class MusicListController extends HttpServlet {
 		
 		ArrayList<Music> list = new MusicServiceImpl().selectList(pi);
 		
-		System.out.println(list);
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		
