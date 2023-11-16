@@ -82,12 +82,12 @@
 
 		<c:choose>
 		  <c:when test="${ empty loginUser }">
-	        <div class="music-grid" style="cursor: pointer;">
+	        <div class="music-grid" style="cursor: pointer;" onclick="alert('로그인 후 이용해 주세요.')">	          
 	            <div>
 	                <div class="top100part">
 	                <div class="speech-bubble">
 	                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-	                <u><a class="musRec" href="newList.mu">이번 주 추천 곡</a></u>
+	                <u><a class="musRec" href="#">이번 주 추천 곡</a></u>
 	            	</div>
 	                <h1 class="top100-h1">쿼카 플레이어
 	                    <br>top 100
