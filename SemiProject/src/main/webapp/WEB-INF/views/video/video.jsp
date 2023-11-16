@@ -128,8 +128,8 @@
             function drawTop100List(data) {
                 for (let rowData of data) {
                     const tr = document.createElement('div');
-                    const MusArt = rowData.musArt.length > 12 ? rowData.musArt.substring(0, 7) + '...' : rowData.musArt;
-                    const MusName = rowData.musName.length > 12 ? rowData.musName.substring(0, 7) + '...' : rowData.musName;
+                    const MusArt = rowData.musArt.length > 20 ? rowData.musArt.substring(0, 19) + '...' : rowData.musArt;
+                    const MusName = rowData.musName.length > 20 ? rowData.musName.substring(0, 19) + '...' : rowData.musName;
 
                     tr.innerHTML = "<div><img src='" + rowData.filePath + rowData.changeName + "'>" +
                         "<div>" + "<p>" + MusArt + "</p>" +
