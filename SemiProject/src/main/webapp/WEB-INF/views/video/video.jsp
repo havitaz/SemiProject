@@ -6,7 +6,6 @@
 
 <% 
 	String contextPath = request.getContextPath();
-	String albumPath = "resources/icon/musicAlbumCover/";
 %>
 
 <%
