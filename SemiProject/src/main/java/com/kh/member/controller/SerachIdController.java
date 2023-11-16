@@ -40,12 +40,13 @@ public class SerachIdController extends HttpServlet {
 		Member searchMember = new MemberServiceImpl().searchMember(m);
 
 		if(searchMember == null) {
+			
 			request.setAttribute("errorMsg", "찾고자하는 회원이 없습니다");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "고객님의 아이디는 [" + searchMember.getMemberId() + "] 입니다.");
-			request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
+	         session.setAttribute("alertMsg", "회원님의 아이디는 {" + searchMember.getMemberId() + "} 입니다.");
+	         request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 		}
 	}
 

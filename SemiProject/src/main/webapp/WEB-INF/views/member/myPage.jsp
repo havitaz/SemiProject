@@ -28,16 +28,16 @@
 				<p class="p-style">이메일</p>	
 				<input class="input-table" type="text" id="email" name="email" value="${loginUser.email}" required>
 				<img class="memberIcon" src="<%=contextPath%>/resources/images/login.jpg" style="position: absolute; right: 25px; bottom: 0px;" />
-			</div>
-			<div>
-				<button type="submit" id="btn-member">수정하기</button>
-			</div>
+		</div>
+		<div>
+			<button type="submit" id="btn-member">수정하기</button>
+		</div>
 	   </form>
     </div>
     
     <script>
-	  function closeMenu(){
-      	location.href="backPage.me"
+	    function closeMenu(){
+        location.href="backPage.me"
       }
 	</script>
     

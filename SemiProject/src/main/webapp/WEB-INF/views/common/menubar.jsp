@@ -42,6 +42,7 @@ body{
 	<% } %>
 
 	 <header class="header">
+
         <div class="left-section">
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
@@ -49,7 +50,9 @@ body{
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
                 <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
         </div>
+
         <div class="middle-section">
+        
         
             <div class="player-bar"> 
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg"> 
@@ -65,7 +68,11 @@ body{
                 <div  class="flex-item time align">
                     14:48
                 </div>
-            </div>     
+                
+            </div>
+            
+            
+            
         </div>
 
         <div class="right-section">
@@ -75,7 +82,9 @@ body{
         </div>
     </header>
 
+
     <nav class="sidebar">    
+
         <div class="top-section">
                 <img class= "logo" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/>               
                 <div class="Member-profile">
@@ -84,7 +93,9 @@ body{
                     </ul>
                 </div>
         </div>
+
     </nav>
+
 
      <!-- loginModal -->
      <div class="modal" id="loginModal" style="color: black;">

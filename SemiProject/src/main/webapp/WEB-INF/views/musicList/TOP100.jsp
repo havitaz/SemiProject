@@ -63,7 +63,7 @@
 	<div class="container mt-3">           
 		<ul class="pagination justify-content-center">
 			<c:if test="${pi.currentPage ne 1 }">
-				<li class="page-item"><a class="page-link" href="list.mu?cpage=${pi.currentPage - 1 }">&#9665;</a></li>
+			<li class="page-item"><a class="page-link" href="list.mu?cpage=${pi.currentPage - 1 }">&#9665;</a></li>
 			</c:if>
 			
 			<c:forEach var="i" begin="${ pi.startPage }" end="${ pi.endPage }">
@@ -75,5 +75,9 @@
 			</c:if>
 		</ul>
 	</div>
+	
+	<script>
+		
+	</script>
 </body>
 </html>

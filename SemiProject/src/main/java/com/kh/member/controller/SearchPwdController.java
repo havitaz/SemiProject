@@ -31,7 +31,6 @@ public class SearchPwdController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
 		Member m = new Member();
 		m.setMemberId(request.getParameter("memberId"));
 		m.setEmail(request.getParameter("email"));
@@ -45,8 +44,8 @@ public class SearchPwdController extends HttpServlet {
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "회원님의 비밀번호는 [" + searchMemberPwd.getMemberPwd() + "] 입니다.");
-			request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
+	         session.setAttribute("alertMsg", "회원님의 비밀번호는 {" + searchMemberPwd.getMemberPwd() + "} 입니다.");
+	         request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 		}
 		
 	}

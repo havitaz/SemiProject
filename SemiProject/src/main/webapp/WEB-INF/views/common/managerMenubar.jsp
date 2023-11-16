@@ -33,23 +33,25 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
+
 }
 
 ul{
-	margin-inline-end: 10px;
+	 margin-inline-end: 10px;
 }
 
 </style>
 <body>
-
 	 <header class="header">
+
         <div class="left-section">
-			<img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
-			<img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
-			<img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
-			<img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
-			<img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/shuffle.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/left.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/play.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/right.png" alt="메뉴"/>
+                <img class= "player-menu" src="<%=contextPath %>/resources/icon/menubarIcon/repeat.png" alt="메뉴"/>
         </div>
+
         <div class="middle-section">
             <div class="player-bar">
                 <img class="album-thumb" src="<%=contextPath %>/resources/images/temp.jpg">                  
@@ -58,26 +60,36 @@ ul{
                 </div>
             </div>
         </div>
+
+        
+
     </header>
-    
+
+
     <nav class="sidebar">
+
         <div class="top-section" style="margin-top: 20px;">
             <img class= "logo" style="margin-bottom: 10px;" src="<%=contextPath %>/resources/images/logo.png" alt="로고"/> 
+                
+                
                 <div class="manager-profile" align="center">
                     <ul class="profileImg">
                         <img class= "pro_admin" src="<%=contextPath %>/resources/images/admin.png" alt="관리자"/>               
-                    </ul>
+                      </ul>
+
                     <ul class="detail-profile">
                         <li>관리자 님</li>
                     </ul>
+                    
 					<ul class="profile-button">
                         <a href="<%=contextPath %>/music.bt" rel="wobble-vertical" class="music-btn">노래관리</a>
                         <a href="<%=contextPath %>/member.bt" rel="wobble-vertical"  class="member-btn">회원관리</a>
 					</ul>
                 </div>
+
+
         </div>
     </nav>
-    
     <header class="header">
 
 		<div class="left-section">
@@ -91,12 +103,17 @@ ul{
 		
 		
 		<audio id="audioPlayer" style="display: none;">
-			<source src="<%=contextPath%>/resources/audio/King Gnu-Specialz.mp3" type="audio/mp3">
+		  <source src="<%=contextPath%>/resources/audio/King Gnu-Specialz.mp3" type="audio/mp3">
 		</audio>
 		
+		
+		
+
+
 		<div class="middle-section">
 			<div class="player-bar">
 				<script>
+	
 					/*반복*/	
 					var audioElement = document.getElementById('audioPlayer');
 					var repeatButton = document.getElementById('repeatButton');
@@ -112,13 +129,14 @@ ul{
 					        repeatButton.src = "<%=contextPath%>/resources/icon/menubarIcon/repeat.png";
 					    }
 					});	
+					
 										
 					/*상단바 재생시간 */
 					function timeStringToSeconds(timeString) {
-					    var timeArray = timeString.split(':');
-					    var minutes = parseInt(timeArray[0], 10);
-					    var seconds = parseInt(timeArray[1], 10);
-					    return minutes * 60 + seconds;
+				    var timeArray = timeString.split(':');
+				    var minutes = parseInt(timeArray[0], 10);
+				    var seconds = parseInt(timeArray[1], 10);
+				    return minutes * 60 + seconds;
 					}
 					
 					var musTimeInSeconds = timeStringToSeconds('${pl.musTime}');
@@ -146,24 +164,26 @@ ul{
 
 					    // 시간이 0초가 되면 타이머를 멈춤
 					    if (currentTimeInSeconds === 0) {
-					        	clearInterval(timer);
-					    	}
-						}, 1000);
+					        clearInterval(timer);
+					    }
+					}, 1000);
 					
 					  // 오디오 시간이 업데이트 될 때 호출되는 이벤트 핸들러
 					  audioElement.addEventListener('timeupdate', function () {
-						  // 시간을 화면에 업데이트
-						  var formattedTime = formatTime(audioElement.currentTime);
-						  $(".flex-item.time.flow").text(formattedTime);
+					    // 시간을 화면에 업데이트
+					    var formattedTime = formatTime(audioElement.currentTime);
+					    $(".flex-item.time.flow").text(formattedTime);
 					  });
 
 					  // 시간을 00:00 형식으로 포맷하는 함수
 					  function formatTime(timeInSeconds) {
-						var minutes = Math.floor(timeInSeconds / 60);
-						var seconds = Math.floor(timeInSeconds % 60);
-						return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+					    var minutes = Math.floor(timeInSeconds / 60);
+					    var seconds = Math.floor(timeInSeconds % 60);
+					    return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 					  }
-
+					
+					  
+					
 				  // 오디오 요소와 버튼 요소 가져오기
 				  var audioElement = document.getElementById('audioPlayer');
 				  var playButton = document.getElementById('playButton');
@@ -179,6 +199,7 @@ ul{
 				    }
 				  }
 
+
 				/*음소거 이미지 변경*/
 			  function changeImage() {
 				    let volCheck = document.getElementById("vol");				    
@@ -192,13 +213,15 @@ ul{
 		                audioElement.muted = true; // 음소거
 
 				    }
-				  }		 
+				  }
+				  			 
 				
 				  var audioElement = document.getElementById('audioPlayer');
 				  audioElement.volume = 0.5; //초기 볼륨 값 50%
 
 				// 볼륨을 조절하는 함수
 				function changeVolume() {
+	
 				    var volumeRange = document.getElementById('volumeRange');
 				    var volCheck = document.getElementById("vol");
 	
@@ -208,25 +231,32 @@ ul{
 				    // volumeRange의 값이 0인 경우 mute 이미지로, 그 외에는 vol 이미지로 변경
 				    volCheck.src = volumeRange.value == 0 ? "<%=contextPath%>/resources/icon/menubarIcon/mute.png" : "<%=contextPath%>/resources/icon/menubarIcon/vol.png";
 				}
-		
-				/*재생버튼 이미지 변경*/
-				function changeImagePlay() {
-				  let plbtn = document.getElementById("playButton");
-				  
-				  if (!audioElement.paused) {
-				    plbtn.src = "<%=contextPath%>/resources/icon/menubarIcon/pause-button.png";
-				  } else {
-				    plbtn.src = "<%=contextPath%>/resources/icon/menubarIcon/play.png";
-				  }
-				}
+	
+					
+			/*재생버튼 이미지 변경*/
+
+				  function changeImagePlay() {
+					    let plbtn = document.getElementById("playButton");
+					    
+					    if (!audioElement.paused) {
+					      plbtn.src = "<%=contextPath%>/resources/icon/menubarIcon/pause-button.png";
+					    } else {
+					      plbtn.src = "<%=contextPath%>/resources/icon/menubarIcon/play.png";
+					    }
+					  }
 				  
 				function playAudio() {
 			        audioElement.currentTime = 0; /*다시 클릭시 초기화	*/
-			       	audioElement.play();
+			        
+
+			       		audioElement.play();
+
 			        changeImagePlay(); /*재생버튼 반영*/
+
 			    }
-				
+		
 				audioElement.addEventListener('click', playAudio);
+				
 				audioElement.addEventListener('ended', function() {
 					 if (isRepeat) {
 					        // 반복 상태일 때, 오디오를 처음부터 다시 재생
@@ -235,9 +265,14 @@ ul{
 					    } else {
 					        // 반복 상태가 아닐 때, 
 					        // 다음 곡 재생 함수 
+					        
 					    }
 					});
-
+	
+				  			 		 
+				    
+            
+            
 				    function sendMusicInfo(musName, musArt, musTime, albumPath) {
 				        // Ajax 요청을 통해 음악 정보를 서버로 전송
 				        $.ajax({
@@ -262,7 +297,10 @@ ul{
 				            }
 				        });
 				    }
-  
+
+
+				    
+				    
 					function updateUI(response) {
 						// 서버 응답에 따라 UI 업데이트 수행
 						// 이 부분에 받은 데이터를 이용하여 UI를 업데이트하는 로직을 추가할 수 있습니다.
@@ -284,10 +322,13 @@ ul{
 					    }
 					}
 
+
 					$(document).ready(function () {
 					    updateUI();
 					});
-						
+					
+					
+					
 					  // 오디오 요소 가져오기
 					  var audioElement = document.getElementById('audioPlayer');
 					  // 프로그레스바 요소 가져오기
@@ -303,8 +344,18 @@ ul{
 					  progressBar.addEventListener('input', function () {
 					    var seekTime = (progressBar.value / 100) * audioElement.duration;
 					    audioElement.currentTime = seekTime;
-					  });	
+					  });
+					
+					
+
+					
 				</script>
+
+
+
+			
+
+
 						<img class="album-thumb"
 							src="<%=contextPath%>/resources/images/default-albumArt.png">
 
@@ -316,6 +367,8 @@ ul{
 
 					<!-- <input class="progressBar" type="range" id="progressBar" min="0" max="100" value="0" oninput="updateProgressBar()"> -->
 
+					
+
 			</div>
 
 			<div class="volume">
@@ -326,17 +379,19 @@ ul{
 		</div>
 
 		<!-- 로그인 전 -->
-		<div class="right-section">
-			<div class="notifications-icon-container"></div>
-			<input type="button" onclick="logout()" class="btn-login" data-bs-toggle="modal"
-				data-bs-target="#loginModal" value="로그아웃"></input>
-		</div>
-		
-		<script>
-			function logout() {
-				location.href = "logout.me"
-			}
-		</script>
+
+				<div class="right-section">
+					<div class="notifications-icon-container"></div>
+					<input type="button" onclick="logout()" class="btn-login" data-bs-toggle="modal"
+						data-bs-target="#loginModal" value="로그아웃"></input>
+				</div>
+				
+				<script>
+					function logout() {
+						location.href = "logout.me"
+					}
+				</script>
+
 	</header>
 </body>
 </html>

@@ -18,6 +18,7 @@ public class MusicDao {
 	}
 	
 	public ArrayList<Music> selectList(SqlSession sqlSession, PageInfo pi){
+		
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
 		
@@ -27,6 +28,7 @@ public class MusicDao {
 		return list;
 	}
 
+	
 	public ArrayList<Music> selectMusicTitleList(SqlSession sqlSession) {
 		return (ArrayList)sqlSession.selectList("musicMapper.selectMusicTitleList");
 	}
