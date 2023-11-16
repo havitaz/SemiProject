@@ -61,10 +61,10 @@
 
             <div class="video-preview">
                 <div>
-                    <iframe width="360" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="360" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="360" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="360" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 
             </div>
@@ -80,35 +80,69 @@
 
 
 
-
-        <div class="music-grid" onclick="location.href='list.mu?cpage=1';" style="cursor: pointer;">
-            <div>
-                <div class="top100part">
-                <div class="speech-bubble">
-                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-                <u><a class="musRec" href="newList.mu">이번 주 추천 곡</a></u>
-            	</div>
-                <h1 class="top100-h1">쿼카 플레이어
-                    <br>top 100
-                </h1>
-                <div class="top100info">
-                	<br><br>
-                    총 6곡!
-                    <br><br>
-                    <%= formattedDateTime %>
-                    <br><br><br>
-                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
-                </div>
-
-            </div>
-            </div>
-            <div>
-               <div id="top100List">
-               
-               </div>
- 
-            </div>
-        </div>
+		<c:choose>
+		  <c:when test="${ empty loginUser }">
+	        <div class="music-grid" style="cursor: pointer;">
+	            <div>
+	                <div class="top100part">
+	                <div class="speech-bubble">
+	                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
+	                <u><a class="musRec" href="newList.mu">이번 주 추천 곡</a></u>
+	            	</div>
+	                <h1 class="top100-h1">쿼카 플레이어
+	                    <br>top 100
+	                </h1>
+	                <div class="top100info">
+	                	<br><br>
+	                    총 6곡!
+	                    <br><br>
+	                    <%= formattedDateTime %>
+	                    <br><br><br>
+	                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
+	                </div>
+			
+	            </div>
+	            </div>
+	            <div>
+	               <div id="top100List">
+	               
+	               </div>
+	 
+	            </div>
+	        </div>
+	      </c:when>
+	      <c:otherwise>
+	      		<div class="music-grid" onclick="location.href='list.mu?cpage=1';" style="cursor: pointer;">
+	            <div>
+	                <div class="top100part">
+	                <div class="speech-bubble">
+	                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
+	                <u><a class="musRec" href="newList.mu">쿼카가 추천하는 6곡!</a></u>
+	                <!--<p style="color:white ">쿼카가 추천하는 6곡!</p>-->
+	            	</div>
+	                <h1 class="top100-h1">쿼카 플레이어
+	                    <br>top 100
+	                </h1>
+	                <div class="top100info">
+	                	<br><br>
+	                    총 6곡!
+	                    <br><br>
+	                    <%= formattedDateTime %>
+	                    <br><br><br>
+	                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
+	                </div>
+			
+	            </div>
+	            </div>
+	            <div>
+	               <div id="top100List">
+	               
+	               </div>
+	 
+	            </div>
+	        </div>
+	      </c:otherwise>
+        </c:choose>
         <script>
             $(function(){
                 top100List();
