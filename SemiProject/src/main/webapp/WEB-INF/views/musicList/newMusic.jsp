@@ -26,6 +26,7 @@
 		margin: 2%;
 		padding: 1px;
 	}
+		
   </style>
 </head>
 <body>

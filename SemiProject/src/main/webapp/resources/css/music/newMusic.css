@@ -19,3 +19,7 @@
   	float: left;
   	margin-left: 5%;
   	}
+  		body {
+		background-image:
+		url("/semi/resources/images/background.png") no-repeat center center fixed;
+	}

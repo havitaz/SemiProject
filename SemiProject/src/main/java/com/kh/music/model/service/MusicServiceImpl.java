@@ -97,8 +97,12 @@ public class MusicServiceImpl implements MusicService{
 		int result1 = mDao.updateMusic(sqlSession, m);
 		int result2 = 1;
 		
+		
+		
 		if(at != null) {
 			result2 = mDao.updateAttachment(sqlSession, at);
+			System.out.println("result1" + result1);
+			System.out.println("result2" + result2);
 		}
 		
 		if(result1 > 0 && result2 > 0) {

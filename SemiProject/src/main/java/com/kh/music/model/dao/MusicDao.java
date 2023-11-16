@@ -58,6 +58,7 @@ public class MusicDao {
 	}
 	
 	public int updateAttachment(SqlSession sqlSession, Attachment at) {
+		System.out.println(at);
 		return sqlSession.update("musicMapper.updateAttachment", at);
 	}
 	
