@@ -59,7 +59,6 @@ public class ManagerMusicInsertController extends HttpServlet {
 			m.setMusTime(musTime);
 			m.setAlbumPath(albumPath);
 			
-			System.out.println(m);
 			Attachment at = null;
 			
 			if(multiRequest.getOriginalFileName("upfile") != null) {

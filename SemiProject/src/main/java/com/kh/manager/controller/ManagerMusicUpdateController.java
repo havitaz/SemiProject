@@ -46,17 +46,22 @@ public class ManagerMusicUpdateController extends HttpServlet {
 				
 				MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
 				
-			int musNo = Integer.parseInt(request.getParameter("mno"));
-			String musName = multiRequest.getParameter("musName");
-			String musArt = multiRequest.getParameter("musArt");
-			String musGen = multiRequest.getParameter("musGen");
-			String musTime = multiRequest.getParameter("musTime");
-			
-			Music m = new Music();
-			m.setMusName(musName);
-			m.setMusArt(musArt);
-			m.setMusGen(musGen);
-			m.setMusTime(musTime);
+				int musNo = Integer.parseInt(multiRequest.getParameter("mno"));
+				String musName = multiRequest.getParameter("musName");
+				String musArt = multiRequest.getParameter("musArt");
+				String musGen = multiRequest.getParameter("musGen");
+				String musTime = multiRequest.getParameter("musTime");
+				
+				Music m = new Music();
+				m.setMusNo(musNo);
+				m.setMusName(musName);
+				m.setMusArt(musArt);
+				m.setMusGen(musGen);
+				m.setMusTime(musTime);
+				m.setFileNo(Integer.parseInt(multiRequest.getParameter("fileNo")));
+				
+				
+
 
 			Attachment at = null;
 			if(multiRequest.getOriginalFileName("upfile") != null) {
@@ -66,7 +71,8 @@ public class ManagerMusicUpdateController extends HttpServlet {
 				at = new Attachment();
 				at.setOriginName(multiRequest.getOriginalFileName("upfile"));
 				at.setChangeName(multiRequest.getFilesystemName("upfile"));
-				at.setFilePath("resources/icon/musicAlbumCover/");	
+				at.setFilePath("resources/icon/musicAlbumCover/");
+				at.setFileNo(Integer.parseInt(multiRequest.getParameter("fileNo")));
 		}
 			
 			int result =  new MusicServiceImpl().updateMusic(m, at);
