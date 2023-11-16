@@ -32,9 +32,7 @@ public class Top100ThumnailList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		ArrayList<Music> list = new MemberServiceImpl().selectTopList();
-		
 		
 		request.setAttribute("list", list);
 		

@@ -40,7 +40,6 @@ public class SerachIdController extends HttpServlet {
 		Member searchMember = new MemberServiceImpl().searchMember(m);
 
 		if(searchMember == null) {
-			
 			request.setAttribute("errorMsg", "찾고자하는 회원이 없습니다");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		} else {

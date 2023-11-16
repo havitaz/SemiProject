@@ -15,5 +15,4 @@ public class PlaylistDao {
 	public int insertPlayList(SqlSession sqlSession, Playlist p) {
 		return sqlSession.insert("playlistMapper.insertPlayList", p);
 	}
-	
 }

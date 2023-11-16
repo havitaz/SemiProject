@@ -27,7 +27,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 
- body {
+body{
     margin: 0;
     padding-top: 80px;
     padding-left: 310px;
@@ -37,72 +37,57 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(255, 252, 227);
-  }
+}
   
-  .musRec{
-  color: white;
-  text-decoration-line: none
-  }
+.musRec{
+	color: white;
+	text-decoration-line: none
+}
 </style>
 
 </head>
 <meta charset="UTF-8">
 <title>Quokka Player</title>
 <body>
-		<jsp:include page="../common/menubar-test.jsp"/>
-
-
+	<jsp:include page="../common/menubar-test.jsp"/>
     <main>
         <h1 class="main-title" style="color: black;">지금 듣기</h1><br>
 
         <div>
-
-        <section class="video-grid">
-
-            <div class="video-preview">
-                <div>
-                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                
-            </div>
-
-
-
-                
-            
-        </section>
-
+	        <section class="video-grid">
+	            <div class="video-preview">
+	                <div>
+	                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/MIbt_Yn_rdw?si=tUN--4rIUsdwL8n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/WbhK3wMXluE?si=VoVFHuxVVkT45X83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/L6-uJLteKek?si=8h3XxMeaBk3dIpwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	                    <iframe class="video-mv" width="360" height="250" src="https://www.youtube.com/embed/2fDzCWNS3ig?si=S4pcMem377qQq5pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	                </div>
+	                
+	            </div>       
+	        </section>
         </div>
-
-
-
-
 		<c:choose>
 		  <c:when test="${ empty loginUser }">
 	        <div class="music-grid" style="cursor: pointer;" onclick="alert('로그인 후 이용해 주세요.')">	          
 	            <div>
 	                <div class="top100part">
-	                <div class="speech-bubble">
-	                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
-	                <u><a class="musRec" href="#">쿼카가 추천하는 8곡과<br> 새로 들어온 노래 15곡!</a></u>
-	            	</div>
-	                <h1 class="top100-h1">쿼카 플레이어
-	                    <br>top 100
-	                </h1>
-	                <div class="top100info">
-	                	<br><br>
-	                    총 6곡!
-	                    <br><br>
-	                    <%= formattedDateTime %>
-	                    <br><br><br>
-	                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
-	                </div>
-			
-	            </div>
-	            </div>
+		                <div class="speech-bubble">
+			                <!-- 추천 곡 정보와 같은 대화 말풍선의 내용을 추가하세요 -->
+			                <u><a class="musRec" href="#">쿼카가 추천하는 8곡과<br> 새로 들어온 노래 15곡!</a></u>
+			            </div>
+			            <h1 class="top100-h1">쿼카 플레이어
+			            	<br>top 100
+			            </h1>
+			            <div class="top100info">
+		                	<br><br>
+		                    총 6곡!
+		                    <br><br>
+		                    <%= formattedDateTime %>
+		                    <br><br><br>
+		                    <img class="top100play-btn" src="<%=contextPath%>/resources/icon/menubarIcon/play.png"/>
+			             </div>
+		            </div>
+	          	</div>
 	            <div>
 	               <div id="top100List">
 	               
@@ -135,12 +120,11 @@
 	            </div>
 	            <div>
 	               <div id="top100List">
-	               
-	               </div>
-	 
-	            </div>
-	        </div>
-	      </c:otherwise>
+	                
+	                </div>
+	             </div>
+	         </div>
+	       </c:otherwise>
         </c:choose>
         <script>
             $(function(){
@@ -148,9 +132,9 @@
             })
             function top100List(){
                 $.ajax({
-                    url:"top100list.bo",
-                    success: function(data){
-                        drawTop100List(data);
+	                    url:"top100list.bo",
+	                    success: function(data){
+	                        drawTop100List(data);
                     },
                     error: function(data){
                         console.log("top100 ajax 실패");

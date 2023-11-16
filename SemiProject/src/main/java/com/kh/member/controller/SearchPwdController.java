@@ -31,6 +31,7 @@ public class SearchPwdController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		Member m = new Member();
 		m.setMemberId(request.getParameter("memberId"));
 		m.setEmail(request.getParameter("email"));

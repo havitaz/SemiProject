@@ -47,6 +47,7 @@ public class MemberDao {
 	public  int deleteMember(SqlSession sqlSession, int memberNo){
 		return  sqlSession.update("memberMapper.deleteMember", memberNo);
 	}
+	
 	public ArrayList<Music> selectTopList(SqlSession sqlSession){
 		return (ArrayList)sqlSession.selectList("videoMapper.selectTopList");
 	}

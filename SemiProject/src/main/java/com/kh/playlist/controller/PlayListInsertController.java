@@ -40,11 +40,11 @@ public class PlayListInsertController extends HttpServlet {
 		int musNo = Integer.parseInt(request.getParameter("musNo"));
 		
 		Playlist p = new Playlist(musNo, memberNo);
-		System.out.println(p);
+
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
 		
 		int result = new PlaylistServiceImpl().insertPlayList(p);
-		System.out.println(result);
+
 		if(result > 0) {
 			ArrayList<Playlist> playlist = new PlaylistServiceImpl().selectPlaylist(memberNo);
 

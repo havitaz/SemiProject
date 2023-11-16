@@ -2,8 +2,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 } */
-
-
 .video-grid{
     display: flex;
     align-items: center;
@@ -45,7 +43,6 @@
     */
 }
 
-
 .video-time{
     position: absolute;
     bottom: 8px;
@@ -75,8 +72,6 @@
     line-height: 20px;
     margin-bottom: 10px;
 }
-
-
 
 .video-author,
 .video-stats{
@@ -135,7 +130,6 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-
 
 .modal-header > .btn-close{
     position: relative;
@@ -204,8 +198,7 @@
 }
 
 body{
-	
-	    margin: 0;
+	margin: 0;
     padding-top: 80px;
     padding-left: 310px;
     padding-right: 20px;
@@ -217,18 +210,17 @@ body{
 }
 
 .enroll{
-position: absolute;
+	position: absolute;
     left: 200px;
 }
 .searchId{
-position: absolute;
+	position: absolute;
     left: 355px;
 }
 .searchPwd{
     position: absolute;
     left: 500px;
 }
-
 
 #top100List img{
     width: 150px;

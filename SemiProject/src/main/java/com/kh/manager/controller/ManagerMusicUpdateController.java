@@ -77,7 +77,6 @@ public class ManagerMusicUpdateController extends HttpServlet {
 			
 			int result =  new MusicServiceImpl().updateMusic(m, at);
 
-			
 			if(result > 0) {
 				//성공 => /jsp/detail.bo?bno=해당게시글번호
 				request.getSession().setAttribute("alertMsg", "성공적으로 수정하였습니다.");

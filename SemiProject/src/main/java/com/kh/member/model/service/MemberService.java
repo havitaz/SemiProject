@@ -9,11 +9,17 @@ import com.kh.music.model.vo.Music;
 public interface MemberService {
 	
 	Member loginUser(Member m);
+	
 	int insertMember(Member m);
+	
 	Member searchMember(Member m);
+	
 	Member searchMemberPwd(Member m);
+	
 	int idCheck(String checkId);
+	
 	ArrayList<Music> selectTopList();
+	
 	Member updateMember(Member m);
 	
 	//관리자 회원 리스트

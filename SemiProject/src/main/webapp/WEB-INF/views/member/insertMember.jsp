@@ -42,10 +42,9 @@
     </div>
     
   <script>
-	    function closeMenu(){
-        location.href="backPage.me"
+	  function closeMenu(){
+      	location.href="backPage.me"
       }
 	</script>
-
 </body>
 </html>

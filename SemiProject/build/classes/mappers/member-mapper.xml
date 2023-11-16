@@ -12,7 +12,6 @@
 	<result column="EMAIL" property="email" />
 	<result column="STATUS" property="status" />
 </resultMap>
-
 	<select id="loginUser" parameterType="Member" resultMap="memberResultSet">
 			SELECT MEM_NO,
 				   MEM_ID,
@@ -25,7 +24,6 @@
 		    AND  MEM_PWD = #{memberPwd}
 		    AND  STATUS = 'Y'
 	</select>
-	
 	<insert id="insertMember" parameterType="Member">
 			INSERT 
 				INTO MEMBER
@@ -72,34 +70,34 @@
 	</select>
 	<select id="idCheck" parameterType="Member">
 		SELECT COUNT(*) "COUNT"
-	  	 FROM MEMBER
+	  	FROM MEMBER
 	 	WHERE USER_ID = ?
 	</select>	
 	<select id="selectMemberTitleList" parameterType="Member" resultMap="memberResultSet">
-			SELECT MEM_NO, 
-						MEM_ID
-				FROM MEMBER
-			WHERE STATUS = 'Y'
+		SELECT MEM_NO, 
+					MEM_ID
+		FROM MEMBER
+		WHERE STATUS = 'Y'
 	</select>
 		<select id="selectSearchMember" resultMap="memberResultSet">
-			SELECT MEM_NO, 
-						MEM_ID
-				FROM MEMBER
-			WHERE STATUS = 'Y'
-			AND MEM_ID LIKE '%' || #{keyword} || '%'
+		SELECT MEM_NO, 
+				MEM_ID
+		FROM MEMBER
+		WHERE STATUS = 'Y'
+		AND MEM_ID LIKE '%' || #{keyword} || '%'
 	</select>
 	<select id="selectDetailMember" resultMap="memberResultSet">
-			SELECT MEM_NO, 
-						 MEM_ID,
-						 EMAIL,
-						 PHONE
-				FROM MEMBER
-			WHERE MEM_NO = #{memberNo}
+		SELECT MEM_NO, 
+				 MEM_ID,
+				 EMAIL,
+				 PHONE
+		FROM MEMBER
+		WHERE MEM_NO = #{memberNo}
 	</select>
 	 <update id="deleteMember">
-  				UPDATE MEMBER
-						SET STATUS = 'N'
-				WHERE  MEM_NO = #{memberNo}
+		UPDATE MEMBER
+		SET STATUS = 'N'
+		WHERE  MEM_NO = #{memberNo}
   	</update>
   	<update id="updateMember">
 		UPDATE MEMBER

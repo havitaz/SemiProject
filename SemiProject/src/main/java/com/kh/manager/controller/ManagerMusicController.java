@@ -32,7 +32,6 @@ public class ManagerMusicController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		request.getRequestDispatcher("WEB-INF/views/manager/managerMusic.jsp").forward(request, response);
 
 	}
