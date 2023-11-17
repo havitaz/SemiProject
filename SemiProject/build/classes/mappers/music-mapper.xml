@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="musicMapper">
+
 	<resultMap id="MusicResultSet" type="Music">
 		<result column="MUS_NO" property="musNo"/>
 		<result column="MUS_NAME" property="musName"/>
@@ -21,110 +22,112 @@
 		<result column="ORIGIN_NAME" property="originName"/>
 		<result column="FILE_NO" property="fileNo"/>
 	</resultMap>
+	
 	<select id="selectListCount" resultType="_int">
 		SELECT COUNT(*)
 		FROM MUSIC
 		WHERE STATUS = 'Y'
 	</select>
 	<select id="selectList" resultMap="MusicResultSet">
-		SELECT ROWNUM,
-	         	MUS_NO,
-				MUS_NAME,
-				MUS_ART,
-				MUS_GEN,
-				MUS_TIME,
-				MUS_MV,
-				STATUS,
-				COUNT,
-				ALBUM_PATH,
-	            FILE_PATH,
-	            CHANGE_NAME
-		FROM (	SELECT M.MUS_NO,
-						M.MUS_NAME,
-						M.MUS_ART,
-						M.MUS_GEN,
-						M.MUS_TIME,
-						M.MUS_MV,
-						M.STATUS,
-						M.COUNT,
-						M.ALBUM_PATH,
-		                FILE_PATH,
-		                CHANGE_NAME
+				SELECT ROWNUM,
+		         MUS_NO,
+					MUS_NAME,
+					MUS_ART,
+                    MUS_GEN,
+					MUS_TIME,
+					MUS_MV,
+					STATUS,
+					COUNT,
+					ALBUM_PATH,
+                    FILE_PATH,
+                    CHANGE_NAME
+		FROM (SELECT M.MUS_NO,
+					M.MUS_NAME,
+					M.MUS_ART,
+					M.MUS_GEN,
+					M.MUS_TIME,
+					M.MUS_MV,
+					M.STATUS,
+					M.COUNT,
+					M.ALBUM_PATH,
+                    FILE_PATH,
+                    CHANGE_NAME
 				FROM MUSIC M, ATTACHMENT A
 				WHERE M.STATUS = 'Y'
                 AND M.MUS_NO = A.REF_MNO
 				ORDER BY COUNT DESC)
 	</select>
 	<select id="selectMusicTitleList" parameterType="Music" resultMap="MusicResultSet">
-		SELECT MUS_NO, 
-	            MUS_NAME,
-	            ALBUM_PATH,
-	            FILE_PATH,
-				CHANGE_NAME,
-				FILE_NO
-	 	FROM MUSIC M, ATTACHMENT A
-		WHERE M.STATUS = 'Y'
-		AND M.MUS_NO = A.REF_MNO
+				SELECT MUS_NO, 
+				            MUS_NAME,
+				            ALBUM_PATH,
+				            FILE_PATH,
+                    		CHANGE_NAME,
+                    		FILE_NO
+   				 	FROM MUSIC M, ATTACHMENT A
+    				WHERE M.STATUS = 'Y'
+    				 AND M.MUS_NO = A.REF_MNO
 	</select>
 	<select id="selectNewList" resultMap="MusicResultSet">
 		SELECT  MUS_NAME,
 		        MUS_ART,
 		        FILE_PATH,
 		        CHANGE_NAME
-		FROM(SELECT M.MUS_NAME,
+			FROM( SELECT M.MUS_NAME,
 		        	M.MUS_ART,
 		        	FILE_PATH,
 		        	CHANGE_NAME
-			FROM MUSIC M, ATTACHMENT A
-			WHERE M.STATUS = 'Y'
-			AND M.MUS_NO = A.REF_MNO
-			ORDER BY ENROLL_DATE DESC
-			)
+				FROM MUSIC M, ATTACHMENT A
+				WHERE M.STATUS = 'Y'
+				AND M.MUS_NO = A.REF_MNO
+				ORDER BY ENROLL_DATE DESC
+				)
 		WHERE ROWNUM <![CDATA[<]]>= 15
 	</select>
 	<select id="selectSearchMusic" resultMap="MusicResultSet">
-		SELECT MUS_NO,
-				MUS_NAME,
-				FILE_PATH,
-       			CHANGE_NAME,
-       			FILE_NO
-		FROM MUSIC M, ATTACHMENT A
-		WHERE M.STATUS = 'Y'
-		AND M.MUS_NO = A.REF_MNO
-		AND M.MUS_NAME LIKE '%' || #{keyword} || '%'
+				SELECT MUS_NO,
+							 MUS_NAME,
+							 FILE_PATH,
+		        			CHANGE_NAME,
+		        			FILE_NO
+					FROM MUSIC M, ATTACHMENT A
+				WHERE M.STATUS = 'Y'
+					AND M.MUS_NO = A.REF_MNO
+				   AND M.MUS_NAME LIKE '%' || #{keyword} || '%'
 	</select>
 	<!-- 관리자 노래상세정보 -->
 	<select id="selectDetailMusic" resultMap="MusicResultSet">
-		SELECT	M.MUS_NO, 
-				M.MUS_NAME,
-				M.MUS_ART,
-				M.MUS_GEN,
-				M.MUS_TIME,
-				FILE_PATH,
-				CHANGE_NAME,
-				ORIGIN_NAME,
-				FILE_NO
-		FROM MUSIC M, ATTACHMENT A
-		WHERE M.MUS_NO = #{musNo}
-		AND M.MUS_NO = A.REF_MNO
+				SELECT     M.MUS_NO, 
+							M.MUS_NAME,
+								M.MUS_ART,
+								M.MUS_GEN,
+								M.MUS_TIME,
+							FILE_PATH,
+							CHANGE_NAME,
+							ORIGIN_NAME,
+							FILE_NO
+					FROM MUSIC M, ATTACHMENT A
+				WHERE M.MUS_NO = #{musNo}
+				AND M.MUS_NO = A.REF_MNO
 	</select>
 	<!-- 관리자 노래 추가 -->
 	<insert id="insertMusic" parameterType="Music">
-	INSERT INTO MUSIC
+			INSERT 
+				INTO MUSIC
+				(
+				  MUS_NO,
+				  MUS_NAME,
+				  MUS_ART,
+				  MUS_GEN,
+				  MUS_TIME
+				)
+			VALUES
 			(
-			  MUS_NO,
-			  MUS_NAME,
-			  MUS_ART,
-			  MUS_GEN,
-			  MUS_TIME
-			)
-	VALUES
-			(
-		   SEQ_MUS_NO.NEXTVAL,
-		   #{musName},
-		   #{musArt},
-		   #{musGen},
-		   #{musTime}
+			   SEQ_MUS_NO.NEXTVAL,
+			   #{musName},
+			   #{musArt},
+			   #{musGen},
+			   #{musTime}
 			)
 	</insert>
 	<insert id="insertAttachment">
@@ -136,36 +139,39 @@
 						CHANGE_NAME,
 						FILE_PATH
 						)
-		VALUES (
-				SEQ_FILE_NO.NEXTVAL,
-				SEQ_MUS_NO.CURRVAL,
-				#{originName},
-				#{changeName},
-				#{filePath}
+			VALUES (
+						SEQ_FILE_NO.NEXTVAL,
+						SEQ_MUS_NO.CURRVAL,
+						#{originName},
+						#{changeName},
+						#{filePath}
 				)
 	</insert>
 	
 	<!-- 관리자 노래수정 -->
 	<update id="updateMusic">
 		UPDATE MUSIC
-		SET MUS_NAME = #{musName},
-			MUS_ART = #{musArt},
-			MUS_GEN = #{musGen},
-			MUS_TIME = #{musTime}
-		WHERE MUS_NO = #{musNo}
-		AND STATUS = 'Y'
+				  SET MUS_NAME = #{musName},
+						 MUS_ART = #{musArt},
+						 MUS_GEN = #{musGen},
+						 MUS_TIME = #{musTime}
+				  WHERE MUS_NO = #{musNo}
+				  AND STATUS = 'Y'
 	</update>
 	<update id="updateAttachment">
 		UPDATE ATTACHMENT
-		SET ORIGIN_NAME = #{originName},
-			CHANGE_NAME = #{changeName},
-			FILE_PATH = #{filePath}
-		WHERE FILE_NO = #{fileNo} 
+				SET ORIGIN_NAME = #{originName},
+					   CHANGE_NAME = #{changeName},
+					   FILE_PATH = #{filePath}
+				WHERE FILE_NO = #{fileNo} 
 	</update>
+
+	
 	<!-- 관리자 노래삭제 -->
 	<update id="deleteMusic">
 			UPDATE MUSIC
 			SET STATUS = 'N'
 			WHERE MUS_NO = #{musNo}
 	</update>
+	
 </mapper>

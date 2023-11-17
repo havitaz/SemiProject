@@ -24,6 +24,7 @@ public class PlaylistServiceImpl implements PlaylistService{
 	            sqlSession.close();
 	        }
 	    }
+
 	    return playlist;
 	}
 
@@ -31,7 +32,6 @@ public class PlaylistServiceImpl implements PlaylistService{
 	public int insertPlayList(Playlist p) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = pDao.insertPlayList(sqlSession , p);
-		
 		if(result > 0) {
 			sqlSession.commit();
 		} else {

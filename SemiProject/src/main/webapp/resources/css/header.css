@@ -125,54 +125,55 @@
     text-align: right;
 }
 
-.flex-item{
-    color: black;
-    text-align: center;
-}
-
-.item1{
-    align-self: flex-start;
-    order: 3;
-    flex: 1;
-}
-.time{
-    align-self:flex-end;
-    color: rgba(152, 152, 152, 0.792);
-    font-size: 12px;
-    order: 1;
-}
-
-.time1{
-    align-self:flex-end;
-    color: rgba(152, 152, 152, 0.792);
-    font-size: 12px;
-    order: 1;
-}
-
-.mp_info{
-    color: white;
-    flex: 1;
-    order: 1;
-}
-
-.align{
-position: relative;
-right: 15px;
-}
-
-/*볼륨*/
-.volume{
-display: flex;
-margin-left: 10px;
-align-items: center;
-accent-color: rgb(133, 90, 71);
-}
-
-.vol-btn{
-	width: 35px;
-	cursor: pointer;
-}
-
-.vol-btn:hover{
-	scale: 1.1;
-}
+    .flex-item{
+        color: black;
+        text-align: center;
+    }
+    .item1{
+        align-self: flex-start;
+        order: 3;
+        flex: 1;
+    }
+    .time{
+        align-self:flex-end;
+        color: rgba(152, 152, 152, 0.792);
+        font-size: 12px;
+        order: 1;
+    }
+    .flow{
+		
+	}
+    .time1{
+        align-self:flex-end;
+        color: rgba(152, 152, 152, 0.792);
+        font-size: 12px;
+        order: 1;
+    }
+    .mp_info{
+        color: white;
+        flex: 1;
+        order: 1;
+    }
+    .align{
+    position: relative;
+    right: 15px;
+    }
+    
+    
+    /*볼륨*/
+    
+    .volume{
+	display: flex;
+	margin-left: 10px;
+	align-items: center;
+	accent-color: rgb(133, 90, 71);
+	}
+	
+	.vol-btn{
+		width: 35px;
+		cursor: pointer;
+	}
+	.vol-btn:hover{
+		scale: 1.1;
+	}
+	

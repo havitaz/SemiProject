@@ -22,6 +22,8 @@ public class Member {
 		this.status = status;
 	}
 	
+	
+
 	public Member(String memberId, String phone, String email) {
 		super();
 		this.memberId = memberId;
@@ -37,6 +39,7 @@ public class Member {
 		this.email = email;
 	}
 	
+
 	public Member(String phone, String email) {
 		super();
 		this.phone = phone;
@@ -96,5 +99,6 @@ public class Member {
 		return "Member [memberNo=" + memberNo + ", memberId=" + memberId + ", memberPwd=" + memberPwd + ", phone="
 				+ phone + ", email=" + email + ", status=" + status + "]";
 	}
+	
 	
 }
