@@ -44,7 +44,7 @@ public class MemberInsertController extends HttpServlet {
 		
 		if (result > 0) {
 			HttpSession session = request.getSession();
-			session.setAttribute("alertMsg", "성공적으로 회원가입이 완료되었습니다");
+			session.setAttribute("alertMsg", "성공적으로 회원가입이 완료되었습니다." + "환영합니다." + m.getMemberId() + "님");
 			
 			request.getRequestDispatcher("WEB-INF/views/video/video.jsp").forward(request, response);
 		} else {

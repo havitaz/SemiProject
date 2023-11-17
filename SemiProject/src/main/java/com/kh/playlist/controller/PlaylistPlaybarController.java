@@ -36,9 +36,11 @@ public class PlaylistPlaybarController extends HttpServlet {
         // 클라이언트에게 필요한 경우 응답을 보낼 수 있습니다.
         response.setContentType("application/json; charset=UTF-8");
         response.getWriter().write("{\"musName\": \"" + musName + "\", \"musArt\": \"" + musArt + "\", \"musTime\": \"" + musTime + "\", \"filePath\": \"" + filePath + "\"}");
-    
+        
+        
         // 현재 재생 중인 음악 파일 경로를 설정
         String currentSongPath = getServletContext().getRealPath("/resources/icon/musicAlbumCover/") + musName + ".mp3";
+        System.out.println(currentSongPath);
         // 현재 재생 중인 음악 파일을 설정
         request.getSession().setAttribute("currentSongPath", currentSongPath);
     }
