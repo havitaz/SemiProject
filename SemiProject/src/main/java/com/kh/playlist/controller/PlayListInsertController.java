@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kh.music.model.service.MusicServiceImpl;
+import com.kh.music.model.service.MusicServiceImpl;
 import com.kh.playlist.model.service.PlaylistServiceImpl;
 import com.kh.playlist.model.vo.Playlist;
 
@@ -41,6 +42,7 @@ public class PlayListInsertController extends HttpServlet {
 		int musNo = Integer.parseInt(request.getParameter("musNo"));
 		
 		Playlist p = new Playlist(musNo, memberNo);
+		System.out.println(p);
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
 		
 		int result = new PlaylistServiceImpl().insertPlayList(p);

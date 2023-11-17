@@ -65,7 +65,6 @@ public class MusicDao {
 	public int deleteMusic(SqlSession sqlSession, int musNo) {
 		return sqlSession.update("musicMapper.deleteMusic", musNo);
 	}
-	
 	public int addCount(SqlSession sqlSession, int musNo) {
 		return sqlSession.update("musicMapper.addCount", musNo);
 	}
