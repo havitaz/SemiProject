@@ -174,4 +174,10 @@
 			WHERE MUS_NO = #{musNo}
 	</update>
 	
+	<update id="addCount">
+		UPDATE MUSIC
+		SET COUNT = COUNT + 1
+		WHERE MUS_NO = #{musNo}
+	</update>
+	
 </mapper>

@@ -33,4 +33,7 @@ public interface MusicService {
 	
 	//최신곡 10곡 노래제목 리스트
 	public ArrayList<Music> selectNewList();
+	
+	//조회수(담기횟수) 증가
+	int addCount(int musNo);
 }
