@@ -256,7 +256,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Bye bye my blue', '¹é¿¹¸°', 'R&B', '03:23', 'https://www.youtube.com/watch?v=WbhK3wMXluE', 'Y', 0, 'resources/icon/musicAlbumCover/Bye bye my blue.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Vancouver', 'BIG Naughty(¼­µ¿Çö)', 'R&B', '03:36', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Vancouver.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Vancouver', 'BIG Naughty(¼­µ¿Çö)', 'R&B', '03:36', NULL, 'Y', 50, 'resources/icon/musicAlbumCover/Vancouver.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'D', 'DEAN', 'R&B', '03:49', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/D.jpg', SYSDATE);
@@ -298,10 +298,10 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'ÆÈ·¹Æ®(feat. G-DRAGON)', '¾ÆÀÌÀ¯', 'R&B', '03:37', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÆÈ·¹Æ®(feat. G-DRAGON).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, '°ç¿¡ ÀÖ¾îÁà(feat. ¿ø½´Å¸ÀÎ)', 'SOLE(½ò)', 'R&B', '03:11', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/°ç¿¡ ÀÖ¾îÁà(feat. ¿ø½´Å¸ÀÎ).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, '°ç¿¡ ÀÖ¾îÁà(feat. ¿ø½´Å¸ÀÎ)', 'SOLE(½ò)', 'R&B', '03:11', NULL, 'Y', 30, 'resources/icon/musicAlbumCover/°ç¿¡ ÀÖ¾îÁà(feat. ¿ø½´Å¸ÀÎ).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'ÀÚ´Ï(feat.´ÙÀÌ³ª¹Íµà¿À)', 'ÇÁ¶óÀÌ¸Ó¸®', 'R&B', '03:54', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/ÀÚ´Ï(feat.´ÙÀÌ³ª¹Íµà¿À).jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'ÀÚ´Ï(feat.´ÙÀÌ³ª¹Íµà¿À)', 'ÇÁ¶óÀÌ¸Ó¸®', 'R&B', '03:54', NULL, 'Y', 19, 'resources/icon/musicAlbumCover/ÀÚ´Ï(feat.´ÙÀÌ³ª¹Íµà¿À).jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, '¾çÈ­´ë±³', 'Zion.T', 'R&B', '03:49', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/¾çÈ­´ë±³.jpg', SYSDATE);
@@ -394,10 +394,10 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'Burn', 'Deep Purple', 'Rock', '06:04', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Burn.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Somebody To Love', 'Queen ', 'Rock', '05:09', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Somebody To Love.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Somebody To Love', 'Queen ', 'Rock', '05:09', NULL, 'Y', 15, 'resources/icon/musicAlbumCover/Somebody To Love.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Highway to Hell', 'AC/DC', 'Rock', '03:28', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Highway to Hell.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Highway to Hell', 'AC/DC', 'Rock', '03:28', NULL, 'Y', 10, 'resources/icon/musicAlbumCover/Highway to Hell.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, 'I Don''t Want to Miss a Thing', 'Aerosmith ', 'Rock', '04:52', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/I Don''t Want to Miss a Thing.jpg', SYSDATE);
@@ -428,7 +428,7 @@ INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS,
 VALUES (SEQ_MUS_NO.NEXTVAL, 'That''s Hilarious', 'Charlie Puth', 'POP', '02:25', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/That''s Hilarious.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
-VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers', 'Á¤±¹', 'POP', '03:22', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/Dreamers.jpg', SYSDATE);
+VALUES (SEQ_MUS_NO.NEXTVAL, 'Dreamers', 'Á¤±¹', 'POP', '03:22', NULL, 'Y', 25, 'resources/icon/musicAlbumCover/Dreamers.jpg', SYSDATE);
 
 INSERT INTO MUSIC (MUS_NO, MUS_NAME, MUS_ART, MUS_GEN, MUS_TIME, MUS_MV, STATUS, COUNT, ALBUM_PATH, ENROLL_DATE) 
 VALUES (SEQ_MUS_NO.NEXTVAL, '2002', 'Anne-Marie', 'POP', '03:07', NULL, 'Y', 0, 'resources/icon/musicAlbumCover/2002.jpg', SYSDATE);

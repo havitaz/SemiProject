@@ -128,4 +128,17 @@ public class MusicServiceImpl implements MusicService{
 		return result;
 	}
 
+	@Override
+	public int addCount(int musNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.addCount(sqlSession, musNo);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		return result;
+	}
+
 }
