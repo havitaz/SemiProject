@@ -13,8 +13,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-
-Servers/
+SemiProject/
+Servers/src/main/java/security
 # External tool builders
 .externalToolBuilders/
 
