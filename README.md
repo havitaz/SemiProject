@@ -14,7 +14,7 @@
 
 ## 기술 스택
 `Front-End` 
-                                          
+                                          이름 - 색상코드                  이름
 <img src="https://img.shields.io/badge/React-FFFFFF?style=flat-square&logo=React&logoColor=white"/>
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/ReactQuery-FF4154?style=flat-square&logo=ReactQuery&logoColor=white"/>
