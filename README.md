@@ -42,6 +42,7 @@
 -
 
 ## 실행 방법
+(메이븐 톰캣 스프링 받고 어떻게 해라~)
 
 1. 프로젝트 레포지토리를 클론합니다.
 
@@ -118,7 +119,7 @@ $ yarn dev
 
 | 이름 | 포지션 | Contact |
 | --- | --- | --- |
-| 최지원 | AI | a1@gmail.com |
+| 최지원 | AI | a1@gmail.com(깃메일 대체 가능) |
 | 최지투 | BE | a1@gmail.com |
 | 최지삼 | FE | a1@gmail.com |
 | 최지사 | FE | a1@gmail.com |
