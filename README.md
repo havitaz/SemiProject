@@ -6,29 +6,37 @@
 - 개발 기간: 2023-10-26 ~ 2023-11-16
   
 - 본 프로젝트의 간단한 설명
-  - [노션 링크]([(https://www.notion.so/QUOKKA-PLAYER-semiProject-25787e372a1f4244a834a2b54420f28c?pvs=4))
+  - [노션 링크 - 쿼카플레이어](https://www.notion.so/QUOKKA-PLAYER-semiProject-25787e372a1f4244a834a2b54420f28c?pvs=4)
 
 ## 기술 스택
-`Front-End` 
-                                          이름 - 색상코드                  이름
-<img src="https://img.shields.io/badge/React-FFFFFF?style=flat-square&logo=React&logoColor=white"/>
-<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/ReactQuery-FF4154?style=flat-square&logo=ReactQuery&logoColor=white"/>
-<img src="https://img.shields.io/badge/Recoil-black?style=flat-square&logo=Recoil&logoColor=white"/>
-<img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
-<img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/>
-<img src="https://img.shields.io/badge/ReactHookForm-EC5990?style=flat-square&logo=ReactHookForm&logoColor=white"/>
+`Skill`
 
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/>
 
-`Back-end`
+<img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/Nest.js-E0234E?style=flat-square&logo=Nestjs&logoColor=white">
-<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/bootstrap-05054B?style=flat-square&logo=bootstrap&logoColor=white"/>
+
+<img src="https://camo.githubusercontent.com/587c2237c6d4d94104e33f657a81c6b006e89f77b5afcbdfb86b1bf2e66558d8/68747470733a2f2f6d7962617469732e6f72672f696d616765732f6d7962617469732d6c6f676f2e706e67" width="80"/>
+
+<img src="https://postfiles.pstatic.net/20121022_163/missalz_1350835158178b7DNe_JPEG/%BF%C0%B6%F3%C5%AC.jpg?type=w2" width="80"/>
+
+<img src="https://img.shields.io/badge/eclipseide-525C86?style=flat-square&logo=eclipseide&logoColor=white">
+
+<img src="https://img.shields.io/badge/windows10-0078D6?style=flat-square&logo=windows10&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/apachetomcat-F8DC75?style=flat-square&logo=apachetomcat&logoColor=white">
 
 `Communication`
-<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=white">
+
 <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white">
+
+<img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
+
 
 ## 사용 라이브러리및 API
 -
@@ -115,8 +123,7 @@ $ yarn dev
 
 | 이름 | 포지션 | Contact |
 | --- | --- | --- |
-| 최지원 | AI | a1@gmail.com(깃메일 대체 가능) |
-| 최지투 | BE | a1@gmail.com |
-| 최지삼 | FE | a1@gmail.com |
-| 최지사 | FE | a1@gmail.com |
-| 최지오 | FE | a1@gmail.com |
+| 나기윤 | DB관리 | [github.com/GIYUN9](https://github.com/GIYUN9) |
+| 이선우 | 조장 | a1@gmail.com |
+| 김경보 | 형상관리 | a1@gmail.com |
+| 윤수진 | 이슈관리 | a1@gmail.com |
