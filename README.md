@@ -48,12 +48,18 @@
 -
 
 ## 실행 방법
-1. 프로젝트 레포지토리를 클론합니다.
+
+사전작업 - Eclipse, jdk 8이상, 서버 -> 아파치 톰캣 8.5 기반
+
+1. 프로젝트 레파지토리를 클론합니다.
 
 ```sh
-$ git clone https://kdt-gitlab.elice.io/ai_track/class05/ai_project/team05/team05.git
+$ git clone https://github.com/GIYUN9/SemiProject.git
 ```
 
+2. eclipse에서 클론받은 레파지토리를 임포트합니다.
+
+3. eclipse에서 아파치톰캣 8.5에 임포트한 프로젝트를 추가한후 실행합니다
 
 ## 주요 기능
 
