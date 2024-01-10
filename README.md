@@ -2,15 +2,11 @@
 > 음악스트리밍 웹 사이트 - 쿼카플레이어
 
 ## 프로젝트 개요
-
-![로고](./SemiProject/src/main/webapp/resources/images/logo.png)
 <img src="./SemiProject/src/main/webapp/resources/images/logo.png" width="200" height="100"/>
-- 개발 기간: 2023-00-00 ~ 2023-00-00
-- 개발자 링크: [https://www.naver.com](https://www.naver.com)
-- 서비스 링크: [https://www.naver.com](https://www.naver.com)
-- 본 프로젝트의 구조를 더 자세히 알고 싶다면?
-  - [백엔드 README](./BACK.md)
-  - [프론트엔드 README](./FRONT.md)
+- 개발 기간: 2023-10-26 ~ 2023-11-16
+  
+- 본 프로젝트의 간단한 설명
+  - [노션 링크]([(https://www.notion.so/QUOKKA-PLAYER-semiProject-25787e372a1f4244a834a2b54420f28c?pvs=4))
 
 ## 기술 스택
 `Front-End` 
