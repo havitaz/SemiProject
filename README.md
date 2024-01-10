@@ -4,7 +4,7 @@
 ## 프로젝트 개요
 
 ![로고](./SemiProject/src/main/webapp/resources/images/logo.png)
-
+<img src="./SemiProject/src/main/webapp/resources/images/logo.png" width="200" height="100"/>
 - 개발 기간: 2023-00-00 ~ 2023-00-00
 - 개발자 링크: [https://www.naver.com](https://www.naver.com)
 - 서비스 링크: [https://www.naver.com](https://www.naver.com)
