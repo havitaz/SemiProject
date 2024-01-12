@@ -64,10 +64,10 @@ $ git clone https://github.com/GIYUN9/SemiProject.git
 ## 주요 기능
 
 ### ✏ 노래 Top100 및 최신곡 확인, 플레이리스트에 추가 및 재생  
-  <img src="" height="300">
-  <img src="" height="300">
-  <img src="" height="300">
-  <img src="" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/main.png" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/top100.png" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/new.png" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/login.png" height="300">
 
 + 로그인
   + 회원 가입
@@ -83,8 +83,8 @@ $ git clone https://github.com/GIYUN9/SemiProject.git
   + 최신곡 (최근 등록순)
 
 ### ⚙ 관리자의 노래 및 회원 관리
-  <img src="/" height="300">
-  <img src="/" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/admin1.png" height="300">
+  <img src="./SemiProject/src/main/webapp/resources/images/admin2.png" height="300">
 
 + 노래 관리
   + 등록, 수정, 삭제, 검색
