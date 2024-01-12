@@ -41,11 +41,11 @@
 
 
 ## 사용 라이브러리및 API
--
--
--
--
--
+- cos
+- gson
+- mybatis
+- ojdbc6
+- taglibs
 
 ## 실행 방법
 
